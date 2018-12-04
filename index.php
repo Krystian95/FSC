@@ -8,12 +8,12 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Modern Business - Start Bootstrap Template</title>
+        <title>HESystem</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/lib/bootstrap-4.1.3.min.css" rel="stylesheet">
         <link href="css/lib/jquery-ui.min.css" rel="stylesheet">
-
+        <link href="css/index.css" rel="stylesheet">
     </head>
 
     <body>
@@ -118,11 +118,51 @@
 
 
         <br><br><br><br><br><br><br><br><br>
+        <div class="container container-custom">
+            <div class="row">
+                <div class="col">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <form>
+                                <div class="row form-group">
+                                    <label class="col-form-label col-2">
+                                        Popolazione
+                                    </label>
+                                    <div class="col-8">
+                                        <!--<div id="slider">
+                                            <div id="custom-handle" class="ui-slider-handle"></div>
+                                        </div>-->
+                                        <input type="range" class="custom-range" min="10" max="5000" step="1" name="popolazione_slider" value="1000">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="text" class="form-control" name="popolazione_text" value="1000"> 
+                                    </div>
+                                </div>
+                            </form>
 
-        <div id="slider">
-            <div id="custom-handle" class="ui-slider-handle"></div>
+                        </div>
+                        <div class="col">
+                            <div class="row align-items-center buttons-container">
+                                <div class="col">
+                                    <button type="button" class="btn btn-light">Parametri</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-success">Start</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-light">Pause</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-danger">Stop</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>    
         </div>
-
 
         <br><br><br><br><br><br><br><br><br>
 
