@@ -197,10 +197,45 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="popolazione">
+                        <!--<img src="house.png" height="42" width="42">-->
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="industria">
+                        <!--<img src="house.png" height="42" width="42">-->
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Grafici
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Grafico 1</a>
+                          <a class="dropdown-item" href="#">Grafico 2</a>
+                          <a class="dropdown-item" href="#">Grafico 3</a>
+                          <a class="dropdown-item" href="#">Grafico 4</a>
+                          <a class="dropdown-item" href="#">Grafico 5</a>
+                          <a class="dropdown-item" href="#">Grafico 6</a>
+                          <a class="dropdown-item" href="#">Grafico 7</a>
+                          <a class="dropdown-item" href="#">Grafico 8</a>
+                          <a class="dropdown-item" href="#">Grafico 9</a>
+                        </div>
+                    </div>
+                    <br>
+                    <canvas id="myChart" width="1550" height="1000"></canvas>
+                </div>
+            </div>
         </div>
-        
-        <canvas id="myChart" width="100" height="100"></canvas>
 
         <!-- Footer -->
         <footer class="py-5 bg-dark">
