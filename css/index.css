@@ -28,3 +28,8 @@
     height: 228px;
     width: 100%;
 }
+
+.modal-content {
+    width:1000px;
+    margin-left: -250px;
+}

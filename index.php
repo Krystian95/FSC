@@ -133,7 +133,7 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="popolazione_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-light">Imposta parametri</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterModal">Imposta parametri</button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -150,8 +150,8 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="ricchezza_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                    <button type="submit" class="btn btn-success">Start</button>
-                                </div> 
+                                        <button type="submit" class="btn btn-success">Start</button>
+                                    </div> 
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-2">
@@ -167,7 +167,7 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="salute_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-light">Pause</button>
+                                        <button type="button" class="btn btn-warning">Pause</button>
                                     </div>
                                     <div class="col">
                                         <button type="button" class="btn btn-danger">Stop</button>
@@ -198,7 +198,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-6">
                     <div class="row">
@@ -212,23 +212,23 @@
                         <!--<img src="house.png" height="42" width="42">-->
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="col-6">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Grafici
+                            Grafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Grafico 1</a>
-                          <a class="dropdown-item" href="#">Grafico 2</a>
-                          <a class="dropdown-item" href="#">Grafico 3</a>
-                          <a class="dropdown-item" href="#">Grafico 4</a>
-                          <a class="dropdown-item" href="#">Grafico 5</a>
-                          <a class="dropdown-item" href="#">Grafico 6</a>
-                          <a class="dropdown-item" href="#">Grafico 7</a>
-                          <a class="dropdown-item" href="#">Grafico 8</a>
-                          <a class="dropdown-item" href="#">Grafico 9</a>
+                            <a class="dropdown-item" href="#">Grafico 1</a>
+                            <a class="dropdown-item" href="#">Grafico 2</a>
+                            <a class="dropdown-item" href="#">Grafico 3</a>
+                            <a class="dropdown-item" href="#">Grafico 4</a>
+                            <a class="dropdown-item" href="#">Grafico 5</a>
+                            <a class="dropdown-item" href="#">Grafico 6</a>
+                            <a class="dropdown-item" href="#">Grafico 7</a>
+                            <a class="dropdown-item" href="#">Grafico 8</a>
+                            <a class="dropdown-item" href="#">Grafico 9</a>
                         </div>
                     </div>
                     <br>
@@ -244,6 +244,371 @@
             </div>
             <!-- /.container -->
         </footer>
+
+        <!-- Modal -->
+        <div class="modal fade" id="parameterModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Imposta parametri</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <center>
+                                    <label class="col-form-label form-group">
+                                        <h4>Prezzo</h4>
+                                    </label>
+                                </center>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Manzo
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="manzo_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="manzo_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Pollo
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="pollo_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="pollo_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Maiale
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="maiale_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="maiale_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Cavallo
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="cavallo_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="cavallo_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Tacchino
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="tacchino_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="tacchino_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Patate
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="patate_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="patate_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Zucchine
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="zucchine_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="zucchine_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Peperoni
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="peperoni_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="peperoni_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Melanzane
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="melanzane_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="melanzane_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Pomodori
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="pomodori_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="pomodori_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Grano
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="grano_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="grano_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Riso
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="riso_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="riso_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Melo
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="melo_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="melo_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Pero
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="pero_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="pero_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Arancio
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="arancio_prezzo_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="arancio_prezzo_textbox" value="0"> 
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="col-6">
+                                <center>
+                                    <label class="col-form-label form-group">
+                                        <h4>Produttività</h4>
+                                    </label>
+                                </center>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Manzo
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="manzo_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="manzo_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Pollo
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="pollo_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="pollo_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Maiale
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="maiale_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="maiale_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Cavallo
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="cavallo_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="cavallo_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Tacchino
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="tacchino_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="tacchino_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Patate
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="patate_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="patate_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Zucchine
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="zucchine_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="zucchine_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Peperoni
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="peperoni_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="peperoni_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Melanzane
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="melanzane_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="melanzane_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Pomodori
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="pomodori_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="pomodori_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Grano
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="grano_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="grano_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Riso
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="riso_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="riso_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Melo
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="melo_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="melo_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Pero
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="pero_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="pero_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-3">
+                                        Arancio
+                                    </label>
+                                    <div class="col-6">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="arancio_produttivita_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="arancio_produttivita_textbox" value="0"> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Discard changes</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Bootstrap core JavaScript -->
         <script src="js/lib/jquery-3.3.1.min.js"></script>
