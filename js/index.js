@@ -32,6 +32,71 @@ function initChart() {
 }
 
 $(function () {
+    
+    $('#buttonDiscardChanges').on('click', function(event) {
+        
+        $('input[name="manzo_prezzo_textbox"]').val(0);
+        $('input[name="manzo_prezzo_slider"]').val(0);
+        $('input[name="pollo_prezzo_textbox"]').val(0);
+        $('input[name="pollo_prezzo_slider"]').val(0);
+        $('input[name="maiale_prezzo_textbox"]').val(0);
+        $('input[name="maiale_prezzo_slider"]').val(0);
+        $('input[name="cavallo_prezzo_textbox"]').val(0);
+        $('input[name="cavallo_prezzo_slider"]').val(0);
+        $('input[name="tacchino_prezzo_textbox"]').val(0);
+        $('input[name="tacchino_prezzo_slider"]').val(0);
+        $('input[name="patate_prezzo_textbox"]').val(0);
+        $('input[name="patate_prezzo_slider"]').val(0);
+        $('input[name="zucchine_prezzo_textbox"]').val(0);
+        $('input[name="zucchine_prezzo_slider"]').val(0);
+        $('input[name="peperoni_prezzo_textbox"]').val(0);
+        $('input[name="peperoni_prezzo_slider"]').val(0);
+        $('input[name="melanzane_prezzo_textbox"]').val(0);
+        $('input[name="melanzane_prezzo_slider"]').val(0);
+        $('input[name="pomodori_prezzo_textbox"]').val(0);
+        $('input[name="pomodori_prezzo_slider"]').val(0);
+        $('input[name="grano_prezzo_textbox"]').val(0);
+        $('input[name="grano_prezzo_slider"]').val(0);
+        $('input[name="riso_prezzo_textbox"]').val(0);
+        $('input[name="riso_prezzo_slider"]').val(0);
+        $('input[name="melo_prezzo_textbox"]').val(0);
+        $('input[name="melo_prezzo_slider"]').val(0);
+        $('input[name="pero_prezzo_textbox"]').val(0);
+        $('input[name="pero_prezzo_slider"]').val(0);
+        $('input[name="arancio_prezzo_textbox"]').val(0);
+        $('input[name="arancio_prezzo_slider"]').val(0);
+        
+        $('input[name="manzo_produttivita_textbox"]').val(0);
+        $('input[name="manzo_produttivita_slider"]').val(0);
+        $('input[name="pollo_produttivita_textbox"]').val(0);
+        $('input[name="pollo_produttivita_slider"]').val(0);
+        $('input[name="maiale_produttivita_textbox"]').val(0);
+        $('input[name="maiale_produttivita_slider"]').val(0);
+        $('input[name="cavallo_produttivita_textbox"]').val(0);
+        $('input[name="cavallo_produttivita_slider"]').val(0);
+        $('input[name="tacchino_produttivita_textbox"]').val(0);
+        $('input[name="tacchino_produttivita_slider"]').val(0);
+        $('input[name="patate_produttivita_textbox"]').val(0);
+        $('input[name="patate_produttivita_slider"]').val(0);
+        $('input[name="zucchine_produttivita_textbox"]').val(0);
+        $('input[name="zucchine_produttivita_slider"]').val(0);
+        $('input[name="peperoni_produttivita_textbox"]').val(0);
+        $('input[name="peperoni_produttivita_slider"]').val(0);
+        $('input[name="melanzane_produttivita_textbox"]').val(0);
+        $('input[name="melanzane_produttivita_slider"]').val(0);
+        $('input[name="pomodori_produttivita_textbox"]').val(0);
+        $('input[name="pomodori_produttivita_slider"]').val(0);
+        $('input[name="grano_produttivita_textbox"]').val(0);
+        $('input[name="grano_produttivita_slider"]').val(0);
+        $('input[name="riso_produttivita_textbox"]').val(0);
+        $('input[name="riso_produttivita_slider"]').val(0);
+        $('input[name="melo_produttivita_textbox"]').val(0);
+        $('input[name="melo_produttivita_slider"]').val(0);
+        $('input[name="pero_produttivita_textbox"]').val(0);
+        $('input[name="pero_produttivita_slider"]').val(0);
+        $('input[name="arancio_produttivita_textbox"]').val(0);
+        $('input[name="arancio_produttivita_slider"]').val(0);
+    });
 
     /* Popolazione */
     $(document).on('input change', 'input[name="popolazione_slider"]', function () {

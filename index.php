@@ -150,7 +150,7 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="ricchezza_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                        <button type="submit" class="btn btn-success">Start</button>
+                                        <button type="submit" class="btn btn-success" id="bottoneStart">Start</button>
                                     </div> 
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -167,10 +167,10 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="salute_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-warning">Pause</button>
+                                        <button type="button" class="btn btn-warning" id="bottonePausa">Pausa</button>
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-danger">Stop</button>
+                                        <button type="button" class="btn btn-danger" id="bottoneStop">Stop</button>
                                     </div>
                                 </div>
                             </form>
@@ -183,7 +183,7 @@
                             Periodo
                         </label>
                         <div class="col">
-                            <input type="text" class="form-control textbox" name="periodo_textbox" value="11/18"> 
+                            <input type="text" class="form-control textbox" name="periodo_textbox" value="01/2019"> 
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -216,7 +216,7 @@
                 </div>
                 <div class="col-6">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Grafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -246,13 +246,13 @@
         </footer>
 
         <!-- Modal -->
-        <div class="modal fade" id="parameterModal" role="dialog">
+        <div class="modal fade" id="parameterModal" role="dialog" data-backdrop="static">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Imposta parametri</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -603,7 +603,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Discard changes</button>
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" id="buttonDiscardChanges">Discard changes</button>
                         <button type="button" class="btn btn-success" data-dismiss="modal">Save changes</button>
                     </div>
                 </div>

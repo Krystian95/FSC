@@ -33,3 +33,17 @@
     width:1000px;
     margin-left: -250px;
 }
+
+.navbar-brand {
+    margin-left: -114px;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #ffa700;
+    border-color: #ffa700;
+}
+
+.btn-warning:hover, btn-warning:not(:disabled):not(.disabled).active, .btn-warning:not(:disabled):not(.disabled):active, .show>.btn-warning.dropdown-toggle {
+    color: #fff;
+}
