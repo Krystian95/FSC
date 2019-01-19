@@ -150,7 +150,7 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="ricchezza_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                        <button type="submit" class="btn btn-success" id="bottoneStart">Start</button>
+                                        <button type="button" class="btn btn-success" id="bottoneStart">Start</button>
                                     </div> 
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -183,7 +183,7 @@
                             Periodo
                         </label>
                         <div class="col">
-                            <input type="text" class="form-control textbox" name="periodo_textbox" value="01/2019"> 
+                            <input type="text" class="form-control textbox" name="periodo_textbox" value="01/2019" readonly> 
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -240,7 +240,7 @@
         <!-- Footer -->
         <footer class="py-5 bg-dark">
             <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; 2018 HESystem. Tutti i diritti riservati.</p>
+                <p class="m-0 text-center text-white">Copyright &copy; 2019 HESystem. Tutti i diritti riservati.</p>
             </div>
             <!-- /.container -->
         </footer>
@@ -252,7 +252,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Imposta parametri</h4>
-                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <button type="button" class="close" data-dismiss="modal" id="bottoneChiudiFinestra">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -604,7 +604,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal" id="buttonDiscardChanges">Discard changes</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Save changes</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="buttonSaveChanges">Save changes</button>
                     </div>
                 </div>
             </div>

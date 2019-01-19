@@ -33,6 +33,153 @@ function initChart() {
 
 $(function () {
     
+    /* Premo il bottone start */
+    $('#bottoneStart').on('click', function(event) {
+        
+        /* Mostra bottone chiudi finestra quando si preme su start */
+        document.getElementById("bottoneChiudiFinestra").style.display = "block";
+        
+        /* Disabilita gli elementi nella finestra imposta altri parametri */
+        $('#buttonDiscardChanges').prop('disabled', true);
+        $('#buttonSaveChanges').prop('disabled', true);
+        
+        $('input[name="manzo_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="manzo_prezzo_slider"]').prop('disabled', true);
+        $('input[name="pollo_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="pollo_prezzo_slider"]').prop('disabled', true);
+        $('input[name="maiale_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="maiale_prezzo_slider"]').prop('disabled', true);
+        $('input[name="cavallo_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="cavallo_prezzo_slider"]').prop('disabled', true);
+        $('input[name="tacchino_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="tacchino_prezzo_slider"]').prop('disabled', true);
+        $('input[name="patate_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="patate_prezzo_slider"]').prop('disabled', true);
+        $('input[name="zucchine_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="zucchine_prezzo_slider"]').prop('disabled', true);
+        $('input[name="peperoni_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="peperoni_prezzo_slider"]').prop('disabled', true);
+        $('input[name="melanzane_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="melanzane_prezzo_slider"]').prop('disabled', true);
+        $('input[name="pomodori_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="pomodori_prezzo_slider"]').prop('disabled', true);
+        $('input[name="grano_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="grano_prezzo_slider"]').prop('disabled', true);
+        $('input[name="riso_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="riso_prezzo_slider"]').prop('disabled', true);
+        $('input[name="melo_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="melo_prezzo_slider"]').prop('disabled', true);
+        $('input[name="pero_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="pero_prezzo_slider"]').prop('disabled', true);
+        $('input[name="arancio_prezzo_textbox"]').prop('disabled', true);
+        $('input[name="arancio_prezzo_slider"]').prop('disabled', true);
+        
+        $('input[name="manzo_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="manzo_produttivita_slider"]').prop('disabled', true);
+        $('input[name="pollo_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="pollo_produttivita_slider"]').prop('disabled', true);
+        $('input[name="maiale_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="maiale_produttivita_slider"]').prop('disabled', true);
+        $('input[name="cavallo_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="cavallo_produttivita_slider"]').prop('disabled', true);
+        $('input[name="tacchino_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="tacchino_produttivita_slider"]').prop('disabled', true);
+        $('input[name="patate_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="patate_produttivita_slider"]').prop('disabled', true);
+        $('input[name="zucchine_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="zucchine_produttivita_slider"]').prop('disabled', true);
+        $('input[name="peperoni_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="peperoni_produttivita_slider"]').prop('disabled', true);
+        $('input[name="melanzane_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="melanzane_produttivita_slider"]').prop('disabled', true);
+        $('input[name="pomodori_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="pomodori_produttivita_slider"]').prop('disabled', true);
+        $('input[name="grano_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="grano_produttivita_slider"]').prop('disabled', true);
+        $('input[name="riso_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="riso_produttivita_slider"]').prop('disabled', true);
+        $('input[name="melo_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="melo_produttivita_slider"]').prop('disabled', true);
+        $('input[name="pero_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="pero_produttivita_slider"]').prop('disabled', true);
+        $('input[name="arancio_produttivita_textbox"]').prop('disabled', true);
+        $('input[name="arancio_produttivita_slider"]').prop('disabled', true);
+    });
+    
+    /* Premo il bottone stop */
+    $('#bottoneStop').on('click', function(event) {      
+        
+        /* Nascondi bottone chiudi finestra quando si preme su stop */
+        document.getElementById("bottoneChiudiFinestra").style.display = "none";
+        
+        /* Abilita gli elementi nella finestra imposta altri parametri */
+        $('#buttonDiscardChanges').prop('disabled', false);
+        $('#buttonSaveChanges').prop('disabled', false);
+        
+        $('input[name="manzo_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="manzo_prezzo_slider"]').prop('disabled', false);
+        $('input[name="pollo_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="pollo_prezzo_slider"]').prop('disabled', false);
+        $('input[name="maiale_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="maiale_prezzo_slider"]').prop('disabled', false);
+        $('input[name="cavallo_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="cavallo_prezzo_slider"]').prop('disabled', false);
+        $('input[name="tacchino_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="tacchino_prezzo_slider"]').prop('disabled', false);
+        $('input[name="patate_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="patate_prezzo_slider"]').prop('disabled', false);
+        $('input[name="zucchine_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="zucchine_prezzo_slider"]').prop('disabled', false);
+        $('input[name="peperoni_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="peperoni_prezzo_slider"]').prop('disabled', false);
+        $('input[name="melanzane_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="melanzane_prezzo_slider"]').prop('disabled', false);
+        $('input[name="pomodori_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="pomodori_prezzo_slider"]').prop('disabled', false);
+        $('input[name="grano_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="grano_prezzo_slider"]').prop('disabled', false);
+        $('input[name="riso_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="riso_prezzo_slider"]').prop('disabled', false);
+        $('input[name="melo_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="melo_prezzo_slider"]').prop('disabled', false);
+        $('input[name="pero_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="pero_prezzo_slider"]').prop('disabled', false);
+        $('input[name="arancio_prezzo_textbox"]').prop('disabled', false);
+        $('input[name="arancio_prezzo_slider"]').prop('disabled', false);
+        
+        $('input[name="manzo_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="manzo_produttivita_slider"]').prop('disabled', false);
+        $('input[name="pollo_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="pollo_produttivita_slider"]').prop('disabled', false);
+        $('input[name="maiale_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="maiale_produttivita_slider"]').prop('disabled', false);
+        $('input[name="cavallo_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="cavallo_produttivita_slider"]').prop('disabled', false);
+        $('input[name="tacchino_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="tacchino_produttivita_slider"]').prop('disabled', false);
+        $('input[name="patate_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="patate_produttivita_slider"]').prop('disabled', false);
+        $('input[name="zucchine_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="zucchine_produttivita_slider"]').prop('disabled', false);
+        $('input[name="peperoni_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="peperoni_produttivita_slider"]').prop('disabled', false);
+        $('input[name="melanzane_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="melanzane_produttivita_slider"]').prop('disabled', false);
+        $('input[name="pomodori_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="pomodori_produttivita_slider"]').prop('disabled', false);
+        $('input[name="grano_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="grano_produttivita_slider"]').prop('disabled', false);
+        $('input[name="riso_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="riso_produttivita_slider"]').prop('disabled', false);
+        $('input[name="melo_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="melo_produttivita_slider"]').prop('disabled', false);
+        $('input[name="pero_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="pero_produttivita_slider"]').prop('disabled', false);
+        $('input[name="arancio_produttivita_textbox"]').prop('disabled', false);
+        $('input[name="arancio_produttivita_slider"]').prop('disabled', false);
+    });
+    
+    /* Azzera parametri premendo su discard changes */
     $('#buttonDiscardChanges').on('click', function(event) {
         
         $('input[name="manzo_prezzo_textbox"]').val(0);
@@ -108,7 +255,6 @@ $(function () {
     });
 
     /* Ricchezza */
-
     $(document).on('input change', 'input[name="ricchezza_slider"]', function () {
         $('input[name="ricchezza_textbox"]').val($(this).val());
     });
@@ -118,7 +264,6 @@ $(function () {
     });
 
     /* Salute */
-
     $(document).on('input change', 'input[name="salute_slider"]', function () {
         $('input[name="salute_textbox"]').val($(this).val());
     });
@@ -128,7 +273,6 @@ $(function () {
     });
 
     /* Anima slider */
-
     $("#params-form").submit(function (event) {
         $('.progress-bar').addClass('progress-bar-animated');
     });
