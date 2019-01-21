@@ -72,8 +72,44 @@ $(function () {
     /* Premo il bottone start */
     $('#bottoneStart').on('click', function(event) {
         
+        /* Disabilita bottone start */
+        $('#bottoneStart').prop('disabled', true);
+        
+        /* Abilita bottoni pausa e stop */
+        $('#bottonePausa').prop('disabled', false);
+        $('#bottoneStop').prop('disabled', false);
+        
+        /* Abilita avanzamento slider */
+        var count = 8.3333;
+        var mese = 1;
+        var anno = 2019;
+        
+        interval = setInterval(function() {
+            
+            if(count < 100)
+            {
+                $('#textboxAnno').attr('value', mese + '/' + anno);
+                $('#progressBarYear').attr('aria-valuenow', count);
+                $('#progressBarYear').attr('style', 'width: '+ count +'%');
+                count = count + 8.3333;
+                mese++;
+            } else{
+                count = 0;
+                mese = 0;
+                anno++;
+            }
+        }, 1000);
+        
         /* Mostra bottone chiudi finestra quando si preme su start */
         document.getElementById("bottoneChiudiFinestra").style.display = "block";
+        
+        /* Disabilita gli elementi nella home */
+        $('input[name="popolazione_textbox"]').prop('disabled', true);
+        $('input[name="popolazione_slider"]').prop('disabled', true);
+        $('input[name="ricchezza_textbox"]').prop('disabled', true);
+        $('input[name="ricchezza_slider"]').prop('disabled', true);
+        $('input[name="salute_textbox"]').prop('disabled', true);
+        $('input[name="salute_slider"]').prop('disabled', true);
         
         /* Disabilita gli elementi nella finestra imposta altri parametri */
         $('#buttonDiscardChanges').prop('disabled', true);
@@ -142,11 +178,37 @@ $(function () {
         $('input[name="arancio_produttivita_slider"]').prop('disabled', true);
     });
     
+    /* Premo il bottone start */
+    $('#bottonePausa').on('click', function(event) {       
+    });
+    
     /* Premo il bottone stop */
-    $('#bottoneStop').on('click', function(event) {      
+    $('#bottoneStop').on('click', function(event) {
+        
+        $('#textboxAnno').attr('value', '0/0');
+        
+        /* Abilita bottone start */
+        $('#bottoneStart').prop('disabled', false);
+        
+        /* Disabilita bottone pausa e stop */
+        $('#bottonePausa').prop('disabled', true);
+        $('#bottoneStop').prop('disabled', true);
+        
+        /* Disabilita avanzamento slider */
+        clearInterval(interval);
+        $('#progressBarYear').attr('aria-valuenow', 0);
+        $('#progressBarYear').attr('style', '0%');
         
         /* Nascondi bottone chiudi finestra quando si preme su stop */
         document.getElementById("bottoneChiudiFinestra").style.display = "none";
+        
+        /* Abilita gli elementi nella home */
+        $('input[name="popolazione_textbox"]').prop('disabled', false);
+        $('input[name="popolazione_slider"]').prop('disabled', false);
+        $('input[name="ricchezza_textbox"]').prop('disabled', false);
+        $('input[name="ricchezza_slider"]').prop('disabled', false);
+        $('input[name="salute_textbox"]').prop('disabled', false);
+        $('input[name="salute_slider"]').prop('disabled', false);
         
         /* Abilita gli elementi nella finestra imposta altri parametri */
         $('#buttonDiscardChanges').prop('disabled', false);

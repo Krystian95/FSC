@@ -167,10 +167,10 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="salute_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-warning" id="bottonePausa">Pausa</button>
+                                        <button type="button" class="btn btn-warning" id="bottonePausa" disabled="true">Pausa</button>
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-danger" id="bottoneStop">Stop</button>
+                                        <button type="button" class="btn btn-danger" id="bottoneStop" disabled="true">Stop</button>
                                     </div>
                                 </div>
                             </form>
@@ -183,7 +183,7 @@
                             Periodo
                         </label>
                         <div class="col">
-                            <input type="text" class="form-control textbox" name="periodo_textbox" value="01/2019" readonly> 
+                            <input type="text" class="form-control textbox" name="periodo_textbox" value="0/0" id="textboxAnno" readonly> 
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -192,7 +192,7 @@
                         </label>
                         <div class="col">
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBarYear" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
                             </div>
                         </div>
                     </div>
