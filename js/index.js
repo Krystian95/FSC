@@ -27,7 +27,7 @@ function initChart() {
                         'rgba(255, 159, 64, 1)'
                     ],
                     borderWidth: 1
-                },{
+                }, {
                     label: 'aaa',
                     data: [2, 19, 5],
                     backgroundColor: [
@@ -57,7 +57,7 @@ function initChart() {
             }
         }
     });
-    
+
     $("#bottoneStart").click(function () {
         myChart.data.labels.push("cacca");
         myChart.data.datasets.forEach((dataset) => {
@@ -68,41 +68,51 @@ function initChart() {
 }
 
 $(function () {
-    
+
+    var utils = new Utils();
+
+    var params = {};
+    params['action'] = 'test';
+
+    var response = utils.performAjaxCall(params);
+    var response_decoded = JSON.parse(response);
+    console.log(response_decoded);
+    console.log(response_decoded.result_1);
+
     /* Premo il bottone start */
-    $('#bottoneStart').on('click', function(event) {
-        
+    $('#bottoneStart').on('click', function (event) {
+
         /* Disabilita bottone start */
         $('#bottoneStart').prop('disabled', true);
-        
+
         /* Abilita bottoni pausa e stop */
         $('#bottonePausa').prop('disabled', false);
         $('#bottoneStop').prop('disabled', false);
-        
+
         /* Abilita avanzamento slider */
         var count = 8.3333;
         var mese = 1;
         var anno = 2019;
-        
-        interval = setInterval(function() {
-            
-            if(count < 100)
+
+        interval = setInterval(function () {
+
+            if (count < 100)
             {
                 $('#textboxAnno').attr('value', mese + '/' + anno);
                 $('#progressBarYear').attr('aria-valuenow', count);
-                $('#progressBarYear').attr('style', 'width: '+ count +'%');
+                $('#progressBarYear').attr('style', 'width: ' + count + '%');
                 count = count + 8.3333;
                 mese++;
-            } else{
+            } else {
                 count = 0;
                 mese = 0;
                 anno++;
             }
         }, 1000);
-        
+
         /* Mostra bottone chiudi finestra quando si preme su start */
         document.getElementById("bottoneChiudiFinestra").style.display = "block";
-        
+
         /* Disabilita gli elementi nella home */
         $('input[name="popolazione_textbox"]').prop('disabled', true);
         $('input[name="popolazione_slider"]').prop('disabled', true);
@@ -110,11 +120,11 @@ $(function () {
         $('input[name="ricchezza_slider"]').prop('disabled', true);
         $('input[name="salute_textbox"]').prop('disabled', true);
         $('input[name="salute_slider"]').prop('disabled', true);
-        
+
         /* Disabilita gli elementi nella finestra imposta altri parametri */
         $('#buttonDiscardChanges').prop('disabled', true);
         $('#buttonSaveChanges').prop('disabled', true);
-        
+
         $('input[name="manzo_prezzo_textbox"]').prop('disabled', true);
         $('input[name="manzo_prezzo_slider"]').prop('disabled', true);
         $('input[name="pollo_prezzo_textbox"]').prop('disabled', true);
@@ -145,7 +155,7 @@ $(function () {
         $('input[name="pero_prezzo_slider"]').prop('disabled', true);
         $('input[name="arancio_prezzo_textbox"]').prop('disabled', true);
         $('input[name="arancio_prezzo_slider"]').prop('disabled', true);
-        
+
         $('input[name="manzo_produttivita_textbox"]').prop('disabled', true);
         $('input[name="manzo_produttivita_slider"]').prop('disabled', true);
         $('input[name="pollo_produttivita_textbox"]').prop('disabled', true);
@@ -177,31 +187,31 @@ $(function () {
         $('input[name="arancio_produttivita_textbox"]').prop('disabled', true);
         $('input[name="arancio_produttivita_slider"]').prop('disabled', true);
     });
-    
+
     /* Premo il bottone start */
-    $('#bottonePausa').on('click', function(event) {       
+    $('#bottonePausa').on('click', function (event) {
     });
-    
+
     /* Premo il bottone stop */
-    $('#bottoneStop').on('click', function(event) {
-        
+    $('#bottoneStop').on('click', function (event) {
+
         $('#textboxAnno').attr('value', '0/0');
-        
+
         /* Abilita bottone start */
         $('#bottoneStart').prop('disabled', false);
-        
+
         /* Disabilita bottone pausa e stop */
         $('#bottonePausa').prop('disabled', true);
         $('#bottoneStop').prop('disabled', true);
-        
+
         /* Disabilita avanzamento slider */
         clearInterval(interval);
         $('#progressBarYear').attr('aria-valuenow', 0);
         $('#progressBarYear').attr('style', '0%');
-        
+
         /* Nascondi bottone chiudi finestra quando si preme su stop */
         document.getElementById("bottoneChiudiFinestra").style.display = "none";
-        
+
         /* Abilita gli elementi nella home */
         $('input[name="popolazione_textbox"]').prop('disabled', false);
         $('input[name="popolazione_slider"]').prop('disabled', false);
@@ -209,11 +219,11 @@ $(function () {
         $('input[name="ricchezza_slider"]').prop('disabled', false);
         $('input[name="salute_textbox"]').prop('disabled', false);
         $('input[name="salute_slider"]').prop('disabled', false);
-        
+
         /* Abilita gli elementi nella finestra imposta altri parametri */
         $('#buttonDiscardChanges').prop('disabled', false);
         $('#buttonSaveChanges').prop('disabled', false);
-        
+
         $('input[name="manzo_prezzo_textbox"]').prop('disabled', false);
         $('input[name="manzo_prezzo_slider"]').prop('disabled', false);
         $('input[name="pollo_prezzo_textbox"]').prop('disabled', false);
@@ -244,7 +254,7 @@ $(function () {
         $('input[name="pero_prezzo_slider"]').prop('disabled', false);
         $('input[name="arancio_prezzo_textbox"]').prop('disabled', false);
         $('input[name="arancio_prezzo_slider"]').prop('disabled', false);
-        
+
         $('input[name="manzo_produttivita_textbox"]').prop('disabled', false);
         $('input[name="manzo_produttivita_slider"]').prop('disabled', false);
         $('input[name="pollo_produttivita_textbox"]').prop('disabled', false);
@@ -276,10 +286,10 @@ $(function () {
         $('input[name="arancio_produttivita_textbox"]').prop('disabled', false);
         $('input[name="arancio_produttivita_slider"]').prop('disabled', false);
     });
-    
+
     /* Azzera parametri premendo su discard changes */
-    $('#buttonDiscardChanges').on('click', function(event) {
-        
+    $('#buttonDiscardChanges').on('click', function (event) {
+
         $('input[name="manzo_prezzo_textbox"]').val(0);
         $('input[name="manzo_prezzo_slider"]').val(0);
         $('input[name="pollo_prezzo_textbox"]').val(0);
@@ -310,7 +320,7 @@ $(function () {
         $('input[name="pero_prezzo_slider"]').val(0);
         $('input[name="arancio_prezzo_textbox"]').val(0);
         $('input[name="arancio_prezzo_slider"]').val(0);
-        
+
         $('input[name="manzo_produttivita_textbox"]').val(0);
         $('input[name="manzo_produttivita_slider"]').val(0);
         $('input[name="pollo_produttivita_textbox"]').val(0);

@@ -616,6 +616,7 @@
         <script src="js/lib/popper-1.14.3.min.js"></script>
         <script src="js/lib/bootstrap-4.1.3.min.js"></script>
         <script src="js/lib/Chart.bundle.min.js"></script>
+        <script src="js/Utils.js"></script>
         <script src="js/index.js"></script>
 
     </body>
