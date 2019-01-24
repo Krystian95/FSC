@@ -17,7 +17,7 @@ function initChart() {
                         'rgba(255, 99, 132, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(255,99,132,1)'
+                        'rgba(255, 99, 132, 1)'
                     ],
                     borderWidth: 1
                 },
@@ -56,6 +56,7 @@ function performResponseActions(current_period, response_encoded) {
     chart_1.data.labels.push(current_period);
     chart_1.data.datasets.forEach((dataset) => {
         var value = response['Charts']['Chart 1']['Linea 1'];
+        var value = response['Charts']['Chart 1']['Linea 2'];
         dataset.data.push(value);
     });
     chart_1.update();
@@ -146,12 +147,26 @@ $(function () {
         document.getElementById("bottoneChiudiFinestra").style.display = "block";
 
         /* Disabilita gli elementi nella home */
-        $('input[name="popolazione_textbox"]').prop('disabled', true);
-        $('input[name="popolazione_slider"]').prop('disabled', true);
-        $('input[name="ricchezza_textbox"]').prop('disabled', true);
-        $('input[name="ricchezza_slider"]').prop('disabled', true);
-        $('input[name="salute_textbox"]').prop('disabled', true);
-        $('input[name="salute_slider"]').prop('disabled', true);
+
+        var items = ['popolazione', 'ricchezza', 'salute'];
+
+        $(items).each(function (index, value) {
+            $('input[name="' + value + '_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_slider"]').prop('disabled', true);
+        });
+
+
+        /*$('input[name="popolazione_textbox"]').prop('disabled', true);
+         $('input[name="popolazione_slider"]').prop('disabled', true);
+         
+         $('input[name="ricchezza_textbox"]').prop('disabled', true);
+         $('input[name="ricchezza_slider"]').prop('disabled', true);
+         
+         $('input[name="salute_textbox"]').prop('disabled', true);
+         $('input[name="salute_slider"]').prop('disabled', true);*/
+
+
+
 
         /* Disabilita gli elementi nella finestra imposta altri parametri */
         $('#buttonDiscardChanges').prop('disabled', true);
@@ -386,13 +401,19 @@ $(function () {
     });
 
     /* Popolazione */
+
+    /* foreach....*/
     $(document).on('input change', 'input[name="popolazione_slider"]', function () {
         $('input[name="popolazione_textbox"]').val($(this).val());
     });
-
     $(document).on('input change', 'input[name="popolazione_textbox"]', function () {
         $('input[name="popolazione_slider"]').val($(this).val());
     });
+    /* ... */
+
+
+
+
 
     /* Ricchezza */
     $(document).on('input change', 'input[name="ricchezza_slider"]', function () {
