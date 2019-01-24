@@ -1,51 +1,38 @@
 
+var chart_1;
+
 function initChart() {
 
-    var ctx = document.getElementById("myChart").getContext('2d');
+    var ctx = document.getElementById('chart_1').getContext('2d');
 
-    var myChart = new Chart(ctx, {
+    chart_1 = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["Red", "Blue", "Yellow 66", "Green", "Purple", "Orange"],
-            datasets: [{
-                    label: 'Legenda',
-                    data: [12, 19, 3, 5, 2, 3],
+            //labels: ['01/2019'],
+            datasets: [
+                {
+                    label: 'Linea 1',
+                    //data: [10],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(255, 99, 132, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255,99,132,1)'
                     ],
                     borderWidth: 1
-                }, {
-                    label: 'aaa',
-                    data: [2, 19, 5],
+                },
+                {
+                    label: 'Linea 2',
+                    //data: [8],
                     backgroundColor: [
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(54, 162, 235, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(54, 162, 235, 1)'
                     ],
                     borderWidth: 1
-                }],
+                }
+            ]
         },
         options: {
             scales: {
@@ -57,27 +44,72 @@ function initChart() {
             }
         }
     });
+}
 
-    $("#bottoneStart").click(function () {
-        myChart.data.labels.push("cacca");
-        myChart.data.datasets.forEach((dataset) => {
-            dataset.data.push(2);
-        });
-        myChart.update();
+function performResponseActions(current_period, response_encoded) {
+
+    var response = JSON.parse(response_encoded);
+    console.log(response);
+    var next_period = response.Next_Period;
+    $('input[name="periodo_textbox"]').val(next_period);
+
+    chart_1.data.labels.push(current_period);
+    chart_1.data.datasets.forEach((dataset) => {
+        var value = response['Charts']['Chart 1']['Linea 1'];
+        dataset.data.push(value);
     });
+    chart_1.update();
+}
+
+function getCurrentMonthYear() {
+
+    var today = new Date();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    return mm + '/' + yyyy;
 }
 
 $(function () {
 
+    var current_period = getCurrentMonthYear();
+    $('input[name="periodo_textbox"]').val(current_period);
+
     var utils = new Utils();
 
-    var params = {};
-    params['action'] = 'test';
+    /*
+     * Start
+     */
+    $('#bottoneStart').on('click', function (event) {
+        var params = {};
+        params['Action'] = 'Start';
+        params['Data'] = {};
+        current_period = $('input[name="periodo_textbox"]').val();
+        params['Data']['Period'] = current_period;
 
-    var response = utils.performAjaxCall(params);
-    var response_decoded = JSON.parse(response);
-    console.log(response_decoded);
-    console.log(response_decoded.result_1);
+        var response = utils.performAjaxCall(params);
+        performResponseActions(current_period, response);
+
+        /*
+         * Next Iteration(s)
+         */
+        setInterval(function () {
+            var params = {};
+            params['Action'] = 'Period_Iteration';
+            params['Data'] = {};
+            current_period = $('input[name="periodo_textbox"]').val();
+            params['Data']['Period'] = current_period;
+
+            var response = utils.performAjaxCall(params);
+            performResponseActions(current_period, response);
+
+        }, 100);
+    });
+
 
     /* Premo il bottone start */
     $('#bottoneStart').on('click', function (event) {
@@ -90,25 +122,25 @@ $(function () {
         $('#bottoneStop').prop('disabled', false);
 
         /* Abilita avanzamento slider */
-        var count = 8.3333;
-        var mese = 1;
-        var anno = 2019;
-
-        interval = setInterval(function () {
-
-            if (count < 100)
-            {
-                $('#textboxAnno').attr('value', mese + '/' + anno);
-                $('#progressBarYear').attr('aria-valuenow', count);
-                $('#progressBarYear').attr('style', 'width: ' + count + '%');
-                count = count + 8.3333;
-                mese++;
-            } else {
-                count = 0;
-                mese = 0;
-                anno++;
-            }
-        }, 1000);
+        /*var count = 8.3333;
+         var mese = 1;
+         var anno = 2019;
+         
+         interval = setInterval(function () {
+         
+         if (count < 100)
+         {
+         $('#textboxAnno').attr('value', mese + '/' + anno);
+         $('#progressBarYear').attr('aria-valuenow', count);
+         $('#progressBarYear').attr('style', 'width: ' + count + '%');
+         count = count + 8.3333;
+         mese++;
+         } else {
+         count = 0;
+         mese = 0;
+         anno++;
+         }
+         }, 1000);*/
 
         /* Mostra bottone chiudi finestra quando si preme su start */
         document.getElementById("bottoneChiudiFinestra").style.display = "block";

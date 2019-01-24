@@ -183,7 +183,7 @@
                             Periodo
                         </label>
                         <div class="col">
-                            <input type="text" class="form-control textbox" name="periodo_textbox" value="0/0" id="textboxAnno" readonly> 
+                            <input type="text" class="form-control textbox" name="periodo_textbox" id="textboxAnno" readonly> 
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -232,13 +232,13 @@
                         </div>
                     </div>
                     <br>
-                    <canvas id="myChart" width="1550" height="1000"></canvas>
+                    <canvas id="chart_1" width="1550" height="1000"></canvas>
                 </div>
             </div>
         </div>
 
         <!-- Footer -->
-        <footer class="py-5 bg-dark">
+        <footer class="py-4 bg-dark">
             <div class="container">
                 <p class="m-0 text-center text-white">Copyright &copy; 2019 HESystem. Tutti i diritti riservati.</p>
             </div>

@@ -5,9 +5,10 @@ function Utils() {}
 Utils.prototype.performAjaxCall = function (params) {
 
     var resp = null;
+    console.log(params);
 
     $.ajax({
-        url: './class/controller/Controller.php',
+        url: './class/controllers/Controller.php',
         data: params,
         type: 'POST',
         async: false,
