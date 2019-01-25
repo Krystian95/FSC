@@ -150,7 +150,7 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="ricchezza_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-success" id="bottoneStart">Start</button>
+                                        <button type="button" class="btn btn-success" id="start">Start</button>
                                     </div> 
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -167,10 +167,10 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="salute_textbox" value="1000"> 
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-warning" id="bottonePausa" disabled="true">Pausa</button>
+                                        <button type="button" class="btn btn-warning" id="pausa" disabled="true">Pausa</button>
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-danger" id="bottoneStop" disabled="true">Stop</button>
+                                        <button type="button" class="btn btn-danger" id="stop" disabled="true">Stop</button>
                                     </div>
                                 </div>
                             </form>
@@ -252,7 +252,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Imposta parametri</h4>
-                        <button type="button" class="close" data-dismiss="modal" id="bottoneChiudiFinestra">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal" id="chiudiFinestra">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -603,8 +603,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" id="buttonDiscardChanges">Discard changes</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal" id="buttonSaveChanges">Save changes</button>
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" id="discardChanges">Discard changes</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChanges">Save changes</button>
                     </div>
                 </div>
             </div>

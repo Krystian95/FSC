@@ -35,7 +35,8 @@
 }
 
 .navbar-brand {
-    margin-left: -114px;
+    /* margin-left: -114px; Logo a sinistra */
+    margin: 0 auto;
 }
 
 .btn-warning {
@@ -48,6 +49,10 @@
     color: #fff;
 }
 
-#bottoneChiudiFinestra {
+#chiudiFinestra {
     display: none;
+}
+
+.btn-warning.disabled, .btn-warning:disabled {
+    color: #fff;
 }
