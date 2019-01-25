@@ -41,9 +41,70 @@ function initChart() {
                             beginAtZero: true
                         }
                     }]
+            },
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
+            // Container for pan options
+            pan: {
+                // Boolean to enable panning
+                enabled: true,
+                // Panning directions. Remove the appropriate direction to disable 
+                // Eg. 'y' would only allow panning in the y direction
+                mode: 'xy',
+                rangeMin: {
+                    // Format of min pan range depends on scale type
+                    x: null,
+                    y: null
+                },
+                rangeMax: {
+                    // Format of max pan range depends on scale type
+                    x: null,
+                    y: null
+                },
+                // Function called once panning is completed
+                // Useful for dynamic data loading
+                onPan: function () {
+                    console.log('I was panned!!!');
+                }
+            },
+            // Container for zoom options
+            zoom: {
+                // Boolean to enable zooming
+                enabled: true,
+                // Enable drag-to-zoom behavior
+                drag: true,
+                // Drag-to-zoom rectangle style can be customized
+                // drag: {
+                // 	 borderColor: 'rgba(225,225,225,0.3)'
+                // 	 borderWidth: 5,
+                // 	 backgroundColor: 'rgb(225,225,225)'
+                // },
+
+                // Zooming directions. Remove the appropriate direction to disable 
+                // Eg. 'y' would only allow zooming in the y direction
+                mode: 'xy',
+                rangeMin: {
+                    // Format of min zoom range depends on scale type
+                    x: null,
+                    y: null
+                },
+                rangeMax: {
+                    // Format of max zoom range depends on scale type
+                    x: null,
+                    y: null
+                },
+                // Function called once zooming is completed
+                // Useful for dynamic data loading
+                onZoom: function () {
+                    console.log('I was zoomed!!!');
+                }
             }
         }
-    });
+    }
+    );
 }
 
 function performResponseActions(current_period, response_encoded) {
@@ -54,11 +115,15 @@ function performResponseActions(current_period, response_encoded) {
     $('input[name="periodo_textbox"]').val(next_period);
 
     chart_1.data.labels.push(current_period);
-    chart_1.data.datasets.forEach((dataset) => {
-        var value = response['Charts']['Chart 1']['Linea 1'];
-        var value = response['Charts']['Chart 1']['Linea 2'];
-        dataset.data.push(value);
-    });
+    /**chart_1.data.datasets.forEach((dataset) => {
+     var value = response['Charts']['Chart 1']['Linea 1'];
+     var value = response['Charts']['Chart 1']['Linea 2'];
+     dataset.data.push(value);
+     });**/
+    var value = response['Charts']['Chart 1']['Linea 1'];
+    var value1 = response['Charts']['Chart 1']['Linea 2'];
+    chart_1.data.datasets[0].data.push(value);
+    chart_1.data.datasets[1].data.push(value1);
     chart_1.update();
 }
 
@@ -108,7 +173,7 @@ $(function () {
             var response = utils.performAjaxCall(params);
             performResponseActions(current_period, response);
 
-        }, 100);
+        }, 1000);
     });
 
 
@@ -153,13 +218,13 @@ $(function () {
             $('input[name="' + value + '_textbox"]').prop('disabled', true);
             $('input[name="' + value + '_slider"]').prop('disabled', true);
         });
-        
+
         /* Disabilita gli elementi nella finestra imposta altri parametri */
         $('#discardChanges').prop('disabled', true);
         $('#saveChanges').prop('disabled', true);
-        
+
         var items = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
-        'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+            'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
 
         $(items).each(function (index, value) {
             $('input[name="' + value + '_prezzo_textbox"]').prop('disabled', true);
@@ -171,14 +236,14 @@ $(function () {
 
     /* Premo il bottone pausa */
     $('#pausa').on('click', function (event) {
-        
+
         /* Codice... */
-        
+
     });
 
     /* Premo il bottone stop */
     $('#stop').on('click', function (event) {
-        
+
         $('#textboxAnno').attr('value', '0/0');
 
         /* Abilita bottone start */
@@ -209,7 +274,7 @@ $(function () {
         $('#saveChanges').prop('disabled', false);
 
         var items = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
-        'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+            'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
 
         $(items).each(function (index, value) {
             $('input[name="' + value + '_prezzo_textbox"]').prop('disabled', false);
@@ -224,7 +289,7 @@ $(function () {
 
         /* Azzera parametri */
         var items = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
-        'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+            'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
 
         $(items).each(function (index, value) {
             $('input[name="' + value + '_prezzo_textbox"]').val(0);
@@ -233,7 +298,7 @@ $(function () {
             $('input[name="' + value + '_produttivita_slider"]').val(0);
         });
     });
-    
+
     /* Accoppia elementi slider e textbox nella home */
     var items = ['popolazione', 'ricchezza', 'salute'];
 
@@ -245,7 +310,7 @@ $(function () {
             $('input[name="' + value + '_slider"]').val($(this).val());
         });
     });
-    
+
     /* Accoppia elementi slider e textbox nella finestra imposta altri parametri*/
     var items = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
         'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
