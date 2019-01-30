@@ -14,7 +14,7 @@ function initChart() {
                     label: 'Linea 1',
                     //data: [10],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)'
+                        'rgba(255, 99, 132, 0)'
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)'
@@ -25,7 +25,7 @@ function initChart() {
                     label: 'Linea 2',
                     //data: [8],
                     backgroundColor: [
-                        'rgba(54, 162, 235, 0.2)'
+                        'rgba(54, 162, 235, 0)'
                     ],
                     borderColor: [
                         'rgba(54, 162, 235, 1)'

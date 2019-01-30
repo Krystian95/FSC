@@ -2,7 +2,13 @@
 
 session_start();
 
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/System.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Environment.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Person.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/People.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Product.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Products.php';
+
 
 if (isset($_POST['Action']) && !empty($_POST['Action'])) {
 
@@ -10,19 +16,20 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
     $response = null;
 
     switch ($action) {
+        
         case 'Start' :
-            $environment = new Environment();
-            $environment->setupParams(null);
+            $system = new System();
+            $system->setupParams(null);
             $period = $_POST['Data']['Period'];
-            $response = $environment->iteratePeriod($period);
-            $_SESSION['environment'] = serialize($environment);
+            $response = $system->iteratePeriod($period);
+            $_SESSION['system'] = serialize($system);
             break;
 
         case 'Period_Iteration' :
             $period = $_POST['Data']['Period'];
-            $environment = unserialize($_SESSION['environment']);
-            $response = $environment->iteratePeriod($period);
-            $_SESSION['environment'] = serialize($environment);
+            $system = unserialize($_SESSION['system']);
+            $response = $system->iteratePeriod($period);
+            $_SESSION['system'] = serialize($system);
             break;
 
         case 'Stop':

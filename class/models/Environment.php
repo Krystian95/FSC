@@ -1,68 +1,39 @@
 <?php
 
 /**
- * Description of Environment
+ * Environment
  *
  * @author Cristian
  */
 class Environment {
 
-    /*
-     * Default construct
-     */
+    private static $mean_temp = 0.0;
+    private static $width_temp = 0.0;
+    private $temperature = [2];
+    private $GHGS = [2];
+    private $NH3 = [2];
+    private $PM = [2];
 
     public function __construct() {
-        
+        $this->temperature[0] = 0.0; // TODO set via UI
+        $this->temperature[1] = 0.0; // TODO set via UI
+        $this->GHGS[0] = 0.0;
+        $this->GHGS[1] = 0.0;
+        $this->NH3[0] = 0.0;
+        $this->NH3[1] = 0.0;
+        $this->PM[0] = 0.0;
+        $this->PM[1] = 0.0;
     }
 
-    /*
-     * Setup params with provided or by default
-     */
+    public function impact_from_product(Product $product) {
 
-    public function setupParams($params) {
-        
+        $this->GHGS[1] += $product->get_impact_on_GHGS() * $product->get_production(1);
+        $this->NH3[1] += $product->get_impact_on_NH3() * $product->get_production(1);
+        $this->PM[1] += $product->get_impact_on_PM() * $product->get_production(1);
     }
 
-    /*
-     * Compute the period passed (eg. "05/2019").
-     * Returns the next period.
-     */
-
-    public function iteratePeriod($period) {
-
-        $next_period = $this->calculateNextPeriod($current_period = $period);
-
-        $return['Next_Period'] = $next_period;
-        
-        $return['Charts']['Chart 1']['Linea 1'] = random_int(0, 500);
-        $return['Charts']['Chart 1']['Linea 2'] = random_int(0, 500);
-        
-        return $return;
-    }
-
-    /*
-     * Return the next period providing the current.
-     * Eg. $current_period = "12/2019" will return $next_period = "01/2020"
-     */
-
-    private function calculateNextPeriod($current_period) {
-
-        $explode = explode('/', $current_period);
-        $period_current['month'] = (int) $explode[0];
-        $period_current['year'] = (int) $explode[1];
-
-        if ($period_current['month'] == 12) {
-            $period_next['month'] = '01';
-            $period_next['year'] = $period_current['year'] + 1;
-        } else {
-            $period_next['month'] = $period_current['month'] + 1;
-            if ($period_next['month'] < 10) {
-                $period_next['month'] = '0' . $period_next['month'];
-            }
-            $period_next['year'] = $period_current['year'];
-        }
-
-        return $period_next['month'] . '/' . $period_next['year'];
+    public function temperature_evaluation() {
+        $this->temperature[1] = self::$mean_temp + self::$width_temp * cos(( (System::$current_month - 8) % 12) / 12 * 2 * pi());
     }
 
 }
