@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        <link rel="icon" href="images/favicon.png" type="image/png" />
+        
         <title>HESystem</title>
 
         <!-- Bootstrap core CSS -->
@@ -21,7 +22,10 @@
         <!-- Navigation -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">HESystem</a>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/favicon.png" height="35" width="35" style="display: inline-block;">
+                    <span style="display: inline-block;">HESystem</span>
+                </a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button><!--
