@@ -48,6 +48,9 @@ class PersonCollection {
             $mean += $person->get_health(1);
         }
 
+        /*error_log($mean);
+        error_log(count($this->persons));*/
+
         return $mean / count($this->persons);
     }
 
@@ -56,6 +59,9 @@ class PersonCollection {
         $new_persons = [];
 
         foreach ($this->persons as $key => $person) {
+
+            $person->health_evaluate();
+
             if ($person->get_health(1) <= self::$step_pop_death) {
                 unset($this->persons[$key]); // death
             } elseif ($person->get_health(1) >= self::$step_pop_growth) {

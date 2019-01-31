@@ -7,20 +7,38 @@
  */
 class Product {
 
-    private static $prod_stab = 0.0;
-    private static $max_growth_prod = 0.0;
+    private $name;
+    private static $prod_stab = 15.0;
+    private static $max_growth_prod = 90.0;
     private $impact_on_GHGS;
     private $impact_on_NH3;
     private $impact_on_PM;
     private $production = [2];
+    private $capacity = [2];
+    private $price;
+    private $ideal_temperature;
+    private $tolerance_temperature;
+    private $sold = [2];
 
     public function __construct() {
         
     }
 
+    public function step_production($environment) {
+        $this->production[1] = $this->capacity[1] * (1 - ($environment->getTemperature(0) - $this->ideal_temperature) / $this->tolerance_temperature);
+    }
+
+    public function growth_evaluate() {
+        $this->capacity[1] = $this->capacity[0] + ($this->sold[1] / $this->production[1] - self::$prod_stab) * self::$max_growth_prod / self::$prod_stab;
+    }
+
     /*
      * Setter
      */
+
+    public function set_name($name) {
+        $this->name = $name;
+    }
 
     public function set_impact_on_GHGS($impact_on_GHGS) {
         $this->impact_on_GHGS = $impact_on_GHGS;
@@ -38,9 +56,33 @@ class Product {
         $this->production[$index] = $production;
     }
 
+    public function set_capacity($capacity, $index) {
+        $this->capacity[$index] = $capacity;
+    }
+
+    public function set_price($price) {
+        $this->price = $price;
+    }
+
+    public function set_ideal_temperature($ideal_temperature) {
+        $this->ideal_temperature = $ideal_temperature;
+    }
+
+    public function set_tolerance_temperature($tolerance_temperature) {
+        $this->tolerance_temperature = $tolerance_temperature;
+    }
+
+    public function set_sold($sold, $index) {
+        $this->sold[$index] = $sold;
+    }
+
     /*
      * Getter
      */
+
+    public function get_name() {
+        return $this->name;
+    }
 
     public function get_impact_on_GHGS() {
         return $this->impact_on_GHGS;

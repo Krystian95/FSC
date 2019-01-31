@@ -25,7 +25,7 @@ class Environment {
         $this->PM[1] = 0.0;
     }
 
-    public function impact_from_product(Product $product) {
+    private function impact_from_product(Product $product) {
 
         $this->GHGS[1] += $product->get_impact_on_GHGS() * $product->get_production(1);
         $this->NH3[1] += $product->get_impact_on_NH3() * $product->get_production(1);
@@ -48,8 +48,14 @@ class Environment {
         return $this->PM[1];
     }
 
-    public function getTemperature() {
-        return $this->temperature[1];
+    public function getTemperature($index) {
+        return $this->temperature[$index];
+    }
+
+    public function impact_from_products($products) {
+        foreach ($products as $product) {
+            $this->impact_from_product($product);
+        }
     }
 
 }

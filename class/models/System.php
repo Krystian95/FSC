@@ -10,6 +10,7 @@ class System {
     public static $n_meat = 5;
     public static $n_veg = 15;
     public static $current_month;
+    public static $step = 0;
     private $environment;
     private $product_collection = [];
     private $person_collection = [];
@@ -39,29 +40,45 @@ class System {
         $this->setCurrentMonth($period);
 
         /*
+         * step_productions
+         */
+        $this->product_collection->step_productions($this->environment);
+
+        /*
          * impact_from_product
          */
         $products = $this->product_collection->getProducts();
-        foreach ($products as $product) {
-            $this->environment->impact_from_product($product);
-        }
+        $this->environment->impact_from_products($products);
 
         /*
          * temperature_evaluation
          */
         $this->environment->temperature_evaluation();
-        
+
+        /*
+         * health_evaluate
+         */
+        //error_log(count($this->person_collection->getPersons()));
+        $this->person_collection->grow_pops();
+        //error_log(count($this->person_collection->getPersons()));
+
+        /*
+         * growth_evaluate
+         */
+        $this->product_collection->growth_evaluations();
+
+        self::$step++;
+
+
         /*
          * Test
          */
-
         $return['Charts']['Chart 1']['Linea 1'] = $this->person_collection->getMeanHealth();
         $return['Charts']['Chart 1']['Linea 2'] = $this->environment->getNH3();
 
         /*
          * Extra
          */
-
         $next_period = $this->calculateNextPeriod($current_period = $period);
 
         $return['Next_Period'] = $next_period;

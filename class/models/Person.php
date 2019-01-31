@@ -7,9 +7,9 @@
  */
 class Person {
 
-    private static $pop_stab = 0.0;
-    private static $max_growth_pop = 0.0;
-    private static $food_need = 0.0;
+    private static $pop_stab = 15.0;
+    private static $max_growth_pop = 1500.0;
+    private static $food_need = 26.0;
     private $preferenze = [];
     private $wealth;
     private $health = [2];
@@ -20,6 +20,10 @@ class Person {
         //$this->preferenze[System::$n_meat + System::$n_veg]; // array_push a runtime
         $this->eaten[0] = 0;
         $this->eaten[1] = 0;
+    }
+
+    public function health_evaluate() {
+        $this->health[1] = $this->health[0] + ($this->eaten[1] / self::$food_need - self::$pop_stab) * self::$max_growth_pop / self::$pop_stab;
     }
 
     /*
