@@ -17,7 +17,7 @@ class Person {
 
     public function __construct() {
 
-        $this->preferenze[System::$n_meat + System::$n_veg];
+        //$this->preferenze[System::$n_meat + System::$n_veg]; // array_push a runtime
         $this->eaten[0] = 0;
         $this->eaten[1] = 0;
     }

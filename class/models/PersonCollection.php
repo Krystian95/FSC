@@ -1,21 +1,26 @@
 <?php
 
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Person.php';
+
 /**
  * Collection of Person(s)
  *
  * @author Cristian
  */
-class People {
+class PersonCollection {
 
-    private static $n_max_pop = 100000;
+    private static $n_max_pop = 1000;
     private static $step_pop_growth = 0.8;
     private static $step_pop_death = 0.2;
     private static $growth_parameter = 0.4;
-    private $persons = [];
+    private $persons;
 
     public function __construct() {
 
+        $this->persons = [];
+
         for ($i = 0; $i < self::$n_max_pop; $i++) {
+
             $person = new Person();
 
             $rand = random_int(0, 100);
@@ -25,6 +30,10 @@ class People {
 
             array_push($this->persons, $person);
         }
+    }
+
+    public function getPersons() {
+        return $this->persons;
     }
 
     public function getCountPeople() {

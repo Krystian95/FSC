@@ -11,12 +11,14 @@ class System {
     public static $n_veg = 15;
     public static $current_month;
     private $environment;
-    private $products;
+    private $product_collection = [];
+    private $person_collection = [];
 
     public function __construct() {
 
         $this->environment = new Environment();
-        $this->products = new Products();
+        $this->product_collection = new ProductCollection();
+        $this->person_collection = new PersonCollection();
     }
 
     /*
@@ -33,16 +35,28 @@ class System {
      */
 
     public function iteratePeriod($period) {
-        
+
         $this->setCurrentMonth($period);
 
-        $products = $this->products->getProducts();
-
+        /*
+         * impact_from_product
+         */
+        $products = $this->product_collection->getProducts();
         foreach ($products as $product) {
             $this->environment->impact_from_product($product);
         }
 
+        /*
+         * temperature_evaluation
+         */
         $this->environment->temperature_evaluation();
+        
+        /*
+         * Test
+         */
+
+        $return['Charts']['Chart 1']['Linea 1'] = $this->person_collection->getMeanHealth();
+        $return['Charts']['Chart 1']['Linea 2'] = $this->environment->getNH3();
 
         /*
          * Extra
@@ -52,14 +66,14 @@ class System {
 
         $return['Next_Period'] = $next_period;
 
-        $return['Charts']['Chart 1']['Linea 1'] = random_int(0, 500);
-        $return['Charts']['Chart 1']['Linea 2'] = random_int(0, 500);
+        /* $return['Charts']['Chart 1']['Linea 1'] = random_int(0, 500);
+          $return['Charts']['Chart 1']['Linea 2'] = random_int(0, 500); */
 
         return $return;
     }
 
     private function setCurrentMonth($current_period) {
-        
+
         $explode = explode('/', $current_period);
         $period_current['month'] = (int) $explode[0];
         $period_current['year'] = (int) $explode[1];

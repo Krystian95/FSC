@@ -5,19 +5,24 @@ session_start();
 require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/System.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Environment.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Person.php';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/People.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/PersonCollection.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Product.php';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Products.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/ProductCollection.php';
 
 
 if (isset($_POST['Action']) && !empty($_POST['Action'])) {
+
+    ini_set('memory_limit', '2048M');
+
+    //error_log("real: " . (memory_get_usage() / 1024 / 1024) . " MiB");
 
     $action = $_POST['Action'];
     $response = null;
 
     switch ($action) {
-        
+
         case 'Start' :
+
             $system = new System();
             $system->setupParams(null);
             $period = $_POST['Data']['Period'];
@@ -26,6 +31,7 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
             break;
 
         case 'Period_Iteration' :
+            
             $period = $_POST['Data']['Period'];
             $system = unserialize($_SESSION['system']);
             $response = $system->iteratePeriod($period);
@@ -33,7 +39,9 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
             break;
 
         case 'Stop':
+            
             session_unset();
+            session_destroy();
             break;
     }
 

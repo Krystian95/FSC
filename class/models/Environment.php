@@ -36,4 +36,20 @@ class Environment {
         $this->temperature[1] = self::$mean_temp + self::$width_temp * cos(( (System::$current_month - 8) % 12) / 12 * 2 * pi());
     }
 
+    public function getGHGS() {
+        return $this->GHGS[1];
+    }
+
+    public function getNH3() {
+        return $this->NH3[1];
+    }
+
+    public function getPM() {
+        return $this->PM[1];
+    }
+
+    public function getTemperature() {
+        return $this->temperature[1];
+    }
+
 }

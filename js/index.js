@@ -160,10 +160,13 @@ $(function () {
         var response = utils.performAjaxCall(params);
         performResponseActions(current_period, response);
 
+        var iterations = 100;
+
         /*
          * Next Iteration(s)
          */
         setInterval(function () {
+            //while (iterations > 0) {
             var params = {};
             params['Action'] = 'Period_Iteration';
             params['Data'] = {};
@@ -173,7 +176,9 @@ $(function () {
             var response = utils.performAjaxCall(params);
             performResponseActions(current_period, response);
 
-        }, 1000);
+            iterations--;
+            //}
+        }, 2000);
     });
 
 
