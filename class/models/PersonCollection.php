@@ -15,18 +15,23 @@ class PersonCollection {
     private static $growth_parameter = 0.4;
     private $persons;
 
-    public function __construct() {
+    public function __construct($product_collection) {
 
         $this->persons = [];
 
         for ($i = 0; $i < self::$n_max_pop; $i++) {
 
-            $person = new Person();
+            $wealth = random_int(0, 100);
+            $deviation_of_preference = 2;
+            $tendency = 4;
+            $ricchezza_media = 7;
+
+            $person = new Person($deviation_of_preference, $tendency, $product_collection, $wealth, $ricchezza_media);
 
             $rand = random_int(0, 100);
+
             $person->set_health($rand, 0);
             $person->set_health($rand, 1);
-            $person->set_wealth(random_int(0, 100));
 
             array_push($this->persons, $person);
         }
@@ -36,6 +41,10 @@ class PersonCollection {
         return $this->persons;
     }
 
+    public function getPerson($index) {
+        return $this->persons[$index];
+    }
+
     public function getCountPeople() {
         return count($this->persons);
     }
@@ -43,13 +52,12 @@ class PersonCollection {
     public function getMeanHealth() {
 
         $mean = 0;
-
         foreach ($this->persons as $person) {
             $mean += $person->get_health(1);
         }
 
-        /*error_log($mean);
-        error_log(count($this->persons));*/
+        /* error_log($mean);
+          error_log(count($this->persons)); */
 
         return $mean / count($this->persons);
     }

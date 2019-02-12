@@ -28,9 +28,29 @@ class ProductCollection {
             $product->set_tolerance_temperature($default_product['tolerance_temperature']);
             $product->set_sold($default_product['sold'], 0);
             $product->set_sold($default_product['sold'], 1);
+            $product->set_type($default_product['type']);
+            $product->set_ideal_GHGS($default_product['ideal_GHGS']);
+            $product->set_ideal_NH3($default_product['ideal_NH3']);
+            $product->set_ideal_PM($default_product['ideal_PM']);
+            $product->set_tolerance_GHGS($default_product['tolerance_GHGS']);
+            $product->set_tolerance_NH3($default_product['tolerance_NH3']);
+            $product->set_tolerance_PM($default_product['tolerance_PM']);
 
             array_push($this->products, $product);
         }
+    }
+
+    public function getProductTypeByIndex($index) {
+
+        $counter = 0;
+        foreach ($this->products as $product) {
+            if ($index == $counter) {
+                return $product->get_type();
+            }
+            $counter++;
+        }
+
+        return null;
     }
 
     private function buildDefaultProducts() {
@@ -47,6 +67,13 @@ class ProductCollection {
         $products['Pollo']['ideal_temperature'] = 23.0;
         $products['Pollo']['tolerance_temperature'] = 48.0;
         $products['Pollo']['sold'] = 7.0;
+        $products['Pollo']['type'] = 'meat';
+        $products['Pollo']['ideal_GHGS'] = 3;
+        $products['Pollo']['ideal_NH3'] = 4;
+        $products['Pollo']['ideal_PM'] = 5;
+        $products['Pollo']['tolerance_GHGS'] = 3;
+        $products['Pollo']['tolerance_NH3'] = 4;
+        $products['Pollo']['tolerance_PM'] = 5;
 
         return $products;
     }
@@ -65,6 +92,10 @@ class ProductCollection {
 
     public function getProducts() {
         return $this->products;
+    }
+
+    public function getProduct($index) {
+        return $this->products[$index];
     }
 
 }

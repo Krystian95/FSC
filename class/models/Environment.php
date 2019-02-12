@@ -27,25 +27,25 @@ class Environment {
 
     private function impact_from_product(Product $product) {
 
-        $this->GHGS[1] += $product->get_impact_on_GHGS() * $product->get_production(1);
-        $this->NH3[1] += $product->get_impact_on_NH3() * $product->get_production(1);
-        $this->PM[1] += $product->get_impact_on_PM() * $product->get_production(1);
+        $this->GHGS[1] = $this->GHGS[0] + $product->get_impact_on_GHGS() * $product->get_production(1);
+        $this->NH3[1] = $this->NH3[0] + $product->get_impact_on_NH3() * $product->get_production(1);
+        $this->PM[1] = $this->PM[0] + $product->get_impact_on_PM() * $product->get_production(1);
     }
 
     public function temperature_evaluation() {
         $this->temperature[1] = self::$mean_temp + self::$width_temp * cos(( (System::$current_month - 8) % 12) / 12 * 2 * pi());
     }
 
-    public function getGHGS() {
-        return $this->GHGS[1];
+    public function getGHGS($index) {
+        return $this->GHGS[$index];
     }
 
-    public function getNH3() {
-        return $this->NH3[1];
+    public function getNH3($index) {
+        return $this->NH3[$index];
     }
 
-    public function getPM() {
-        return $this->PM[1];
+    public function getPM($index) {
+        return $this->PM[$index];
     }
 
     public function getTemperature($index) {
