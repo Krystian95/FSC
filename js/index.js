@@ -288,6 +288,12 @@ $(function () {
             $('input[name="' + value + '_produttivita_slider"]').prop('disabled', false);
         });
     });
+    
+    /* Premo il bottone reset */
+    $('#reset').on('click', function (event) {
+
+        location.reload();
+    });
 
     /* Premo il bottone discard changes */
     $('#discardChanges').on('click', function (event) {

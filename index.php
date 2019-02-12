@@ -12,6 +12,7 @@
         <title>HESystem</title>
 
         <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/lib/bootstrap-4.1.3.min.css" rel="stylesheet">
         <link href="css/lib/jquery-ui.min.css" rel="stylesheet">
         <link href="css/index.css" rel="stylesheet">
@@ -130,51 +131,54 @@
                                     <label class="col-form-label col-2">
                                         Popolazione
                                     </label>
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <input type="range" class="custom-range" min="10" max="5000" step="1" name="popolazione_slider" value="1000">
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="popolazione_textbox" value="1000"> 
                                     </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterModal">Imposta parametri</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri</button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-2">
                                         Ricchezza
                                     </label>
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <!--<div id="slider">
                                             <div id="custom-handle" class="ui-slider-handle"></div>
                                         </div>-->
                                         <input type="range" class="custom-range" min="10" max="5000" step="1" name="ricchezza_slider" value="1000">
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="ricchezza_textbox" value="1000"> 
                                     </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-success" id="start">Start</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbspStart</button>
                                     </div> 
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-2">
                                         Salute
                                     </label>
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <!--<div id="slider">
                                             <div id="custom-handle" class="ui-slider-handle"></div>
                                         </div>-->
                                         <input type="range" class="custom-range" min="10" max="5000" step="1" name="salute_slider" value="1000">
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="salute_textbox" value="1000"> 
                                     </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-warning" id="pausa" disabled="true">Pausa</button>
+                                    <div class="col-2">
+                                        <button type="button" class="btn btn-warning" id="pausa" disabled="true"><i class="fa fa-pause"></i>&nbspPausa</button>
                                     </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-danger" id="stop" disabled="true">Stop</button>
+                                    <div class="col-2">
+                                        <button type="button" class="btn btn-danger" id="stop" disabled="true"><i class="fa fa-stop"></i>&nbspStop</button>
+                                    </div>
+                                    <div class="col-2">
+                                        <button type="button" class="btn btn-secondary" id="reset"><i class="fa fa-refresh"></i>&nbspReset</button>
                                     </div>
                                 </div>
                             </form>
@@ -221,7 +225,7 @@
                 <div class="col-6">
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Grafici
+                            <i class="fa fa-bar-chart"></i>&nbsp&nbspGrafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Grafico 1</a>
