@@ -149,7 +149,7 @@ $(function () {
 
     /*
      * Start
-     */
+     
     $('#start').on('click', function (event) {
         var params = {};
         params['Action'] = 'Start';
@@ -162,9 +162,8 @@ $(function () {
 
         var iterations = 100;
 
-        /*
-         * Next Iteration(s)
-         */
+        // Next Iteration(s)
+        
         setInterval(function () {
             //while (iterations > 0) {
             var params = {};
@@ -180,7 +179,8 @@ $(function () {
             //}
         }, 2000);
     });
-
+    
+    Togliere commento per lanciare esecuzione start */
 
     /* Premo il bottone start */
     $('#start').on('click', function (event) {
@@ -241,9 +241,9 @@ $(function () {
 
     /* Premo il bottone pausa */
     $('#pausa').on('click', function (event) {
-
-        /* Codice... */
-
+ 
+        $("#starttext").text('Continua');
+        $('#start').prop('disabled', false);
     });
 
     /* Premo il bottone stop */
@@ -252,6 +252,7 @@ $(function () {
         $('#textboxAnno').attr('value', '0/0');
 
         /* Abilita bottone start */
+        $("#starttext").text('Start');
         $('#start').prop('disabled', false);
 
         /* Disabilita bottone pausa e stop */

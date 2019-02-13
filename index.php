@@ -11,7 +11,9 @@
         
         <title>HESystem</title>
 
-        <!-- Bootstrap core CSS -->
+        <!-- CSS e JavaScript
+        <link href="css/lib/font-awesome.min.css" rel="stylesheet">
+        -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/lib/bootstrap-4.1.3.min.css" rel="stylesheet">
         <link href="css/lib/jquery-ui.min.css" rel="stylesheet">
@@ -155,7 +157,7 @@
                                         <input type="number" class="form-control textbox" min="10" max="5000" step="1" name="ricchezza_textbox" value="1000"> 
                                     </div>
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbspStart</button>
+                                        <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbsp<span id="starttext">Start</span></button>
                                     </div> 
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -228,15 +230,15 @@
                             <i class="fa fa-bar-chart"></i>&nbsp&nbspGrafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Grafico 1</a>
-                            <a class="dropdown-item" href="#">Grafico 2</a>
-                            <a class="dropdown-item" href="#">Grafico 3</a>
-                            <a class="dropdown-item" href="#">Grafico 4</a>
-                            <a class="dropdown-item" href="#">Grafico 5</a>
-                            <a class="dropdown-item" href="#">Grafico 6</a>
-                            <a class="dropdown-item" href="#">Grafico 7</a>
-                            <a class="dropdown-item" href="#">Grafico 8</a>
-                            <a class="dropdown-item" href="#">Grafico 9</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-users"></i>&nbsp&nbspGrafico 1</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-euro"></i>&nbsp&nbspGrafico 2</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-medkit"></i>&nbsp&nbspGrafico 3</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-industry"></i>&nbsp&nbspGrafico 4</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-envira"></i>&nbsp&nbspGrafico 5</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-cloud"></i>&nbsp&nbspGrafico 6</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-home"></i>&nbsp&nbspGrafico 7</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-car"></i>&nbsp&nbspGrafico 8</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-heart"></i>&nbsp&nbspGrafico 9</a>
                         </div>
                     </div>
                     <br>
