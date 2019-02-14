@@ -9,10 +9,10 @@ class Environment {
 
     private static $mean_temp = 0.0;
     private static $width_temp = 0.0;
-    private $temperature = [2];
-    private $GHGS = [2];
-    private $NH3 = [2];
-    private $PM = [2];
+    private $temperature = [];
+    private $GHGS = [];
+    private $NH3 = [];
+    private $PM = [];
 
     public function __construct() {
         $this->temperature[0] = 0.0; // TODO set via UI

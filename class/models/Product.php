@@ -8,17 +8,17 @@
 class Product {
 
     private $name;
-    private static $prod_stab = 15.0;
-    private static $max_growth_prod = 90.0;
+    private static $prod_stab = 60.0;
+    private static $max_growth_prod = 2.0;
     private $impact_on_GHGS;
     private $impact_on_NH3;
     private $impact_on_PM;
-    private $production = [2];
-    private $capacity = [2];
+    private $production = [];
+    private $capacity = [];
     private $price;
     private $ideal_temperature;
     private $tolerance_temperature;
-    private $sold = [2];
+    private $sold = [];
     private $ideal_GHGS;
     private $ideal_NH3;
     private $ideal_PM;
@@ -28,7 +28,12 @@ class Product {
     private $type;
 
     public function __construct() {
-        
+        $this->capacity[0] = 0.0;
+        $this->capacity[1] = 0.0;
+        $this->production[0] = 0.0;
+        $this->production[1] = 0.0;
+        $this->sold[0] = 0.0;
+        $this->sold[1] = 0.0;
     }
 
     public function step_production($environment) {

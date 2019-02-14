@@ -9,7 +9,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Person.php';
  */
 class PersonCollection {
 
-    private static $n_max_pop = 1000;
+    private static $n_max_pop = 100;
     private static $step_pop_growth = 0.8;
     private static $step_pop_death = 0.2;
     private static $growth_parameter = 0.4;
@@ -59,10 +59,14 @@ class PersonCollection {
         /* error_log($mean);
           error_log(count($this->persons)); */
 
-        return $mean / count($this->persons);
+        if (count($this->persons) == 0) {
+            return 0;
+        } else {
+            return $mean / count($this->persons);
+        }
     }
 
-    public function grow_pops() {
+    public function grow_pops($product_collection) {
 
         $new_persons = [];
 
@@ -75,7 +79,14 @@ class PersonCollection {
             } elseif ($person->get_health(1) >= self::$step_pop_growth) {
                 $rand = random_int(0, 100);
                 if ($rand >= self::$growth_parameter) {
-                    $new_person = new Person();
+
+                    $wealth = random_int(0, 100);
+                    $deviation_of_preference = 2;
+                    $tendency = 4;
+                    $ricchezza_media = 7;
+
+                    $new_person = new Person($deviation_of_preference, $tendency, $product_collection, $wealth, $ricchezza_media);
+
                     // Evita di aggiungere persone all'array che si sta scorrendo
                     array_push($new_persons, $new_person); // birth
                 }

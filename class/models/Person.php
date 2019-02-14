@@ -7,19 +7,21 @@
  */
 class Person {
 
-    private static $pop_stab = 15.0;
-    private static $max_growth_pop = 1500.0;
-    private static $food_need = 26.0;
+    private static $pop_stab = 60.0;
+    private static $max_growth_pop = 2.0;
+    private static $food_need = 8.0;
     private $preferenze = [];
     private $wealth;
-    private $health = [2];
-    private $eaten = [2];
+    private $health = [];
+    private $eaten = [];
     private $speso = 0;
 
     public function __construct($deviation_of_preference, $tendency, $product_collection, $wealth, $ricchezza_media) {
 
-        $this->eaten[0] = 0;
-        $this->eaten[1] = 0;
+        $this->eaten[0] = 0.0;
+        $this->eaten[1] = 0.0;
+        $this->health[0] = 0.0;
+        $this->health[1] = 0.0;
 
         $this->wealth = $wealth;
 
@@ -42,7 +44,10 @@ class Person {
             }
 
             //$gauss = stats_dens_normal(0, $mean_to_use, $deviation_of_preference);
-            $gauss = 2;
+            /*
+             * stats_rand_gen_normal()
+             */
+            $gauss = (rand(0, 10000) / 10000 ) * $mean_to_use * 2;
             $preferenze_tmp[$i] = ($gauss > 0 ? $gauss : 0);
             $sum += $preferenze_tmp[$i];
         }

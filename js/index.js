@@ -149,7 +149,7 @@ $(function () {
 
     /*
      * Start
-     
+     */
     $('#start').on('click', function (event) {
         var params = {};
         params['Action'] = 'Start';
@@ -163,7 +163,7 @@ $(function () {
         var iterations = 100;
 
         // Next Iteration(s)
-        
+
         setInterval(function () {
             //while (iterations > 0) {
             var params = {};
@@ -179,8 +179,6 @@ $(function () {
             //}
         }, 2000);
     });
-    
-    Togliere commento per lanciare esecuzione start */
 
     /* Premo il bottone start */
     $('#start').on('click', function (event) {
@@ -241,7 +239,7 @@ $(function () {
 
     /* Premo il bottone pausa */
     $('#pausa').on('click', function (event) {
- 
+
         $("#starttext").text('Continua');
         $('#start').prop('disabled', false);
     });
@@ -289,7 +287,7 @@ $(function () {
             $('input[name="' + value + '_produttivita_slider"]').prop('disabled', false);
         });
     });
-    
+
     /* Premo il bottone reset */
     $('#reset').on('click', function (event) {
 

@@ -8,7 +8,7 @@
 class System {
 
     public static $n_meat = 5;
-    public static $n_veg = 15;
+    public static $n_veg = 10;
     public static $current_month;
     public static $step = 0;
     private $environment;
@@ -65,7 +65,7 @@ class System {
          * health_evaluate
          */
         //error_log(count($this->person_collection->getPersons()));
-        $this->person_collection->grow_pops();
+        $this->person_collection->grow_pops($this->product_collection);
         //error_log(count($this->person_collection->getPersons()));
 
         /*
@@ -79,8 +79,8 @@ class System {
         /*
          * Test
          */
-        $return['Charts']['Chart 1']['Linea 1'] = $this->person_collection->getMeanHealth();
-        $return['Charts']['Chart 1']['Linea 2'] = $this->environment->getNH3(1);
+        $return['Charts']['Chart 1']['Linea 1'] = $this->person_collection->getCountPeople();
+        $return['Charts']['Chart 1']['Linea 2'] = $this->person_collection->getMeanHealth();
 
         /*
          * Extra
@@ -101,8 +101,14 @@ class System {
         $products_indexes = array_keys($this->product_collection->getProducts());
 
         while (count($persons_indexes) > 0 && count($products_indexes) > 0) {
-            for ($i = 0; $i < count($persons_indexes); $i++) {
-
+            /* error_log('New while cicle');
+              error_log('$persons_indexes = ' . count($persons_indexes));
+              error_log(''); */
+            for ($i = 0; $i < count($persons_indexes) && count($products_indexes) > 0; $i++) {
+                /* error_log('$persons_indexes = ' . count($persons_indexes));
+                  error_log('$products_indexes = ' . count($products_indexes));
+                  error_log('');
+                  error_log('New for cicle i = ' . $i); */
                 $person = $this->person_collection->getPerson($i);
                 $rnd = rand(0, 1);
 
@@ -116,19 +122,40 @@ class System {
                     }
                 }
 
+                /*
+                 * Recupera un prodotto (sia che sia sotto che sopra)
+                 */
+                $t = $j;
+                while (!in_array($j, $products_indexes)) {
+                    if ($j == 0) {
+                        $j = $t;
+                        while (!in_array($j, $products_indexes)) {
+                            if ($j == (self::$n_meat + self::$n_veg) - 1) {
+                                break;
+                            } else {
+                                $j++;
+                            }
+                        }
+                    } else {
+                        $j--;
+                    }
+                }
+
                 $product = $this->product_collection->getProduct($j);
 
                 // TODO controlla che persons abbia abbastanza soldi per acquistare quel prodotto
 
                 $val = 1;
-                $person->set_eaten($person->get_eaten() + $val, 1);
+                $person->set_eaten($person->get_eaten(1) + $val, 1);
                 $product->set_sold($product->get_sold(1) + $val, 1);
                 $person->set_speso($person->get_speso() + $product->get_price() * $val);
 
                 if ($person->get_eaten(1) >= $person->get_food_need() || $person->get_speso() >= $person->get_wealth()) {
+                    //error_log('Removed Person i = ' . $i);
                     unset($persons_indexes[$i]);
                 }
-                if ($person->get_sold(1) >= $product->get_production(1)) {
+                if ($product->get_sold(1) >= $product->get_production(1)) {
+                    //error_log('Removed Product j = ' . $j);
                     unset($products_indexes[$j]);
                 }
             }

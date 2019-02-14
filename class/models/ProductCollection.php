@@ -14,7 +14,9 @@ class ProductCollection {
         $default_products = $this->buildDefaultProducts();
 
         foreach ($default_products as $default_product_name => $default_product) {
+
             $product = new Product();
+
             $product->set_name($default_product_name);
             $product->set_impact_on_GHGS($default_product['impact_on_GHGS']);
             $product->set_impact_on_NH3($default_product['impact_on_NH3']);
@@ -55,25 +57,28 @@ class ProductCollection {
 
     private function buildDefaultProducts() {
 
+        $products_name = ['Manzo', 'Pollo', 'Maiale', 'Cavallo', 'Tacchino', 'Patate', 'Zucchine', 'Peperoni', 'Melanzane', 'Pomodori', 'Grano', 'Riso', 'Melo', 'Pero', 'Arancio'];
         $products = [];
 
-        $products['Pollo'] = [];
-        $products['Pollo']['impact_on_GHGS'] = 13.0;
-        $products['Pollo']['impact_on_NH3'] = 1.0;
-        $products['Pollo']['impact_on_PM'] = 5.0;
-        $products['Pollo']['production'] = 8.0;
-        $products['Pollo']['capacity'] = 8.0;
-        $products['Pollo']['price'] = 80.0;
-        $products['Pollo']['ideal_temperature'] = 23.0;
-        $products['Pollo']['tolerance_temperature'] = 48.0;
-        $products['Pollo']['sold'] = 7.0;
-        $products['Pollo']['type'] = 'meat';
-        $products['Pollo']['ideal_GHGS'] = 3;
-        $products['Pollo']['ideal_NH3'] = 4;
-        $products['Pollo']['ideal_PM'] = 5;
-        $products['Pollo']['tolerance_GHGS'] = 3;
-        $products['Pollo']['tolerance_NH3'] = 4;
-        $products['Pollo']['tolerance_PM'] = 5;
+        foreach ($products_name as $product) {
+            $products[$product] = [];
+            $products[$product]['impact_on_GHGS'] = 2.0;
+            $products[$product]['impact_on_NH3'] = 1.0;
+            $products[$product]['impact_on_PM'] = 5.0;
+            $products[$product]['production'] = 20.0;
+            $products[$product]['capacity'] = 80.0;
+            $products[$product]['price'] = 8.0;
+            $products[$product]['ideal_temperature'] = 23.0;
+            $products[$product]['tolerance_temperature'] = 48.0;
+            $products[$product]['sold'] = 7.0;
+            $products[$product]['type'] = 'meat';
+            $products[$product]['ideal_GHGS'] = 3.0;
+            $products[$product]['ideal_NH3'] = 4.0;
+            $products[$product]['ideal_PM'] = 5.0;
+            $products[$product]['tolerance_GHGS'] = 60.0;
+            $products[$product]['tolerance_NH3'] = 60.0;
+            $products[$product]['tolerance_PM'] = 60.0;
+        }
 
         return $products;
     }
