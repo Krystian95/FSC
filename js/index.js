@@ -163,9 +163,6 @@ $(function () {
     $('input[name="periodo_textbox"]').val(current_period);
 
     var utils = new Utils();
-
-    /*
-     * Start
      
     $('#start').on('click', function (event) {
         var params = {};
@@ -196,8 +193,6 @@ $(function () {
             //}
         }, 2000);
     });
-    
-    Togliere commento per lanciare esecuzione start */
 
     /* Premo il bottone start */
     $('#start').on('click', function (event) {
