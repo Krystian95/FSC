@@ -20,21 +20,27 @@ class PersonCollection {
         $this->persons = [];
 
         for ($i = 0; $i < self::$n_max_pop; $i++) {
-
-            $wealth = random_int(0, 100);
-            $deviation_of_preference = 2;
-            $tendency = 4;
-            $ricchezza_media = 7;
-
-            $person = new Person($deviation_of_preference, $tendency, $product_collection, $wealth, $ricchezza_media);
-
-            $rand = random_int(0, 100);
-
-            $person->set_health($rand, 0);
-            $person->set_health($rand, 1);
-
+            $person = $this->generateNewPerson($product_collection);
             array_push($this->persons, $person);
         }
+    }
+
+    private function generateNewPerson($product_collection) {
+
+        $wealth = random_int(0, 100);
+        $deviation_of_preference = 2;
+        $tendency = 4;
+        $ricchezza_media = 100;
+        $health = 60;
+
+        $person = new Person($deviation_of_preference, $tendency, $product_collection, $wealth, $health, $ricchezza_media);
+
+        $rand = random_int(0, 100);
+
+        $person->set_health($rand, 0);
+        $person->set_health($rand, 1);
+
+        return $person;
     }
 
     public function getPersons() {
@@ -80,12 +86,7 @@ class PersonCollection {
                 $rand = random_int(0, 100);
                 if ($rand >= self::$growth_parameter) {
 
-                    $wealth = random_int(0, 100);
-                    $deviation_of_preference = 2;
-                    $tendency = 4;
-                    $ricchezza_media = 7;
-
-                    $new_person = new Person($deviation_of_preference, $tendency, $product_collection, $wealth, $ricchezza_media);
+                    $new_person = $this->generateNewPerson($product_collection);
 
                     // Evita di aggiungere persone all'array che si sta scorrendo
                     array_push($new_persons, $new_person); // birth

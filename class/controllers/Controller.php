@@ -2,6 +2,7 @@
 
 session_start();
 
+require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Utils.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/System.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Environment.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Person.php';
