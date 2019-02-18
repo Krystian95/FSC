@@ -112,7 +112,7 @@ function performResponseActions(current_period, response_encoded) {
     var response = JSON.parse(response_encoded);
     console.log(response);
     var next_period = response.Next_Period;
-    $('input[name="periodo_textbox"]').val(next_period);
+    $('input[name="periodo"]').val(next_period);
 
     chart_1.data.labels.push(current_period);
     /**chart_1.data.datasets.forEach((dataset) => {
@@ -142,9 +142,37 @@ function getCurrentMonthYear() {
 
 $(function () {
     
+    /* Slider range parametri per tutti i prodotti */
+    var sliderPrezzoRange = new Slider('#prezzoRange', {});
+    var sliderProduttivitaRange = new Slider('#produttivitaRange', {});
+    var sliderImpattoGhgsRange = new Slider('#impattoGhgsRange', {});
+    var sliderImpattoPmRange = new Slider('#impattoPmRange', {});
+    var sliderPercentualeAnimaliPianteRange = new Slider("#percentuale_animali_piante_tot_range", { id: "percentuale_animali_piante_tot_range", min: 0, max: 100, value: 50 });
+    
+    $('#parametriRandom').on('click', function (event) {
+       
+        var prezzoRange = $('#prezzoRange').val();
+        var arrayPrezzoRange = prezzoRange.split(',');
+        
+        var produttivitaRange = $('#produttivitaRange').val();
+        var arrayProduttivitaRange = produttivitaRange.split(',');
+        
+        var impattoGhgsRange = $('#impattoGhgsRange').val();
+        var arrayImpattoGhgsRange = impattoGhgsRange.split(',');
+        
+        var impattoPmRange = $('#impattoPmRange').val();
+        var arrayImpattoPmRange = impattoPmRange.split(',');
+        
+        console.log(arrayPrezzoRange);
+        console.log(arrayProduttivitaRange);
+        console.log(arrayImpattoGhgsRange);
+        console.log(arrayImpattoPmRange);
+    });
+    
     /* Nascondi bottone chiudi finestra */
     document.getElementById("chiudiFinestraPop").style.display = "none";
     document.getElementById("chiudiFinestraEnv").style.display = "none";
+    document.getElementById("chiudiFinestraExtra").style.display = "none";
         
     var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
             'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
@@ -160,15 +188,18 @@ $(function () {
     });
 
     var current_period = getCurrentMonthYear();
-    $('input[name="periodo_textbox"]').val(current_period);
+    $('input[name="periodo"]').val(current_period);
 
     var utils = new Utils();
+
+    /*
+     * Start */
      
     $('#start').on('click', function (event) {
         var params = {};
         params['Action'] = 'Start';
         params['Data'] = {};
-        current_period = $('input[name="periodo_textbox"]').val();
+        current_period = $('input[name="periodo"]').val();
         params['Data']['Period'] = current_period;
 
         var response = utils.performAjaxCall(params);
@@ -183,7 +214,7 @@ $(function () {
             var params = {};
             params['Action'] = 'Period_Iteration';
             params['Data'] = {};
-            current_period = $('input[name="periodo_textbox"]').val();
+            current_period = $('input[name="periodo"]').val();
             params['Data']['Period'] = current_period;
 
             var response = utils.performAjaxCall(params);
@@ -196,7 +227,7 @@ $(function () {
 
     /* Premo il bottone start */
     $('#start').on('click', function (event) {
-
+    
         /* Disabilita bottone start */
         $('#start').prop('disabled', true);
 
@@ -228,6 +259,7 @@ $(function () {
         /* Mostra bottone chiudi finestra */
         document.getElementById("chiudiFinestraPop").style.display = "block";
         document.getElementById("chiudiFinestraEnv").style.display = "block";
+        document.getElementById("chiudiFinestraExtra").style.display = "block";
         
         var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
             'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
@@ -243,37 +275,40 @@ $(function () {
         $('#saveChangesEnv').prop('disabled', true);
         $('#discardChangesProd').prop('disabled', true);
         $('#saveChangesProd').prop('disabled', true);
+        $('#discardChangesExtra').prop('disabled', true);
+        $('#saveChangesExtra').prop('disabled', true);
         
-        var itemsPopEnv = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
+        var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3'];
+        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'salute',
+        'crescita_industria', 'crescita_popolazione', 'quantita_cibo_acquistato'];
     
-        $(itemsPopEnv).each(function (index, value) {
-            $('input[name="' + value + '_textbox"]').prop('disabled', true);
+        $(itemsPopEnvExtra).each(function (index, value) {
+            $('input[name="' + value + '"]').prop('disabled', true);
             $('input[name="' + value + '_slider"]').prop('disabled', true);
         });
         
         $(itemsProd).each(function (index, value) {
             $('input[name="' + value + '_prezzo_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_prezzo_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_prezzo"]').prop('disabled', true);
             $('input[name="' + value + '_produttivita_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_produttivita_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_produttivita"]').prop('disabled', true);
             $('input[name="' + value + '_impatto_ghgs_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_impatto_ghgs_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_impatto_ghgs"]').prop('disabled', true);
             $('input[name="' + value + '_impatto_pm_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_impatto_pm_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_impatto_pm"]').prop('disabled', true);
             $('input[name="' + value + '_impatto_nh3_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_impatto_nh3_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_impatto_nh3"]').prop('disabled', true);
             $('input[name="' + value + '_influenza_produzione_ghgs_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_influenza_produzione_ghgs_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_influenza_produzione_ghgs"]').prop('disabled', true);
             $('input[name="' + value + '_influenza_produzione_pm_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_influenza_produzione_pm_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_influenza_produzione_pm"]').prop('disabled', true);
             $('input[name="' + value + '_influenza_produzione_nh3_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_influenza_produzione_nh3_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_influenza_produzione_nh3"]').prop('disabled', true);
             $('input[name="' + value + '_influenza_produzione_temperatura_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_influenza_produzione_temperatura_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_influenza_produzione_temperatura"]').prop('disabled', true);
             $('input[name="' + value + '_toll_influenza_produzione_temperatura_slider"]').prop('disabled', true);
-            $('input[name="' + value + '_toll_influenza_produzione_temperatura_textbox"]').prop('disabled', true);
+            $('input[name="' + value + '_toll_influenza_produzione_temperatura"]').prop('disabled', true);
             $('#discardChanges' + value + '').prop('disabled', true);
             $('#saveChanges' + value + '').prop('disabled', true);
         });
@@ -307,6 +342,7 @@ $(function () {
         /* Nascondi bottone chiudi finestra */
         document.getElementById("chiudiFinestraPop").style.display = "none";
         document.getElementById("chiudiFinestraEnv").style.display = "none";
+        document.getElementById("chiudiFinestraExtra").style.display = "none";
         
         var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
             'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
@@ -322,37 +358,40 @@ $(function () {
         $('#saveChangesEnv').prop('disabled', false);
         $('#discardChangesProd').prop('disabled', false);
         $('#saveChangesProd').prop('disabled', false);
+        $('#discardChangesExtra').prop('disabled', false);
+        $('#saveChangesExtra').prop('disabled', false);
         
-        var itemsPopEnv = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
+        var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3'];
+        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'salute',
+        'crescita_industria', 'crescita_popolazione', 'quantita_cibo_acquistato'];
     
-        $(itemsPopEnv).each(function (index, value) {
-            $('input[name="' + value + '_textbox"]').prop('disabled', false);
+        $(itemsPopEnvExtra).each(function (index, value) {
+            $('input[name="' + value + '"]').prop('disabled', false);
             $('input[name="' + value + '_slider"]').prop('disabled', false);
         });
         
         $(itemsProd).each(function (index, value) {
             $('input[name="' + value + '_prezzo_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_prezzo_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_prezzo"]').prop('disabled', false);
             $('input[name="' + value + '_produttivita_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_produttivita_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_produttivita"]').prop('disabled', false);
             $('input[name="' + value + '_impatto_ghgs_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_impatto_ghgs_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_impatto_ghgs"]').prop('disabled', false);
             $('input[name="' + value + '_impatto_pm_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_impatto_pm_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_impatto_pm"]').prop('disabled', false);
             $('input[name="' + value + '_impatto_nh3_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_impatto_nh3_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_impatto_nh3"]').prop('disabled', false);
             $('input[name="' + value + '_influenza_produzione_ghgs_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_influenza_produzione_ghgs_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_influenza_produzione_ghgs"]').prop('disabled', false);
             $('input[name="' + value + '_influenza_produzione_pm_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_influenza_produzione_pm_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_influenza_produzione_pm"]').prop('disabled', false);
             $('input[name="' + value + '_influenza_produzione_nh3_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_influenza_produzione_nh3_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_influenza_produzione_nh3"]').prop('disabled', false);
             $('input[name="' + value + '_influenza_produzione_temperatura_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_influenza_produzione_temperatura_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_influenza_produzione_temperatura"]').prop('disabled', false);
             $('input[name="' + value + '_toll_influenza_produzione_temperatura_slider"]').prop('disabled', false);
-            $('input[name="' + value + '_toll_influenza_produzione_temperatura_textbox"]').prop('disabled', false);
+            $('input[name="' + value + '_toll_influenza_produzione_temperatura"]').prop('disabled', false);
             $('#discardChanges' + value + '').prop('disabled', false);
             $('#saveChanges' + value + '').prop('disabled', false);
         });
@@ -364,42 +403,52 @@ $(function () {
         location.reload();
     });
     
-    /* Premo il bottone discard changes popolazione */
+    /* Premo il bottone reset popolazione */
     $('#discardChangesPop').on('click', function (event) {
 
-        /* Azzera parametri */
         var itemsPop = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
 
         $(itemsPop).each(function (index, value) {
-            $('input[name="' + value + '_textbox"]').val(0);
+            $('input[name="' + value + '"]').val(0);
             $('input[name="' + value + '_slider"]').val(0);
         });
     });
     
-    /* Premo il bottone discard changes ambiente */
+    /* Premo il bottone reset ambiente */
     $('#discardChangesEnv').on('click', function (event) {
 
-        /* Azzera parametri */
         var itemsEnv = ['oscillazioni_temperatura_media', 'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 
             'valore_iniziale_nh3'];
 
         $(itemsEnv).each(function (index, value) {
-            $('input[name="' + value + '_textbox"]').val(0);
+            $('input[name="' + value + '"]').val(0);
+            $('input[name="' + value + '_slider"]').val(0);
+        });
+    });
+    
+    /* Premo il bottone reset parametri extra */
+    $('#discardChangesExtra').on('click', function (event) {
+
+        var itemsExtra = ['salute', 'crescita_industria', 'crescita_popolazione', 'quantita_cibo_acquistato'];
+
+        $(itemsExtra).each(function (index, value) {
+            $('input[name="' + value + '"]').val(0);
             $('input[name="' + value + '_slider"]').val(0);
         });
     });
     
     /* Accoppia elementi slider e textbox nelle finestre imposta altri parametri popolazione e ambiente */
-    var itemsPopEnv = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
+    var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3'];
+        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'salute',
+        'crescita_industria', 'crescita_popolazione', 'quantita_cibo_acquistato'];
 
-    $(itemsPopEnv).each(function (index, value) {
+    $(itemsPopEnvExtra).each(function (index, value) {
         $(document).on('input change', 'input[name="' + value + '_slider"]', function () {
-            $('input[name="' + value + '_textbox"]').val($(this).val());
+            $('input[name="' + value + '"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '"]', function () {
             $('input[name="' + value + '_slider"]').val($(this).val());
         });
     });
@@ -410,63 +459,63 @@ $(function () {
 
     $(itemsProd).each(function (index, value) {
         $(document).on('input change', 'input[name="' + value + '_prezzo_slider"]', function () {
-            $('input[name="' + value + '_prezzo_textbox"]').val($(this).val());
+            $('input[name="' + value + '_prezzo"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_prezzo_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_prezzo"]', function () {
             $('input[name="' + value + '_prezzo_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_produttivita_slider"]', function () {
-            $('input[name="' + value + '_produttivita_textbox"]').val($(this).val());
+            $('input[name="' + value + '_produttivita"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_produttivita_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_produttivita"]', function () {
             $('input[name="' + value + '_produttivita_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_impatto_ghgs_slider"]', function () {
-            $('input[name="' + value + '_impatto_ghgs_textbox"]').val($(this).val());
+            $('input[name="' + value + '_impatto_ghgs"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_impatto_ghgs_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_impatto_ghgs"]', function () {
             $('input[name="' + value + '_impatto_ghgs_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_impatto_pm_slider"]', function () {
-            $('input[name="' + value + '_impatto_pm_textbox"]').val($(this).val());
+            $('input[name="' + value + '_impatto_pm"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_impatto_pm_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_impatto_pm"]', function () {
             $('input[name="' + value + '_impatto_pm_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_impatto_nh3_slider"]', function () {
-            $('input[name="' + value + '_impatto_nh3_textbox"]').val($(this).val());
+            $('input[name="' + value + '_impatto_nh3"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_impatto_nh3_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_impatto_nh3"]', function () {
             $('input[name="' + value + '_impatto_nh3_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_influenza_produzione_ghgs_slider"]', function () {
-            $('input[name="' + value + '_influenza_produzione_ghgs_textbox"]').val($(this).val());
+            $('input[name="' + value + '_influenza_produzione_ghgs"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_influenza_produzione_ghgs_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_influenza_produzione_ghgs"]', function () {
             $('input[name="' + value + '_influenza_produzione_ghgs_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_influenza_produzione_pm_slider"]', function () {
-            $('input[name="' + value + '_influenza_produzione_pm_textbox"]').val($(this).val());
+            $('input[name="' + value + '_influenza_produzione_pm"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_influenza_produzione_pm_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_influenza_produzione_pm"]', function () {
             $('input[name="' + value + '_influenza_produzione_pm_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_influenza_produzione_nh3_slider"]', function () {
-            $('input[name="' + value + '_influenza_produzione_nh3_textbox"]').val($(this).val());
+            $('input[name="' + value + '_influenza_produzione_nh3"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_influenza_produzione_nh3_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_influenza_produzione_nh3"]', function () {
             $('input[name="' + value + '_influenza_produzione_nh3_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_influenza_produzione_temperatura_slider"]', function () {
-            $('input[name="' + value + '_influenza_produzione_temperatura_textbox"]').val($(this).val());
+            $('input[name="' + value + '_influenza_produzione_temperatura"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_influenza_produzione_temperatura_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_influenza_produzione_temperatura"]', function () {
             $('input[name="' + value + '_influenza_produzione_temperatura_slider"]').val($(this).val());
         });
         $(document).on('input change', 'input[name="' + value + '_toll_influenza_produzione_temperatura_slider"]', function () {
-            $('input[name="' + value + '_toll_influenza_produzione_temperatura_textbox"]').val($(this).val());
+            $('input[name="' + value + '_toll_influenza_produzione_temperatura"]').val($(this).val());
         });
-        $(document).on('input change', 'input[name="' + value + '_toll_influenza_produzione_temperatura_textbox"]', function () {
+        $(document).on('input change', 'input[name="' + value + '_toll_influenza_produzione_temperatura"]', function () {
             $('input[name="' + value + '_toll_influenza_produzione_temperatura_slider"]').val($(this).val());
         });
     });

@@ -56,3 +56,20 @@
 .btn-warning.disabled, .btn-warning:disabled {
     color: #fff;
 }
+
+.tooltip.in {
+  opacity: 1;
+}
+
+.slider.slider-horizontal {
+    width: 736px !important;
+    height: 20px;
+}
+
+#percentuale_animali_piante_tot_range .slider-track-high {
+	background: #1ea73f;
+}
+
+#percentuale_animali_piante_tot_range .slider-selection {
+	background: #de3341;
+}

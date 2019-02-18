@@ -18,6 +18,7 @@
         <link href="css/lib/bootstrap-4.1.3.min.css" rel="stylesheet">
         <link href="css/lib/jquery-ui.min.css" rel="stylesheet">
         <link href="css/index.css" rel="stylesheet">
+        <link href="css/lib/bootstrap-slider.min.css" rel="stylesheet">
     </head>
 
     <body>
@@ -131,15 +132,15 @@
                             <form id="params-form" method="post" action="#!">
                                 <div class="row form-group align-items-center">
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterPopModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri popolazione</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterPopModal"><i class="fa fa-users"></i>&nbsp&nbspPopolazione</button>
                                     </div>
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterExtraModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri</button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
                                      <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterEnvModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri ambiente</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterEnvModal"><i class="fa fa-envira"></i>&nbsp&nbspAmbiente</button>
                                     </div>
                                     <div class="col-6">
                                         <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbsp<span id="starttext">Start</span></button>
@@ -147,7 +148,7 @@
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterProdModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri prodotti</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterProdModal"><i class="fa fa-industry"></i>&nbsp&nbspProdotti</button>
                                     </div>
                                     <div class="col-2">
                                         <button type="button" class="btn btn-warning" id="pausa" disabled="true"><i class="fa fa-pause"></i>&nbspPausa</button>
@@ -169,7 +170,7 @@
                             Periodo
                         </label>
                         <div class="col">
-                            <input type="text" class="form-control textbox" name="periodo_textbox" id="textboxAnno" readonly> 
+                            <input type="text" class="form-control textbox" name="periodo" id="textboxAnno" readonly> 
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -251,7 +252,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="popolazione_iniziale_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="popolazione_iniziale_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="popolazione_iniziale" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -262,7 +263,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="tendenza_mangiare_carne_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="tendenza_mangiare_carne_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="tendenza_mangiare_carne" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -273,7 +274,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_iniziale_media_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_media_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_media" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -284,7 +285,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_iniziale_dev_stan_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_dev_stan_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_dev_stan" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -295,7 +296,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_media_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -306,7 +307,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_dev_stan_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_dev_stan_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_dev_stan" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -317,7 +318,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_media_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_media_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_media" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -328,15 +329,15 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan" value="0"> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesPop">Reset</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesPop">Salva</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesPop"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesPop"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
                     </div>
                 </div>
             </div>
@@ -362,7 +363,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_media_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_media_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_media" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -373,7 +374,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -384,7 +385,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_ghgs_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_ghgs_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_ghgs" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -395,7 +396,7 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_pm_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_pm_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_pm" value="0"> 
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -406,15 +407,15 @@
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_nh3_slider" value="0">
                                     </div>
                                     <div class="col-3">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_nh3_textbox" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_nh3" value="0"> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesEnv">Reset</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesEnv">Salva</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesEnv"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesEnv"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
                     </div>
                 </div>
             </div>
@@ -433,131 +434,136 @@
                         <div class="row">
                             <div class="col">
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
-                                        Parametri per tutti i prodotti
-                                    </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tuttiProdottiModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri per tutti i prodotti</button>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterTuttiProdModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri per tutti i prodotti</button>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Manzo
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#manzoModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri manzo</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#manzoModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Pollo
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#polloModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri pollo</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#polloModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Maiale
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#maialeModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri maiale</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#maialeModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Cavallo
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#cavalloModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri cavallo</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#cavalloModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Tacchino
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tacchinoModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri tacchino</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tacchinoModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-4">
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Patate
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#patateModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri patate</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#patateModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Zucchine
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#zucchineModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri zucchine</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#zucchineModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Peperoni
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#peperoniModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri peperoni</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#peperoniModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Melanzane
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#melanzaneModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri melanzane</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#melanzaneModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Pomodori
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#pomodoriModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri pomodori</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#pomodoriModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-4">
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Grano
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#granoModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri grano</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#granoModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Riso
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#risoModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri riso</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#risoModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Melo
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#meloModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri melo</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#meloModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Pero
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#peroModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri pero</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#peroModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-3">
+                                    <label class="col-form-label col-6">
                                         Arancio
                                     </label>
-                                    <div class="col-9">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#arancioModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri arancio</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#arancioModal"><i class="fa fa-gear"></i></button>
                                     </div>
                                 </div> 
                             </div>
@@ -589,77 +595,224 @@
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_prezzo_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_prezzo_textbox" value="0">';
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_prezzo" value="0">';
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Produttività</label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_produttivita_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_produttivita_textbox" value="0">';
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_produttivita" value="0">';
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Impatto su GHGS</label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_impatto_ghgs_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_ghgs_textbox" value="0">'; 
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_ghgs" value="0">'; 
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Impatto su PM</label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_impatto_pm_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_pm_textbox" value="0">';
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_pm" value="0">';
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Impatto su NH<sub>3</sub></label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_impatto_nh3_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_nh3_textbox" value="0">'; 
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_nh3" value="0">'; 
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Influenza sulla produzione causata da GHGS</label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_ghgs_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_ghgs_textbox" value="0">'; 
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_ghgs" value="0">'; 
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Influenza sulla produzione causata da PM</label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_pm_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_pm_textbox" value="0">';
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_pm" value="0">';
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Influenza sulla produzione causata da NH<sub>3</sub></label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_nh3_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_nh3_textbox" value="0">';
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_nh3" value="0">';
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Influenza sulla produzione causata dalla temperatura</label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_temperatura_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_temperatura_textbox" value="0">'; 
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_influenza_produzione_temperatura" value="0">'; 
               echo '</div></div>';
               echo '<div class="row form-group align-items-center">';
               echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata dalla temperatura</label>';
               echo '<div class="col-6">';
               echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_toll_influenza_produzione_temperatura_slider" value="0">';
               echo '</div><div class="col-3">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_toll_influenza_produzione_temperatura_textbox" value="0">'; 
+              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_toll_influenza_produzione_temperatura" value="0">'; 
               echo '</div></div></div></div></div>';
               echo '<div class="modal-footer">';
-              echo '<button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChanges'.$value.'">Reset</button>';
-              echo '<button type="button" class="btn btn-success" data-dismiss="modal" id="saveChanges'.$value.'">Salva</button>';
+              echo '<button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChanges'.$value.'"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>';
+              echo '<button type="button" class="btn btn-success" data-dismiss="modal" id="saveChanges'.$value.'"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>';
               echo '</div></div></div></div>';
             }
         ?>
+        
+        <!-- Modal tutti i prodotti-->
+        <div class="modal fade" id="parameterTuttiProdModal" role="dialog" data-backdrop="static">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Imposta parametri per tutti i prodotti</h4>
+                        <button type="button" class="close" data-dismiss="modal" id="chiudiFinestratuttiProd">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row form-group align-items-center">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-light" id="parametriRandom"><i class="fa fa-random"></i>&nbsp&nbspGenera parametri random</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-2">
+                                        Numero prodotti
+                                    </label>
+                                    <div class="col-10">
+                                         <input type="number" class="form-control textbox" min="15" max="30" step="1" name="numero_prodotti_tot" value="15"> 
+                                    </div>
+                                </div>
+                                 <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-2">
+                                        Percentuale animali/piante
+                                    </label>
+                                    <div class="col-10">
+                                        <b>0</b> <input id="percentuale_animali_piante_tot_range" type="text"/> <b>100</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-2">
+                                        Prezzo
+                                    </label>
+                                    <div class="col-10">
+                                        <b>1</b> <input id="prezzoRange" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/> <b>100</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-2">
+                                        Produttività
+                                    </label>
+                                    <div class="col-10">
+                                        <b>1</b> <input id="produttivitaRange" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/> <b>100</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-2">
+                                        Impatto su GHGS
+                                    </label>
+                                    <div class="col-10">
+                                        <b>-50</b> <input id="impattoGhgsRange" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-28,22]"/> <b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-2">
+                                        Impatto su PM
+                                    </label>
+                                    <div class="col-10">
+                                        <b>0</b> <input id="impattoPmRange" type="text" class="span2" value="" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="[12,37]"/> <b>50</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesExtra"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesExtra"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal extra-->
+        <div class="modal fade" id="parameterExtraModal" role="dialog" data-backdrop="static">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Imposta parametri</h4>
+                        <button type="button" class="close" data-dismiss="modal" id="chiudiFinestraExtra">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Salute
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Crescita industria
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="crescita_industria_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="crescita_industria" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Crescita popolazione
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="crescita_popolazione_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="crescita_popolazione" value="0"> 
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Quantità di cibo acquistato
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="quantita_cibo_acquistato_slider" value="0">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="quantita_cibo_acquistato" value="0"> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesExtra"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesExtra"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Bootstrap core JavaScript -->
         <script src="js/lib/jquery-3.3.1.min.js"></script>
@@ -669,6 +822,7 @@
         <script src="js/lib/Chart.bundle.min.js"></script>
         <script src="js/Utils.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/lib/bootstrap-slider.min.js"></script>
 
     </body>
 
