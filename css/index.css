@@ -61,11 +61,6 @@
   opacity: 1;
 }
 
-.slider.slider-horizontal {
-    width: 736px !important;
-    height: 20px;
-}
-
 #percentuale_animali_piante_tot_range .slider-track-high {
 	background: #1ea73f;
 }
