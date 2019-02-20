@@ -9,36 +9,42 @@ class ProductCollection {
 
     private $products = [];
 
-    public function __construct() {
+    public function __construct($params) {
 
-        $default_products = $this->buildDefaultProducts();
+        //$default_products = $this->buildDefaultProducts();
 
-        foreach ($default_products as $default_product_name => $default_product) {
+        $products = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane', 'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
 
-            $product = new Product();
+        foreach ($products as $product) {
 
-            $product->set_name($default_product_name);
-            $product->set_impact_on_GHGS($default_product['impact_on_GHGS']);
-            $product->set_impact_on_NH3($default_product['impact_on_NH3']);
-            $product->set_impact_on_PM($default_product['impact_on_PM']);
-            $product->set_production($default_product['production'], 0);
-            $product->set_production($default_product['production'], 1);
-            $product->set_capacity($default_product['capacity'], 0);
-            $product->set_capacity($default_product['capacity'], 1);
-            $product->set_price($default_product['price']);
-            $product->set_ideal_temperature($default_product['ideal_temperature']);
-            $product->set_tolerance_temperature($default_product['tolerance_temperature']);
-            $product->set_sold($default_product['sold'], 0);
-            $product->set_sold($default_product['sold'], 1);
-            $product->set_type($default_product['type']);
-            $product->set_ideal_GHGS($default_product['ideal_GHGS']);
-            $product->set_ideal_NH3($default_product['ideal_NH3']);
-            $product->set_ideal_PM($default_product['ideal_PM']);
-            $product->set_tolerance_GHGS($default_product['tolerance_GHGS']);
-            $product->set_tolerance_NH3($default_product['tolerance_NH3']);
-            $product->set_tolerance_PM($default_product['tolerance_PM']);
+            $prefix = $product . '_';
 
-            array_push($this->products, $product);
+            $new_product = new Product();
+
+            $new_product->set_name($product);
+            $new_product->set_type($params[$prefix . 'tipo']);
+            $new_product->set_price($params[$prefix . 'prezzo']);
+
+            $new_product->set_capacity($params[$prefix . 'produttivita'], 0);
+            $new_product->set_capacity($params[$prefix . 'produttivita'], 1);
+
+            $new_product->set_impact_on_GHGS($params[$prefix . 'impatto_ghgs']);
+            $new_product->set_impact_on_PM($params[$prefix . 'impatto_pm']);
+            $new_product->set_impact_on_NH3($params[$prefix . 'impatto_nh3']);
+
+            $new_product->set_ideal_GHGS($params[$prefix . 'ghgs_ideale']);
+            $new_product->set_tolerance_GHGS($params[$prefix . 'tolleranza_ghgs']);
+
+            $new_product->set_ideal_PM($params[$prefix . 'pm_ideale']);
+            $new_product->set_tolerance_PM($params[$prefix . 'tolleranza_pm']);
+
+            $new_product->set_ideal_NH3($params[$prefix . 'nh3_ideale']);
+            $new_product->set_tolerance_NH3($params[$prefix . 'tolleranza_nh3']);
+
+            $new_product->set_ideal_temperature($params[$prefix . 'ideal_temperature']);
+            $new_product->set_tolerance_temperature($params[$prefix . 'tolerance_temperature']);
+
+            array_push($this->products, $new_product);
         }
     }
 

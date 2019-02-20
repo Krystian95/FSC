@@ -15,19 +15,11 @@ class System {
     private $product_collection;
     private $person_collection;
 
-    public function __construct() {
+    public function __construct($params) {
 
-        $this->environment = new Environment();
-        $this->product_collection = new ProductCollection();
-        $this->person_collection = new PersonCollection($this->product_collection);
-    }
-
-    /*
-     * Setup params with provided or by default
-     */
-
-    public function setupParams($params) {
-        
+        $this->environment = new Environment($params);
+        $this->product_collection = new ProductCollection($params);
+        $this->person_collection = new PersonCollection($params, $this->product_collection);
     }
 
     /*

@@ -7,22 +7,27 @@
  */
 class Environment {
 
-    private static $mean_temp = 0.0;
-    private static $width_temp = 0.0;
+    private $mean_temp = 0.0;
+    private $width_temp = 0.0;
     private $temperature = [];
     private $GHGS = [];
     private $NH3 = [];
     private $PM = [];
 
-    public function __construct() {
-        $this->temperature[0] = 0.0; // TODO set via UI
-        $this->temperature[1] = 0.0; // TODO set via UI
-        $this->GHGS[0] = 0.0;
-        $this->GHGS[1] = 0.0;
-        $this->NH3[0] = 0.0;
-        $this->NH3[1] = 0.0;
-        $this->PM[0] = 0.0;
-        $this->PM[1] = 0.0;
+    public function __construct($params) {
+
+        $this->mean_temp = $params['oscillazioni_temperatura_media'];
+        $this->width_temp = $params['oscillazioni_temperatura_ampiezza'];
+        $this->GHGS[0] = $params['valore_iniziale_ghgs'];
+        $this->GHGS[1] = $this->GHGS[0];
+        $this->NH3[0] = $params['valore_iniziale_nh3'];
+        $this->NH3[1] = $this->NH3[0];
+        $this->PM[0] = $params['valore_iniziale_pm'];
+        $this->PM[1] = $this->PM[0];
+
+        $this->temperature[1] = 0.0;
+        $this->temperature_evaluation();
+        $this->temperature[0] = $this->temperature[1];
     }
 
     private function impact_from_product(Product $product) {
@@ -33,7 +38,7 @@ class Environment {
     }
 
     public function temperature_evaluation() {
-        $this->temperature[1] = self::$mean_temp + self::$width_temp * cos(( (System::$current_month - 8) % 12) / 12 * 2 * pi());
+        $this->temperature[1] = $this->mean_temp + $this->width_temp * cos(( (System::$current_month - 8) % 12) / 12 * 2 * pi());
     }
 
     public function getGHGS($index) {

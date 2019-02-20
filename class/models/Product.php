@@ -28,8 +28,7 @@ class Product {
     private $type;
 
     public function __construct() {
-        $this->capacity[0] = 0.0;
-        $this->capacity[1] = 0.0;
+        
         $this->production[0] = 0.0;
         $this->production[1] = 0.0;
         $this->sold[0] = 0.0;

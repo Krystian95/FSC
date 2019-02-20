@@ -24,8 +24,12 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
 
         case 'Start' :
 
-            $system = new System();
-            $system->setupParams(null);
+            $params = $_POST['Data']['Params'];
+            $system = new System($params);
+
+            /*error_log(implode('#', $_POST['Data']));
+            exit;*/
+
             $period = $_POST['Data']['Period'];
             $response = $system->iteratePeriod($period);
             /*
@@ -35,7 +39,7 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
             break;
 
         case 'Period_Iteration' :
-            
+
             $period = $_POST['Data']['Period'];
             $system = unserialize($_SESSION['system']);
             $response = $system->iteratePeriod($period);
@@ -43,7 +47,7 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
             break;
 
         case 'Stop':
-            
+
             session_unset();
             session_destroy();
             break;

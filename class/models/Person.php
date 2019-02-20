@@ -17,7 +17,7 @@ class Person {
     private $eaten = [];
     private $speso = 0;
 
-    public function __construct($deviation_of_preference, $tendency, $product_collection, $wealth, $health, $ricchezza_media) {
+    public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo) {
 
         $this->eaten[0] = 0.0;
         $this->eaten[1] = 0.0;
