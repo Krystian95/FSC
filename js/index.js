@@ -248,53 +248,62 @@ $(function () {
     /* Nascondi bottoni scelta singoli prodotti */
     $("#singoli_prodotti").hide();
     
-    /* Slider numero prodotti nel dialog "Imposta parametri per tutti i prodotti" */
-    var slider = new Slider('#sliderNumeroProdotti', {
-	formatter: function(value) {
-		return value;
-	}
-    });
+    /* Slider numero prodotti modal imposta parametri per tutti i prodotti */
+    var numero_prodotti = new Slider('#numero_prodotti', {formatter: function(value) {return value;}});
     
-    var originalVal;
+    /* Slider percentuale carne vegetali modal imposta parametri per tutti i prodotti */
+    var percentuale_carne_vegetali = new Slider("#percentuale_carne_vegetali", { id: "percentuale_carne_vegetali", min: 0, max: 100, value: 50 });
 
-    $('#percentuale_animali_piante_tot_range').slider().on('slideStart', function(ev){
-        originalVal = $('#percentuale_animali_piante_tot_range').data('slider').getValue();
-        alert('Value Changed!');
-    });
-
-    $('#percentuale_animali_piante_tot_range').slider().on('slideStop', function(ev){
-        var newVal = $('#percentuale_animali_piante_tot_range').data('slider').getValue();
-        if(originalVal !== newVal) {
-            alert('Value Changed!');
-        }
-    });
+    /* Range carne modal imposta parametri per tutti i prodotti */
+    var meat_prezzo = new Slider('#meat_prezzo', {});
+    var meat_produttivita = new Slider('#meat_produttivita', {});
+    var meat_impatto_ghgs = new Slider('#meat_impatto_ghgs', {});
+    var meat_impatto_pm = new Slider('#meat_impatto_pm', {});
+    var meat_impatto_nh3 = new Slider('#meat_impatto_nh3', {});
+    var meat_infl_prod_ghgs = new Slider('#meat_infl_prod_ghgs', {});
+    var meat_toll_infl_prod_ghgs = new Slider('#meat_toll_infl_prod_ghgs', {});
+    var meat_infl_prod_pm = new Slider('#meat_infl_prod_pm', {});
+    var meat_toll_infl_prod_pm = new Slider('#meat_toll_infl_prod_pm', {});
+    var meat_infl_prod_nh3 = new Slider('#meat_infl_prod_nh3', {});
+    var meat_toll_infl_prod_nh3 = new Slider('#meat_toll_infl_prod_nh3', {});
+    var meat_infl_prod_temp = new Slider('#meat_infl_prod_temp', {});
+    var meat_toll_infl_prod_temp = new Slider('#meat_toll_infl_prod_temp', {});
     
-    /* Slider range parametri per tutti i prodotti */
-    var sliderPrezzoRange = new Slider('#prezzoRange', {});
-    var sliderProduttivitaRange = new Slider('#produttivitaRange', {});
-    var sliderImpattoGhgsRange = new Slider('#impattoGhgsRange', {});
-    var sliderImpattoPmRange = new Slider('#impattoPmRange', {});
-    var sliderPercentualeAnimaliPianteRange = new Slider("#percentuale_animali_piante_tot_range", { id: "percentuale_animali_piante_tot_range", min: 0, max: 100, value: 50 });
+    /* Range vegetali modal imposta parametri per tutti i prodotti */
+    var veg_prezzo = new Slider('#veg_prezzo', {});
+    var veg_produttivita = new Slider('#veg_produttivita', {});
+    var veg_impatto_ghgs = new Slider('#veg_impatto_ghgs', {});
+    var veg_impatto_pm = new Slider('#veg_impatto_pm', {});
+    var veg_impatto_nh3 = new Slider('#veg_impatto_nh3', {});
+    var veg_infl_prod_ghgs = new Slider('#veg_infl_prod_ghgs', {});
+    var veg_toll_infl_prod_ghgs = new Slider('#veg_toll_infl_prod_ghgs', {});
+    var veg_infl_prod_pm = new Slider('#veg_infl_prod_pm', {});
+    var veg_toll_infl_prod_pm = new Slider('#veg_toll_infl_prod_pm', {});
+    var veg_infl_prod_nh3 = new Slider('#veg_infl_prod_nh3', {});
+    var veg_toll_infl_prod_nh3 = new Slider('#veg_toll_infl_prod_nh3', {});
+    var veg_infl_prod_temp = new Slider('#veg_infl_prod_temp', {});
+    var veg_toll_infl_prod_temp = new Slider('#veg_toll_infl_prod_temp', {});
     
+    /*
     $('#parametriRandom').on('click', function (event) {
+        
+        // Recupero valori dei due slider
+        //console.log(numero_prodotti.getValue());
+        //console.log(percentuale_carne_vegetali.getValue());
+        
+        // Recupero valori dei range della carne
+        //console.log(meat_prezzo.getValue()[0]);
        
-        var prezzoRange = $('#prezzoRange').val();
-        var arrayPrezzoRange = prezzoRange.split(',');
+        var itemsMeat = [meat_prezzo, meat_produttivita, meat_impatto_ghgs, meat_impatto_pm, meat_impatto_nh3, 
+            meat_infl_prod_ghgs, meat_toll_infl_prod_ghgs, meat_infl_prod_pm, meat_toll_infl_prod_pm, 
+            meat_infl_prod_nh3, meat_toll_infl_prod_nh3, meat_infl_prod_temp, meat_toll_infl_prod_temp];
         
-        var produttivitaRange = $('#produttivitaRange').val();
-        var arrayProduttivitaRange = produttivitaRange.split(',');
-        
-        var impattoGhgsRange = $('#impattoGhgsRange').val();
-        var arrayImpattoGhgsRange = impattoGhgsRange.split(',');
-        
-        var impattoPmRange = $('#impattoPmRange').val();
-        var arrayImpattoPmRange = impattoPmRange.split(',');
-        
-        console.log(arrayPrezzoRange);
-        console.log(arrayProduttivitaRange);
-        console.log(arrayImpattoGhgsRange);
-        console.log(arrayImpattoPmRange);
+        $(itemsMeat).each(function (index, value) {
+            var random =  Math.floor(value.getValue()[0] + (value.getValue()[1] - value.getValue()[0]) * Math.random());
+            console.log(random);
+        });
     });
+    */
     
     /* Select list tutti i prodotti o prodotti singoli */
     $('#selectModProd').change(function () {
@@ -422,8 +431,9 @@ $(function () {
         
         var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'salute',
-        'crescita_industria', 'crescita_popolazione', 'quantita_cibo_acquistato'];
+        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
+        'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
+        'massima_crescita_capacita','influenza_differenze_ricchezza'];
     
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', true);
@@ -505,8 +515,9 @@ $(function () {
         
         var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'salute',
-        'crescita_industria', 'crescita_popolazione', 'quantita_cibo_acquistato'];
+        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
+        'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
+        'massima_crescita_capacita','influenza_differenze_ricchezza'];
     
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', false);
@@ -547,7 +558,7 @@ $(function () {
     
     /* Premo il bottone reset popolazione */
     $('#discardChangesPop').on('click', function (event) {
-
+        
         var itemsPop = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
 
@@ -555,11 +566,13 @@ $(function () {
             $('input[name="' + value + '"]').val(0);
             $('input[name="' + value + '_slider"]').val(0);
         });
+        
+         $('input[name="variazione_percentuale_popolazione"]').val(0);
     });
     
     /* Premo il bottone reset ambiente */
     $('#discardChangesEnv').on('click', function (event) {
-
+        
         var itemsEnv = ['oscillazioni_temperatura_media', 'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 
             'valore_iniziale_nh3'];
 
@@ -567,24 +580,30 @@ $(function () {
             $('input[name="' + value + '"]').val(0);
             $('input[name="' + value + '_slider"]').val(0);
         });
+        
+        $('input[name="variazione_percentuale_ambiente"]').val(0);
     });
     
     /* Premo il bottone reset parametri extra */
     $('#discardChangesExtra').on('click', function (event) {
-
-        var itemsExtra = ['salute', 'crescita_industria', 'crescita_popolazione', 'quantita_cibo_acquistato'];
+        
+        var itemsExtra = ['step_nascita_popolazione','step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
+        'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita','influenza_differenze_ricchezza'];
 
         $(itemsExtra).each(function (index, value) {
             $('input[name="' + value + '"]').val(0);
             $('input[name="' + value + '_slider"]').val(0);
         });
+        
+        $('input[name="variazione_percentuale_extra"]').val(0);
     });
     
     /* Accoppia elementi slider e textbox nelle finestre imposta altri parametri popolazione e ambiente */
     var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'salute',
-        'crescita_industria', 'crescita_popolazione', 'quantita_cibo_acquistato'];
+        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
+        'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
+        'massima_crescita_capacita','influenza_differenze_ricchezza'];
 
     $(itemsPopEnvExtra).each(function (index, value) {
         $(document).on('input change', 'input[name="' + value + '_slider"]', function () {

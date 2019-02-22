@@ -711,10 +711,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Imposta parametri per tutti i prodotti</h4>
-                        <button type="button" class="close" data-dismiss="modal" id="chiudiFinestratuttiProd">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal" id="chiudiFinestraTuttiProd">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
+                        <!--<div class="row">
                             <div class="col">
                                 <div class="row form-group align-items-center">
                                     <div class="col">
@@ -722,7 +722,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="row">
                             <div class="col">
                                 <div class="row form-group align-items-center">
@@ -730,27 +730,31 @@
                                         Numero prodotti
                                     </label>
                                     <div class="col-10">
-                                        <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="sliderNumeroProdotti" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="numero_prodotti" data-slider-id='numero_prodotti' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                     </div>
                                 </div>
                                  <div class="row form-group align-items-center">
                                     <label class="col-form-label col-2">
-                                        Percentuale animali/piante
+                                        Percentuale carne/vegetali
                                     </label>
                                     <div class="col-10">
-                                        <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="percentuale_animali_piante_tot_range" type="text"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="percentuale_carne_vegetali" type="text"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-6">        
+                            <div class="col-6">
+                                <div class="row align-items-center">
+                                    <h3 class="text-center container-fluid">Carne</h3>
+                                </div>
+                                <br>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-4">
                                         Prezzo
                                     </label>
                                     <div class="col-8">
-                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="prezzoRange" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -758,7 +762,7 @@
                                         Produttività
                                     </label>
                                     <div class="col-8">
-                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="produttivitaRange" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -766,7 +770,7 @@
                                         Impatto su GHGS
                                     </label>
                                     <div class="col-8">
-                                        <b>-50</b> <input id="impattoGhgsRange" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-26,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        <b>-50</b> <input id="meat_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
@@ -774,15 +778,197 @@
                                         Impatto su PM
                                     </label>
                                     <div class="col-8">
-                                        <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="impattoPmRange" type="text" class="span2" value="" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="[12,37]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        <b>-50</b> <input id="meat_impatto_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Impatto su NH<sub>3</sub>
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_impatto_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza sulla produzione causata da GHGS
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Tolleranza influenza sulla produzione causata da GHGS
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza sulla produzione causata da PM
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Tolleranza influenza sulla produzione causata da PM
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza sulla produzione causata da NH<sub>3</sub>
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Tolleranza influenza sulla produzione causata da NH<sub>3</sub>
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza sulla produzione causata dalla temperatura
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Tolleranza influenza sulla produzione causata dalla temperatura
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row align-items-center">
+                                    <h3 class="text-center container-fluid">Vegetali</h3>
+                                </div>
+                                <br>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Prezzo
+                                    </label>
+                                    <div class="col-8">
+                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Produttività
+                                    </label>
+                                    <div class="col-8">
+                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Impatto su GHGS
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Impatto su PM
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_impatto_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Impatto su NH<sub>3</sub>
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_impatto_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza sulla produzione causata da GHGS
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Tolleranza influenza sulla produzione causata da GHGS
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza sulla produzione causata da PM
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Tolleranza influenza sulla produzione causata da PM
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza sulla produzione causata da NH<sub>3</sub>
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Tolleranza influenza sulla produzione causata da NH<sub>3</sub>
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza sulla produzione causata dalla temperatura
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Tolleranza influenza sulla produzione causata dalla temperatura
+                                    </label>
+                                    <div class="col-8">
+                                        <b>-50</b> <input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesExtra"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesExtra"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesTuttiProd"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesTuttiProd"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
                     </div>
                 </div>
             </div>
@@ -802,58 +988,114 @@
                             <div class="col">
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-4">
-                                        Salute
+                                        Step nascita popolazione
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="0"> 
                                     </div>
                                     <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="salute_checkbox"></div>
+                                        <div class="checkbox"><input type="checkbox" value="" id="step_nascita_popolazione_checkbox"></div>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-4">
-                                        Crescita industria
+                                        Step morte popolazione
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="crescita_industria_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="crescita_industria" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="0"> 
                                     </div>
                                     <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="crescita_industria_checkbox"></div>
+                                        <div class="checkbox"><input type="checkbox" value="" id="step_morte_popolazione_checkbox"></div>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-4">
-                                        Crescita popolazione
+                                        Rapporto nascite salute
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="crescita_popolazione_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="rapporto_nascite_salute_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="crescita_popolazione" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="rapporto_nascite_salute" value="0"> 
                                     </div>
                                     <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="crescita_popolazione_checkbox"></div>
+                                        <div class="checkbox"><input type="checkbox" value="" id="rapporto_nascite_salute_checkbox"></div>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-4">
-                                        Quantità di cibo acquistato
+                                        Valore salute stabile
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="quantita_cibo_acquistato_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_salute_stabile_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="quantita_cibo_acquistato" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_salute_stabile" value="0"> 
                                     </div>
                                     <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="quantita_cibo_acquistato_checkbox"></div>
+                                        <div class="checkbox"><input type="checkbox" value="" id="valore_salute_stabile_checkbox"></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Massima crescita salute
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_salute_slider" value="0">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_salute" value="0"> 
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_salute_checkbox"></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Valore capacità stabile
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_capacita_stabile_slider" value="0">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_capacita_stabile" value="0"> 
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="checkbox"><input type="checkbox" value="" id="valore_capacita_stabile_checkbox"></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Massima crescita capacita
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_capacita_slider" value="0">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_capacita" value="0"> 
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_capacita_checkbox"></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Influenza differenze ricchezza
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="influenza_differenze_ricchezza_slider" value="0">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="influenza_differenze_ricchezza" value="0"> 
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="checkbox"><input type="checkbox" value="" id="influenza_differenze_ricchezza_checkbox"></div>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">

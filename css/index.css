@@ -61,10 +61,23 @@
   opacity: 1;
 }
 
-#percentuale_animali_piante_tot_range .slider-track-high {
+.slider-selection {
+    background: #007bff !important;
+}
+
+#percentuale_carne_vegetali .slider-track-high {
 	background: #1ea73f;
 }
 
-#percentuale_animali_piante_tot_range .slider-selection {
-	background: #de3341;
+#percentuale_carne_vegetali .slider-selection {
+	background: #de3341 !important;
+}
+
+#numero_prodotti.slider.slider-horizontal, #percentuale_carne_vegetali.slider.slider-horizontal {
+    width: 707px;
+}
+
+.slider-handle {
+    background-color: #b2b2b3 !important;
+    background-image: none !important;
 }
