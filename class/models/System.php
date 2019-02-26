@@ -67,12 +67,18 @@ class System {
 
         self::$step++;
 
-
         /*
          * Test
          */
         $return['Charts']['Chart 1']['Linea 1'] = $this->person_collection->getCountPeople();
         $return['Charts']['Chart 1']['Linea 2'] = $this->person_collection->getMeanHealth();
+
+        /*
+         * Terminal operations of the cicle
+         */
+        $this->product_collection->endIteration();
+        $this->person_collection->endIteration();
+        $this->environment->endIteration();
 
         /*
          * Extra
@@ -134,8 +140,6 @@ class System {
                 }
 
                 $product = $this->product_collection->getProduct($j);
-
-                // TODO controlla che persons abbia abbastanza soldi per acquistare quel prodotto
 
                 $val = 1;
                 $person->set_eaten($person->get_eaten(1) + $val, 1);

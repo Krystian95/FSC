@@ -41,26 +41,65 @@ class Environment {
         $this->temperature[1] = $this->mean_temp + $this->width_temp * cos(( (System::$current_month - 8) % 12) / 12 * 2 * pi());
     }
 
-    public function getGHGS($index) {
-        return $this->GHGS[$index];
-    }
-
-    public function getNH3($index) {
-        return $this->NH3[$index];
-    }
-
-    public function getPM($index) {
-        return $this->PM[$index];
-    }
-
-    public function getTemperature($index) {
-        return $this->temperature[$index];
-    }
-
     public function impact_from_products($products) {
         foreach ($products as $product) {
             $this->impact_from_product($product);
         }
+    }
+
+    public function endIteration() {
+
+        $this->set_temperature($this->get_temperature(1), 0);
+        $this->set_temperature(0.0, 1);
+
+        $this->set_GHGS($this->get_GHGS(1), 0);
+        $this->set_GHGS(0.0, 1);
+
+        $this->set_NH3($this->get_NH3(1), 0);
+        $this->set_NH3(0.0, 1);
+
+        $this->set_PM($this->get_PM(1), 0);
+        $this->set_PM(0.0, 1);
+    }
+
+    /*
+     * Setters
+     */
+
+    public function set_GHGS($index) {
+        return $this->GHGS[$index];
+    }
+
+    public function set_NH3($index) {
+        return $this->NH3[$index];
+    }
+
+    public function set_PM($index) {
+        return $this->PM[$index];
+    }
+
+    public function set_temperature($index) {
+        return $this->temperature[$index];
+    }
+
+    /*
+     * Getters
+     */
+
+    public function get_GHGS($index) {
+        return $this->GHGS[$index];
+    }
+
+    public function get_NH3($index) {
+        return $this->NH3[$index];
+    }
+
+    public function get_PM($index) {
+        return $this->PM[$index];
+    }
+
+    public function get_temperature($index) {
+        return $this->temperature[$index];
     }
 
 }

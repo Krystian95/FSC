@@ -29,6 +29,8 @@ class PersonCollection {
             $person = $this->generateNewPerson($params, $product_collection);
             array_push($this->persons, $person);
         }
+
+        $this->sortPersonsByWealthDescending($this->persons);
     }
 
     private function generateNewPerson($params, $product_collection) {
@@ -60,16 +62,27 @@ class PersonCollection {
         return $person;
     }
 
-    public function getPersons() {
-        return $this->persons;
+    private function sortPersonsByWealthDescending(&$persons) {
+
+        usort($persons, 'my_sort_function');
+
+        function my_sort_function($a, $b) {
+            return $a['wealth'] < $b['wealth'];
+        }
+
     }
 
-    public function getPerson($index) {
-        return $this->persons[$index];
-    }
+    public function endIteration() {
 
-    public function getCountPeople() {
-        return count($this->persons);
+        foreach ($this->persons as $person) {
+            $person->set_health($person->get_health(1), 0);
+            $person->set_health(0.0, 1);
+
+            $person->set_eaten($person->get_eaten(1), 0);
+            $person->set_eaten(0.0, 1);
+
+            $person->set_speso(0.0);
+        }
     }
 
     public function getMeanHealth() {
@@ -102,7 +115,9 @@ class PersonCollection {
             } elseif ($person->get_health(1) >= $this->step_pop_growth) {
                 $rand = random_int(0, 100);
                 if ($rand >= $this->growth_parameter) {
-                    $new_person = $this->generateNewPerson($product_collection);
+                    //$new_person = $this->generateNewPerson($product_collection);
+                    $new_person = new Person($params['tendenza_mangiare_carne'], $product_collection, $person->get_wealth(), $birth_health=50, $ricchezza_media, $person->get_food_need(), $params['influenza_differenze_ricchezza']);
+                  
                     // Evita di aggiungere persone all'array che si sta scorrendo
                     array_push($new_persons, $new_person); // birth
                 }
@@ -112,6 +127,20 @@ class PersonCollection {
         foreach ($new_persons as $new_person) {
             array_push($this->persons, $new_person);
         }
+
+        $this->sortPersonsByWealthDescending($this->persons);
+    }
+
+    public function getPersons() {
+        return $this->persons;
+    }
+
+    public function getPerson($index) {
+        return $this->persons[$index];
+    }
+
+    public function getCountPeople() {
+        return count($this->persons);
     }
 
 }

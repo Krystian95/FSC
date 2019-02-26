@@ -1,6 +1,9 @@
 
 var chart_1;
 var chart_2;
+var sliders = [];
+var slider_numero_prodotti;
+var slider_percentuale_carne_vegetali;
 
 function initChart() {
 
@@ -253,6 +256,15 @@ function getInputValues() {
         data[name] = value;
     });
 
+    data['numero_prodotti'] = String(slider_numero_prodotti.getValue());
+    data['percentuale_carne_vegetali'] = String(slider_percentuale_carne_vegetali.getValue());
+
+    $(sliders).each(function (index, value) {
+        var name = this.element.id;
+        data[name + '_min'] = String(this.getValue()[0]);
+        data[name + '_max'] = String(this.getValue()[1]);
+    });
+
     console.log(data);
     return data;
 }
@@ -263,42 +275,68 @@ $(function () {
     $("#singoli_prodotti").hide();
 
     /* Slider numero prodotti modal imposta parametri per tutti i prodotti */
-    var numero_prodotti = new Slider('#numero_prodotti', {formatter: function (value) {
+    slider_numero_prodotti = new Slider('#numero_prodotti', {formatter: function (value) {
             return value;
         }});
 
     /* Slider percentuale carne vegetali modal imposta parametri per tutti i prodotti */
-    var percentuale_carne_vegetali = new Slider("#percentuale_carne_vegetali", {id: "percentuale_carne_vegetali", min: 0, max: 100, value: 50});
+    slider_percentuale_carne_vegetali = new Slider("#percentuale_carne_vegetali", {id: "percentuale_carne_vegetali", min: 0, max: 100, value: 50});
 
     /* Range carne modal imposta parametri per tutti i prodotti */
     var meat_prezzo = new Slider('#meat_prezzo', {});
+    sliders.push(meat_prezzo);
     var meat_produttivita = new Slider('#meat_produttivita', {});
+    sliders.push(meat_produttivita);
     var meat_impatto_ghgs = new Slider('#meat_impatto_ghgs', {});
+    sliders.push(meat_impatto_ghgs);
     var meat_impatto_pm = new Slider('#meat_impatto_pm', {});
+    sliders.push(meat_impatto_pm);
     var meat_impatto_nh3 = new Slider('#meat_impatto_nh3', {});
+    sliders.push(meat_impatto_nh3);
     var meat_infl_prod_ghgs = new Slider('#meat_infl_prod_ghgs', {});
+    sliders.push(meat_infl_prod_ghgs);
     var meat_toll_infl_prod_ghgs = new Slider('#meat_toll_infl_prod_ghgs', {});
+    sliders.push(meat_toll_infl_prod_ghgs);
     var meat_infl_prod_pm = new Slider('#meat_infl_prod_pm', {});
+    sliders.push(meat_infl_prod_pm);
     var meat_toll_infl_prod_pm = new Slider('#meat_toll_infl_prod_pm', {});
+    sliders.push(meat_toll_infl_prod_pm);
     var meat_infl_prod_nh3 = new Slider('#meat_infl_prod_nh3', {});
+    sliders.push(meat_infl_prod_nh3);
     var meat_toll_infl_prod_nh3 = new Slider('#meat_toll_infl_prod_nh3', {});
+    sliders.push(meat_toll_infl_prod_nh3);
     var meat_infl_prod_temp = new Slider('#meat_infl_prod_temp', {});
+    sliders.push(meat_infl_prod_temp);
     var meat_toll_infl_prod_temp = new Slider('#meat_toll_infl_prod_temp', {});
+    sliders.push(meat_toll_infl_prod_temp);
 
     /* Range vegetali modal imposta parametri per tutti i prodotti */
     var veg_prezzo = new Slider('#veg_prezzo', {});
+    sliders.push(veg_prezzo);
     var veg_produttivita = new Slider('#veg_produttivita', {});
+    sliders.push(veg_produttivita);
     var veg_impatto_ghgs = new Slider('#veg_impatto_ghgs', {});
+    sliders.push(veg_impatto_ghgs);
     var veg_impatto_pm = new Slider('#veg_impatto_pm', {});
+    sliders.push(veg_impatto_pm);
     var veg_impatto_nh3 = new Slider('#veg_impatto_nh3', {});
+    sliders.push(veg_impatto_nh3);
     var veg_infl_prod_ghgs = new Slider('#veg_infl_prod_ghgs', {});
+    sliders.push(veg_infl_prod_ghgs);
     var veg_toll_infl_prod_ghgs = new Slider('#veg_toll_infl_prod_ghgs', {});
+    sliders.push(veg_toll_infl_prod_ghgs);
     var veg_infl_prod_pm = new Slider('#veg_infl_prod_pm', {});
+    sliders.push(veg_infl_prod_pm);
     var veg_toll_infl_prod_pm = new Slider('#veg_toll_infl_prod_pm', {});
+    sliders.push(veg_toll_infl_prod_pm);
     var veg_infl_prod_nh3 = new Slider('#veg_infl_prod_nh3', {});
+    sliders.push(veg_infl_prod_nh3);
     var veg_toll_infl_prod_nh3 = new Slider('#veg_toll_infl_prod_nh3', {});
+    sliders.push(veg_toll_infl_prod_nh3);
     var veg_infl_prod_temp = new Slider('#veg_infl_prod_temp', {});
+    sliders.push(veg_infl_prod_temp);
     var veg_toll_infl_prod_temp = new Slider('#veg_toll_infl_prod_temp', {});
+    sliders.push(veg_toll_infl_prod_temp);
 
     /*
      $('#parametriRandom').on('click', function (event) {

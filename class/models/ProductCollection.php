@@ -124,7 +124,31 @@ class ProductCollection {
             }
         }
 
-        // TODO order products array by crescent price
+        $this->sortProductsByPriceAscending($this->products);
+    }
+
+    private function sortProductsByPriceAscending(&$products) {
+
+        usort($products, 'my_sort_function');
+
+        function my_sort_function($a, $b) {
+            return $a['price'] < $b['price'];
+        }
+
+    }
+
+    public function endIteration() {
+
+        foreach ($this->products as $product) {
+            $product->set_production($product->get_production(1), 0);
+            $product->set_production(0.0, 1);
+
+            $product->set_capacity($product->get_capacity(1), 0);
+            $product->set_capacity(0.0, 1);
+
+            $product->set_sold($product->get_sold(1), 0);
+            $product->set_sold(0.0, 1);
+        }
     }
 
     public function getProductTypeByIndex($index) {
