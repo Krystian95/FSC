@@ -7,13 +7,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="images/favicon.png" type="image/png" />
-        
         <title>HESystem</title>
-
-        <!-- CSS e JavaScript
-        <link href="css/lib/font-awesome.min.css" rel="stylesheet">
-        -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="css/lib/bootstrap-4.1.3.min.css" rel="stylesheet">
         <link href="css/lib/jquery-ui.min.css" rel="stylesheet">
         <link href="css/index.css" rel="stylesheet">
@@ -46,12 +41,12 @@
                                         <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterPopModal"><i class="fa fa-users"></i>&nbsp&nbspPopolazione</button>
                                     </div>
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterExtraModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterExtraModal"><i class="fa fa-cog"></i>&nbsp&nbspImposta parametri</button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                     <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterEnvModal"><i class="fa fa-envira"></i>&nbsp&nbspAmbiente</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterEnvModal"><i class="fa fa-tree"></i>&nbsp&nbspAmbiente</button>
                                     </div>
                                     <div class="col-6">
                                         <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbsp<span id="starttext">Start</span></button>
@@ -68,7 +63,7 @@
                                         <button type="button" class="btn btn-danger" id="stop" disabled="true"><i class="fa fa-stop"></i>&nbspStop</button>
                                     </div>
                                     <div class="col-2">
-                                        <button type="button" class="btn btn-secondary" id="reset"><i class="fa fa-refresh"></i>&nbspReset</button>
+                                        <button type="button" class="btn btn-secondary" id="reset"><i class="fas fa-sync-alt"></i>&nbspReset</button>
                                     </div>
                                 </div>
                             </form>
@@ -102,18 +97,20 @@
                     <br>
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bar-chart"></i>&nbsp&nbspGrafici
+                            <i class="fa fa-chart-bar"></i>&nbsp&nbspGrafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#"><i class="fa fa-users"></i>&nbsp&nbspGrafico 1</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-euro"></i>&nbsp&nbspGrafico 2</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-medkit"></i>&nbsp&nbspGrafico 3</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-industry"></i>&nbsp&nbspGrafico 4</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-envira"></i>&nbsp&nbspGrafico 5</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-cloud"></i>&nbsp&nbspGrafico 6</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-home"></i>&nbsp&nbspGrafico 7</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-car"></i>&nbsp&nbspGrafico 8</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-heart"></i>&nbsp&nbspGrafico 9</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspAndamento temporale N persone</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspAndamento temporale N persone morte, N persone nate</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspAndamento temporale salute media</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspAndamento temporale capacità produttiva di ogni prodotto</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspAndamento temporale produzione di ogni prodotto</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspAndamento temporale vendite di ogni prodotto</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspGrafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-chart-area fa-fw"></i>&nbsp&nbspAndamento temporale capacità produttiva totale, produzione totale, venduto totale</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspAndamento temporale temperatura</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-poll fa-fw"></i>&nbsp&nbspAndamento temporale GHGS, NH<sub>3</sub>, PM</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspProdotti acquistati in base alla ricchezza della popolazione</a>
                         </div>
                     </div>
                     <br><br>
@@ -123,18 +120,20 @@
                     <br>
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bar-chart"></i>&nbsp&nbspGrafici
+                            <i class="fa fa-chart-bar"></i>&nbsp&nbspGrafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#"><i class="fa fa-users"></i>&nbsp&nbspGrafico 1</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-euro"></i>&nbsp&nbspGrafico 2</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-medkit"></i>&nbsp&nbspGrafico 3</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-industry"></i>&nbsp&nbspGrafico 4</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-envira"></i>&nbsp&nbspGrafico 5</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-cloud"></i>&nbsp&nbspGrafico 6</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-home"></i>&nbsp&nbspGrafico 7</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-car"></i>&nbsp&nbspGrafico 8</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-heart"></i>&nbsp&nbspGrafico 9</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspAndamento temporale N persone</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspAndamento temporale N persone morte, N persone nate</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspAndamento temporale salute media</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspAndamento temporale capacità produttiva di ogni prodotto</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspAndamento temporale produzione di ogni prodotto</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspAndamento temporale vendite di ogni prodotto</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspGrafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-chart-area fa-fw"></i>&nbsp&nbspAndamento temporale capacità produttiva totale, produzione totale, venduto totale</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspAndamento temporale temperatura</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-poll fa-fw"></i>&nbsp&nbspAndamento temporale GHGS, NH<sub>3</sub>, PM</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspProdotti acquistati in base alla ricchezza della popolazione</a>
                         </div>
                     </div>
                     <br><br>
@@ -150,7 +149,7 @@
             </div>
             <!-- /.container -->
         </footer>
-        
+
         <!-- Modal popolazione-->
         <div class="modal fade" id="parameterPopModal" role="dialog" data-backdrop="static">
             <div class="modal-dialog">
@@ -288,13 +287,13 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesPop"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesPop"><i class="fas fa-sync-alt"></i>&nbsp&nbspReset</button>
                         <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesPop"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Modal ambiente-->
         <div class="modal fade" id="parameterEnvModal" role="dialog" data-backdrop="static">
             <div class="modal-dialog">
@@ -390,15 +389,15 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesEnv"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesEnv"><i class="fas fa-sync-alt"></i>&nbsp&nbspReset</button>
                         <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesEnv"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
                     </div>
                 </div>
             </div>
         </div>
-        
-         <!-- Modal prodotti-->
-         <div class="modal fade" id="parameterProdModal" tabindex="-1" role="dialog" data-backdrop="static">
+
+        <!-- Modal prodotti-->
+        <div class="modal fade" id="parameterProdModal" tabindex="-1" role="dialog" data-backdrop="static">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -411,10 +410,10 @@
                             <div class="col">
                                 <form>
                                     <div class="form-group">
-                                      <select class="form-control" id="selectModProd">
-                                        <option>Tutti i prodotti</option>
-                                        <option>Singoli prodotti</option>
-                                      </select>
+                                        <select class="form-control" id="selectModProd">
+                                            <option>Tutti i prodotti</option>
+                                            <option>Singoli prodotti</option>
+                                        </select>
                                     </div>
                                 </form>
                             </div>
@@ -423,11 +422,249 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="row form-group align-items-center">
-                                        <div class="col">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterTuttiProdModal"><i class="fa fa-gear"></i>&nbsp&nbspImposta parametri per tutti i prodotti</button>
+                                        <label class="col-form-label col-2">
+                                            Numero prodotti
+                                        </label>
+                                        <div class="col-10">
+                                            <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="numero_prodotti" data-slider-id='numero_prodotti' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-2">
+                                            Percentuale carne/vegetali
+                                        </label>
+                                        <div class="col-10">
+                                            <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="percentuale_carne_vegetali" type="text"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row align-items-center">
+                                        <h3 class="text-center container-fluid">Carne</h3>
+                                    </div>
+                                    <br>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Prezzo
+                                        </label>
+                                        <div class="col-8">
+                                            &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Produttività
+                                        </label>
+                                        <div class="col-8">
+                                            &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Impatto su GHGS
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Impatto su PM
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_impatto_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Impatto su NH<sub>3</sub>
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_impatto_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Influenza sulla produzione causata da GHGS
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Tolleranza influenza sulla produzione causata da GHGS
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Influenza sulla produzione causata da PM
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Tolleranza influenza sulla produzione causata da PM
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Influenza sulla produzione causata da NH<sub>3</sub>
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Tolleranza influenza sulla produzione causata da NH<sub>3</sub>
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Influenza sulla produzione causata dalla temperatura
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Tolleranza influenza sulla produzione causata dalla temperatura
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row align-items-center">
+                                        <h3 class="text-center container-fluid">Vegetali</h3>
+                                    </div>
+                                    <br>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Prezzo
+                                        </label>
+                                        <div class="col-8">
+                                            &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Produttività
+                                        </label>
+                                        <div class="col-8">
+                                            &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Impatto su GHGS
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Impatto su PM
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_impatto_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Impatto su NH<sub>3</sub>
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_impatto_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Influenza sulla produzione causata da GHGS
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Tolleranza influenza sulla produzione causata da GHGS
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Influenza sulla produzione causata da PM
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Tolleranza influenza sulla produzione causata da PM
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Influenza sulla produzione causata da NH<sub>3</sub>
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Tolleranza influenza sulla produzione causata da NH<sub>3</sub>
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Influenza sulla produzione causata dalla temperatura
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group align-items-center">
+                                        <label class="col-form-label col-4">
+                                            Tolleranza influenza sulla produzione causata dalla temperatura
+                                        </label>
+                                        <div class="col-8">
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesTuttiProd"><i class="fas fa-sync-alt"></i>&nbsp&nbspReset</button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesTuttiProd"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
                             </div>
                         </div>
                         <div id="singoli_prodotti">
@@ -438,7 +675,7 @@
                                             Manzo
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#manzoModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#manzoModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -446,7 +683,7 @@
                                             Pollo
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#polloModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#polloModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -454,7 +691,7 @@
                                             Maiale
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#maialeModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#maialeModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -462,7 +699,7 @@
                                             Cavallo
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#cavalloModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#cavalloModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -470,7 +707,7 @@
                                             Tacchino
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tacchinoModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tacchinoModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -480,7 +717,7 @@
                                             Patate
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#patateModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#patateModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -488,7 +725,7 @@
                                             Zucchine
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#zucchineModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#zucchineModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -496,7 +733,7 @@
                                             Peperoni
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#peperoniModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#peperoniModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -504,7 +741,7 @@
                                             Melanzane
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#melanzaneModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#melanzaneModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -512,7 +749,7 @@
                                             Pomodori
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#pomodoriModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#pomodoriModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -522,7 +759,7 @@
                                             Grano
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#granoModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#granoModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -530,7 +767,7 @@
                                             Riso
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#risoModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#risoModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -538,7 +775,7 @@
                                             Melo
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#meloModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#meloModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -546,7 +783,7 @@
                                             Pero
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#peroModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#peroModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -554,580 +791,313 @@
                                             Arancio
                                         </label>
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#arancioModal"><i class="fa fa-gear"></i></button>
+                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#arancioModal"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div> 
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesSingoliProd"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal singoli prodotti-->
-        <?php
-            $itemsProd = ['manzo'=>'carne', 'pollo'=>'carne', 'maiale'=>'carne', 'cavallo'=>'carne', 'tacchino'=>'carne', 
-                'patate'=>'vegetale', 'zucchine'=>'vegetale', 'peperoni'=>'vegetale', 'melanzane'=>'vegetale', 'pomodori'=>'vegetale',
-                'grano'=>'vegetale', 'riso'=>'vegetale', 'melo'=>'vegetale', 'pero'=>'vegetale', 'arancio'=>'vegetale'];
+    <!-- Modal singoli prodotti-->
+    <?php
+    $itemsProd = ['manzo' => 'carne', 'pollo' => 'carne', 'maiale' => 'carne', 'cavallo' => 'carne', 'tacchino' => 'carne',
+        'patate' => 'vegetale', 'zucchine' => 'vegetale', 'peperoni' => 'vegetale', 'melanzane' => 'vegetale', 'pomodori' => 'vegetale',
+        'grano' => 'vegetale', 'riso' => 'vegetale', 'melo' => 'vegetale', 'pero' => 'vegetale', 'arancio' => 'vegetale'];
 
-            foreach ($itemsProd as $value => $value_tipo) {
+    foreach ($itemsProd as $value => $value_tipo) {
 
-              echo '<div class="modal fade child-modal" id="'.$value.'Modal" tabindex="-1" role="dialog" data-backdrop="static">';
-              echo '<div class="modal-dialog">';
-              echo '<div class="modal-content">';
-              echo '<div class="modal-header">';
-              echo '<h4 class="modal-title">Imposta parametri '.$value.'</h4>';
-              echo '<button type="button" class="close" data-dismiss="modal" id="chiudiFinestra'.$value.'">&times;</button>';
-              echo '</div>';
-              echo '<div class="modal-body">';
-              echo '<div class="row">';
-              echo '<div class="col-3">';
-              echo '<input type="text" readonly class="form-control textbox" name="'.$value.'_tipo" value="'.$value_tipo.'" style="display: none;">';
-              echo '</div></div>';
-              echo '<div class="row">';
-              echo '<div class="col">';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Prezzo</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_prezzo_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_prezzo" value="0">';
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_prezzo_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Produttività</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_produttivita_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_produttivita" value="0">';
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_produttivita_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Impatto su GHGS</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_impatto_ghgs_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_ghgs" value="0">'; 
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_impatto_ghgs_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Impatto su PM</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_impatto_pm_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_pm" value="0">';
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_impatto_pm_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Impatto su NH<sub>3</sub></label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_impatto_nh3_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_impatto_nh3" value="0">'; 
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_impatto_nh3_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Influenza sulla produzione causata da GHGS</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_ghgs_ideale_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_ghgs_ideale" value="0">'; 
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_ghgs_ideale_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da GHGS</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_tolleranza_ghgs_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_tolleranza_ghgs" value="0">'; 
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_tolleranza_ghgs_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Influenza sulla produzione causata da PM</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_pm_ideale_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_pm_ideale" value="0">';
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_pm_ideale_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da PM</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_tolleranza_pm_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_tolleranza_pm" value="0">'; 
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_tolleranza_pm_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Influenza sulla produzione causata da NH<sub>3</sub></label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_nh3_ideale_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_nh3_ideale" value="0">';
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_nh3_ideale_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da NH<sub>3</sub></label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_tolleranza_nh3_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_tolleranza_nh3" value="0">';
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_tolleranza_nh3_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Influenza sulla produzione causata dalla temperatura</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_temperatura_ideale_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_temperatura_ideale" value="0">'; 
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_temperatura_ideale_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata dalla temperatura</label>';
-              echo '<div class="col-6">';
-              echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="'.$value.'_tolleranza_temperatura_slider" value="0">';
-              echo '</div><div class="col-2">';
-              echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="'.$value.'_tolleranza_temperatura" value="0">'; 
-              echo '</div><div class="col-1">';
-              echo '<div class="checkbox"><input type="checkbox" value="" id="'.$value.'_tolleranza_temperatura_checkbox"></div></div></div>';
-              echo '<div class="row form-group align-items-center">';
-              echo '<label class="col-form-label col-3">Variazione percentuale</label>';
-              echo '<div class="col-8">';
-              echo '<input type="number" class="form-control textbox" min="-100" max="100" step="1" name="variazione_percentuale_'.$value.'" value="0">'; 
-              echo '</div><div class="col-1"></div></div>';
-              echo '</div></div></div>';
-              echo '<div class="modal-footer">';
-              echo '<button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChanges'.$value.'"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>';
-              echo '<button type="button" class="btn btn-success" data-dismiss="modal" id="saveChanges'.$value.'"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>';
-              echo '</div></div></div></div>';
-            }
-        ?>
-        
-        <!-- Modal tutti i prodotti-->
-        <div class="modal fade" id="parameterTuttiProdModal" role="dialog" data-backdrop="static">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Imposta parametri per tutti i prodotti</h4>
-                        <button type="button" class="close" data-dismiss="modal" id="chiudiFinestraTuttiProd">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <!--<div class="row">
-                            <div class="col">
-                                <div class="row form-group align-items-center">
-                                    <div class="col">
-                                        <button type="button" class="btn btn-light" id="parametriRandom"><i class="fa fa-random"></i>&nbsp&nbspGenera parametri random</button>
-                                    </div>
+        echo '<div class="modal fade child-modal" id="' . $value . 'Modal" tabindex="-1" role="dialog" data-backdrop="static">';
+        echo '<div class="modal-dialog">';
+        echo '<div class="modal-content">';
+        echo '<div class="modal-header">';
+        echo '<h4 class="modal-title">Imposta parametri ' . $value . '</h4>';
+        echo '<button type="button" class="close" data-dismiss="modal" id="chiudiFinestra' . $value . '">&times;</button>';
+        echo '</div>';
+        echo '<div class="modal-body">';
+        echo '<div class="row">';
+        echo '<div class="col-3">';
+        echo '<input type="text" readonly class="form-control textbox" name="' . $value . '_tipo" value="' . $value_tipo . '" style="display: none;">';
+        echo '</div></div>';
+        echo '<div class="row">';
+        echo '<div class="col">';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Prezzo</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_prezzo_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_prezzo" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_prezzo_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Produttività</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_produttivita_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_produttivita" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_produttivita_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Impatto su GHGS</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_ghgs_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_ghgs" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_ghgs_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Impatto su PM</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_pm_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_pm" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_pm_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Impatto su NH<sub>3</sub></label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_nh3_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_nh3" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_nh3_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Influenza sulla produzione causata da GHGS</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_ghgs_ideale_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da GHGS</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_ghgs_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Influenza sulla produzione causata da PM</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_pm_ideale_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_pm_ideale" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_pm_ideale_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da PM</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_pm_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Influenza sulla produzione causata da NH<sub>3</sub></label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_nh3_ideale_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_nh3_ideale" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_nh3_ideale_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da NH<sub>3</sub></label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_nh3_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Influenza sulla produzione causata dalla temperatura</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_temperatura_ideale_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata dalla temperatura</label>';
+        echo '<div class="col-6">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura_slider" value="0">';
+        echo '</div><div class="col-2">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura" value="0">';
+        echo '</div><div class="col-1">';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_temperatura_checkbox"></div></div></div>';
+        echo '<div class="row form-group align-items-center">';
+        echo '<label class="col-form-label col-3">Variazione percentuale</label>';
+        echo '<div class="col-8">';
+        echo '<input type="number" class="form-control textbox" min="-100" max="100" step="1" name="variazione_percentuale_' . $value . '" value="0">';
+        echo '</div><div class="col-1"></div></div>';
+        echo '</div></div></div>';
+        echo '<div class="modal-footer">';
+        echo '<button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChanges' . $value . '"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>';
+        echo '<button type="button" class="btn btn-success" data-dismiss="modal" id="saveChanges' . $value . '"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>';
+        echo '</div></div></div></div>';
+    }
+    ?>
+    <!-- Modal extra-->
+    <div class="modal fade" id="parameterExtraModal" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Imposta parametri</h4>
+                    <button type="button" class="close" data-dismiss="modal" id="chiudiFinestraExtra">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Step nascita popolazione
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="0">
+                                </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="0"> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="step_nascita_popolazione_checkbox"></div>
                                 </div>
                             </div>
-                        </div>-->
-                        <div class="row">
-                            <div class="col">
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-2">
-                                        Numero prodotti
-                                    </label>
-                                    <div class="col-10">
-                                        <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="numero_prodotti" data-slider-id='numero_prodotti' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
-                                    </div>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Step morte popolazione
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="0">
                                 </div>
-                                 <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-2">
-                                        Percentuale carne/vegetali
-                                    </label>
-                                    <div class="col-10">
-                                        <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="percentuale_carne_vegetali" type="text"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
-                                    </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="0"> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="step_morte_popolazione_checkbox"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="row align-items-center">
-                                    <h3 class="text-center container-fluid">Carne</h3>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Rapporto nascite salute
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="rapporto_nascite_salute_slider" value="0">
                                 </div>
-                                <br>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Prezzo
-                                    </label>
-                                    <div class="col-8">
-                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
-                                    </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="rapporto_nascite_salute" value="0"> 
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Produttività
-                                    </label>
-                                    <div class="col-8">
-                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Impatto su GHGS
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Impatto su PM
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_impatto_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Impatto su NH<sub>3</sub>
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_impatto_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza sulla produzione causata da GHGS
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Tolleranza influenza sulla produzione causata da GHGS
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza sulla produzione causata da PM
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Tolleranza influenza sulla produzione causata da PM
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza sulla produzione causata da NH<sub>3</sub>
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Tolleranza influenza sulla produzione causata da NH<sub>3</sub>
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza sulla produzione causata dalla temperatura
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Tolleranza influenza sulla produzione causata dalla temperatura
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="rapporto_nascite_salute_checkbox"></div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="row align-items-center">
-                                    <h3 class="text-center container-fluid">Vegetali</h3>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Valore salute stabile
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_salute_stabile_slider" value="0">
                                 </div>
-                                <br>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Prezzo
-                                    </label>
-                                    <div class="col-8">
-                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
-                                    </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_salute_stabile" value="0"> 
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Produttività
-                                    </label>
-                                    <div class="col-8">
-                                        <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
-                                    </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="valore_salute_stabile_checkbox"></div>
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Impatto su GHGS
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                            </div>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Massima crescita salute
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_salute_slider" value="0">
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Impatto su PM
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_impatto_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_salute" value="0"> 
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Impatto su NH<sub>3</sub>
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_impatto_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_salute_checkbox"></div>
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza sulla produzione causata da GHGS
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                            </div>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Valore capacità stabile
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_capacita_stabile_slider" value="0">
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Tolleranza influenza sulla produzione causata da GHGS
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_capacita_stabile" value="0"> 
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza sulla produzione causata da PM
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="valore_capacita_stabile_checkbox"></div>
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Tolleranza influenza sulla produzione causata da PM
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                            </div>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Massima crescita capacita
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_capacita_slider" value="0">
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza sulla produzione causata da NH<sub>3</sub>
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_capacita" value="0"> 
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Tolleranza influenza sulla produzione causata da NH<sub>3</sub>
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_capacita_checkbox"></div>
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza sulla produzione causata dalla temperatura
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                            </div>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Influenza differenze ricchezza
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="influenza_differenze_ricchezza_slider" value="0">
                                 </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Tolleranza influenza sulla produzione causata dalla temperatura
-                                    </label>
-                                    <div class="col-8">
-                                        <b>-50</b> <input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
-                                    </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="influenza_differenze_ricchezza" value="0"> 
                                 </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="influenza_differenze_ricchezza_checkbox"></div>
+                                </div>
+                            </div>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
+                                    Variazione percentuale
+                                </label>
+                                <div class="col-7">
+                                    <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="variazione_percentuale_extra" value="0"> 
+                                </div>
+                                <div class="col-1"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesTuttiProd"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesTuttiProd"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesExtra"><i class="fas fa-sync-alt"></i>&nbsp&nbspReset</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesExtra"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
                 </div>
             </div>
         </div>
-        
-        <!-- Modal extra-->
-        <div class="modal fade" id="parameterExtraModal" role="dialog" data-backdrop="static">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Imposta parametri</h4>
-                        <button type="button" class="close" data-dismiss="modal" id="chiudiFinestraExtra">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col">
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Step nascita popolazione
-                                    </label>
-                                    <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="0">
-                                    </div>
-                                    <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="0"> 
-                                    </div>
-                                    <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="step_nascita_popolazione_checkbox"></div>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Step morte popolazione
-                                    </label>
-                                    <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="0">
-                                    </div>
-                                    <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="0"> 
-                                    </div>
-                                    <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="step_morte_popolazione_checkbox"></div>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Rapporto nascite salute
-                                    </label>
-                                    <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="rapporto_nascite_salute_slider" value="0">
-                                    </div>
-                                    <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="rapporto_nascite_salute" value="0"> 
-                                    </div>
-                                    <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="rapporto_nascite_salute_checkbox"></div>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Valore salute stabile
-                                    </label>
-                                    <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_salute_stabile_slider" value="0">
-                                    </div>
-                                    <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_salute_stabile" value="0"> 
-                                    </div>
-                                    <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="valore_salute_stabile_checkbox"></div>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Massima crescita salute
-                                    </label>
-                                    <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_salute_slider" value="0">
-                                    </div>
-                                    <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_salute" value="0"> 
-                                    </div>
-                                    <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_salute_checkbox"></div>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Valore capacità stabile
-                                    </label>
-                                    <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_capacita_stabile_slider" value="0">
-                                    </div>
-                                    <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_capacita_stabile" value="0"> 
-                                    </div>
-                                    <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="valore_capacita_stabile_checkbox"></div>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Massima crescita capacita
-                                    </label>
-                                    <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_capacita_slider" value="0">
-                                    </div>
-                                    <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_capacita" value="0"> 
-                                    </div>
-                                    <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_capacita_checkbox"></div>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Influenza differenze ricchezza
-                                    </label>
-                                    <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="influenza_differenze_ricchezza_slider" value="0">
-                                    </div>
-                                    <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="influenza_differenze_ricchezza" value="0"> 
-                                    </div>
-                                    <div class="col-1">
-                                        <div class="checkbox"><input type="checkbox" value="" id="influenza_differenze_ricchezza_checkbox"></div>
-                                    </div>
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <label class="col-form-label col-4">
-                                        Variazione percentuale
-                                    </label>
-                                    <div class="col-7">
-                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="variazione_percentuale_extra" value="0"> 
-                                    </div>
-                                    <div class="col-1"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChangesExtra"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal" id="saveChangesExtra"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="js/lib/jquery-3.3.1.min.js"></script>
-        <script src="js/lib/jquery-ui.min.js"></script>
-        <script src="js/lib/popper-1.14.3.min.js"></script>
-        <script src="js/lib/bootstrap-4.1.3.min.js"></script>
-        <script src="js/lib/Chart.bundle.min.js"></script>
-        <script src="js/Utils.js"></script>
-        <script src="js/index.js"></script>
-        <script src="js/lib/bootstrap-slider.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="js/lib/jquery-ui.min.js"></script>
+    <script src="js/lib/popper-1.14.3.min.js"></script>
+    <script src="js/lib/bootstrap-4.1.3.min.js"></script>
+    <script src="js/lib/Chart.bundle.min.js"></script>
+    <script src="js/Utils.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/lib/bootstrap-slider.min.js"></script>
 
-    </body>
+</body>
 
 </html>
