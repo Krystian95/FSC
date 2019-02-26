@@ -34,11 +34,25 @@ class Product {
     }
 
     public function step_production($environment) {
+        $min_required_production = 2/10;
         $this->production[1] = $this->capacity[0] * (1 - ($environment->get_temperature(0) - $this->ideal_temperature) / $this->tolerance_temperature) * ($environment->get_GHGS(0) - $this->ideal_GHGS / $this->tolerance_GHGS) * ($environment->get_NH3(0) - $this->ideal_NH3 / $this->tolerance_NH3) * ($environment->get_PM(0) - $this->ideal_PM / $this->tolerance_PM);
+ 
+        if($this->production[1] <= $this->production[1]*$min_required_production){
+              $this->production[1]=0;
+        }
     }
 
     public function growth_evaluate($prod_stab, $max_growth_prod) {
-        $this->capacity[1] = $this->capacity[0] + ($this->sold[1] / $this->production[1] - $prod_stab / 100 ) * $max_growth_prod / $prod_stab;
+        if( $this->production[1] == 0) {
+            $this->capacity[1] = $this->capacity[0]  - $prod_stab / 100  * $max_growth_prod / $prod_stab;
+        }
+        else{
+               $this->capacity[1] = $this->capacity[0] + ($this->sold[1] / $this->production[1] - $prod_stab / 100 ) * $max_growth_prod / $prod_stab;
+        }
+
+        if($this->capacity[1] <= 0) {
+            $this->capacity[1]=1;
+        }
     }
 
     /*
