@@ -83,7 +83,7 @@ class Person {
     }
 
     /*
-     * Setter
+     * Setters
      */
 
     public function set_wealth($wealth) {
@@ -103,7 +103,7 @@ class Person {
     }
 
     /*
-     * Getter
+     * Getters
      */
 
     public function get_wealth() {

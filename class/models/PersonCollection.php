@@ -29,6 +29,8 @@ class PersonCollection {
             $person = $this->generateNewPerson($params, $product_collection);
             array_push($this->persons, $person);
         }
+
+        $this->sortPersonsByWealthDescending($this->persons);
     }
 
     private function generateNewPerson($params, $product_collection) {
@@ -60,16 +62,27 @@ class PersonCollection {
         return $person;
     }
 
-    public function getPersons() {
-        return $this->persons;
+    private function sortPersonsByWealthDescending(&$persons) {
+
+        usort($persons, 'my_sort_function');
+
+        function my_sort_function($a, $b) {
+            return $a['wealth'] < $b['wealth'];
+        }
+
     }
 
-    public function getPerson($index) {
-        return $this->persons[$index];
-    }
+    public function endIteration() {
 
-    public function getCountPeople() {
-        return count($this->persons);
+        foreach ($this->persons as $person) {
+            $person->set_health($person->get_health(1), 0);
+            $person->set_health(0.0, 1);
+
+            $person->set_eaten($person->get_eaten(1), 0);
+            $person->set_eaten(0.0, 1);
+
+            $person->set_speso(0.0);
+        }
     }
 
     public function getMeanHealth() {
@@ -112,6 +125,20 @@ class PersonCollection {
         foreach ($new_persons as $new_person) {
             array_push($this->persons, $new_person);
         }
+
+        $this->sortPersonsByWealthDescending($this->persons);
+    }
+
+    public function getPersons() {
+        return $this->persons;
+    }
+
+    public function getPerson($index) {
+        return $this->persons[$index];
+    }
+
+    public function getCountPeople() {
+        return count($this->persons);
     }
 
 }

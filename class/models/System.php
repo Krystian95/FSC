@@ -65,6 +65,13 @@ class System {
          */
         $this->product_collection->growth_evaluations();
 
+        /*
+         * Terminal operations of the cicle
+         */
+        $this->product_collection->endIteration();
+        $this->person_collection->endIteration();
+        $this->environment->endIteration();
+
         self::$step++;
 
 
