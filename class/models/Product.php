@@ -38,7 +38,7 @@ class Product {
     }
 
     public function growth_evaluate($prod_stab, $max_growth_prod) {
-        $this->capacity[1] = $this->capacity[0] + ($this->sold[1] / $this->production[1] - $prod_stab) * $max_growth_prod / $prod_stab;
+        $this->capacity[1] = $this->capacity[0] + ($this->sold[1] / $this->production[1] - $prod_stab / 100 ) * $max_growth_prod / $prod_stab;
     }
 
     /*
