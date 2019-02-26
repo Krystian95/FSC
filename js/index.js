@@ -6,7 +6,7 @@ function initChart() {
 
     var ctx1 = document.getElementById('chart_1').getContext('2d');
     var ctx2 = document.getElementById('chart_2').getContext('2d');
-    
+
     chart_1 = new Chart(ctx1, {
         type: 'line',
         data: {
@@ -107,7 +107,7 @@ function initChart() {
         }
     }
     );
-    
+
     chart_2 = new Chart(ctx2, {
         type: 'line',
         data: {
@@ -243,16 +243,32 @@ function getCurrentMonthYear() {
     return mm + '/' + yyyy;
 }
 
+function getInputValues() {
+
+    var data = [];
+
+    $('input.form-control.textbox').each(function (index, value) {
+        var name = $(this).attr('name');
+        var value = $(this).val();
+        data[name] = value;
+    });
+
+    console.log(data);
+    return data;
+}
+
 $(function () {
-    
+
     /* Nascondi bottoni scelta singoli prodotti */
     $("#singoli_prodotti").hide();
-    
+
     /* Slider numero prodotti modal imposta parametri per tutti i prodotti */
-    var numero_prodotti = new Slider('#numero_prodotti', {formatter: function(value) {return value;}});
-    
+    var numero_prodotti = new Slider('#numero_prodotti', {formatter: function (value) {
+            return value;
+        }});
+
     /* Slider percentuale carne vegetali modal imposta parametri per tutti i prodotti */
-    var percentuale_carne_vegetali = new Slider("#percentuale_carne_vegetali", { id: "percentuale_carne_vegetali", min: 0, max: 100, value: 50 });
+    var percentuale_carne_vegetali = new Slider("#percentuale_carne_vegetali", {id: "percentuale_carne_vegetali", min: 0, max: 100, value: 50});
 
     /* Range carne modal imposta parametri per tutti i prodotti */
     var meat_prezzo = new Slider('#meat_prezzo', {});
@@ -268,7 +284,7 @@ $(function () {
     var meat_toll_infl_prod_nh3 = new Slider('#meat_toll_infl_prod_nh3', {});
     var meat_infl_prod_temp = new Slider('#meat_infl_prod_temp', {});
     var meat_toll_infl_prod_temp = new Slider('#meat_toll_infl_prod_temp', {});
-    
+
     /* Range vegetali modal imposta parametri per tutti i prodotti */
     var veg_prezzo = new Slider('#veg_prezzo', {});
     var veg_produttivita = new Slider('#veg_produttivita', {});
@@ -283,55 +299,55 @@ $(function () {
     var veg_toll_infl_prod_nh3 = new Slider('#veg_toll_infl_prod_nh3', {});
     var veg_infl_prod_temp = new Slider('#veg_infl_prod_temp', {});
     var veg_toll_infl_prod_temp = new Slider('#veg_toll_infl_prod_temp', {});
-    
+
     /*
-    $('#parametriRandom').on('click', function (event) {
-        
-        // Recupero valori dei due slider
-        //console.log(numero_prodotti.getValue());
-        //console.log(percentuale_carne_vegetali.getValue());
-        
-        // Recupero valori dei range della carne
-        //console.log(meat_prezzo.getValue()[0]);
-       
-        var itemsMeat = [meat_prezzo, meat_produttivita, meat_impatto_ghgs, meat_impatto_pm, meat_impatto_nh3, 
-            meat_infl_prod_ghgs, meat_toll_infl_prod_ghgs, meat_infl_prod_pm, meat_toll_infl_prod_pm, 
-            meat_infl_prod_nh3, meat_toll_infl_prod_nh3, meat_infl_prod_temp, meat_toll_infl_prod_temp];
-        
-        $(itemsMeat).each(function (index, value) {
-            var random =  Math.floor(value.getValue()[0] + (value.getValue()[1] - value.getValue()[0]) * Math.random());
-            console.log(random);
-        });
-    });
-    */
-    
+     $('#parametriRandom').on('click', function (event) {
+     
+     // Recupero valori dei due slider
+     //console.log(numero_prodotti.getValue());
+     //console.log(percentuale_carne_vegetali.getValue());
+     
+     // Recupero valori dei range della carne
+     //console.log(meat_prezzo.getValue()[0]);
+     
+     var itemsMeat = [meat_prezzo, meat_produttivita, meat_impatto_ghgs, meat_impatto_pm, meat_impatto_nh3, 
+     meat_infl_prod_ghgs, meat_toll_infl_prod_ghgs, meat_infl_prod_pm, meat_toll_infl_prod_pm, 
+     meat_infl_prod_nh3, meat_toll_infl_prod_nh3, meat_infl_prod_temp, meat_toll_infl_prod_temp];
+     
+     $(itemsMeat).each(function (index, value) {
+     var random =  Math.floor(value.getValue()[0] + (value.getValue()[1] - value.getValue()[0]) * Math.random());
+     console.log(random);
+     });
+     });
+     */
+
     /* Select list tutti i prodotti o prodotti singoli */
     $('#selectModProd').change(function () {
         var selectedText = $(this).find("option:selected").text();
-        
+
         console.log(selectedText);
-        
-        if(selectedText == "Tutti i prodotti"){
+
+        if (selectedText == "Tutti i prodotti") {
             $("#singoli_prodotti").hide();
             $("#tutti_prodotti").show();
         } else {
             $("#tutti_prodotti").hide();
             $("#singoli_prodotti").show();
-        }  
+        }
     });
-    
+
     /* Nascondi bottone chiudi finestra */
     document.getElementById("chiudiFinestraPop").style.display = "none";
     document.getElementById("chiudiFinestraEnv").style.display = "none";
     document.getElementById("chiudiFinestraExtra").style.display = "none";
-        
+
     var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
-            'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
-        
+        'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+
     $(itemsProd).each(function (index, value) {
         document.getElementById("chiudiFinestra" + value + "").style.display = "none";
     });
-    
+
     /* Gestione scroll modal richiamate dentro modal principale */
     $(document).find('.child-modal').on('hidden.bs.modal', function () {
         console.log('hiding child modal');
@@ -345,13 +361,14 @@ $(function () {
 
     /*
      * Start */
-     
+
     $('#start').on('click', function (event) {
         var params = {};
         params['Action'] = 'Start';
         params['Data'] = {};
         current_period = $('input[name="periodo"]').val();
         params['Data']['Period'] = current_period;
+        params['Data']['Params'] = getInputValues();
 
         var response = utils.performAjaxCall(params);
         performResponseActions(current_period, response);
@@ -359,7 +376,7 @@ $(function () {
         var iterations = 100;
 
         // Next Iteration(s)
-        
+
         setInterval(function () {
             //while (iterations > 0) {
             var params = {};
@@ -378,7 +395,7 @@ $(function () {
 
     /* Premo il bottone start */
     $('#start').on('click', function (event) {
-    
+
         /* Disabilita bottone start */
         $('#start').prop('disabled', true);
 
@@ -411,10 +428,10 @@ $(function () {
         document.getElementById("chiudiFinestraPop").style.display = "block";
         document.getElementById("chiudiFinestraEnv").style.display = "block";
         document.getElementById("chiudiFinestraExtra").style.display = "block";
-        
+
         var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
             'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
-        
+
         $(itemsProd).each(function (index, value) {
             document.getElementById("chiudiFinestra" + value + "").style.display = "block";
         });
@@ -428,18 +445,18 @@ $(function () {
         $('#saveChangesProd').prop('disabled', true);
         $('#discardChangesExtra').prop('disabled', true);
         $('#saveChangesExtra').prop('disabled', true);
-        
+
         var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
-        'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
-        'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
-        'massima_crescita_capacita','influenza_differenze_ricchezza'];
-    
+            'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
+            'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
+            'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
+            'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', true);
             $('input[name="' + value + '_slider"]').prop('disabled', true);
         });
-        
+
         $(itemsProd).each(function (index, value) {
             $('input[name="' + value + '_prezzo_slider"]').prop('disabled', true);
             $('input[name="' + value + '_prezzo"]').prop('disabled', true);
@@ -468,7 +485,7 @@ $(function () {
 
     /* Premo il bottone pausa */
     $('#pausa').on('click', function (event) {
- 
+
         $("#starttext").text('Continua');
         $('#start').prop('disabled', false);
     });
@@ -495,14 +512,14 @@ $(function () {
         document.getElementById("chiudiFinestraPop").style.display = "none";
         document.getElementById("chiudiFinestraEnv").style.display = "none";
         document.getElementById("chiudiFinestraExtra").style.display = "none";
-        
+
         var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
             'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
-        
+
         $(itemsProd).each(function (index, value) {
             document.getElementById("chiudiFinestra" + value + "").style.display = "none";
         });
-        
+
         /* Abilita gli elementi nelle finestre modali */
         $('#discardChangesPop').prop('disabled', false);
         $('#saveChangesPop').prop('disabled', false);
@@ -512,18 +529,18 @@ $(function () {
         $('#saveChangesProd').prop('disabled', false);
         $('#discardChangesExtra').prop('disabled', false);
         $('#saveChangesExtra').prop('disabled', false);
-        
+
         var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
-        'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
-        'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
-        'massima_crescita_capacita','influenza_differenze_ricchezza'];
-    
+            'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
+            'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
+            'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
+            'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', false);
             $('input[name="' + value + '_slider"]').prop('disabled', false);
         });
-        
+
         $(itemsProd).each(function (index, value) {
             $('input[name="' + value + '_prezzo_slider"]').prop('disabled', false);
             $('input[name="' + value + '_prezzo"]').prop('disabled', false);
@@ -549,61 +566,61 @@ $(function () {
             $('#saveChanges' + value + '').prop('disabled', false);
         });
     });
-    
+
     /* Premo il bottone reset */
     $('#reset').on('click', function (event) {
 
         location.reload();
     });
-    
+
     /* Premo il bottone reset popolazione */
     $('#discardChangesPop').on('click', function (event) {
-        
+
         var itemsPop = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
-        'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
+            'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
 
         $(itemsPop).each(function (index, value) {
             $('input[name="' + value + '"]').val(0);
             $('input[name="' + value + '_slider"]').val(0);
         });
-        
-         $('input[name="variazione_percentuale_popolazione"]').val(0);
+
+        $('input[name="variazione_percentuale_popolazione"]').val(0);
     });
-    
+
     /* Premo il bottone reset ambiente */
     $('#discardChangesEnv').on('click', function (event) {
-        
-        var itemsEnv = ['oscillazioni_temperatura_media', 'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 
+
+        var itemsEnv = ['oscillazioni_temperatura_media', 'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm',
             'valore_iniziale_nh3'];
 
         $(itemsEnv).each(function (index, value) {
             $('input[name="' + value + '"]').val(0);
             $('input[name="' + value + '_slider"]').val(0);
         });
-        
+
         $('input[name="variazione_percentuale_ambiente"]').val(0);
     });
-    
+
     /* Premo il bottone reset parametri extra */
     $('#discardChangesExtra').on('click', function (event) {
-        
-        var itemsExtra = ['step_nascita_popolazione','step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
-        'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita','influenza_differenze_ricchezza'];
+
+        var itemsExtra = ['step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
+            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
 
         $(itemsExtra).each(function (index, value) {
             $('input[name="' + value + '"]').val(0);
             $('input[name="' + value + '_slider"]').val(0);
         });
-        
+
         $('input[name="variazione_percentuale_extra"]').val(0);
     });
-    
+
     /* Accoppia elementi slider e textbox nelle finestre imposta altri parametri popolazione e ambiente */
     var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
         'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
         'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
-        'massima_crescita_capacita','influenza_differenze_ricchezza'];
+        'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
 
     $(itemsPopEnvExtra).each(function (index, value) {
         $(document).on('input change', 'input[name="' + value + '_slider"]', function () {
@@ -613,10 +630,10 @@ $(function () {
             $('input[name="' + value + '_slider"]').val($(this).val());
         });
     });
-    
+
     /* Accoppia elementi slider e textbox nelle finestre imposta parametri prodotti */
     var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
-                'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+        'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
 
     $(itemsProd).each(function (index, value) {
         $(document).on('input change', 'input[name="' + value + '_prezzo_slider"]', function () {

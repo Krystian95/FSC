@@ -8,8 +8,6 @@
 class Product {
 
     private $name;
-    private static $prod_stab = 60.0;
-    private static $max_growth_prod = 2.0;
     private $impact_on_GHGS;
     private $impact_on_NH3;
     private $impact_on_PM;
@@ -28,7 +26,7 @@ class Product {
     private $type;
 
     public function __construct() {
-        
+
         $this->production[0] = 0.0;
         $this->production[1] = 0.0;
         $this->sold[0] = 0.0;
@@ -39,8 +37,8 @@ class Product {
         $this->production[1] = $this->capacity[1] * (1 - ($environment->getTemperature(0) - $this->ideal_temperature) / $this->tolerance_temperature) * ($environment->getGHGS(0) - $this->ideal_GHGS / $this->tolerance_GHGS) * ($environment->getNH3(0) - $this->ideal_NH3 / $this->tolerance_NH3) * ($environment->getPM(0) - $this->ideal_PM / $this->tolerance_PM);
     }
 
-    public function growth_evaluate() {
-        $this->capacity[1] = $this->capacity[0] + ($this->sold[1] / $this->production[1] - self::$prod_stab) * self::$max_growth_prod / self::$prod_stab;
+    public function growth_evaluate($prod_stab, $max_growth_prod) {
+        $this->capacity[1] = $this->capacity[0] + ($this->sold[1] / $this->production[1] - $prod_stab) * $max_growth_prod / $prod_stab;
     }
 
     /*

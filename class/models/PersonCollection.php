@@ -8,15 +8,22 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/FSC/class/models/Person.php';
  * @author Cristian
  */
 class PersonCollection {
-    
-    private static $step_pop_growth = 0.8;
-    private static $step_pop_death = 0.2;
-    private static $growth_parameter = 0.4;
+
+    private $step_pop_growth;
+    private $step_pop_death;
+    private $growth_parameter;
     private $persons;
+    private $pop_stab;
+    private $max_growth_pop;
 
     public function __construct($params, $product_collection) {
 
         $this->persons = [];
+        $this->step_pop_growth = $params['step_nascita_popolazione'];
+        $this->step_pop_death = $params['step_morte_popolazione'];
+        $this->growth_parameter = $params['rapporto_nascite_salute'];
+        $this->pop_stab = $params['valore_salute_stabile'];
+        $this->max_growth_pop = $params['massima_crescita_salute'];
 
         for ($i = 0; $i < $params['popolazione_iniziale']; $i++) {
             $person = $this->generateNewPerson($params, $product_collection);
@@ -43,9 +50,7 @@ class PersonCollection {
         $gauss = Utils::rand(($fabbisogno_cibo_media - $fabbisogno_cibo_dev_std / 2), ($fabbisogno_cibo_media + $fabbisogno_cibo_dev_std / 2));
         $fabbisogno_cibo = ($gauss > 0 ? $gauss : 1);
 
-        $tendency = $params['tendenza_mangiare_carne'];
-
-        $person = new Person($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo);
+        $person = new Person($params['tendenza_mangiare_carne'], $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $params['influenza_differenze_ricchezza']);
 
         $rand = random_int(0, 100);
 
@@ -90,16 +95,14 @@ class PersonCollection {
 
         foreach ($this->persons as $key => $person) {
 
-            $person->health_evaluate();
+            $person->health_evaluate($this->pop_stab, $this->max_growth_pop);
 
-            if ($person->get_health(1) <= self::$step_pop_death) {
+            if ($person->get_health(1) <= $this->step_pop_death) {
                 unset($this->persons[$key]); // death
-            } elseif ($person->get_health(1) >= self::$step_pop_growth) {
+            } elseif ($person->get_health(1) >= $this->step_pop_growth) {
                 $rand = random_int(0, 100);
-                if ($rand >= self::$growth_parameter) {
-
+                if ($rand >= $this->growth_parameter) {
                     $new_person = $this->generateNewPerson($product_collection);
-
                     // Evita di aggiungere persone all'array che si sta scorrendo
                     array_push($new_persons, $new_person); // birth
                 }

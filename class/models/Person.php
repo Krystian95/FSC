@@ -7,26 +7,24 @@
  */
 class Person {
 
-    private static $pop_stab = 60.0;
-    private static $max_growth_pop = 2.0;
-    private static $food_need = 8.0;
-    private static $wealth_influence_factor = 0.1;
+    private $food_need;
     private $preferenze = [];
     private $wealth;
     private $health = [];
     private $eaten = [];
     private $speso = 0;
 
-    public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo) {
+    public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $wealth_influence_factor) {
 
         $this->eaten[0] = 0.0;
         $this->eaten[1] = 0.0;
         $this->health[0] = $health;
         $this->health[1] = $health;
+        $this->food_need = $fabbisogno_cibo;
 
         $this->wealth = $wealth;
         $tot_prod = System::$n_meat + System::$n_veg;
-        $wealth_influence = self::$wealth_influence_factor / ($tot_prod);
+        $wealth_influence = $wealth_influence_factor / ($tot_prod);
 
         /*
          * Preferences
@@ -80,8 +78,8 @@ class Person {
         }
     }
 
-    public function health_evaluate() {
-        $this->health[1] = $this->health[0] + ($this->eaten[1] / self::$food_need - self::$pop_stab) * self::$max_growth_pop / self::$pop_stab;
+    public function health_evaluate($pop_stab, $max_growth_pop) {
+        $this->health[1] = $this->health[0] + ($this->eaten[1] / $this->food_need - $pop_stab) * $max_growth_pop / $pop_stab;
     }
 
     /*
@@ -113,7 +111,7 @@ class Person {
     }
 
     public function get_food_need() {
-        return self::$food_need;
+        return $this->food_need;
     }
 
     public function get_health($index) {

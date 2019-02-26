@@ -8,44 +8,123 @@
 class ProductCollection {
 
     private $products = [];
+    private $prod_stab;
+    private $max_growth_prod;
 
     public function __construct($params) {
 
-        //$default_products = $this->buildDefaultProducts();
+        $this->prod_stab = $params['valore_capacita_stabile'];
+        $this->max_growth_prod = $params['massima_crescita_capacita'];
 
-        $products = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane', 'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+        $mode_random_params = (isset($params['mode_random_params']) && $params['mode_random_params'] == 1) ? true : false; // TODO verify option value
 
-        foreach ($products as $product) {
+        if ($mode_random_params) {
 
-            $prefix = $product . '_';
+            // TODO update params names
 
-            $new_product = new Product();
+            $n_products = $params['numero_prodotti'];
+            $percent_type = $params['percentuale_animali_piante'];
 
-            $new_product->set_name($product);
-            $new_product->set_type($params[$prefix . 'tipo']);
-            $new_product->set_price($params[$prefix . 'prezzo']);
+            $n_meat = round($n_products / 100 * $percent_type);
+            $n_veg = $n_products - $n_meat;
 
-            $new_product->set_capacity($params[$prefix . 'produttivita'], 0);
-            $new_product->set_capacity($params[$prefix . 'produttivita'], 1);
+            for ($i = 0; $i < $n_products; $i++) {
 
-            $new_product->set_impact_on_GHGS($params[$prefix . 'impatto_ghgs']);
-            $new_product->set_impact_on_PM($params[$prefix . 'impatto_pm']);
-            $new_product->set_impact_on_NH3($params[$prefix . 'impatto_nh3']);
+                $new_product = new Product();
 
-            $new_product->set_ideal_GHGS($params[$prefix . 'ghgs_ideale']);
-            $new_product->set_tolerance_GHGS($params[$prefix . 'tolleranza_ghgs']);
+                $new_product->set_name($i);
 
-            $new_product->set_ideal_PM($params[$prefix . 'pm_ideale']);
-            $new_product->set_tolerance_PM($params[$prefix . 'tolleranza_pm']);
+                if ($i < $n_veg) {
+                    $tipo = 'veg';
+                } else {
+                    $tipo = 'meat';
+                }
 
-            $new_product->set_ideal_NH3($params[$prefix . 'nh3_ideale']);
-            $new_product->set_tolerance_NH3($params[$prefix . 'tolleranza_nh3']);
+                $new_product->set_type($tipo);
 
-            $new_product->set_ideal_temperature($params[$prefix . 'ideal_temperature']);
-            $new_product->set_tolerance_temperature($params[$prefix . 'tolerance_temperature']);
+                $prefix = $tipo . '_';
 
-            array_push($this->products, $new_product);
+                // TODO verificare nomenclatura min/max
+
+                $price = Utils::rand($params[$prefix . 'prezzo_min'], $params[$prefix . 'prezzo_min_max']);
+                $new_product->set_price($price);
+
+                $capacity = Utils::rand($params[$prefix . 'produttivita_min'], $params[$prefix . 'produttivita_max']);
+                $new_product->set_capacity($capacity, 0);
+                $new_product->set_capacity($capacity, 1);
+
+                $impact_on_GHGS = Utils::rand($params[$prefix . 'impatto_ghgs_min'], $params[$prefix . 'impatto_ghgs_max']);
+                $new_product->set_impact_on_GHGS($impact_on_GHGS);
+
+                $impact_on_PM = Utils::rand($params[$prefix . 'impatto_pm_min'], $params[$prefix . 'impatto_pm_max']);
+                $new_product->set_impact_on_PM($impact_on_PM);
+
+                $impact_on_NH3 = Utils::rand($params[$prefix . 'impatto_nh3_min'], $params[$prefix . 'impatto_nh3_max']);
+                $new_product->set_impact_on_NH3($impact_on_NH3);
+
+                $ideal_GHGS = Utils::rand($params[$prefix . 'ghgs_ideale_min'], $params[$prefix . 'ghgs_ideale_max']);
+                $new_product->set_ideal_GHGS($ideal_GHGS);
+
+                $tolerance_GHGS = Utils::rand($params[$prefix . 'tolleranza_ghgs_min'], $params[$prefix . 'tolleranza_ghgs_max']);
+                $new_product->set_tolerance_GHGS($tolerance_GHGS);
+
+                $ideal_PM = Utils::rand($params[$prefix . 'pm_ideale_min'], $params[$prefix . 'pm_ideale_max']);
+                $new_product->set_ideal_PM($ideal_PM);
+
+                $tolerance_PM = Utils::rand($params[$prefix . 'tolleranza_pm_min'], $params[$prefix . 'tolleranza_pm_max']);
+                $new_product->set_tolerance_PM($tolerance_PM);
+
+                $ideal_NH3 = Utils::rand($params[$prefix . 'nh3_ideale_min'], $params[$prefix . 'nh3_ideale_max']);
+                $new_product->set_ideal_NH3($ideal_NH3);
+
+                $tolerance_NH3 = Utils::rand($params[$prefix . 'tolleranza_nh3_min'], $params[$prefix . 'tolleranza_nh3_max']);
+                $new_product->set_tolerance_NH3($tolerance_NH3);
+
+                $ideal_temperature = Utils::rand($params[$prefix . 'ideal_temperature_min'], $params[$prefix . 'ideal_temperature_max']);
+                $new_product->set_ideal_temperature($ideal_temperature);
+
+                $tolerance_temperature = Utils::rand($params[$prefix . 'tolerance_temperature_min'], $params[$prefix . 'tolerance_temperature_max']);
+                $new_product->set_tolerance_temperature($tolerance_temperature);
+
+                array_push($this->products, $new_product);
+            }
+        } else {
+            $products = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane', 'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+
+            foreach ($products as $product) {
+
+                $prefix = $product . '_';
+
+                $new_product = new Product();
+
+                $new_product->set_name($product);
+                $new_product->set_type($params[$prefix . 'tipo']);
+                $new_product->set_price($params[$prefix . 'prezzo']);
+
+                $new_product->set_capacity($params[$prefix . 'produttivita'], 0);
+                $new_product->set_capacity($params[$prefix . 'produttivita'], 1);
+
+                $new_product->set_impact_on_GHGS($params[$prefix . 'impatto_ghgs']);
+                $new_product->set_impact_on_PM($params[$prefix . 'impatto_pm']);
+                $new_product->set_impact_on_NH3($params[$prefix . 'impatto_nh3']);
+
+                $new_product->set_ideal_GHGS($params[$prefix . 'ghgs_ideale']);
+                $new_product->set_tolerance_GHGS($params[$prefix . 'tolleranza_ghgs']);
+
+                $new_product->set_ideal_PM($params[$prefix . 'pm_ideale']);
+                $new_product->set_tolerance_PM($params[$prefix . 'tolleranza_pm']);
+
+                $new_product->set_ideal_NH3($params[$prefix . 'nh3_ideale']);
+                $new_product->set_tolerance_NH3($params[$prefix . 'tolleranza_nh3']);
+
+                $new_product->set_ideal_temperature($params[$prefix . 'ideal_temperature']);
+                $new_product->set_tolerance_temperature($params[$prefix . 'tolerance_temperature']);
+
+                array_push($this->products, $new_product);
+            }
         }
+
+        // TODO order products array by crescent price
     }
 
     public function getProductTypeByIndex($index) {
@@ -97,7 +176,7 @@ class ProductCollection {
 
     public function growth_evaluations() {
         foreach ($this->products as $product) {
-            $product->growth_evaluate();
+            $product->growth_evaluate($this->prod_stab, $this->max_growth_prod);
         }
     }
 
