@@ -115,7 +115,9 @@ class PersonCollection {
             } elseif ($person->get_health(1) >= $this->step_pop_growth) {
                 $rand = random_int(0, 100);
                 if ($rand >= $this->growth_parameter) {
-                    $new_person = $this->generateNewPerson($product_collection);
+                    //$new_person = $this->generateNewPerson($product_collection);
+                    $new_person = new Person($params['tendenza_mangiare_carne'], $product_collection, $person->get_wealth(), $birth_health=50, $ricchezza_media, $person->get_food_need(), $params['influenza_differenze_ricchezza']);
+                  
                     // Evita di aggiungere persone all'array che si sta scorrendo
                     array_push($new_persons, $new_person); // birth
                 }
