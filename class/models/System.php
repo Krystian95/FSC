@@ -65,21 +65,20 @@ class System {
          */
         $this->product_collection->growth_evaluations();
 
-        /*
-         * Terminal operations of the cicle
-         */
-        $this->product_collection->endIteration();
-        $this->person_collection->endIteration();
-        $this->environment->endIteration();
-
         self::$step++;
-
 
         /*
          * Test
          */
         $return['Charts']['Chart 1']['Linea 1'] = $this->person_collection->getCountPeople();
         $return['Charts']['Chart 1']['Linea 2'] = $this->person_collection->getMeanHealth();
+
+        /*
+         * Terminal operations of the cicle
+         */
+        $this->product_collection->endIteration();
+        $this->person_collection->endIteration();
+        $this->environment->endIteration();
 
         /*
          * Extra
