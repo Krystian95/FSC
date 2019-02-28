@@ -658,25 +658,26 @@ $(function () {
         $('input[name="variazione_percentuale_extra"]').val(0);
     });
     
-    /* Premo il bottone reset parametri per ogni singolo prodotto 
+    /* Premo il bottone reset parametri per ogni singolo prodotto */
     var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
             'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
     
-    $(itemsProd).each(function (index, value1) {
+    $(itemsProd).each(function (index1, value1) {
         
         $('#discardChanges' + value1).on('click', function (event) {
 
-            var itemsExtra = ['_prezzo', '_produttivita', ''];
+            var itemsParProd = ['_prezzo', '_produttivita', '_impatto_ghgs', '_impatto_pm', '_impatto_nh3', '_ghgs_ideale', '_tolleranza_ghgs',
+            '_pm_ideale', '_tolleranza_pm', '_nh3_ideale', '_tolleranza_nh3', '_temperatura_ideale', '_tolleranza_temperatura', ];
 
-            $(itemsExtra).each(function (index2, value2) {
-                $('input[name="' + value2 + '"]').val(0);
-                $('input[name="' + value2 + '_slider"]').val(0);
-                $('#' + value2 + '_checkbox').prop('checked', false);
+            $(itemsParProd).each(function (index2, value2) {
+                $('input[name="' + value1 + value2 + '"]').val(0);
+                $('input[name="' + value1 + value2 + '_slider"]').val(0);
+                $('#' + value1 + value2 + '_checkbox').prop('checked', false);
             });
 
-            $('input[name="variazione_percentuale_extra"]').val(0);
+            $('input[name="variazione_percentuale_' + value1 + '"]').val(0);
         });
-    });*/
+    });
 
     /* Accoppia elementi slider e textbox nelle finestre imposta altri parametri popolazione e ambiente */
     var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',

@@ -411,8 +411,8 @@
                                 <form>
                                     <div class="form-group">
                                         <select class="form-control" id="selectModProd">
-                                            <option>Tutti i prodotti</option>
-                                            <option>Singoli prodotti</option>
+                                            <option value="1">Tutti i prodotti</option>
+                                            <option value="0">Singoli prodotti</option>
                                         </select>
                                     </div>
                                 </form>
@@ -939,7 +939,7 @@
         echo '</div><div class="col-1"></div></div>';
         echo '</div></div></div>';
         echo '<div class="modal-footer">';
-        echo '<button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChanges' . $value . '"><i class="fa fa-refresh"></i>&nbsp&nbspReset</button>';
+        echo '<button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChanges' . $value . '"><i class="fas fa-sync-alt"></i>&nbsp&nbspReset</button>';
         echo '<button type="button" class="btn btn-success" data-dismiss="modal" id="saveChanges' . $value . '"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>';
         echo '</div></div></div></div>';
     }
