@@ -487,10 +487,10 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Influenza sulla produzione causata da GHGS
+                                            GHGS ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -503,10 +503,10 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Influenza sulla produzione causata da PM
+                                            PM ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -519,10 +519,10 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Influenza sulla produzione causata da NH<sub>3</sub>
+                                            NH<sub>3</sub> ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -535,10 +535,10 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Influenza sulla produzione causata dalla temperatura
+                                            Temperatura ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -597,10 +597,10 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Influenza sulla produzione causata da GHGS
+                                            GHGS ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -613,10 +613,10 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Influenza sulla produzione causata da PM
+                                            PM ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -629,10 +629,10 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Influenza sulla produzione causata da NH<sub>3</sub>
+                                            NH<sub>3</sub> ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -645,10 +645,10 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Influenza sulla produzione causata dalla temperatura
+                                            Temperatura ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
