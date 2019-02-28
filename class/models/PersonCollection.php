@@ -15,8 +15,17 @@ class PersonCollection {
     private $persons;
     private $pop_stab;
     private $max_growth_pop;
+    private $tendenza_mangiare_carne;
+    private $ricchezza_media;
+    private $influenza_differenze_ricchezza;
+    private $n_nati = 0;
+    private $n_morti = 0;
 
     public function __construct($params, $product_collection) {
+
+        $this->tendenza_mangiare_carne = $params['tendenza_mangiare_carne'];
+        $this->ricchezza_media = $params['ricchezza_media'];
+        $this->influenza_differenze_ricchezza = $params['influenza_differenze_ricchezza'];
 
         $this->persons = [];
         $this->step_pop_growth = $params['step_nascita_popolazione'];
@@ -112,12 +121,14 @@ class PersonCollection {
 
             if ($person->get_health(1) <= $this->step_pop_death) {
                 unset($this->persons[$key]); // death
+                $this->n_morti++;
             } elseif ($person->get_health(1) >= $this->step_pop_growth) {
                 $rand = random_int(0, 100);
                 if ($rand >= $this->growth_parameter) {
-                    //$new_person = $this->generateNewPerson($product_collection);
-                    $new_person = new Person($params['tendenza_mangiare_carne'], $product_collection, $person->get_wealth(), $birth_health=50, $ricchezza_media, $person->get_food_need(), $params['influenza_differenze_ricchezza']);
-                  
+
+                    $new_person = new Person($this->tendenza_mangiare_carne, $product_collection, $person->get_wealth(), $birth_health = 50, $this->ricchezza_media, $person->get_food_need(), $this->influenza_differenze_ricchezza);
+                    $this->n_nati++;
+
                     // Evita di aggiungere persone all'array che si sta scorrendo
                     array_push($new_persons, $new_person); // birth
                 }
@@ -131,6 +142,18 @@ class PersonCollection {
         $this->sortPersonsByWealthDescending($this->persons);
     }
 
+    /*
+     * Getters
+     */
+
+    public function getCountNati() {
+        return $this->n_nati;
+    }
+
+    public function getCountMorti() {
+        return $this->n_morti;
+    }
+
     public function getPersons() {
         return $this->persons;
     }
@@ -141,6 +164,18 @@ class PersonCollection {
 
     public function getCountPeople() {
         return count($this->persons);
+    }
+
+    /*
+     * Setters
+     */
+
+    public function setCountNati($n_nati) {
+        $this->n_nati = $n_nati;
+    }
+
+    public function setCountMorti($n_morti) {
+        $this->n_morti = $n_morti;
     }
 
 }

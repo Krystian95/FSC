@@ -30,6 +30,8 @@ class System {
     public function iteratePeriod($period) {
 
         $this->setCurrentMonth($period);
+        $this->person_collection->setCountMorti(0);
+        $this->person_collection->setCountNati(0);
 
         /*
          * step_productions
@@ -68,10 +70,21 @@ class System {
         self::$step++;
 
         /*
-         * Test
+         * Charts
          */
-        $return['Charts']['Chart 1']['Linea 1'] = $this->person_collection->getCountPeople();
-        $return['Charts']['Chart 1']['Linea 2'] = $this->person_collection->getMeanHealth();
+
+        // Popolazione
+        $return['Charts']['Popolazione']['Popolazione Totale'] = $this->person_collection->getCountPeople();
+
+        $return['Charts']['Nati e morti']['Nati'] = $this->person_collection->getCountNati();
+        $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
+
+        $return['Charts']['Salute media']['Salute media'] = $this->person_collection->getMeanHealth();
+
+        // Prodotti
+        // Ambiente
+
+
 
         /*
          * Terminal operations of the cicle
@@ -84,11 +97,7 @@ class System {
          * Extra
          */
         $next_period = $this->calculateNextPeriod($current_period = $period);
-
         $return['Next_Period'] = $next_period;
-
-        /* $return['Charts']['Chart 1']['Linea 1'] = random_int(0, 500);
-          $return['Charts']['Chart 1']['Linea 2'] = random_int(0, 500); */
 
         return $return;
     }

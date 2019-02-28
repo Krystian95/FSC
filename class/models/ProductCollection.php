@@ -16,14 +16,13 @@ class ProductCollection {
         $this->prod_stab = $params['valore_capacita_stabile'];
         $this->max_growth_prod = $params['massima_crescita_capacita'];
 
-        $mode_random_params = (isset($params['mode_random_params']) && $params['mode_random_params'] == 1) ? true : false; // TODO verify option value
+        // TODO add "selectModProd" param at index.js then verify option real value
+        $mode_random_params = (isset($params['selectModProd']) && $params['selectModProd'] == '1') ? true : false;
 
         if ($mode_random_params) {
 
-            // TODO update params names
-
             $n_products = $params['numero_prodotti'];
-            $percent_type = $params['percentuale_animali_piante'];
+            $percent_type = $params['percentuale_carne_vegetali'];
 
             $n_meat = round($n_products / 100 * $percent_type);
             $n_veg = $n_products - $n_meat;
@@ -44,9 +43,7 @@ class ProductCollection {
 
                 $prefix = $tipo . '_';
 
-                // TODO verificare nomenclatura min/max
-
-                $price = Utils::rand($params[$prefix . 'prezzo_min'], $params[$prefix . 'prezzo_min_max']);
+                $price = Utils::rand($params[$prefix . 'prezzo_min'], $params[$prefix . 'prezzo_max']);
                 $new_product->set_price($price);
 
                 $capacity = Utils::rand($params[$prefix . 'produttivita_min'], $params[$prefix . 'produttivita_max']);
@@ -62,28 +59,28 @@ class ProductCollection {
                 $impact_on_NH3 = Utils::rand($params[$prefix . 'impatto_nh3_min'], $params[$prefix . 'impatto_nh3_max']);
                 $new_product->set_impact_on_NH3($impact_on_NH3);
 
-                $ideal_GHGS = Utils::rand($params[$prefix . 'ghgs_ideale_min'], $params[$prefix . 'ghgs_ideale_max']);
+                $ideal_GHGS = Utils::rand($params[$prefix . 'ideal_ghgs_min'], $params[$prefix . 'ideal_ghgs_max']);
                 $new_product->set_ideal_GHGS($ideal_GHGS);
 
-                $tolerance_GHGS = Utils::rand($params[$prefix . 'tolleranza_ghgs_min'], $params[$prefix . 'tolleranza_ghgs_max']);
+                $tolerance_GHGS = Utils::rand($params[$prefix . 'toll_infl_prod_ghgs_min'], $params[$prefix . 'toll_infl_prod_ghgs_max']);
                 $new_product->set_tolerance_GHGS($tolerance_GHGS);
 
-                $ideal_PM = Utils::rand($params[$prefix . 'pm_ideale_min'], $params[$prefix . 'pm_ideale_max']);
+                $ideal_PM = Utils::rand($params[$prefix . 'ideal_pm_min'], $params[$prefix . 'ideal_pm_max']);
                 $new_product->set_ideal_PM($ideal_PM);
 
-                $tolerance_PM = Utils::rand($params[$prefix . 'tolleranza_pm_min'], $params[$prefix . 'tolleranza_pm_max']);
+                $tolerance_PM = Utils::rand($params[$prefix . 'toll_infl_prod_pm_min'], $params[$prefix . 'toll_infl_prod_pm_max']);
                 $new_product->set_tolerance_PM($tolerance_PM);
 
-                $ideal_NH3 = Utils::rand($params[$prefix . 'nh3_ideale_min'], $params[$prefix . 'nh3_ideale_max']);
+                $ideal_NH3 = Utils::rand($params[$prefix . 'ideal_nh3_min'], $params[$prefix . 'ideal_nh3_min']);
                 $new_product->set_ideal_NH3($ideal_NH3);
 
-                $tolerance_NH3 = Utils::rand($params[$prefix . 'tolleranza_nh3_min'], $params[$prefix . 'tolleranza_nh3_max']);
+                $tolerance_NH3 = Utils::rand($params[$prefix . 'toll_infl_prod_nh3_min'], $params[$prefix . 'toll_infl_prod_nh3_max']);
                 $new_product->set_tolerance_NH3($tolerance_NH3);
 
-                $ideal_temperature = Utils::rand($params[$prefix . 'ideal_temperature_min'], $params[$prefix . 'ideal_temperature_max']);
+                $ideal_temperature = Utils::rand($params[$prefix . 'ideal_temp_min'], $params[$prefix . 'ideal_temp_max']);
                 $new_product->set_ideal_temperature($ideal_temperature);
 
-                $tolerance_temperature = Utils::rand($params[$prefix . 'tolerance_temperature_min'], $params[$prefix . 'tolerance_temperature_max']);
+                $tolerance_temperature = Utils::rand($params[$prefix . 'toll_infl_prod_temp_min'], $params[$prefix . 'toll_infl_prod_temp_max']);
                 $new_product->set_tolerance_temperature($tolerance_temperature);
 
                 array_push($this->products, $new_product);
@@ -117,8 +114,8 @@ class ProductCollection {
                 $new_product->set_ideal_NH3($params[$prefix . 'nh3_ideale']);
                 $new_product->set_tolerance_NH3($params[$prefix . 'tolleranza_nh3']);
 
-                $new_product->set_ideal_temperature($params[$prefix . 'ideal_temperature']);
-                $new_product->set_tolerance_temperature($params[$prefix . 'tolerance_temperature']);
+                $new_product->set_ideal_temperature($params[$prefix . 'temperatura_ideale']);
+                $new_product->set_tolerance_temperature($params[$prefix . 'tolleranza_temperatura']);
 
                 array_push($this->products, $new_product);
             }
@@ -132,7 +129,7 @@ class ProductCollection {
         usort($products, 'my_sort_function');
 
         function my_sort_function($a, $b) {
-            return $a['price'] < $b['price'];
+            return $a['prezzo'] < $b['prezzo'];
         }
 
     }

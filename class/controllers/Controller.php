@@ -27,8 +27,8 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
             $params = $_POST['Data']['Params'];
             $system = new System($params);
 
-            /*error_log(implode('#', $_POST['Data']));
-            exit;*/
+            /* error_log(implode('#', $_POST['Data']));
+              exit; */
 
             $period = $_POST['Data']['Period'];
             $response = $system->iteratePeriod($period);
