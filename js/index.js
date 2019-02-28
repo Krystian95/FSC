@@ -678,6 +678,41 @@ $(function () {
             $('input[name="variazione_percentuale_' + value1 + '"]').val(0);
         });
     });
+    
+    /* Premo il bottone reset parametri per tutti i prodotti */
+    $('#discardChangesTuttiProd').on('click', function (event) {
+        
+        slider_numero_prodotti.setAttribute('value', 50).refresh();
+        slider_percentuale_carne_vegetali.setAttribute('value', 50).refresh();
+        
+        meat_prezzo.setAttribute('value', [25,75]).refresh();
+        meat_produttivita.setAttribute('value', [25, 75]).refresh();
+        meat_impatto_ghgs.setAttribute('value', [-25, 25]).refresh();
+        meat_impatto_pm.setAttribute('value', [-25, 25]).refresh();
+        meat_impatto_nh3.setAttribute('value', [-25, 25]).refresh();
+        meat_ideal_ghgs.setAttribute('value', [-25, 25]).refresh();
+        meat_toll_infl_prod_ghgs.setAttribute('value', [-25, 25]).refresh();
+        meat_ideal_pm.setAttribute('value', [-25, 25]).refresh();
+        meat_toll_infl_prod_pm.setAttribute('value', [-25, 25]).refresh();
+        meat_ideal_nh3.setAttribute('value', [-25, 25]).refresh();
+        meat_toll_infl_prod_nh3.setAttribute('value', [-25, 25]).refresh();
+        meat_ideal_temp.setAttribute('value', [-25, 25]).refresh();
+        meat_toll_infl_prod_temp.setAttribute('value', [-25, 25]).refresh();
+        
+        veg_prezzo.setAttribute('value', [25,75]).refresh();
+        veg_produttivita.setAttribute('value', [25, 75]).refresh();
+        veg_impatto_ghgs.setAttribute('value', [-25, 25]).refresh();
+        veg_impatto_pm.setAttribute('value', [-25, 25]).refresh();
+        veg_impatto_nh3.setAttribute('value', [-25, 25]).refresh();
+        veg_ideal_ghgs.setAttribute('value', [-25, 25]).refresh();
+        veg_toll_infl_prod_ghgs.setAttribute('value', [-25, 25]).refresh();
+        veg_ideal_pm.setAttribute('value', [-25, 25]).refresh();
+        veg_toll_infl_prod_pm.setAttribute('value', [-25, 25]).refresh();
+        veg_ideal_nh3.setAttribute('value', [-25, 25]).refresh();
+        veg_toll_infl_prod_nh3.setAttribute('value', [-25, 25]).refresh();
+        veg_ideal_temp.setAttribute('value', [-25, 25]).refresh();
+        veg_toll_infl_prod_temp.setAttribute('value', [-25, 25]).refresh();
+    });
 
     /* Accoppia elementi slider e textbox nelle finestre imposta altri parametri popolazione e ambiente */
     var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
