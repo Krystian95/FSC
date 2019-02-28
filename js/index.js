@@ -280,7 +280,9 @@ $(function () {
         }});
 
     /* Slider percentuale carne vegetali modal imposta parametri per tutti i prodotti */
-    slider_percentuale_carne_vegetali = new Slider("#percentuale_carne_vegetali", {id: "percentuale_carne_vegetali", min: 0, max: 100, value: 50});
+    slider_percentuale_carne_vegetali = new Slider("#percentuale_carne_vegetali", {formatter: function (value) {
+            return 'Carne: ' + value + ' - Vegetali: ' + (100 - value);
+        }, id: "percentuale_carne_vegetali", min: 0, max: 100, value: 50});
 
     /* Range carne modal imposta parametri per tutti i prodotti */
     var meat_prezzo = new Slider('#meat_prezzo', {});
