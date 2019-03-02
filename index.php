@@ -38,24 +38,13 @@
                             <form id="params-form" method="post" action="#!">
                                 <div class="row form-group align-items-center">
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterPopModal"><i class="fa fa-users"></i>&nbsp&nbspPopolazione</button>
+                                        <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbsp<span id="starttext">Start</span></button>
                                     </div>
                                     <div class="col-6">
                                         <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterExtraModal"><i class="fa fa-cog"></i>&nbsp&nbspImposta parametri</button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterEnvModal"><i class="fa fa-tree"></i>&nbsp&nbspAmbiente</button>
-                                    </div>
-                                    <div class="col-6">
-                                        <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbsp<span id="starttext">Start</span></button>
-                                    </div> 
-                                </div>
-                                <div class="row form-group align-items-center">
-                                    <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterProdModal"><i class="fa fa-industry"></i>&nbsp&nbspProdotti</button>
-                                    </div>
                                     <div class="col-2">
                                         <button type="button" class="btn btn-warning" id="pausa" disabled="true"><i class="fa fa-pause"></i>&nbspPausa</button>
                                     </div>
@@ -65,6 +54,9 @@
                                     <div class="col-2">
                                         <button type="button" class="btn btn-secondary" id="reset"><i class="fas fa-sync-alt"></i>&nbspReset</button>
                                     </div>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterProdModal"><i class="fa fa-industry"></i>&nbsp&nbspProdotti</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -72,18 +64,26 @@
                 </div>
                 <div class="col">
                     <div class="row form-group align-items-center">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterPopModal"><i class="fa fa-users"></i>&nbsp&nbspPopolazione</button>
+                        </div>
                         <label class="col-form-label col-2">
                             Periodo
                         </label>
-                        <div class="col">
+                        <div class="col-4">
                             <input type="text" class="form-control textbox" name="periodo" id="textboxAnno" readonly> 
                         </div>
                     </div>
                     <div class="row align-items-center">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterEnvModal"><i class="fa fa-tree"></i>&nbsp&nbspAmbiente</button>
+                        </div>
+
+
                         <label class="col-form-label col-2">
                             Anno
                         </label>
-                        <div class="col">
+                        <div class="col-4">
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBarYear" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
                             </div>
@@ -944,7 +944,7 @@
         echo '</div></div></div></div>';
     }
     ?>
-    
+
     <!-- Modal extra-->
     <div class="modal fade" id="parameterExtraModal" role="dialog" data-backdrop="static">
         <div class="modal-dialog">

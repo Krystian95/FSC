@@ -40,6 +40,10 @@ function initChart() {
             ]
         },
         options: {
+            title: {
+                display: true,
+                text: 'Grafico 1'
+            },
             scales: {
                 yAxes: [{
                         ticks: {
@@ -141,6 +145,10 @@ function initChart() {
             ]
         },
         options: {
+            title: {
+                display: true,
+                text: 'Grafico 2'
+            },
             scales: {
                 yAxes: [{
                         ticks: {
@@ -657,17 +665,17 @@ $(function () {
 
         $('input[name="variazione_percentuale_extra"]').val(0);
     });
-    
+
     /* Premo il bottone reset parametri per ogni singolo prodotto */
     var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
-            'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
-    
+        'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+
     $(itemsProd).each(function (index1, value1) {
-        
+
         $('#discardChanges' + value1).on('click', function (event) {
 
             var itemsParProd = ['_prezzo', '_produttivita', '_impatto_ghgs', '_impatto_pm', '_impatto_nh3', '_ghgs_ideale', '_tolleranza_ghgs',
-            '_pm_ideale', '_tolleranza_pm', '_nh3_ideale', '_tolleranza_nh3', '_temperatura_ideale', '_tolleranza_temperatura', ];
+                '_pm_ideale', '_tolleranza_pm', '_nh3_ideale', '_tolleranza_nh3', '_temperatura_ideale', '_tolleranza_temperatura', ];
 
             $(itemsParProd).each(function (index2, value2) {
                 $('input[name="' + value1 + value2 + '"]').val(0);
@@ -678,14 +686,14 @@ $(function () {
             $('input[name="variazione_percentuale_' + value1 + '"]').val(0);
         });
     });
-    
+
     /* Premo il bottone reset parametri per tutti i prodotti */
     $('#discardChangesTuttiProd').on('click', function (event) {
-        
+
         slider_numero_prodotti.setAttribute('value', 50).refresh();
         slider_percentuale_carne_vegetali.setAttribute('value', 50).refresh();
-        
-        meat_prezzo.setAttribute('value', [25,75]).refresh();
+
+        meat_prezzo.setAttribute('value', [25, 75]).refresh();
         meat_produttivita.setAttribute('value', [25, 75]).refresh();
         meat_impatto_ghgs.setAttribute('value', [-25, 25]).refresh();
         meat_impatto_pm.setAttribute('value', [-25, 25]).refresh();
@@ -698,8 +706,8 @@ $(function () {
         meat_toll_infl_prod_nh3.setAttribute('value', [-25, 25]).refresh();
         meat_ideal_temp.setAttribute('value', [-25, 25]).refresh();
         meat_toll_infl_prod_temp.setAttribute('value', [-25, 25]).refresh();
-        
-        veg_prezzo.setAttribute('value', [25,75]).refresh();
+
+        veg_prezzo.setAttribute('value', [25, 75]).refresh();
         veg_produttivita.setAttribute('value', [25, 75]).refresh();
         veg_impatto_ghgs.setAttribute('value', [-25, 25]).refresh();
         veg_impatto_pm.setAttribute('value', [-25, 25]).refresh();
