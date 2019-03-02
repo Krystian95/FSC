@@ -38,24 +38,18 @@
                             <form id="params-form" method="post" action="#!">
                                 <div class="row form-group align-items-center">
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbsp<span id="starttext">Start</span></button>
-                                    </div>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterPopModal"><i class="fa fa-users"></i>&nbsp&nbspPopolazione</button>
+                                    </div> 
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterExtraModal"><i class="fa fa-cog"></i>&nbsp&nbspImposta parametri</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterProdModal"><i class="fa fa-industry"></i>&nbsp&nbspProdotti</button>
                                     </div>
                                 </div>
                                 <div class="row form-group align-items-center">
-                                    <div class="col-2">
-                                        <button type="button" class="btn btn-warning" id="pausa" disabled="true"><i class="fa fa-pause"></i>&nbspPausa</button>
-                                    </div>
-                                    <div class="col-2">
-                                        <button type="button" class="btn btn-danger" id="stop" disabled="true"><i class="fa fa-stop"></i>&nbspStop</button>
-                                    </div>
-                                    <div class="col-2">
-                                        <button type="button" class="btn btn-secondary" id="reset"><i class="fas fa-sync-alt"></i>&nbspReset</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterEnvModal"><i class="fa fa-tree"></i>&nbsp&nbspAmbiente</button>
                                     </div>
                                     <div class="col-6">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterProdModal"><i class="fa fa-industry"></i>&nbsp&nbspProdotti</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterExtraModal"><i class="fa fa-cog"></i>&nbsp&nbspImposta parametri</button>
                                     </div>
                                 </div>
                             </form>
@@ -65,8 +59,9 @@
                 <div class="col">
                     <div class="row form-group align-items-center">
                         <div class="col-6">
-                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterPopModal"><i class="fa fa-users"></i>&nbsp&nbspPopolazione</button>
+                            <button type="button" class="btn btn-success" id="start"><i class="fa fa-play"></i>&nbsp&nbsp<span id="starttext">Start</span></button>
                         </div>
+
                         <label class="col-form-label col-2">
                             Periodo
                         </label>
@@ -75,9 +70,16 @@
                         </div>
                     </div>
                     <div class="row align-items-center">
-                        <div class="col-6">
-                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#parameterEnvModal"><i class="fa fa-tree"></i>&nbsp&nbspAmbiente</button>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-warning" id="pausa" disabled="true"><i class="fa fa-pause"></i>&nbspPausa</button>
                         </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-danger" id="stop" disabled="true"><i class="fa fa-stop"></i>&nbspStop</button>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-secondary" id="reset"><i class="fas fa-sync-alt"></i>&nbspReset</button>
+                        </div>
+
 
 
                         <label class="col-form-label col-2">
@@ -113,7 +115,7 @@
                             <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspProdotti acquistati in base alla ricchezza della popolazione</a>
                         </div>
                     </div>
-                    <br><br>
+                    <br>
                     <canvas id="chart_1" width="1550" height="1000"></canvas>
                 </div>
                 <div class="col-6">
@@ -136,7 +138,7 @@
                             <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspProdotti acquistati in base alla ricchezza della popolazione</a>
                         </div>
                     </div>
-                    <br><br>
+                    <br>
                     <canvas id="chart_2" width="1550" height="1000"></canvas>
                 </div>
             </div>
