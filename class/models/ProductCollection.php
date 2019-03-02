@@ -16,7 +16,6 @@ class ProductCollection {
         $this->prod_stab = $params['valore_capacita_stabile'];
         $this->max_growth_prod = $params['massima_crescita_capacita'];
 
-        // TODO add "selectModProd" param at index.js then verify option real value
         $mode_random_params = (isset($params['selectModProd']) && $params['selectModProd'] == '1') ? true : false;
 
         if ($mode_random_params) {
@@ -126,12 +125,11 @@ class ProductCollection {
 
     private function sortProductsByPriceAscending(&$products) {
 
-        usort($products, 'my_sort_function');
+        usort($products, ['ProductCollection', 'sort_ascending']);
+    }
 
-        function my_sort_function($a, $b) {
-            return $a['prezzo'] < $b['prezzo'];
-        }
-
+    private function sort_ascending($a, $b) {
+        return $a->get_price() < $b->get_price();
     }
 
     public function endIteration() {

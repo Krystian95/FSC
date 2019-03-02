@@ -5,6 +5,7 @@ function Utils() {}
 Utils.prototype.performAjaxCall = function (params) {
 
     var resp = null;
+    console.log("params sent by ajax call:");
     console.log(params);
 
     $.ajax({

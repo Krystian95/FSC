@@ -256,7 +256,7 @@ function getCurrentMonthYear() {
 
 function getInputValues() {
 
-    var data = [];
+    var data = {};
 
     $('input.form-control.textbox').each(function (index, value) {
         var name = $(this).attr('name');
@@ -266,6 +266,7 @@ function getInputValues() {
 
     data['numero_prodotti'] = String(slider_numero_prodotti.getValue());
     data['percentuale_carne_vegetali'] = String(slider_percentuale_carne_vegetali.getValue());
+    data['selectModProd'] = String($('#selectModProd').val());
 
     $(sliders).each(function (index, value) {
         var name = this.element.id;

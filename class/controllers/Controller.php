@@ -25,10 +25,13 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
         case 'Start' :
 
             $params = $_POST['Data']['Params'];
-            $system = new System($params);
 
-            /* error_log(implode('#', $_POST['Data']));
+            /* foreach ($params as $key => $value) {
+              error_log($key . ': ' . $value);
+              }
               exit; */
+
+            $system = new System($params);
 
             $period = $_POST['Data']['Period'];
             $response = $system->iteratePeriod($period);

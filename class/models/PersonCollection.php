@@ -73,12 +73,11 @@ class PersonCollection {
 
     private function sortPersonsByWealthDescending(&$persons) {
 
-        usort($persons, 'my_sort_function');
+        usort($persons, ['PersonCollection', 'sort_descending']);
+    }
 
-        function my_sort_function($a, $b) {
-            return $a['wealth'] < $b['wealth'];
-        }
-
+    private function sort_descending($a, $b) {
+        return $a->get_wealth() < $b->get_wealth();
     }
 
     public function endIteration() {
