@@ -102,17 +102,16 @@
                             <i class="fa fa-chart-bar"></i>&nbsp&nbspGrafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspAndamento temporale N persone</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspAndamento temporale N persone morte, N persone nate</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspAndamento temporale salute media</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspAndamento temporale capacità produttiva di ogni prodotto</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspAndamento temporale produzione di ogni prodotto</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspAndamento temporale vendite di ogni prodotto</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspGrafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-chart-area fa-fw"></i>&nbsp&nbspAndamento temporale capacità produttiva totale, produzione totale, venduto totale</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspAndamento temporale temperatura</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-poll fa-fw"></i>&nbsp&nbspAndamento temporale GHGS, NH<sub>3</sub>, PM</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspProdotti acquistati in base alla ricchezza della popolazione</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspPopolazione</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspSalute media</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspCapacità produttiva</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspProduzione </a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspVendita</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspCapacità/produzione/vendita mensile</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspTemperatura</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-poll fa-fw"></i>&nbsp&nbspAgenti atmosferici</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspTipologie di cibo in relazione alla ricchezza</a>
                         </div>
                     </div>
                     <br>
@@ -125,17 +124,16 @@
                             <i class="fa fa-chart-bar"></i>&nbsp&nbspGrafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspAndamento temporale N persone</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspAndamento temporale N persone morte, N persone nate</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspAndamento temporale salute media</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspAndamento temporale capacità produttiva di ogni prodotto</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspAndamento temporale produzione di ogni prodotto</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspAndamento temporale vendite di ogni prodotto</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspGrafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-chart-area fa-fw"></i>&nbsp&nbspAndamento temporale capacità produttiva totale, produzione totale, venduto totale</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspAndamento temporale temperatura</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-poll fa-fw"></i>&nbsp&nbspAndamento temporale GHGS, NH<sub>3</sub>, PM</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspProdotti acquistati in base alla ricchezza della popolazione</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspPopolazione</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspSalute media</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspCapacità produttiva</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspProduzione </a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspVendita</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspCapacità/produzione/vendita mensile</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspTemperatura</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-poll fa-fw"></i>&nbsp&nbspAgenti atmosferici</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspTipologie di cibo in relazione alla ricchezza</a>
                         </div>
                     </div>
                     <br>
@@ -280,7 +278,7 @@
                                     <label class="col-form-label col-4">
                                         Variazione percentuale
                                     </label>
-                                    <div class="col-7">
+                                    <div class="col-2">
                                         <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="variazione_percentuale_popolazione" value="0"> 
                                     </div>
                                     <div class="col-1"></div>
