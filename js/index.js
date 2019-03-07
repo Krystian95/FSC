@@ -279,7 +279,24 @@ function getInputValues() {
 }
 
 $(function () {
-
+    
+    // Abilita/disabilita textbox variazione percentuale in base alla selezione delle checkbox dialog popolazione, 
+    // ambiente, parametri extra e singoli prodotti
+    var itemsPopEnvExtraProd = ['popolazione', 'ambiente', 'extra', 'manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 
+        'patate', 'zucchine', 'peperoni', 'melanzane', 'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+    
+    $(itemsPopEnvExtraProd).each(function (index, value) {
+        
+        $('.parametri_' + value + '').change(function() {
+        
+            if (this.checked) {
+                $('input[name="variazione_percentuale_' + value + '"]').prop('disabled', false);
+            } else if($('.parametri_' + value + ':checked').length == 0){
+                $('input[name="variazione_percentuale_' + value + '"]').prop('disabled', true);
+            }
+        });
+    });
+    
     /* Nascondi bottoni scelta singoli prodotti */
     $("#singoli_prodotti").hide();
 
