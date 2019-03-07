@@ -521,9 +521,11 @@ $(function () {
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', true);
             $('input[name="' + value + '_slider"]').prop('disabled', true);
+            $('#' + value + '_checkbox').prop('disabled', true);
         });
 
         $(itemsProd).each(function (index, value) {
+            $('.parametri_' + value + '').prop('disabled', true);
             $('input[name="' + value + '_prezzo_slider"]').prop('disabled', true);
             $('input[name="' + value + '_prezzo"]').prop('disabled', true);
             $('input[name="' + value + '_produttivita_slider"]').prop('disabled', true);
@@ -536,10 +538,16 @@ $(function () {
             $('input[name="' + value + '_impatto_nh3"]').prop('disabled', true);
             $('input[name="' + value + '_ghgs_ideale_slider"]').prop('disabled', true);
             $('input[name="' + value + '_ghgs_ideale"]').prop('disabled', true);
+            $('input[name="' + value + '_tolleranza_ghgs_slider"]').prop('disabled', true);
+            $('input[name="' + value + '_tolleranza_ghgs"]').prop('disabled', true);
             $('input[name="' + value + '_pm_ideale_slider"]').prop('disabled', true);
             $('input[name="' + value + '_pm_ideale"]').prop('disabled', true);
+            $('input[name="' + value + '_tolleranza_pm_slider"]').prop('disabled', true);
+            $('input[name="' + value + '_tolleranza_pm"]').prop('disabled', true);
             $('input[name="' + value + '_nh3_ideale_slider"]').prop('disabled', true);
             $('input[name="' + value + '_nh3_ideale"]').prop('disabled', true);
+            $('input[name="' + value + '_tolleranza_nh3_slider"]').prop('disabled', true);
+            $('input[name="' + value + '_tolleranza_nh3"]').prop('disabled', true);
             $('input[name="' + value + '_temperatura_ideale_slider"]').prop('disabled', true);
             $('input[name="' + value + '_temperatura_ideale"]').prop('disabled', true);
             $('input[name="' + value + '_tolleranza_temperatura_slider"]').prop('disabled', true);
@@ -605,9 +613,11 @@ $(function () {
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', false);
             $('input[name="' + value + '_slider"]').prop('disabled', false);
+            $('#' + value + '_checkbox').prop('disabled', false);
         });
 
         $(itemsProd).each(function (index, value) {
+            $('.parametri_' + value + '').prop('disabled', false);
             $('input[name="' + value + '_prezzo_slider"]').prop('disabled', false);
             $('input[name="' + value + '_prezzo"]').prop('disabled', false);
             $('input[name="' + value + '_produttivita_slider"]').prop('disabled', false);
@@ -620,10 +630,16 @@ $(function () {
             $('input[name="' + value + '_impatto_nh3"]').prop('disabled', false);
             $('input[name="' + value + '_ghgs_ideale_slider"]').prop('disabled', false);
             $('input[name="' + value + '_ghgs_ideale"]').prop('disabled', false);
+            $('input[name="' + value + '_tolleranza_ghgs_slider"]').prop('disabled', false);
+            $('input[name="' + value + '_tolleranza_ghgs"]').prop('disabled', false);
             $('input[name="' + value + '_pm_ideale_slider"]').prop('disabled', false);
             $('input[name="' + value + '_pm_ideale"]').prop('disabled', false);
+            $('input[name="' + value + '_tolleranza_pm_slider"]').prop('disabled', false);
+            $('input[name="' + value + '_tolleranza_pm"]').prop('disabled', false);
             $('input[name="' + value + '_nh3_ideale_slider"]').prop('disabled', false);
             $('input[name="' + value + '_nh3_ideale"]').prop('disabled', false);
+            $('input[name="' + value + '_tolleranza_nh3_slider"]').prop('disabled', false);
+            $('input[name="' + value + '_tolleranza_nh3"]').prop('disabled', false);
             $('input[name="' + value + '_temperatura_ideale_slider"]').prop('disabled', false);
             $('input[name="' + value + '_temperatura_ideale"]').prop('disabled', false);
             $('input[name="' + value + '_tolleranza_temperatura_slider"]').prop('disabled', false);
