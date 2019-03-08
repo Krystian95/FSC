@@ -167,10 +167,10 @@
                                         Popolazione iniziale
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="popolazione_iniziale_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="popolazione_iniziale_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="popolazione_iniziale" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="popolazione_iniziale" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="popolazione_iniziale_checkbox" class="parametri_popolazione"></div>
@@ -181,10 +181,10 @@
                                         Tendenza a mangiare carne
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="tendenza_mangiare_carne_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="tendenza_mangiare_carne_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="tendenza_mangiare_carne" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="tendenza_mangiare_carne" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="tendenza_mangiare_carne_checkbox" class="parametri_popolazione"></div>
@@ -195,10 +195,10 @@
                                         Salute iniziale media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_iniziale_media_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_iniziale_media_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_media" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_media" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="salute_iniziale_media_checkbox" class="parametri_popolazione"></div>
@@ -209,10 +209,10 @@
                                         Salute iniziale deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_iniziale_dev_stan_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_iniziale_dev_stan_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_dev_stan" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_dev_stan" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="salute_iniziale_dev_stan_checkbox" class="parametri_popolazione"></div>
@@ -223,10 +223,10 @@
                                         Ricchezza media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_media_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_media_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_media_checkbox" class="parametri_popolazione"></div>
@@ -237,10 +237,10 @@
                                         Ricchezza deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_dev_stan_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_dev_stan_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_dev_stan" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_dev_stan" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_dev_stan_checkbox" class="parametri_popolazione"></div>
@@ -251,10 +251,10 @@
                                         Fabbisogno di cibo media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_media_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_media_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_media" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_media" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="fabbisogno_cibo_media_checkbox" class="parametri_popolazione"></div>
@@ -265,10 +265,10 @@
                                         Fabbisogno di cibo deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="fabbisogno_cibo_dev_stan_checkbox" class="parametri_popolazione"></div>
@@ -311,10 +311,10 @@
                                         Temperatura media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_media_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_media_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_media" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_media" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="oscillazioni_temperatura_media_checkbox" class="parametri_ambiente"></div>
@@ -325,10 +325,10 @@
                                         Ampiezza oscillazioni temperatura
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="oscillazioni_temperatura_ampiezza_checkbox" class="parametri_ambiente"></div>
@@ -339,10 +339,10 @@
                                         Valore iniziale GHGS
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_ghgs_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_ghgs_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_ghgs" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_ghgs" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="valore_iniziale_ghgs_checkbox" class="parametri_ambiente"></div>
@@ -353,10 +353,10 @@
                                         Valore iniziale PM
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_pm_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_pm_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_pm" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_pm" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="valore_iniziale_pm_checkbox" class="parametri_ambiente"></div>
@@ -367,10 +367,10 @@
                                         Valore iniziale NH<sub>3</sub>
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_nh3_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_nh3_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_nh3" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_nh3" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="valore_iniziale_nh3_checkbox" class="parametri_ambiente"></div>
@@ -381,10 +381,10 @@
                                         Apporto esterno GHGS
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_ghgs_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_ghgs_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_ghgs" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_ghgs" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_ghgs_checkbox" class="parametri_ambiente"></div>
@@ -395,10 +395,10 @@
                                         Apporto esterno PM
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_pm_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_pm_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_pm" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_pm" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_pm_checkbox" class="parametri_ambiente"></div>
@@ -409,10 +409,10 @@
                                         Apporto esterno NH<sub>3</sub>
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_nh3_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_nh3_slider" value="30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_nh3" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_nh3" value="30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_nh3_checkbox" class="parametri_ambiente"></div>
@@ -873,105 +873,105 @@
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Prezzo</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_prezzo_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_prezzo_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_prezzo" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_prezzo" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_prezzo_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Capacità produttiva iniziale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_produttivita_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_produttivita_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_produttivita" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_produttivita" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_produttivita_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Impatto su GHGS</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_ghgs_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_ghgs_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_ghgs" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_ghgs" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_ghgs_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Impatto su PM</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_pm_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_pm_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_pm" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_pm" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_pm_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Impatto su NH<sub>3</sub></label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_nh3_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_nh3_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_nh3" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_nh3" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_nh3_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">GHGS ideale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_ghgs_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Tolleranza all\'influenza di GHGS</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_ghgs_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">PM ideale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_pm_ideale_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_pm_ideale_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_pm_ideale" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_pm_ideale" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_pm_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Tolleranza all\'influenza di PM</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_pm_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">NH<sub>3</sub> ideale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_nh3_ideale_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_nh3_ideale_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_nh3_ideale" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_nh3_ideale" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_nh3_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Tolleranza all\'influenza di NH<sub>3</sub></label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_nh3_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Temperatura ideale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_temperatura_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Tolleranza all\'influenza della temperatura</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura_slider" value="0">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura_slider" value="30">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura" value="0">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura" value="30">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_temperatura_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
@@ -1004,10 +1004,10 @@
                                     Step nascita popolazione
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="0">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="30">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="0"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="30"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="step_nascita_popolazione_checkbox" class="parametri_extra"></div>
@@ -1018,10 +1018,10 @@
                                     Step morte popolazione
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="0">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="30">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="0"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="30"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="step_morte_popolazione_checkbox" class="parametri_extra"></div>
@@ -1032,10 +1032,10 @@
                                     Rapporto nascite salute
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="rapporto_nascite_salute_slider" value="0">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="rapporto_nascite_salute_slider" value="30">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="rapporto_nascite_salute" value="0"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="rapporto_nascite_salute" value="30"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="rapporto_nascite_salute_checkbox" class="parametri_extra"></div>
@@ -1046,10 +1046,10 @@
                                     Valore salute stabile
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_salute_stabile_slider" value="0">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_salute_stabile_slider" value="30">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_salute_stabile" value="0"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_salute_stabile" value="30"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="valore_salute_stabile_checkbox" class="parametri_extra"></div>
@@ -1060,10 +1060,10 @@
                                     Massima crescita salute
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_salute_slider" value="0">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_salute_slider" value="30">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_salute" value="0"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_salute" value="30"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_salute_checkbox" class="parametri_extra"></div>
@@ -1074,10 +1074,10 @@
                                     Valore capacità stabile
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_capacita_stabile_slider" value="0">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_capacita_stabile_slider" value="30">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_capacita_stabile" value="0"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_capacita_stabile" value="30"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="valore_capacita_stabile_checkbox" class="parametri_extra"></div>
@@ -1088,10 +1088,10 @@
                                     Massima crescita capacita
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_capacita_slider" value="0">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_capacita_slider" value="30">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_capacita" value="0"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_capacita" value="30"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_capacita_checkbox" class="parametri_extra"></div>
@@ -1102,10 +1102,10 @@
                                     Influenza differenze ricchezza
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="influenza_differenze_ricchezza_slider" value="0">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="influenza_differenze_ricchezza_slider" value="30">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="influenza_differenze_ricchezza" value="0"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="influenza_differenze_ricchezza" value="30"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="influenza_differenze_ricchezza_checkbox" class="parametri_extra"></div>
