@@ -308,7 +308,7 @@
                             <div class="col">
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-4">
-                                        Oscillazioni temperatura media
+                                        Temperatura media
                                     </label>
                                     <div class="col-5">
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_media_slider" value="0">
@@ -322,7 +322,7 @@
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-4">
-                                        Oscillazioni temperatura ampiezza
+                                        Ampiezza oscillazioni temperatura
                                     </label>
                                     <div class="col-5">
                                         <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza_slider" value="0">
@@ -497,7 +497,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Produttività
+                                            Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
                                             &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
@@ -537,7 +537,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Tolleranza influenza sulla produzione causata da GHGS
+                                            Tolleranza all'influenza di GHGS
                                         </label>
                                         <div class="col-8">
                                             <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
@@ -553,7 +553,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Tolleranza influenza sulla produzione causata da PM
+                                            Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
                                             <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
@@ -569,7 +569,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Tolleranza influenza sulla produzione causata da NH<sub>3</sub>
+                                            Tolleranza all'influenza di NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
                                             <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
@@ -585,7 +585,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Tolleranza influenza sulla produzione causata dalla temperatura
+                                            Tolleranza all'influenza della temperatura
                                         </label>
                                         <div class="col-8">
                                             <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
@@ -607,7 +607,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Produttività
+                                            Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
                                             &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,75]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
@@ -647,7 +647,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Tolleranza influenza sulla produzione causata da GHGS
+                                            Tolleranza all'influenza di GHGS
                                         </label>
                                         <div class="col-8">
                                             <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
@@ -663,7 +663,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Tolleranza influenza sulla produzione causata da PM
+                                            Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
                                             <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
@@ -679,7 +679,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Tolleranza influenza sulla produzione causata da NH<sub>3</sub>
+                                            Tolleranza all'influenza di NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
                                             <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
@@ -695,7 +695,7 @@
                                     </div>
                                     <div class="row form-group align-items-center">
                                         <label class="col-form-label col-4">
-                                            Tolleranza influenza sulla produzione causata dalla temperatura
+                                            Tolleranza all'influenza della temperatura
                                         </label>
                                         <div class="col-8">
                                             <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
@@ -879,7 +879,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_prezzo_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Produttività</label>';
+        echo '<label class="col-form-label col-3">Capacità produttiva iniziale</label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_produttivita_slider" value="0">';
         echo '</div><div class="col-2">';
@@ -911,7 +911,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_nh3_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Influenza sulla produzione causata da GHGS</label>';
+        echo '<label class="col-form-label col-3">GHGS ideale</label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale_slider" value="0">';
         echo '</div><div class="col-2">';
@@ -919,7 +919,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_ghgs_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da GHGS</label>';
+        echo '<label class="col-form-label col-3">Tolleranza all\'influenza di GHGS</label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs_slider" value="0">';
         echo '</div><div class="col-2">';
@@ -927,7 +927,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_ghgs_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Influenza sulla produzione causata da PM</label>';
+        echo '<label class="col-form-label col-3">PM ideale</label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_pm_ideale_slider" value="0">';
         echo '</div><div class="col-2">';
@@ -935,7 +935,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_pm_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da PM</label>';
+        echo '<label class="col-form-label col-3">Tolleranza all\'influenza di PM</label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm_slider" value="0">';
         echo '</div><div class="col-2">';
@@ -943,7 +943,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_pm_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Influenza sulla produzione causata da NH<sub>3</sub></label>';
+        echo '<label class="col-form-label col-3">NH<sub>3</sub> ideale</label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_nh3_ideale_slider" value="0">';
         echo '</div><div class="col-2">';
@@ -951,7 +951,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_nh3_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata da NH<sub>3</sub></label>';
+        echo '<label class="col-form-label col-3">Tolleranza all\'influenza di NH<sub>3</sub></label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3_slider" value="0">';
         echo '</div><div class="col-2">';
@@ -959,7 +959,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_nh3_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Influenza sulla produzione causata dalla temperatura</label>';
+        echo '<label class="col-form-label col-3">Temperatura ideale</label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale_slider" value="0">';
         echo '</div><div class="col-2">';
@@ -967,7 +967,7 @@
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_temperatura_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
-        echo '<label class="col-form-label col-3">Tolleranza influenza sulla produzione causata dalla temperatura</label>';
+        echo '<label class="col-form-label col-3">Tolleranza all\'influenza della temperatura</label>';
         echo '<div class="col-6">';
         echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura_slider" value="0">';
         echo '</div><div class="col-2">';
