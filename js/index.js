@@ -425,9 +425,6 @@ $(function () {
 
     var utils = new Utils();
 
-    /*
-     * Start 
-
     $('#start').on('click', function (event) {
         var params = {};
         params['Action'] = 'Start';
@@ -457,7 +454,7 @@ $(function () {
             iterations--;
             //}
         }, 2000);
-    });*/
+    });
 
     /* Premo il bottone start */
     $('#start').on('click', function (event) {
