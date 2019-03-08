@@ -426,7 +426,7 @@ $(function () {
     var utils = new Utils();
 
     /*
-     * Start */
+     * Start 
 
     $('#start').on('click', function (event) {
         var params = {};
@@ -457,7 +457,7 @@ $(function () {
             iterations--;
             //}
         }, 2000);
-    });
+    });*/
 
     /* Premo il bottone start */
     $('#start').on('click', function (event) {
@@ -514,9 +514,9 @@ $(function () {
 
         var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-            'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
-            'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
-            'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+            'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'extern_ghgs', 
+            'extern_pm', 'extern_nh3', 'step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 
+            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
 
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', true);
@@ -606,9 +606,9 @@ $(function () {
 
         var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-            'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
-            'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
-            'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+            'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'extern_ghgs', 
+            'extern_pm', 'extern_nh3', 'step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 
+            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
 
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', false);
@@ -668,13 +668,14 @@ $(function () {
         });
 
         $('input[name="variazione_percentuale_popolazione"]').val(0);
+        $('input[name="variazione_percentuale_popolazione"]').prop('disabled', true);
     });
 
     /* Premo il bottone reset ambiente */
     $('#discardChangesEnv').on('click', function (event) {
 
         var itemsEnv = ['oscillazioni_temperatura_media', 'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm',
-            'valore_iniziale_nh3'];
+            'valore_iniziale_nh3', 'extern_ghgs', 'extern_pm', 'extern_nh3',];
 
         $(itemsEnv).each(function (index, value) {
             $('input[name="' + value + '"]').val(0);
@@ -683,6 +684,7 @@ $(function () {
         });
 
         $('input[name="variazione_percentuale_ambiente"]').val(0);
+        $('input[name="variazione_percentuale_ambiente"]').prop('disabled', true);
     });
 
     /* Premo il bottone reset parametri extra */
@@ -698,6 +700,7 @@ $(function () {
         });
 
         $('input[name="variazione_percentuale_extra"]').val(0);
+        $('input[name="variazione_percentuale_extra"]').prop('disabled', true);
     });
 
     /* Premo il bottone reset parametri per ogni singolo prodotto */
@@ -718,6 +721,7 @@ $(function () {
             });
 
             $('input[name="variazione_percentuale_' + value1 + '"]').val(0);
+            $('input[name="variazione_percentuale_' + value1 + '"]').prop('disabled', true);
         });
     });
 
@@ -758,10 +762,10 @@ $(function () {
 
     /* Accoppia elementi slider e textbox nelle finestre imposta altri parametri popolazione e ambiente */
     var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
-        'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
-        'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'step_nascita_popolazione',
-        'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 'massima_crescita_salute', 'valore_capacita_stabile',
-        'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+            'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
+            'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'extern_ghgs', 
+            'extern_pm', 'extern_nh3', 'step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile', 
+            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
 
     $(itemsPopEnvExtra).each(function (index, value) {
         $(document).on('input change', 'input[name="' + value + '_slider"]', function () {

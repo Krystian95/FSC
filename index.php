@@ -378,6 +378,48 @@
                                 </div>
                                 <div class="row form-group align-items-center">
                                     <label class="col-form-label col-4">
+                                        Apporto esterno GHGS
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_ghgs_slider" value="0">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_ghgs" value="0"> 
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="checkbox"><input type="checkbox" value="" id="extern_ghgs_checkbox" class="parametri_ambiente"></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Apporto esterno PM
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_pm_slider" value="0">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_pm" value="0"> 
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="checkbox"><input type="checkbox" value="" id="extern_pm_checkbox" class="parametri_ambiente"></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
+                                        Apporto esterno NH<sub>3</sub>
+                                    </label>
+                                    <div class="col-5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_nh3_slider" value="0">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_nh3" value="0"> 
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="checkbox"><input type="checkbox" value="" id="extern_nh3_checkbox" class="parametri_ambiente"></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <label class="col-form-label col-4">
                                         Variazione percentuale
                                     </label>
                                     <div class="col-7">
