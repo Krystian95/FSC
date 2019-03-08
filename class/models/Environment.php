@@ -13,6 +13,9 @@ class Environment {
     private $GHGS = [];
     private $NH3 = [];
     private $PM = [];
+    private $extern_GHGS = 0.0;
+    private $extern_NH3 = 0.0;
+    private $extern_PM = 0.0;
 
     public function __construct($params) {
 
@@ -28,16 +31,18 @@ class Environment {
         $this->temperature[1] = 0.0;
         $this->temperature_evaluation();
         $this->temperature[0] = $this->temperature[1];
+
+        $this->extern_GHGS = $params['extern_ghgs'];
+        $this->extern_NH3 = $params['extern_nh3'];
+        $this->extern_PM = $params['extern_pm'];
     }
 
     private function impact_from_product(Product $product) {
 
-        $this->GHGS[1] = $this->GHGS[0] + $product->get_impact_on_GHGS() * $product->get_production(1) + $extern_GHGS;
-        $this->NH3[1] = $this->NH3[0] + $product->get_impact_on_NH3() * $product->get_production(1) + $extern_NH3;
-        $this->PM[1] = $this->PM[0] + $product->get_impact_on_PM() * $product->get_production(1) + $extern_PM;
+        $this->GHGS[1] = $this->GHGS[0] + $product->get_impact_on_GHGS() * $product->get_production(1) + $this->extern_GHGS;
+        $this->NH3[1] = $this->NH3[0] + $product->get_impact_on_NH3() * $product->get_production(1) + $this->extern_NH3;
+        $this->PM[1] = $this->PM[0] + $product->get_impact_on_PM() * $product->get_production(1) + $this->extern_PM;
     }
-
-//////gli "extern_" glie li passa direttamente l'user dai parametri di sistema
 
     public function temperature_evaluation() {
         $this->temperature[1] = $this->mean_temp + $this->width_temp * cos(( (System::$current_month - 8) % 12) / 12 * 2 * pi());
