@@ -110,7 +110,7 @@
                             <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspVendita</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspCapacità/produzione/vendita mensile</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspTemperatura</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-poll fa-fw"></i>&nbsp&nbspAgenti atmosferici</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>&nbsp&nbspAgenti atmosferici</a>
                             <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspTipologie di cibo in relazione alla ricchezza</a>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                             <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspVendita</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspCapacità/produzione/vendita mensile</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspTemperatura</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-poll fa-fw"></i>&nbsp&nbspAgenti atmosferici</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>&nbsp&nbspAgenti atmosferici</a>
                             <a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspTipologie di cibo in relazione alla ricchezza</a>
                         </div>
                     </div>
