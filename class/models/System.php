@@ -74,7 +74,7 @@ class System {
          */
 
         // Popolazione
-        $return['Charts']['Popolazione']['Popolazione Totale'] = $this->person_collection->getCountPeople();
+        $return['Charts']['Popolazione']['Popolazione'] = $this->person_collection->getCountPeople();
 
         $return['Charts']['Nati e morti']['Nati'] = $this->person_collection->getCountNati();
         $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
@@ -82,9 +82,23 @@ class System {
         $return['Charts']['Salute media']['Salute media'] = $this->person_collection->getMeanHealth();
 
         // Prodotti
+        foreach ($this->product_collection->getProducts() as $product) {
+            $product_name = $product->get_name();
+            $return['Charts']['CapacitÃ  produttiva'][$product_name] = $product->get_capacity(1);
+            $return['Charts']['Produzione'][$product_name] = $product->get_production(1);
+            $return['Charts']['Vendita'][$product_name] = $product->get_sold(1);
+            /*
+             * TODO
+             * 
+             * grafico a barre mese per mese per ogni prodotto: capacitÃ , produzione, venduto (tipo istogramma dove ogni barra Ã¨ divisa per tre)
+             */
+        }
+
         // Ambiente
-
-
+        $return['Charts']['Temperatura']['Temperatura'] = $this->environment->get_temperature(1);
+        $return['Charts']['Agenti atmosferici']['GHGS'] = $this->environment->get_GHGS(1);
+        $return['Charts']['Agenti atmosferici']['PM'] = $this->environment->get_PM(1);
+        $return['Charts']['Agenti atmosferici']['NH3'] = $this->environment->get_NH3(1);
 
         /*
          * Terminal operations of the cicle
@@ -106,16 +120,15 @@ class System {
 
         $persons_indexes = array_keys($this->person_collection->getPersons());
         $products_indexes = array_keys($this->product_collection->getProducts());
-    
+
         ////!!!andrebbe aggiunto un commento al momento dell'acquisto 
         ////   che stampi tutti i parametri coinvolti (quelli interni di prod e pop)
-        
         ////***sarebbe da controllare se le preferenze vengono generate come dovrebbero:
         ////   ovverosia: preferenze(j) di ogni persona sono comprese tra 0 ed 1 e strettamente crescenti
         ////   quindi: preferenza(0) >0 ; preferenza(j)<preferenza(j+1); preferenza(N_meat+N-veg - 1) =1
-                
+
         /* A) considerazioni:
-         * 1) while e for hanno le stesse condizioni, se si blocca lì dentro significa che 
+         * 1) while e for hanno le stesse condizioni, se si blocca l dentro significa che 
          * non si raggiunge la condizione in cui nessuno dei due array (persone e prodotti) raggiunge per tutti i suoi elementi la condizione di unset
          * 2) basta che uno dei due _indexes sia vuoto per far finire il ciclo, e che durante il ciclo
          * i parametri interni degli oggetti DOVREBBERO AUMENTARE MONOTONAMENTE fino a che non raggiungono la condizione di unset
@@ -124,24 +137,24 @@ class System {
          * 1) tutti i valori sono >0
          * 2) tutti i valori sono < del valore max che possono raggiungere: 
          *    person.speso < person.wealth; person.eaten < person. fabbisogno; product.sold < product.production
-         * 3) l'unico momento in cui la (2) non è vera è quando una persona o prodotto ha raggiunto uno dei "limiti di unset"
+         * 3) l'unico momento in cui la (2) non  vera  quando una persona o prodotto ha raggiunto uno dei "limiti di unset"
          *    quindi i casi in cui la (2) non si verifica dovrebbero esser seguiti da "rimosso prodotto tot" o "rimossa persona tot"
-         *    e dopo di quello quella persona o quel prodotto non dovrebbero più comparire nel commento
+         *    e dopo di quello quella persona o quel prodotto non dovrebbero pi comparire nel commento
          *
-         *C) secondo me gli errori possibili sono:                
-         *1) il ciclo è eccessivamente lento a fare quel che deve, il che eventualmente significa
+         * C) secondo me gli errori possibili sono:                
+         * 1) il ciclo  eccessivamente lento a fare quel che deve, il che eventualmente significa
          *   un valore troppo alto tra fabbisogno, wealth, produzione dell'industria
          *   un valore troppo basso di cibo acquistato (val), e prezzi
          *   con !!! e (B) si dovbrebbe poter vedere che quando il programma si arresta stava tuttavia facendo cose sensate
-         *2) ci sono casini strani nei parametri interni di persone e/o prodotti, tali per cui non si raggiungono le condizioni di unset
+         * 2) ci sono casini strani nei parametri interni di persone e/o prodotti, tali per cui non si raggiungono le condizioni di unset
          *   ma in tal caso aggiungendo quel commento al momento dell'acquisto (B) si dovrebbe capire dove sta l'errore
-         *3) le preferenze vengono generate in maniera strana, per cui se non è (1) o (2) conviene *** 
+         * 3) le preferenze vengono generate in maniera strana, per cui se non  (1) o (2) conviene *** 
          *   tecnicamente l'algoritmo dovrebbe funzionare anche con preferenze a casaccio, 
-         *   perché il while(!in_array (...) ) funziona sul solo indice a prescindere dalle preferenze e quindi qualcosa becca sicuro
+         *   perch il while(!in_array (...) ) funziona sul solo indice a prescindere dalle preferenze e quindi qualcosa becca sicuro
          *   tuttavia potrebbe darsi che delle preferenze costruite male rallentino la funzione o chi sa che diavolo    
-         *4) cose di sintassi/codice di cui non ho la minima idea, ad esempio il funzionamento di count, unset, assegnamenti, boh
+         * 4) cose di sintassi/codice di cui non ho la minima idea, ad esempio il funzionamento di count, unset, assegnamenti, boh
          *   o comunque qualche stranezza nelle condizioni dei cicli che tuttavia non mi sembra di notare
-         *5) mi sta sfuggendo qualcosa di palesissimo e bah
+         * 5) mi sta sfuggendo qualcosa di palesissimo e bah
          *
          *
          */
@@ -149,9 +162,9 @@ class System {
             /* error_log('New while cicle');
               error_log('$persons_indexes = ' . count($persons_indexes));
               error_log(''); */
-            
+
             /////aggiungerei un commento qui per capire quante volte il ciclo for riparte da capo
-            /////nb il ciclo for riparte da capo significa: "tutti hanno comprato un prodotto, ora chi è rimasto compra quel che è rimasto"
+            /////nb il ciclo for riparte da capo significa: "tutti hanno comprato un prodotto, ora chi  rimasto compra quel che  rimasto"
             for ($i = 0; $i < count($persons_indexes) && count($products_indexes) > 0; $i++) {
                 /* error_log('$persons_indexes = ' . count($persons_indexes));
                   error_log('$products_indexes = ' . count($products_indexes));
@@ -163,8 +176,8 @@ class System {
                 $j = 0;
                 while ($rnd > $person->get_preferenza($j)) {
                     //j indicizza il cibo acquistato
-                    if ( $j == (self::$n_meat + self::$n_veg - 1)) {
-                        //commento: qui tecnicamente non dovrebbe arrivarci perché nel caso limite rnd=1=preferenza(n_meat+n_veg - 1)
+                    if ($j == (self::$n_meat + self::$n_veg - 1)) {
+                        //commento: qui tecnicamente non dovrebbe arrivarci perch nel caso limite rnd=1=preferenza(n_meat+n_veg - 1)
                         //break;
                         /////questo nel caso in cui le preferenze siano state generate bene *** questo if break non serve 
                         /////ed in caso contrario significa che preferenza(n_meat+n_veg - 1) < 1, cosa che non dovrebbe essere
@@ -174,17 +187,17 @@ class System {
                 }
 
                 /*
-                 * Recupera un prodotto in caso j non sia più disponibile
+                 * Recupera un prodotto in caso j non sia pi disponibile
                  */
                 $t = $j;
                 while (!in_array($j, $products_indexes)) {
                     if ($j == 0) {
                         $j = $t;
                         while (!in_array($j, $products_indexes)) {
-                            if ($j  == (self::$n_meat + self::$n_veg - 1)) {
+                            if ($j == (self::$n_meat + self::$n_veg - 1)) {
                                 break;
-                                //commento: qui ci arriva solo se l'ultimo cibo rimasto è quello più costoso
-                                //Il che è plausibile ma se finisce sistematicamente qui forse c'è qualcosa di strano
+                                //commento: qui ci arriva solo se l'ultimo cibo rimasto  quello pi costoso
+                                //Il che  plausibile ma se finisce sistematicamente qui forse c' qualcosa di strano
                             } else {
                                 $j++;
                             }
@@ -196,15 +209,14 @@ class System {
 
                 $product = $this->product_collection->getProduct($j);
 
-                $val = 1;  //questo val è una costante è può esser tranquillamente messa prima dell'inizio del ciclo
-                
+                $val = 1;  //questo val  una costante  pu esser tranquillamente messa prima dell'inizio del ciclo
                 ///NB: qui get_eaten legge lo stesso indirizzo di memoria che set eaten va a scrivere
                 ///non ne so molto ma potrebbe causare conflitti nella memorizzazione ????
                 $person->set_eaten($person->get_eaten(1) + $val, 1);
                 $product->set_sold($product->get_sold(1) + $val, 1);
                 $person->set_speso($person->get_speso() + $product->get_price() * $val);
-        ///!!!//////commento: "persona 'i' ( spesa attuale 'get_speso(1)' su 'get_wealth'; mangiato 'get_eaten(1)' su 'get_fabbisogno )
-        ///!!!//////           ha comprato 'val' del prodotto 'j' ( nome: 'get_nome' : venduto 'get_sold(1)' su 'get_production(1) )"
+                ///!!!//////commento: "persona 'i' ( spesa attuale 'get_speso(1)' su 'get_wealth'; mangiato 'get_eaten(1)' su 'get_fabbisogno )
+                ///!!!//////           ha comprato 'val' del prodotto 'j' ( nome: 'get_nome' : venduto 'get_sold(1)' su 'get_production(1) )"
 
                 if ($person->get_eaten(1) >= $person->get_food_need() || $person->get_speso() >= $person->get_wealth()) {
                     //error_log('Removed Person i = ' . $i);
@@ -215,7 +227,6 @@ class System {
                     unset($products_indexes[$j]);
                 }
             }
-
         }
     }
 

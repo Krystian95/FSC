@@ -106,7 +106,7 @@
                             <a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspSalute media</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspCapacità produttiva</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspProduzione </a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-boxes fa-fw"></i>&nbsp&nbspProduzione </a>
                             <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspVendita</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspCapacità/produzione/vendita mensile</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspTemperatura</a>
@@ -128,7 +128,7 @@
                             <a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspSalute media</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspCapacità produttiva</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspProduzione </a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-boxes fa-fw"></i>&nbsp&nbspProduzione </a>
                             <a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspVendita</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspCapacità/produzione/vendita mensile</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspTemperatura</a>
