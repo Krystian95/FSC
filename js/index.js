@@ -40,10 +40,10 @@ function initChart() {
             ]
         },
         options: {
-            title: {
+            /*title: {
                 display: true,
                 text: 'Grafico 1'
-            },
+            },*/
             scales: {
                 yAxes: [{
                         ticks: {
@@ -145,10 +145,10 @@ function initChart() {
             ]
         },
         options: {
-            title: {
+            /*title: {
                 display: true,
                 text: 'Grafico 2'
-            },
+            },*/
             scales: {
                 yAxes: [{
                         ticks: {
@@ -279,6 +279,11 @@ function getInputValues() {
 }
 
 $(function () {
+    
+    $(".dropdown-menu li a").click(function(){
+        $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
+        $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+      });
     
     // Abilita/disabilita textbox variazione percentuale in base alla selezione delle checkbox dialog popolazione, 
     // ambiente, parametri extra e singoli prodotti

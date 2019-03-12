@@ -156,6 +156,10 @@ class Product {
         return $this->sold[$index];
     }
 
+    public function get_capacity($index) {
+        return $this->capacity[$index];
+    }
+
     public function get_price() {
         return $this->price;
     }
