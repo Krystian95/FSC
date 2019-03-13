@@ -429,8 +429,13 @@ $(function () {
     $('input[name="periodo"]').val(current_period);
 
     var utils = new Utils();
-/*
+    
+    // Premo il bottone start
     $('#start').on('click', function (event) {
+        
+        startPerform();
+        
+        /*
         var params = {};
         params['Action'] = 'Start';
         params['Data'] = {};
@@ -459,11 +464,11 @@ $(function () {
             iterations--;
             //}
         }, 2000);
+        */
     });
-*/
-    /* Premo il bottone start */
-    $('#start').on('click', function (event) {
 
+    function startPerform() {
+        
         /* Disabilita bottone start */
         $('#start').prop('disabled', true);
 
@@ -589,7 +594,7 @@ $(function () {
         veg_toll_infl_prod_nh3.disable();
         veg_ideal_temp.disable();
         veg_toll_infl_prod_temp.disable();
-    });
+     }
 
     /* Premo il bottone pausa */
     $('#pausa').on('click', function (event) {
@@ -601,6 +606,11 @@ $(function () {
     /* Premo il bottone stop */
     $('#stop').on('click', function (event) {
 
+        stopPerform();
+    });
+    
+    function stopPerform() {
+        
         $('#textboxAnno').attr('value', '0/0');
 
         /* Abilita bottone start */
@@ -713,7 +723,7 @@ $(function () {
         veg_toll_infl_prod_nh3.enable();
         veg_ideal_temp.enable();
         veg_toll_infl_prod_temp.enable();
-    });
+    }
 
     /* Premo il bottone reset */
     $('#reset').on('click', function (event) {
