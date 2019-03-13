@@ -81,7 +81,7 @@ class Person {
     public function health_evaluate($pop_stab, $max_growth_pop) {
         $this->health[1] = $this->health[0] + ($this->eaten[1] / $this->food_need - $pop_stab / 100) * $max_growth_pop / $pop_stab;
 
-        $this->healt[1] = $this->healt[1] >= 100 ? 100 : $this->healt[1];
+        $this->health[1] = $this->health[1] >= 100 ? 100 : $this->health[1];
     }
 
     /*

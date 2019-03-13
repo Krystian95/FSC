@@ -73,20 +73,20 @@ class Environment {
      * Setters
      */
 
-    public function set_GHGS($index) {
-        return $this->GHGS[$index];
+    public function set_GHGS($GHGS, $index) {
+        $this->GHGS[$index] = $GHGS;
     }
 
-    public function set_NH3($index) {
-        return $this->NH3[$index];
+    public function set_NH3($NH3, $index) {
+        $this->NH3[$index] = $NH3;
     }
 
-    public function set_PM($index) {
-        return $this->PM[$index];
+    public function set_PM($PM, $index) {
+        $this->PM[$index] = $PM;
     }
 
-    public function set_temperature($index) {
-        return $this->temperature[$index];
+    public function set_temperature($temperature, $index) {
+        $this->temperature[$index] = $temperature;
     }
 
     /*

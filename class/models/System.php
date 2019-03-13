@@ -29,6 +29,8 @@ class System {
 
     public function iteratePeriod($period) {
 
+        error_log('START iteratePeriod(' . $period . ')');
+
         $this->setCurrentMonth($period);
         $this->person_collection->setCountMorti(0);
         $this->person_collection->setCountNati(0);
@@ -113,6 +115,8 @@ class System {
         $next_period = $this->calculateNextPeriod($current_period = $period);
         $return['Next_Period'] = $next_period;
 
+        error_log('END iteratePeriod(' . $period . ')');
+
         return $return;
     }
 
@@ -121,6 +125,7 @@ class System {
         $persons_indexes = array_keys($this->person_collection->getPersons());
         $products_indexes = array_keys($this->product_collection->getProducts());
 
+        //error_log('Count $persons_indexes = ' . count($persons_indexes));
         ////!!!andrebbe aggiunto un commento al momento dell'acquisto 
         ////   che stampi tutti i parametri coinvolti (quelli interni di prod e pop)
         ////***sarebbe da controllare se le preferenze vengono generate come dovrebbero:
@@ -159,23 +164,30 @@ class System {
          *
          */
         while (count($persons_indexes) > 0 && count($products_indexes) > 0) {
-            /* error_log('New while cicle');
-              error_log('$persons_indexes = ' . count($persons_indexes));
-              error_log(''); */
+            /* error_log('');
+              error_log('');
+              error_log('New while cicle');
+              error_log('$persons_indexes = ' . count($persons_indexes)); */
 
             /////aggiungerei un commento qui per capire quante volte il ciclo for riparte da capo
             /////nb il ciclo for riparte da capo significa: "tutti hanno comprato un prodotto, ora chi  rimasto compra quel che  rimasto"
-            for ($i = 0; $i < count($persons_indexes) && count($products_indexes) > 0; $i++) {
+            //for ($i = 0; $i < $persons_indexes_size && count($products_indexes) > 0; $i++) {
+            foreach ($persons_indexes as $i) {
+                if (count($products_indexes) == 0) {
+                    break;
+                }
+
                 /* error_log('$persons_indexes = ' . count($persons_indexes));
                   error_log('$products_indexes = ' . count($products_indexes));
-                  error_log('');
                   error_log('New for cicle i = ' . $i); */
                 $person = $this->person_collection->getPerson($i);
-                $rnd = rand(0, 1);
+                $rnd = Utils::rand(0, 1);
 
                 $j = 0;
+
+                //error_log('ENTER while');
                 while ($rnd > $person->get_preferenza($j)) {
-                    //j indicizza il cibo acquistato
+                    //error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
                     if ($j == (self::$n_meat + self::$n_veg - 1)) {
                         //commento: qui tecnicamente non dovrebbe arrivarci perch nel caso limite rnd=1=preferenza(n_meat+n_veg - 1)
                         //break;
@@ -185,6 +197,7 @@ class System {
                         $j++;
                     }
                 }
+                //error_log('EXIT while');
 
                 /*
                  * Recupera un prodotto in caso j non sia pi disponibile
@@ -215,9 +228,8 @@ class System {
                 $person->set_eaten($person->get_eaten(1) + $val, 1);
                 $product->set_sold($product->get_sold(1) + $val, 1);
                 $person->set_speso($person->get_speso() + $product->get_price() * $val);
-                ///!!!//////commento: "persona 'i' ( spesa attuale 'get_speso(1)' su 'get_wealth'; mangiato 'get_eaten(1)' su 'get_fabbisogno )
-                ///!!!//////           ha comprato 'val' del prodotto 'j' ( nome: 'get_nome' : venduto 'get_sold(1)' su 'get_production(1) )"
-
+                /* error_log('persona i=' . $i . ' speso(' . $person->get_speso() . '), wealth (' . $person->get_wealth() . '), eaten (' . $person->get_eaten(1) . '), fabbisogno (' . $person->get_food_need() . ')');
+                  error_log('ha comprato val (' . $val . ') del prodotto j=' . $j . '(nome: ' . $product->get_name() . ', venduto ' . $product->get_sold(1) . ', production ' . $product->get_production(1) . ')'); */
                 if ($person->get_eaten(1) >= $person->get_food_need() || $person->get_speso() >= $person->get_wealth()) {
                     //error_log('Removed Person i = ' . $i);
                     unset($persons_indexes[$i]);

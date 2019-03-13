@@ -9,7 +9,7 @@ class Utils {
 
     public static function rand($min, $max) {
         $rand = (rand(0, 10000) / 10000);
-        return $min + $rand * $max;
+        return $min + $rand * ($max - $min);
     }
 
     public static function sortArray($array, $key_sort) {
