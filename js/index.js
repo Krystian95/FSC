@@ -429,7 +429,7 @@ $(function () {
     $('input[name="periodo"]').val(current_period);
 
     var utils = new Utils();
-
+/*
     $('#start').on('click', function (event) {
         var params = {};
         params['Action'] = 'Start';
@@ -460,7 +460,7 @@ $(function () {
             //}
         }, 2000);
     });
-
+*/
     /* Premo il bottone start */
     $('#start').on('click', function (event) {
 
@@ -513,6 +513,9 @@ $(function () {
         $('#saveChangesProd').prop('disabled', true);
         $('#discardChangesExtra').prop('disabled', true);
         $('#saveChangesExtra').prop('disabled', true);
+        $('#discardChangesTuttiProd').prop('disabled', true);
+        $('#saveChangesTuttiProd').prop('disabled', true);
+        $('#saveChangesSingoliProd').prop('disabled', true);
 
         var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
@@ -557,6 +560,35 @@ $(function () {
             $('#discardChanges' + value + '').prop('disabled', true);
             $('#saveChanges' + value + '').prop('disabled', true);
         });
+        
+        slider_numero_prodotti.disable();
+        slider_percentuale_carne_vegetali.disable();
+        meat_prezzo.disable();
+        meat_produttivita.disable();
+        meat_impatto_ghgs.disable();
+        meat_impatto_pm.disable();
+        meat_impatto_nh3.disable();
+        meat_ideal_ghgs.disable();
+        meat_toll_infl_prod_ghgs.disable();
+        meat_ideal_pm.disable();
+        meat_toll_infl_prod_pm.disable();
+        meat_ideal_nh3.disable();
+        meat_toll_infl_prod_nh3.disable();
+        meat_ideal_temp.disable();
+        meat_toll_infl_prod_temp.disable();
+        veg_prezzo.disable();
+        veg_produttivita.disable();
+        veg_impatto_ghgs.disable();
+        veg_impatto_pm.disable();
+        veg_impatto_nh3.disable();
+        veg_ideal_ghgs.disable();
+        veg_toll_infl_prod_ghgs.disable();
+        veg_ideal_pm.disable();
+        veg_toll_infl_prod_pm.disable();
+        veg_ideal_nh3.disable();
+        veg_toll_infl_prod_nh3.disable();
+        veg_ideal_temp.disable();
+        veg_toll_infl_prod_temp.disable();
     });
 
     /* Premo il bottone pausa */
@@ -605,6 +637,9 @@ $(function () {
         $('#saveChangesProd').prop('disabled', false);
         $('#discardChangesExtra').prop('disabled', false);
         $('#saveChangesExtra').prop('disabled', false);
+        $('#discardChangesTuttiProd').prop('disabled', false);
+        $('#saveChangesTuttiProd').prop('disabled', false);
+        $('#saveChangesSingoliProd').prop('disabled', false);
 
         var itemsPopEnvExtra = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
@@ -649,6 +684,35 @@ $(function () {
             $('#discardChanges' + value + '').prop('disabled', false);
             $('#saveChanges' + value + '').prop('disabled', false);
         });
+        
+        slider_numero_prodotti.enable();
+        slider_percentuale_carne_vegetali.enable();
+        meat_prezzo.enable();
+        meat_produttivita.enable();
+        meat_impatto_ghgs.enable();
+        meat_impatto_pm.enable();
+        meat_impatto_nh3.enable();
+        meat_ideal_ghgs.enable();
+        meat_toll_infl_prod_ghgs.enable();
+        meat_ideal_pm.enable();
+        meat_toll_infl_prod_pm.enable();
+        meat_ideal_nh3.enable();
+        meat_toll_infl_prod_nh3.enable();
+        meat_ideal_temp.enable();
+        meat_toll_infl_prod_temp.enable();
+        veg_prezzo.enable();
+        veg_produttivita.enable();
+        veg_impatto_ghgs.enable();
+        veg_impatto_pm.enable();
+        veg_impatto_nh3.enable();
+        veg_ideal_ghgs.enable();
+        veg_toll_infl_prod_ghgs.enable();
+        veg_ideal_pm.enable();
+        veg_toll_infl_prod_pm.enable();
+        veg_ideal_nh3.enable();
+        veg_toll_infl_prod_nh3.enable();
+        veg_ideal_temp.enable();
+        veg_toll_infl_prod_temp.enable();
     });
 
     /* Premo il bottone reset */
