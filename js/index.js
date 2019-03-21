@@ -312,8 +312,8 @@ $(function () {
 
     /* Slider percentuale carne vegetali modal imposta parametri per tutti i prodotti */
     slider_percentuale_carne_vegetali = new Slider("#percentuale_carne_vegetali", {formatter: function (value) {
-            return 'Carne: ' + value + ' - Vegetali: ' + (100 - value);
-        }, id: "percentuale_carne_vegetali", min: 0, max: 100, value: 50});
+            return 'Carne: ' + value + '% - Vegetali: ' + (100 - value) + '%';
+        }, id: "percentuale_carne_vegetali", min: 0, max: 100, value: 33});
 
     /* Range carne modal imposta parametri per tutti i prodotti */
     var meat_prezzo = new Slider('#meat_prezzo', {});
@@ -734,10 +734,12 @@ $(function () {
 
         var itemsPop = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
-
+        
+        var valoriPop = [10,20,50,20,40,20,15,10];
+        
         $(itemsPop).each(function (index, value) {
-            $('input[name="' + value + '"]').val(0);
-            $('input[name="' + value + '_slider"]').val(0);
+            $('input[name="' + value + '"]').val(valoriPop[index]);
+            $('input[name="' + value + '_slider"]').val(valoriPop[index]);
             $('#' + value + '_checkbox').prop('checked', false);
         });
 
@@ -751,9 +753,11 @@ $(function () {
         var itemsEnv = ['oscillazioni_temperatura_media', 'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm',
             'valore_iniziale_nh3', 'extern_ghgs', 'extern_pm', 'extern_nh3', ];
 
+        var valoriEnv = [25,5,2,2,1,-1,-2,-5];
+        
         $(itemsEnv).each(function (index, value) {
-            $('input[name="' + value + '"]').val(0);
-            $('input[name="' + value + '_slider"]').val(0);
+            $('input[name="' + value + '"]').val(valoriEnv[index]);
+            $('input[name="' + value + '_slider"]').val(valoriEnv[index]);
             $('#' + value + '_checkbox').prop('checked', false);
         });
 
@@ -766,10 +770,12 @@ $(function () {
 
         var itemsExtra = ['step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
             'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
-
+        
+        var valoriExtra = [60,25,20,60,3,70,7,30];
+        
         $(itemsExtra).each(function (index, value) {
-            $('input[name="' + value + '"]').val(0);
-            $('input[name="' + value + '_slider"]').val(0);
+            $('input[name="' + value + '"]').val(valoriExtra[index]);
+            $('input[name="' + value + '_slider"]').val(valoriExtra[index]);
             $('#' + value + '_checkbox').prop('checked', false);
         });
 
@@ -802,36 +808,36 @@ $(function () {
     /* Premo il bottone reset parametri per tutti i prodotti */
     $('#discardChangesTuttiProd').on('click', function (event) {
 
-        slider_numero_prodotti.setAttribute('value', 50).refresh();
-        slider_percentuale_carne_vegetali.setAttribute('value', 50).refresh();
+        slider_numero_prodotti.setAttribute('value', 15).refresh();
+        slider_percentuale_carne_vegetali.setAttribute('value', 33).refresh();
 
-        meat_prezzo.setAttribute('value', [25, 75]).refresh();
-        meat_produttivita.setAttribute('value', [25, 75]).refresh();
-        meat_impatto_ghgs.setAttribute('value', [-25, 25]).refresh();
-        meat_impatto_pm.setAttribute('value', [-25, 25]).refresh();
-        meat_impatto_nh3.setAttribute('value', [-25, 25]).refresh();
-        meat_ideal_ghgs.setAttribute('value', [-25, 25]).refresh();
-        meat_toll_infl_prod_ghgs.setAttribute('value', [-25, 25]).refresh();
+        meat_prezzo.setAttribute('value', [8, 14]).refresh();
+        meat_produttivita.setAttribute('value', [3, 5]).refresh();
+        meat_impatto_ghgs.setAttribute('value', [3, 4]).refresh();
+        meat_impatto_pm.setAttribute('value', [2, 3]).refresh();
+        meat_impatto_nh3.setAttribute('value', [1, 2]).refresh();
+        meat_ideal_ghgs.setAttribute('value', [0, 10]).refresh();
+        meat_toll_infl_prod_ghgs.setAttribute('value', [50, 70]).refresh();
         meat_ideal_pm.setAttribute('value', [-25, 25]).refresh();
         meat_toll_infl_prod_pm.setAttribute('value', [-25, 25]).refresh();
-        meat_ideal_nh3.setAttribute('value', [-25, 25]).refresh();
-        meat_toll_infl_prod_nh3.setAttribute('value', [-25, 25]).refresh();
-        meat_ideal_temp.setAttribute('value', [-25, 25]).refresh();
-        meat_toll_infl_prod_temp.setAttribute('value', [-25, 25]).refresh();
+        meat_ideal_nh3.setAttribute('value', [0, 10]).refresh();
+        meat_toll_infl_prod_nh3.setAttribute('value', [50, 70]).refresh();
+        meat_ideal_temp.setAttribute('value', [22, 28]).refresh();
+        meat_toll_infl_prod_temp.setAttribute('value', [5, 12]).refresh();
 
-        veg_prezzo.setAttribute('value', [25, 75]).refresh();
-        veg_produttivita.setAttribute('value', [25, 75]).refresh();
-        veg_impatto_ghgs.setAttribute('value', [-25, 25]).refresh();
-        veg_impatto_pm.setAttribute('value', [-25, 25]).refresh();
-        veg_impatto_nh3.setAttribute('value', [-25, 25]).refresh();
-        veg_ideal_ghgs.setAttribute('value', [-25, 25]).refresh();
-        veg_toll_infl_prod_ghgs.setAttribute('value', [-25, 25]).refresh();
+        veg_prezzo.setAttribute('value', [3, 10]).refresh();
+        veg_produttivita.setAttribute('value', [4, 7]).refresh();
+        veg_impatto_ghgs.setAttribute('value', [-1, 2]).refresh();
+        veg_impatto_pm.setAttribute('value', [1, 2]).refresh();
+        veg_impatto_nh3.setAttribute('value', [-1, -2]).refresh();
+        veg_ideal_ghgs.setAttribute('value', [0, 5]).refresh();
+        veg_toll_infl_prod_ghgs.setAttribute('value', [30, 60]).refresh();
         veg_ideal_pm.setAttribute('value', [-25, 25]).refresh();
         veg_toll_infl_prod_pm.setAttribute('value', [-25, 25]).refresh();
-        veg_ideal_nh3.setAttribute('value', [-25, 25]).refresh();
-        veg_toll_infl_prod_nh3.setAttribute('value', [-25, 25]).refresh();
-        veg_ideal_temp.setAttribute('value', [-25, 25]).refresh();
-        veg_toll_infl_prod_temp.setAttribute('value', [-25, 25]).refresh();
+        veg_ideal_nh3.setAttribute('value', [15, 25]).refresh();
+        veg_toll_infl_prod_nh3.setAttribute('value', [20, 30]).refresh();
+        veg_ideal_temp.setAttribute('value', [20, 30]).refresh();
+        veg_toll_infl_prod_temp.setAttribute('value', [2, 10]).refresh();
     });
 
     /* Accoppia elementi slider e textbox nelle finestre imposta altri parametri popolazione e ambiente */
