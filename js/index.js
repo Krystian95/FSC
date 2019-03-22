@@ -818,8 +818,8 @@ $(function () {
         meat_impatto_nh3.setAttribute('value', [1, 2]).refresh();
         meat_ideal_ghgs.setAttribute('value', [0, 10]).refresh();
         meat_toll_infl_prod_ghgs.setAttribute('value', [50, 70]).refresh();
-        meat_ideal_pm.setAttribute('value', [-25, 25]).refresh();
-        meat_toll_infl_prod_pm.setAttribute('value', [-25, 25]).refresh();
+        meat_ideal_pm.setAttribute('value', [0, 0]).refresh();
+        meat_toll_infl_prod_pm.setAttribute('value', [60, 90]).refresh();
         meat_ideal_nh3.setAttribute('value', [0, 10]).refresh();
         meat_toll_infl_prod_nh3.setAttribute('value', [50, 70]).refresh();
         meat_ideal_temp.setAttribute('value', [22, 28]).refresh();
@@ -832,8 +832,8 @@ $(function () {
         veg_impatto_nh3.setAttribute('value', [-1, -2]).refresh();
         veg_ideal_ghgs.setAttribute('value', [0, 5]).refresh();
         veg_toll_infl_prod_ghgs.setAttribute('value', [30, 60]).refresh();
-        veg_ideal_pm.setAttribute('value', [-25, 25]).refresh();
-        veg_toll_infl_prod_pm.setAttribute('value', [-25, 25]).refresh();
+        veg_ideal_pm.setAttribute('value', [0, 0]).refresh();
+        veg_toll_infl_prod_pm.setAttribute('value', [40, 60]).refresh();
         veg_ideal_nh3.setAttribute('value', [15, 25]).refresh();
         veg_toll_infl_prod_nh3.setAttribute('value', [20, 30]).refresh();
         veg_ideal_temp.setAttribute('value', [20, 30]).refresh();
