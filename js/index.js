@@ -819,7 +819,7 @@ $(function () {
         meat_ideal_ghgs.setAttribute('value', [0, 10]).refresh();
         meat_toll_infl_prod_ghgs.setAttribute('value', [50, 70]).refresh();
         meat_ideal_pm.setAttribute('value', [0, 0]).refresh();
-        meat_toll_infl_prod_pm.setAttribute('value', [60, 90]).refresh();
+        meat_toll_infl_prod_pm.setAttribute('value', [60, 100]).refresh();
         meat_ideal_nh3.setAttribute('value', [0, 10]).refresh();
         meat_toll_infl_prod_nh3.setAttribute('value', [50, 70]).refresh();
         meat_ideal_temp.setAttribute('value', [22, 28]).refresh();

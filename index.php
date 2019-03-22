@@ -442,7 +442,7 @@
         <div class="modal fade" id="parameterProdModal" tabindex="-1" role="dialog" data-backdrop="static">
             <div class="modal-dialog">
                 <!-- Modal content-->
-                <div class="modal-content">
+                <div class="modal-content" id="parameterProdModalDialog">
                     <div class="modal-header">
                         <h4 class="modal-title">Imposta parametri prodotti</h4>
                         <button type="button" class="close" data-dismiss="modal" id="chiudiFinestraProd">&times;</button>
@@ -492,7 +492,7 @@
                                             Prezzo
                                         </label>
                                         <div class="col-8">
-                                            &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[8,14]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[8,14]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -500,7 +500,7 @@
                                             Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[3,5]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[3,5]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -508,7 +508,7 @@
                                             Impatto su GHGS
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[3,4]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[3,4]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -516,7 +516,7 @@
                                             Impatto su PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_impatto_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[2,3]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[2,3]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -524,7 +524,7 @@
                                             Impatto su NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_impatto_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -532,7 +532,7 @@
                                             GHGS ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -540,7 +540,7 @@
                                             Tolleranza all'influenza di GHGS
                                         </label>
                                         <div class="col-8">
-                                            <b>-90</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>90</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -548,7 +548,7 @@
                                             PM ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -556,7 +556,7 @@
                                             Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-90</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="[60,90]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>90</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[60,100]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -564,7 +564,7 @@
                                             NH<sub>3</sub> ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -572,7 +572,7 @@
                                             Tolleranza all'influenza di NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            <b>-90</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>90</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -580,7 +580,7 @@
                                             Temperatura ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[22,28]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_temp" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[22,28]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -588,7 +588,7 @@
                                             Tolleranza all'influenza della temperatura
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[5,12]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[5,12]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                 </div>
@@ -602,7 +602,7 @@
                                             Prezzo
                                         </label>
                                         <div class="col-8">
-                                            &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[3,10]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[3,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -610,7 +610,7 @@
                                             Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[4,7]"/>&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[4,7]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -618,7 +618,7 @@
                                             Impatto su GHGS
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[-1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -626,7 +626,7 @@
                                             Impatto su PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_impatto_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -634,7 +634,7 @@
                                             Impatto su NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_impatto_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-1,-2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[-1,-2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -642,7 +642,7 @@
                                             GHGS ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_ghgs" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[0,5]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,5]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -650,7 +650,7 @@
                                             Tolleranza all'influenza di GHGS
                                         </label>
                                         <div class="col-8">
-                                            <b>-90</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="[30,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>90</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[30,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -658,7 +658,7 @@
                                             PM ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -666,7 +666,7 @@
                                             Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-90</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="[40,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>90</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[40,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -674,7 +674,7 @@
                                             NH<sub>3</sub> ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[15,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[15,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -682,7 +682,7 @@
                                             Tolleranza all'influenza di NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -690,7 +690,7 @@
                                             Temperatura ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_temp" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -698,7 +698,7 @@
                                             Tolleranza all'influenza della temperatura
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[2,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[2,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                 </div>
@@ -858,7 +858,7 @@
 
         echo '<div class="modal fade child-modal" id="' . $value . 'Modal" tabindex="-1" role="dialog" data-backdrop="static">';
         echo '<div class="modal-dialog">';
-        echo '<div class="modal-content">';
+        echo '<div class="modal-content" id="parameterProdSingoliModalDialog">';
         echo '<div class="modal-header">';
         echo '<h4 class="modal-title">Imposta parametri ' . $value . '</h4>';
         echo '<button type="button" class="close" data-dismiss="modal" id="chiudiFinestra' . $value . '">&times;</button>';
