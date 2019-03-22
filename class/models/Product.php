@@ -36,7 +36,7 @@ class Product {
     public function step_production($environment) {
 
         $min_required_production = 2 / 10;
-        $this->production[1] = $this->capacity[0] * (1 - ($environment->get_temperature(0) - $this->ideal_temperature) / $this->tolerance_temperature) * ($environment->get_GHGS(0) - $this->ideal_GHGS / $this->tolerance_GHGS) * ($environment->get_NH3(0) - $this->ideal_NH3 / $this->tolerance_NH3) * ($environment->get_PM(0) - $this->ideal_PM / $this->tolerance_PM);
+        $this->production[1] = $this->capacity[0] * (1 - (abs($environment->get_temperature(0) - $this->ideal_temperature) / $this->tolerance_temperature) * (abs($environment->get_GHGS(0) - $this->ideal_GHGS) / $this->tolerance_GHGS) * (abs($environment->get_NH3(0) - $this->ideal_NH3) / $this->tolerance_NH3) * (abs($environment->get_PM(0) - $this->ideal_PM) / $this->tolerance_PM) );
 
         $this->production[1] = $this->production[1] <= ($this->production[1] * $min_required_production) ? 0 : $this->production[1];
     }
