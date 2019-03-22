@@ -37,19 +37,25 @@ class Product {
 
         $min_required_production = 2 / 10;
         $this->production[1] = $this->capacity[0] * (1 - (abs($environment->get_temperature(0) - $this->ideal_temperature) / $this->tolerance_temperature) * (abs($environment->get_GHGS(0) - $this->ideal_GHGS) / $this->tolerance_GHGS) * (abs($environment->get_NH3(0) - $this->ideal_NH3) / $this->tolerance_NH3) * (abs($environment->get_PM(0) - $this->ideal_PM) / $this->tolerance_PM) );
-
-        $this->production[1] = $this->production[1] <= ($this->production[1] * $min_required_production) ? 0 : $this->production[1];
+        ///se la produzione non supera un minimo percentuale della capacità (min required production), la produzione è direttamente nulla
+        $this->production[1] = ($this->production[1] <= ($this->capacity[1] * $min_required_production) ? 0 : $this->production[1]);
     }
 
     public function growth_evaluate($prod_stab, $max_growth_prod) {
 
         if ($this->production[1] <= 0) {
-            $this->capacity[1] = $this->capacity[0] - $prod_stab / 100 * $max_growth_prod / $prod_stab;
+            ///se la produzione è nulla, la capacità rimane costante (industria in stagnazione)
+            $this->capacity[1] = $this->capacity[0]
         } else {
-            $this->capacity[1] = $this->capacity[0] + ($this->sold[1] / $this->production[1] - $prod_stab / 100 ) * $max_growth_prod / $prod_stab;
+            ///se per ragioni d'algoritmo buy-sell, sold supera production (il che non è realistico ma necessario per l'algoritmo eventualmente), si assume che l'industria abbia venduto tutto il vendibile 
+            if($this->sold[1] >= $this->production[1]){
+                $this->sold[1] = $this->production[1]
+            }
+            $this->capacity[1] = $this->capacity[0] + $max_growth_prod* ($this->sold[1] / $this->production[1] - $prod_stab / 100 )/(1- $prod_stab / 100);
+            
         }
-
-        $this->capacity[1] = $this->capacity[1] <= 0 ? 1 : $this->capacity[1];
+        ///la capacità non può mai essere nulla (l'industria non muore mai)
+        $this->capacity[1] = $this->capacity[1] <= 0 ? 2 : $this->capacity[1];
     }
 
     /*
