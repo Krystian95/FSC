@@ -548,7 +548,7 @@
                                             PM ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_ideal_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -556,7 +556,7 @@
                                             Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-90</b>&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="[60,90]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>90</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -658,7 +658,7 @@
                                             PM ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_ideal_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -666,7 +666,7 @@
                                             Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-50</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-50" data-slider-max="50" data-slider-step="1" data-slider-value="[-25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>50</b>
+                                            <b>-90</b>&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="[40,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>90</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
