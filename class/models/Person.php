@@ -24,7 +24,7 @@ class Person {
 
         $this->wealth = $wealth;
         $tot_prod = System::$n_meat + System::$n_veg;
-        $wealth_influence = $wealth_influence_factor / ($tot_prod);
+        $wealth_influence = $wealth_influence_factor / (1000*$tot_prod);
 
         /*
          * Preferences
