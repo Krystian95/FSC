@@ -1,4 +1,17 @@
 
+.hidden,
+.chart{
+    display: none!important;
+}
+
+.shown{
+    display: block!important;
+}
+
+.disabled:hover{
+    cursor: not-allowed;
+}
+
 .container-custom{
     max-width: 95%;
     margin: 100px auto 40px auto;

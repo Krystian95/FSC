@@ -4,46 +4,15 @@ var chart_2;
 var sliders = [];
 var slider_numero_prodotti;
 var slider_percentuale_carne_vegetali;
+var charts = {};
 
-function initChart() {
-
-    var ctx1 = document.getElementById('chart_1').getContext('2d');
-    var ctx2 = document.getElementById('chart_2').getContext('2d');
-
-    chart_1 = new Chart(ctx1, {
+function getDefaultChart(chart_id) {
+    return new Chart(document.getElementById(chart_id).getContext('2d'), {
         type: 'line',
         data: {
-            //labels: ['01/2019'],
-            datasets: [
-                {
-                    label: 'Linea 1',
-                    //data: [10],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)'
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Linea 2',
-                    //data: [8],
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0)'
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)'
-                    ],
-                    borderWidth: 1
-                }
-            ]
+            datasets: []
         },
         options: {
-            /*title: {
-             display: true,
-             text: 'Grafico 1'
-             },*/
             scales: {
                 yAxes: [{
                         ticks: {
@@ -56,25 +25,11 @@ function initChart() {
                     radius: 0
                 }
             },
-            // Container for pan options
             pan: {
-                // Boolean to enable panning
                 enabled: true,
-                // Panning directions. Remove the appropriate direction to disable 
-                // Eg. 'y' would only allow panning in the y direction
                 mode: 'xy',
-                rangeMin: {
-                    // Format of min pan range depends on scale type
-                    x: null,
-                    y: null
-                },
-                rangeMax: {
-                    // Format of max pan range depends on scale type
-                    x: null,
-                    y: null
-                },
-                // Function called once panning is completed
-                // Useful for dynamic data loading
+                rangeMin: {x: null, y: null},
+                rangeMax: {x: null, y: null},
                 onPan: function () {
                     console.log('I was panned!!!');
                 }
@@ -112,133 +67,119 @@ function initChart() {
                 }
             }
         }
-    }
-    );
+    });
+}
 
-    chart_2 = new Chart(ctx2, {
-        type: 'line',
-        data: {
-            //labels: ['01/2019'],
-            datasets: [
-                {
-                    label: 'Linea 1',
-                    //data: [10],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)'
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Linea 2',
-                    //data: [8],
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0)'
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)'
-                    ],
-                    borderWidth: 1
-                }
-            ]
+/*
+ * Move the specified chart to the specified destination.
+ * @param {type} chart_id Te chart id (Title)
+ * @param {type} destination The class name (without the dot '.')
+ * @returns {undefined}
+ */
+function moveChart(chart_id, destination) {
+
+    var chart = $('[id="' + chart_id + '"]');
+    chart.detach();
+    $('.' + destination).append(chart);
+    chart.removeClass('hidden').addClass('shown');
+
+    /*
+     * TODO add class 'disabled' to the dropdown option of the opposite dropdown.
+     * TODO When remove the class 'disabled'?
+     */
+}
+
+function initCharts() {
+
+    var charts_settings = [
+        {
+            title: 'Popolazione',
+            lines: ['Popolazione']
         },
-        options: {
-            /*title: {
-             display: true,
-             text: 'Grafico 2'
-             },*/
-            scales: {
-                yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-            },
-            elements: {
-                point: {
-                    radius: 0
-                }
-            },
-            // Container for pan options
-            pan: {
-                // Boolean to enable panning
-                enabled: true,
-                // Panning directions. Remove the appropriate direction to disable 
-                // Eg. 'y' would only allow panning in the y direction
-                mode: 'xy',
-                rangeMin: {
-                    // Format of min pan range depends on scale type
-                    x: null,
-                    y: null
-                },
-                rangeMax: {
-                    // Format of max pan range depends on scale type
-                    x: null,
-                    y: null
-                },
-                // Function called once panning is completed
-                // Useful for dynamic data loading
-                onPan: function () {
-                    console.log('I was panned!!!');
-                }
-            },
-            // Container for zoom options
-            zoom: {
-                // Boolean to enable zooming
-                enabled: true,
-                // Enable drag-to-zoom behavior
-                drag: true,
-                // Drag-to-zoom rectangle style can be customized
-                // drag: {
-                // 	 borderColor: 'rgba(225,225,225,0.3)'
-                // 	 borderWidth: 5,
-                // 	 backgroundColor: 'rgb(225,225,225)'
-                // },
-
-                // Zooming directions. Remove the appropriate direction to disable 
-                // Eg. 'y' would only allow zooming in the y direction
-                mode: 'xy',
-                rangeMin: {
-                    // Format of min zoom range depends on scale type
-                    x: null,
-                    y: null
-                },
-                rangeMax: {
-                    // Format of max zoom range depends on scale type
-                    x: null,
-                    y: null
-                },
-                // Function called once zooming is completed
-                // Useful for dynamic data loading
-                onZoom: function () {
-                    console.log('I was zoomed!!!');
-                }
-            }
+        {
+            title: 'Nati e morti',
+            lines: ['Nati', 'Morti']
+        },
+        {
+            title: 'Salute media',
+            lines: ['Salute media']
+        },
+        {
+            title: 'Temperatura',
+            lines: ['Temperatura']
+        },
+        {
+            title: 'Agenti atmosferici',
+            lines: ['GHGS', 'PM', 'NH3']
         }
+    ];
+
+    for (var i = 0; i < charts_settings.length; i++) {
+
+        var chart_title = charts_settings[i].title;
+
+        $('.charts_left').append('<canvas id="' + chart_title + '" class="chart" width="1550" height="1000"></canvas>');
+
+        var chart = getDefaultChart(chart_title);
+
+        for (var j = 0; j < charts_settings[i].lines.length; j++) {
+
+            var line = {
+                label: charts_settings[i].lines[j],
+                data: [],
+                backgroundColor: ['rgba(255, 99, 132, 0)'],
+                borderColor: ['rgba(255, 99, 132, 1)'],
+                borderWidth: 1
+            };
+
+            chart.data.datasets.push(line);
+        }
+
+        chart.update();
+
+        charts[chart_title] = chart;
     }
-    );
+
+    /*
+     * Visualizzazione iniziale grafici (sinistra e destra)
+     */
+
+    moveChart('Salute media', 'charts_left');
+    moveChart('Temperatura', 'charts_right');
 }
 
 function performResponseActions(current_period, response_encoded) {
 
     var response = JSON.parse(response_encoded);
-    console.log(response);
+    /*console.log(response);*/
     var next_period = response.Next_Period;
     $('input[name="periodo"]').val(next_period);
 
-    chart_1.data.labels.push(current_period);
+    $.each(response['Charts'], function (chart_title, value_outer) {
+        /*console.log(charts[chart_title]);*/
+        charts[chart_title].data.labels.push(current_period);
+        var count = 0;
+        $.each(response['Charts'][chart_title], function (chart_line, value_inner) {
+            //alert(key + ": " + value);
+            var value = response['Charts'][chart_title][chart_line];
+            /*console.log(charts[chart_title].data.datasets[0]);*/
+            charts[chart_title].data.datasets[count].data.push(value);
+            count++;
+        });
+        charts[chart_title].update();
+    });
+
+
     /**chart_1.data.datasets.forEach((dataset) => {
      var value = response['Charts']['Chart 1']['Linea 1'];
      var value = response['Charts']['Chart 1']['Linea 2'];
      dataset.data.push(value);
      });**/
-    var value = response['Charts']['Chart 1']['Linea 1'];
-    var value1 = response['Charts']['Chart 1']['Linea 2'];
-    chart_1.data.datasets[0].data.push(value);
-    chart_1.data.datasets[1].data.push(value1);
-    chart_1.update();
+
+    /*chart_1.data.labels.push(current_period);
+     var value_1 = response['Charts']['Popolazione']['Popolazione'];
+     chart_1.data.datasets[0].data.push(value_1);
+     chart_1.update();*/
 }
 
 function getCurrentMonthYear() {
@@ -280,9 +221,13 @@ function getInputValues() {
 
 $(function () {
 
-    $(".dropdown-menu li a").click(function () {
+    $(".dropdown-menu li a").not('.disabled').click(function () {
         $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
         $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+        
+        /*
+         * TODO moveChart(......)
+         */
     });
 
     // Abilita/disabilita textbox variazione percentuale in base alla selezione delle checkbox dialog popolazione, 
@@ -734,9 +679,9 @@ $(function () {
 
         var itemsPop = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
-        
-        var valoriPop = [10,20,50,20,40,20,15,10];
-        
+
+        var valoriPop = [10, 20, 50, 20, 40, 20, 15, 10];
+
         $(itemsPop).each(function (index, value) {
             $('input[name="' + value + '"]').val(valoriPop[index]);
             $('input[name="' + value + '_slider"]').val(valoriPop[index]);
@@ -753,8 +698,8 @@ $(function () {
         var itemsEnv = ['oscillazioni_temperatura_media', 'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm',
             'valore_iniziale_nh3', 'extern_ghgs', 'extern_pm', 'extern_nh3', ];
 
-        var valoriEnv = [25,5,2,2,1,-1,-2,-5];
-        
+        var valoriEnv = [25, 5, 2, 2, 1, -1, -2, -5];
+
         $(itemsEnv).each(function (index, value) {
             $('input[name="' + value + '"]').val(valoriEnv[index]);
             $('input[name="' + value + '_slider"]').val(valoriEnv[index]);
@@ -770,9 +715,9 @@ $(function () {
 
         var itemsExtra = ['step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
             'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
-        
-        var valoriExtra = [60,25,20,60,3,70,7,30];
-        
+
+        var valoriExtra = [60, 25, 20, 60, 3, 70, 7, 30];
+
         $(itemsExtra).each(function (index, value) {
             $('input[name="' + value + '"]').val(valoriExtra[index]);
             $('input[name="' + value + '_slider"]').val(valoriExtra[index]);
@@ -946,5 +891,5 @@ $(function () {
         $('.progress-bar').addClass('progress-bar-animated');
     });
 
-    initChart();
+    initCharts();
 });

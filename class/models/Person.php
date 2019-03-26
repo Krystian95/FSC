@@ -24,7 +24,7 @@ class Person {
 
         $this->wealth = $wealth;
         $tot_prod = System::$n_meat + System::$n_veg;
-        $wealth_influence = $wealth_influence_factor / (1000*$tot_prod);
+        $wealth_influence = $wealth_influence_factor / (1000 * $tot_prod);
 
         /*
          * Preferences
@@ -79,13 +79,12 @@ class Person {
     }
 
     public function health_evaluate($pop_stab, $max_growth_pop) {
-        if($this->eaten[1] >= $this->food_need) {
-            $this->eaten[1] = $this->food_need 
+        if ($this->eaten[1] >= $this->food_need) {
+            $this->eaten[1] = $this->food_need;
+        } else {
+            $this->health[1] = $this->health[0] * $max_growth_pop * ($this->eaten[1] / $this->food_need - $pop_stab / 100) / (1 - $pop_stab / 100);
         }
-        else{
-            $this->health[1] = $this->health[0] + * $max_growth_pop* ($this->eaten[1] / $this->food_need - $pop_stab / 100)/(1-$pop_stab / 100)
-        }
-        
+
         $this->health[1] = $this->health[1] >= 100 ? 100 : $this->health[1];
     }
 

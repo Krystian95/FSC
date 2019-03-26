@@ -103,7 +103,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspPopolazione</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a></li>
+                            <li><a class="dropdown-item disabled" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspSalute media</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspCapacità produttiva</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspProduzione </a></li>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <br>
-                    <canvas id="chart_1" width="1550" height="1000"></canvas>
+                    <div class="charts_left"></div>
                 </div>
                 <div class="col-6">
                     <br>
@@ -124,7 +124,7 @@
                             <i class="fa fa-chart-bar"></i>&nbsp&nbspGrafici
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspPopolazione</a></li>
+                            <li><a class="dropdown-item disabled" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspPopolazione</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspSalute media</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspCapacità produttiva</a></li>
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                     <br>
-                    <canvas id="chart_2" width="1550" height="1000"></canvas>
+                    <div class="charts_right"></div>
                 </div>
             </div>
         </div>
