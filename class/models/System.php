@@ -22,6 +22,45 @@ class System {
         $this->person_collection = new PersonCollection($params, $this->product_collection);
     }
 
+    private function getCharts() {
+
+        $return = [];
+
+        // Popolazione
+        //error_log($this->person_collection->getCountPeople());
+        $return['Charts']['Popolazione']['Popolazione'] = $this->person_collection->getCountPeople();
+
+        $return['Charts']['Nati e morti']['Nati'] = $this->person_collection->getCountNati();
+        $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
+
+        $return['Charts']['Salute media']['Salute media'] = $this->person_collection->getMeanHealth();
+
+        // Prodotti
+        foreach ($this->product_collection->getProducts() as $product) {
+
+            $product_name = $product->get_name();
+            /* $return['Charts']['Capacità produttiva'][$product_name] = $product->get_capacity(1);
+              $return['Charts']['Produzione'][$product_name] = $product->get_production(1);
+              $return['Charts']['Vendita'][$product_name] = $product->get_sold(1); */
+            /*
+             * TODO Grafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto (tipo istogramma dove ogni barra è divisa per tre)
+             */
+        }
+
+        // Ambiente
+        $return['Charts']['Temperatura']['Temperatura'] = $this->environment->get_temperature(1);
+
+        $return['Charts']['Agenti atmosferici']['GHGS'] = $this->environment->get_GHGS(1);
+        $return['Charts']['Agenti atmosferici']['PM'] = $this->environment->get_PM(1);
+        $return['Charts']['Agenti atmosferici']['NH3'] = $this->environment->get_NH3(1);
+
+        /*
+         * TODO Tipologie di cibo in relazione alla ricchezza
+         */
+
+        return $return;
+    }
+
     /*
      * Compute the period passed (eg. "05/2019").
      * Returns the next period.
@@ -71,41 +110,13 @@ class System {
 
         self::$step++;
 
+        $return = [];
+
         /*
          * Charts
          */
 
-        // Popolazione
-        //error_log($this->person_collection->getCountPeople());
-        $return['Charts']['Popolazione']['Popolazione'] = $this->person_collection->getCountPeople();
-
-        $return['Charts']['Nati e morti']['Nati'] = $this->person_collection->getCountNati();
-        $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
-
-        $return['Charts']['Salute media']['Salute media'] = $this->person_collection->getMeanHealth();
-
-        // Prodotti
-        foreach ($this->product_collection->getProducts() as $product) {
-            
-            $product_name = $product->get_name();
-           /* $return['Charts']['Capacità produttiva'][$product_name] = $product->get_capacity(1);
-            $return['Charts']['Produzione'][$product_name] = $product->get_production(1);
-            $return['Charts']['Vendita'][$product_name] = $product->get_sold(1);*/
-            /*
-             * TODO Grafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto (tipo istogramma dove ogni barra è divisa per tre)
-             */
-        }
-
-        // Ambiente
-        $return['Charts']['Temperatura']['Temperatura'] = $this->environment->get_temperature(1);
-        
-        $return['Charts']['Agenti atmosferici']['GHGS'] = $this->environment->get_GHGS(1);
-        $return['Charts']['Agenti atmosferici']['PM'] = $this->environment->get_PM(1);
-        $return['Charts']['Agenti atmosferici']['NH3'] = $this->environment->get_NH3(1);
-        
-        /*
-         * TODO Tipologie di cibo in relazione alla ricchezza
-         */
+        $return = $this->getCharts();
 
         /*
          * Terminal operations of the cicle
@@ -121,6 +132,31 @@ class System {
         $return['Next_Period'] = $next_period;
 
         //error_log('END iteratePeriod(' . $period . ')');
+
+        return $return;
+    }
+
+    public function getInitialValues($period) {
+
+        $return = [];
+
+        /*
+         * Charts
+         */
+        $return = $this->getCharts();
+
+        /*
+         * Terminal operations of the cicle
+         */
+        $this->product_collection->endIteration();
+        $this->person_collection->endIteration();
+        $this->environment->endIteration();
+
+        /*
+         * Extra
+         */
+        $next_period = $this->calculateNextPeriod($current_period = $period);
+        $return['Next_Period'] = $next_period;
 
         return $return;
     }

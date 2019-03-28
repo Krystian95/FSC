@@ -34,10 +34,8 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
             $system = new System($params);
 
             $period = $_POST['Data']['Period'];
-            $response = $system->iteratePeriod($period);
-            /*
-             * TODO return initial values
-             */
+            $response = $system->getInitialValues($period);
+            
             $_SESSION['system'] = serialize($system);
             break;
 
