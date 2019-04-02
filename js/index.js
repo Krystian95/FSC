@@ -176,7 +176,7 @@ function initCharts() {
      */
 
     moveChart('Popolazione', 'charts_left');
-    moveChart('Nati e morti', 'charts_right');
+    moveChart('Capacità produttiva', 'charts_right');
 }
 
 function performResponseActions(current_period, response_encoded) {

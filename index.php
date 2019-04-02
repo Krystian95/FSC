@@ -123,7 +123,7 @@
                     <br>
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user-circle fa-fw"></i><span id="text-right">Nati e morti</span>
+                            <i class="fas fa-user-circle fa-fw"></i><span id="text-right">Capacità produttiva</span>
                         </button>
                         <div class="menu-right">
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
