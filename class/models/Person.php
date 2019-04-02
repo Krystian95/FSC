@@ -35,7 +35,6 @@ class Person {
         $mean_meat = $mean + $mean * $tendency / 100;
         $mean_veg = $mean - $mean * $tendency / 100;
         for ($i = 0; $i < $tot_prod; $i++) {
-            error_log($product_collection->getProductTypeByIndex($i));
             if ($product_collection->getProductTypeByIndex($i) == 'meat') {
                 $preferenze_tmp[$i] = Utils::rand(0, ($mean_meat * 2));
             } elseif ($product_collection->getProductTypeByIndex($i) == 'veg') {
