@@ -99,19 +99,21 @@
                     <br>
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-chart-bar"></i>&nbsp&nbspGrafici
+                            <i class="fas fa-users fa-fw"></i><span id="text-left">Popolazione</span>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspPopolazione</a></li>
-                            <li><a class="dropdown-item disabled" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspSalute media</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspCapacità produttiva</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspProduzione </a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspVendita</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspCapacità/produzione/vendita mensile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspTemperatura</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>&nbsp&nbspAgenti atmosferici</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspTipologie di cibo in relazione alla ricchezza</a></li>
+                        <div class="menu-left">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item left-element" id="Popolazione left" href="#"><i class="fas fa-users fa-fw"></i>Popolazione</a></li>
+                                <li><a class="dropdown-item left-element" id="Nati e morti left" href="#"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
+                                <li><a class="dropdown-item left-element" id="Salute media left" href="#"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
+                                <li><a class="dropdown-item left-element" id="Capacità produttiva left" href="#"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
+                                <li><a class="dropdown-item left-element" id="Produzione left" href="#"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
+                                <li><a class="dropdown-item left-element" id="Vendita left" href="#"><i class="fa fa-chart-line fa-fw"></i>Vendita</a></li>
+                                <li><a class="dropdown-item left-element" id="Capacità, produzione e vendita mensile left" href="#"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
+                                <li><a class="dropdown-item left-element" id="Temperatura left" href="#"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
+                                <li><a class="dropdown-item left-element" id="Agenti atmosferici left" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
+                                <li><a class="dropdown-item left-element" id="Tipologie di cibo in relazione alla ricchezza left" href="#"><i class="fas fa-dollar-sign fa-fw"></i>Tipologie di cibo in relazione alla ricchezza</a></li>
+                            </div>
                         </div>
                     </div>
                     <br>
@@ -121,19 +123,21 @@
                     <br>
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-chart-bar"></i>&nbsp&nbspGrafici
+                            <i class="fas fa-user-circle fa-fw"></i><span id="text-right">Nati e morti</span>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item disabled" href="#"><i class="fas fa-users fa-fw"></i>&nbsp&nbspPopolazione</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle fa-fw"></i>&nbsp&nbspNati e morti</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-medkit fa-fw"></i>&nbsp&nbspSalute media</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-industry fa-fw"></i>&nbsp&nbspCapacità produttiva</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-archive fa-fw"></i>&nbsp&nbspProduzione </a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-chart-line fa-fw"></i>&nbsp&nbspVendita</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-signal fa-fw"></i>&nbsp&nbspCapacità/produzione/vendita mensile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-thermometer-half fa-fw"></i>&nbsp&nbspTemperatura</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>&nbsp&nbspAgenti atmosferici</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-dollar-sign fa-fw"></i>&nbsp&nbspTipologie di cibo in relazione alla ricchezza</a></li>
+                        <div class="menu-right">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item right-element" id="Popolazione right" href="#"><i class="fas fa-users fa-fw"></i>Popolazione</a></li>
+                                <li><a class="dropdown-item right-element" id="Nati e morti right" href="#"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
+                                <li><a class="dropdown-item right-element" id="Salute media right" href="#"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
+                                <li><a class="dropdown-item right-element" id="Capacità produttiva right" href="#"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
+                                <li><a class="dropdown-item right-element" id="Produzione right" href="#"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
+                                <li><a class="dropdown-item right-element" id="Vendita right" href="#"><i class="fa fa-chart-line fa-fw"></i>Vendita</a></li>
+                                <li><a class="dropdown-item right-element" id="Capacità, produzione e vendita mensile right" href="#"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
+                                <li><a class="dropdown-item right-element" id="Temperatura right" href="#"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
+                                <li><a class="dropdown-item right-element" id="Agenti atmosferici right" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
+                                <li><a class="dropdown-item right-element" id="Tipologie di cibo in relazione alla ricchezza right" href="#"><i class="fas fa-dollar-sign fa-fw"></i>Tipologie di cibo in relazione alla ricchezza</a></li>
+                            </div>
                         </div>
                     </div>
                     <br>

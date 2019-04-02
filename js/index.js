@@ -78,6 +78,7 @@ function getDefaultChart(chart_id) {
  */
 function moveChart(chart_id, destination) {
 
+    $('.' + destination).find('.chart').removeClass('shown').addClass('hidden');
     var chart = $('[id="' + chart_id + '"]');
     chart.detach();
     $('.' + destination).append(chart);
@@ -144,8 +145,8 @@ function initCharts() {
      * Visualizzazione iniziale grafici (sinistra e destra)
      */
 
-    moveChart('Salute media', 'charts_left');
-    moveChart('Temperatura', 'charts_right');
+    moveChart('Popolazione', 'charts_left');
+    moveChart('Nati e morti', 'charts_right');
 }
 
 function performResponseActions(current_period, response_encoded) {
@@ -220,16 +221,67 @@ function getInputValues() {
 }
 
 $(function () {
-
-    $(".dropdown-menu li a").not('.disabled').click(function () {
-        $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
-        $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+    
+    $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
         
-        /*
-         * TODO moveChart(......)
-         */
+        console.log($(this).html());
+        
+        $(this).parents(".dropdown").find('.btn').html('<span id="text-left">' + $(this).html() + '</span><span class="caret"></span>');
+        $(this).parents(".dropdown").find('.btn #text-left').val($(this).data('value'));
+        moveChart(String($(this)[0].innerText), 'charts_left');
+        
+        if (String($(this)[0].innerText) == $('#text-right').html()){
+            $('#text-right').html('Seleziona un grafico');
+        }
     });
 
+    $(".menu-right .dropdown-menu li a").not('.disabled').click(function () {
+        
+        console.log($(this).html());
+        
+        $(this).parents(".dropdown").find('.btn').html('<span id="text-right">' + $(this).html() + '</span><span class="caret"></span>');
+        $(this).parents(".dropdown").find('.btn #text-right').val($(this).data('value'));
+        moveChart(String($(this)[0].innerText), 'charts_right');
+        
+        if (String($(this)[0].innerText) == $('#text-left').html()){
+            $('#text-left').html('Seleziona un grafico');
+        }
+    });
+    
+    /*
+    $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
+        
+        $('.right-element').removeClass('disabled');
+        
+        var grafico_selezionato = String($(this)[0].innerText);
+        console.log(grafico_selezionato);
+        $('[id="' + grafico_selezionato + ' right"]').addClass('disabled');
+       
+        if ($('[id="' + grafico_selezionato + '"]').attr('class').indexOf('hidden') >= 0){
+            
+            $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+            moveChart(String($(this)[0].innerText), 'charts_left');
+        }
+    });
+
+    $(".menu-right .dropdown-menu li a").not('.disabled').click(function () {
+        
+        $('.left-element').removeClass('disabled');
+        
+        var grafico_selezionato = String($(this)[0].innerText);
+        console.log(grafico_selezionato);
+        $('[id="' + grafico_selezionato + ' left"]').addClass('disabled');
+        
+        if ($('[id="' + grafico_selezionato + '"]').attr('class').indexOf('hidden') >= 0){
+            
+            $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+            moveChart(String($(this)[0].innerText), 'charts_right');
+        }
+    });
+    */
+   
     // Abilita/disabilita textbox variazione percentuale in base alla selezione delle checkbox dialog popolazione, 
     // ambiente, parametri extra e singoli prodotti
     var itemsPopEnvExtraProd = ['popolazione', 'ambiente', 'extra', 'manzo', 'pollo', 'maiale', 'cavallo', 'tacchino',
