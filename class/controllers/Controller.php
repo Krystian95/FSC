@@ -35,7 +35,7 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
 
             $period = $_POST['Data']['Period'];
             $response = $system->getInitialValues($period);
-            
+
             $_SESSION['system'] = serialize($system);
             break;
 

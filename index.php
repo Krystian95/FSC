@@ -108,7 +108,7 @@
                                 <li><a class="dropdown-item left-element" id="Salute media left" href="#"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
                                 <li><a class="dropdown-item left-element" id="Capacità produttiva left" href="#"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
                                 <li><a class="dropdown-item left-element" id="Produzione left" href="#"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
-                                <li><a class="dropdown-item left-element" id="Vendita left" href="#"><i class="fa fa-chart-line fa-fw"></i>Vendita</a></li>
+                                <li><a class="dropdown-item left-element" id="Vendite left" href="#"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
                                 <li><a class="dropdown-item left-element" id="Capacità, produzione e vendita mensile left" href="#"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
                                 <li><a class="dropdown-item left-element" id="Temperatura left" href="#"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
                                 <li><a class="dropdown-item left-element" id="Agenti atmosferici left" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
@@ -132,7 +132,7 @@
                                 <li><a class="dropdown-item right-element" id="Salute media right" href="#"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
                                 <li><a class="dropdown-item right-element" id="Capacità produttiva right" href="#"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
                                 <li><a class="dropdown-item right-element" id="Produzione right" href="#"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
-                                <li><a class="dropdown-item right-element" id="Vendita right" href="#"><i class="fa fa-chart-line fa-fw"></i>Vendita</a></li>
+                                <li><a class="dropdown-item right-element" id="Vendite right" href="#"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
                                 <li><a class="dropdown-item right-element" id="Capacità, produzione e vendita mensile right" href="#"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
                                 <li><a class="dropdown-item right-element" id="Temperatura right" href="#"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
                                 <li><a class="dropdown-item right-element" id="Agenti atmosferici right" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>

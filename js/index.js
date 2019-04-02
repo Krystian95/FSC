@@ -83,11 +83,6 @@ function moveChart(chart_id, destination) {
     chart.detach();
     $('.' + destination).append(chart);
     chart.removeClass('hidden').addClass('shown');
-
-    /*
-     * TODO add class 'disabled' to the dropdown option of the opposite dropdown.
-     * TODO When remove the class 'disabled'?
-     */
 }
 
 function initCharts() {
@@ -112,8 +107,39 @@ function initCharts() {
         {
             title: 'Agenti atmosferici',
             lines: ['GHGS', 'PM', 'NH3']
-        }
+        },
+        // do not move objects, they are linked by index for selectModProd
+        {
+            title: 'Capacità produttiva',
+            lines: []
+        },
+        {
+            title: 'Produzione',
+            lines: []
+        },
+        {
+            title: 'Vendite',
+            lines: []
+        },
     ];
+
+    // Modalità prodotti
+
+    var selectModProd = String($('#selectModProd').val());
+
+    if (selectModProd == 1) { // Tutti i prodotti
+        var numero_prodotti = String(slider_numero_prodotti.getValue());
+
+        for (var i = 0; i < numero_prodotti; i++) {
+            charts_settings[5].lines.push(i);
+            charts_settings[6].lines.push(i);
+            charts_settings[7].lines.push(i);
+        }
+    } else if (selectModProd == 0) { // Singoli prodotti
+        //console.log('selectModProd = ' + selectModProd);
+    }
+
+    // Creazione grafici
 
     for (var i = 0; i < charts_settings.length; i++) {
 
@@ -206,9 +232,9 @@ function getInputValues() {
         data[name] = value;
     });
 
+    data['selectModProd'] = String($('#selectModProd').val());
     data['numero_prodotti'] = String(slider_numero_prodotti.getValue());
     data['percentuale_carne_vegetali'] = String(slider_percentuale_carne_vegetali.getValue());
-    data['selectModProd'] = String($('#selectModProd').val());
 
     $(sliders).each(function (index, value) {
         var name = this.element.id;
@@ -216,72 +242,72 @@ function getInputValues() {
         data[name + '_max'] = String(this.getValue()[1]);
     });
 
-    console.log(data);
+    //console.log(data);
     return data;
 }
 
 $(function () {
-    
+
     $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
-        
+
         console.log($(this).html());
-        
+
         $(this).parents(".dropdown").find('.btn').html('<span id="text-left">' + $(this).html() + '</span><span class="caret"></span>');
         $(this).parents(".dropdown").find('.btn #text-left').val($(this).data('value'));
         moveChart(String($(this)[0].innerText), 'charts_left');
-        
-        if (String($(this)[0].innerText) == $('#text-right').html()){
+
+        if (String($(this)[0].innerText) == $('#text-right').html()) {
             $('#text-right').html('Seleziona un grafico');
         }
     });
 
     $(".menu-right .dropdown-menu li a").not('.disabled').click(function () {
-        
+
         console.log($(this).html());
-        
+
         $(this).parents(".dropdown").find('.btn').html('<span id="text-right">' + $(this).html() + '</span><span class="caret"></span>');
         $(this).parents(".dropdown").find('.btn #text-right').val($(this).data('value'));
         moveChart(String($(this)[0].innerText), 'charts_right');
-        
-        if (String($(this)[0].innerText) == $('#text-left').html()){
+
+        if (String($(this)[0].innerText) == $('#text-left').html()) {
             $('#text-left').html('Seleziona un grafico');
         }
     });
-    
-    /*
-    $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
-        
-        $('.right-element').removeClass('disabled');
-        
-        var grafico_selezionato = String($(this)[0].innerText);
-        console.log(grafico_selezionato);
-        $('[id="' + grafico_selezionato + ' right"]').addClass('disabled');
-       
-        if ($('[id="' + grafico_selezionato + '"]').attr('class').indexOf('hidden') >= 0){
-            
-            $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
-            $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-            moveChart(String($(this)[0].innerText), 'charts_left');
-        }
-    });
 
-    $(".menu-right .dropdown-menu li a").not('.disabled').click(function () {
-        
-        $('.left-element').removeClass('disabled');
-        
-        var grafico_selezionato = String($(this)[0].innerText);
-        console.log(grafico_selezionato);
-        $('[id="' + grafico_selezionato + ' left"]').addClass('disabled');
-        
-        if ($('[id="' + grafico_selezionato + '"]').attr('class').indexOf('hidden') >= 0){
-            
-            $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
-            $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-            moveChart(String($(this)[0].innerText), 'charts_right');
-        }
-    });
-    */
-   
+    /*
+     $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
+     
+     $('.right-element').removeClass('disabled');
+     
+     var grafico_selezionato = String($(this)[0].innerText);
+     console.log(grafico_selezionato);
+     $('[id="' + grafico_selezionato + ' right"]').addClass('disabled');
+     
+     if ($('[id="' + grafico_selezionato + '"]').attr('class').indexOf('hidden') >= 0){
+     
+     $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
+     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+     moveChart(String($(this)[0].innerText), 'charts_left');
+     }
+     });
+     
+     $(".menu-right .dropdown-menu li a").not('.disabled').click(function () {
+     
+     $('.left-element').removeClass('disabled');
+     
+     var grafico_selezionato = String($(this)[0].innerText);
+     console.log(grafico_selezionato);
+     $('[id="' + grafico_selezionato + ' left"]').addClass('disabled');
+     
+     if ($('[id="' + grafico_selezionato + '"]').attr('class').indexOf('hidden') >= 0){
+     
+     $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
+     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+     moveChart(String($(this)[0].innerText), 'charts_right');
+     }
+     });
+     */
+
     // Abilita/disabilita textbox variazione percentuale in base alla selezione delle checkbox dialog popolazione, 
     // ambiente, parametri extra e singoli prodotti
     var itemsPopEnvExtraProd = ['popolazione', 'ambiente', 'extra', 'manzo', 'pollo', 'maiale', 'cavallo', 'tacchino',
@@ -438,6 +464,8 @@ $(function () {
         current_period = $('input[name="periodo"]').val();
         params['Data']['Period'] = current_period;
         params['Data']['Params'] = getInputValues();
+
+        initCharts();
 
         var response = utils.performAjaxCall(params);
         performResponseActions(current_period, response);
@@ -942,6 +970,4 @@ $(function () {
     $("#params-form").submit(function (event) {
         $('.progress-bar').addClass('progress-bar-animated');
     });
-
-    initCharts();
 });

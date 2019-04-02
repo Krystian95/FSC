@@ -39,9 +39,9 @@ class System {
         foreach ($this->product_collection->getProducts() as $product) {
 
             $product_name = $product->get_name();
-            /* $return['Charts']['Capacità produttiva'][$product_name] = $product->get_capacity(1);
-              $return['Charts']['Produzione'][$product_name] = $product->get_production(1);
-              $return['Charts']['Vendita'][$product_name] = $product->get_sold(1); */
+            $return['Charts']['Capacità produttiva'][$product_name] = $product->get_capacity(1);
+            $return['Charts']['Produzione'][$product_name] = $product->get_production(1);
+            $return['Charts']['Vendite'][$product_name] = $product->get_sold(1);
             /*
              * TODO Grafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto (tipo istogramma dove ogni barra è divisa per tre)
              */
