@@ -7,6 +7,8 @@
  */
 class ProductCollection {
 
+    public $n_meat;
+    public $n_veg;
     private $products = [];
     private $prod_stab;
     private $max_growth_prod;
@@ -23,8 +25,8 @@ class ProductCollection {
             $n_products = $params['numero_prodotti'];
             $percent_type = $params['percentuale_carne_vegetali'];
 
-            $n_meat = round($n_products / 100 * $percent_type);
-            $n_veg = $n_products - $n_meat;
+            $this->n_meat = round($n_products / 100 * $percent_type);
+            $this->n_veg = $n_products - $this->n_meat;
 
             for ($i = 0; $i < $n_products; $i++) {
 
@@ -32,7 +34,7 @@ class ProductCollection {
 
                 $new_product->set_name($i);
 
-                if ($i < $n_veg) {
+                if ($i < $this->n_veg) {
                     $tipo = 'veg';
                 } else {
                     $tipo = 'meat';
@@ -86,6 +88,9 @@ class ProductCollection {
             }
         } else {
             $products = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane', 'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+
+            $this->n_meat = 5;
+            $this->n_veg = 10;
 
             foreach ($products as $product) {
 

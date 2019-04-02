@@ -20,8 +20,11 @@ class PersonCollection {
     private $influenza_differenze_ricchezza;
     private $n_nati = 0;
     private $n_morti = 0;
+    private $tot_prod;
 
     public function __construct($params, $product_collection) {
+
+        $this->tot_prod = $product_collection->n_meat + $product_collection->n_veg;
 
         $this->tendenza_mangiare_carne = $params['tendenza_mangiare_carne'];
         $this->ricchezza_media = $params['ricchezza_media'];
@@ -61,7 +64,7 @@ class PersonCollection {
         $gauss = Utils::rand(($fabbisogno_cibo_media - $fabbisogno_cibo_dev_std / 2), ($fabbisogno_cibo_media + $fabbisogno_cibo_dev_std / 2));
         $fabbisogno_cibo = ($gauss > 0 ? $gauss : 1);
 
-        $person = new Person($params['tendenza_mangiare_carne'], $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $params['influenza_differenze_ricchezza']);
+        $person = new Person($params['tendenza_mangiare_carne'], $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $params['influenza_differenze_ricchezza'], $this->tot_prod);
 
         $rand = random_int(0, 100);
 
@@ -125,7 +128,7 @@ class PersonCollection {
                 $rand = random_int(0, 100);
                 if ($rand >= $this->growth_parameter) {
 
-                    $new_person = new Person($this->tendenza_mangiare_carne, $product_collection, $person->get_wealth(), $birth_health = 50, $this->ricchezza_media, $person->get_food_need(), $this->influenza_differenze_ricchezza);
+                    $new_person = new Person($this->tendenza_mangiare_carne, $product_collection, $person->get_wealth(), $birth_health = 50, $this->ricchezza_media, $person->get_food_need(), $this->influenza_differenze_ricchezza, $this->tot_prod);
                     $this->n_nati++;
 
                     // Evita di aggiungere persone all'array che si sta scorrendo

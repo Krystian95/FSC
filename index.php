@@ -854,9 +854,23 @@
 
     <!-- Modal singoli prodotti-->
     <?php
-    $itemsProd = ['manzo' => 'carne', 'pollo' => 'carne', 'maiale' => 'carne', 'cavallo' => 'carne', 'tacchino' => 'carne',
-        'patate' => 'vegetale', 'zucchine' => 'vegetale', 'peperoni' => 'vegetale', 'melanzane' => 'vegetale', 'pomodori' => 'vegetale',
-        'grano' => 'vegetale', 'riso' => 'vegetale', 'melo' => 'vegetale', 'pero' => 'vegetale', 'arancio' => 'vegetale'];
+    $itemsProd = [
+        'manzo' => 'meat',
+        'pollo' => 'meat',
+        'maiale' => 'meat',
+        'cavallo' => 'meat',
+        'tacchino' => 'meat',
+        'patate' => 'veg',
+        'zucchine' => 'veg',
+        'peperoni' => 'veg',
+        'melanzane' => 'veg',
+        'pomodori' => 'veg',
+        'grano' => 'veg',
+        'riso' => 'veg',
+        'melo' => 'veg',
+        'pero' => 'veg',
+        'arancio' => 'veg',
+    ];
 
     foreach ($itemsProd as $value => $value_tipo) {
 

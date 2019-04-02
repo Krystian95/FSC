@@ -14,7 +14,7 @@ class Person {
     private $eaten = [];
     private $speso = 0;
 
-    public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $wealth_influence_factor) {
+    public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $wealth_influence_factor, $tot_prod) {
 
         $this->eaten[0] = 0.0;
         $this->eaten[1] = 0.0;
@@ -23,7 +23,6 @@ class Person {
         $this->food_need = $fabbisogno_cibo;
 
         $this->wealth = $wealth;
-        $tot_prod = System::$n_meat + System::$n_veg;
         $wealth_influence = $wealth_influence_factor / (1000 * $tot_prod);
 
         /*
@@ -36,6 +35,7 @@ class Person {
         $mean_meat = $mean + $mean * $tendency / 100;
         $mean_veg = $mean - $mean * $tendency / 100;
         for ($i = 0; $i < $tot_prod; $i++) {
+            error_log($product_collection->getProductTypeByIndex($i));
             if ($product_collection->getProductTypeByIndex($i) == 'meat') {
                 $preferenze_tmp[$i] = Utils::rand(0, ($mean_meat * 2));
             } elseif ($product_collection->getProductTypeByIndex($i) == 'veg') {

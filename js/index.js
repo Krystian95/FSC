@@ -129,14 +129,18 @@ function initCharts() {
 
     if (selectModProd == 1) { // Tutti i prodotti
         var numero_prodotti = String(slider_numero_prodotti.getValue());
-
         for (var i = 0; i < numero_prodotti; i++) {
             charts_settings[5].lines.push(i);
             charts_settings[6].lines.push(i);
             charts_settings[7].lines.push(i);
         }
     } else if (selectModProd == 0) { // Singoli prodotti
-        //console.log('selectModProd = ' + selectModProd);
+        var prodotti_default = ['Manzo', 'Pollo', 'Maiale', 'Cavallo', 'Tacchino', 'Patate', 'Zucchine', 'Peperoni', 'Melanzane', 'Pomodori', 'Grano', 'Riso', 'Melo', 'Pero', 'Arancio'];
+        for (var i = 0; i < prodotti_default.length; i++) {
+            charts_settings[5].lines.push(prodotti_default[i]);
+            charts_settings[6].lines.push(prodotti_default[i]);
+            charts_settings[7].lines.push(prodotti_default[i]);
+        }
     }
 
     // Creazione grafici

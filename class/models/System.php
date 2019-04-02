@@ -7,8 +7,6 @@
  */
 class System {
 
-    public static $n_meat = 5;
-    public static $n_veg = 10;
     public static $current_month;
     public static $step = 0;
     private $environment;
@@ -229,7 +227,7 @@ class System {
                 //error_log('ENTER while');
                 while ($rnd > $person->get_preferenza($j)) {
                     //error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
-                    if ($j == (self::$n_meat + self::$n_veg - 1)) {
+                    if ($j == ($this->product_collection->n_meat + $this->product_collection->n_veg - 1)) {
                         //commento: qui tecnicamente non dovrebbe arrivarci perch nel caso limite rnd=1=preferenza(n_meat+n_veg - 1)
                         //break;
                         /////questo nel caso in cui le preferenze siano state generate bene *** questo if break non serve 
@@ -248,7 +246,7 @@ class System {
                     if ($j == 0) {
                         $j = $t;
                         while (!in_array($j, $products_indexes)) {
-                            if ($j == (self::$n_meat + self::$n_veg - 1)) {
+                            if ($j == ($this->product_collection->n_meat + $this->product_collection->n_veg - 1)) {
                                 break;
                                 //commento: qui ci arriva solo se l'ultimo cibo rimasto  quello pi costoso
                                 //Il che  plausibile ma se finisce sistematicamente qui forse c' qualcosa di strano
