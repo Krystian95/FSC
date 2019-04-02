@@ -40,8 +40,11 @@ class Environment {
     private function impact_from_product(Product $product) {
 
         $this->GHGS[1] = $this->GHGS[0] + $product->get_impact_on_GHGS() * $product->get_production(1) + $this->extern_GHGS;
+        if(this->GHGS[1] < 0 ) $this->GHGS[1] = 0;
         $this->NH3[1] = $this->NH3[0] + $product->get_impact_on_NH3() * $product->get_production(1) + $this->extern_NH3;
+        if(this->NH3[1] < 0 ) $this->NH3[1] = 0
         $this->PM[1] = $this->PM[0] + $product->get_impact_on_PM() * $product->get_production(1) + $this->extern_PM;
+        if(this->PM[1] < 0 ) $this->PM[1] = 0
     }
 
     public function temperature_evaluation() {
