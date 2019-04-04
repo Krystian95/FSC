@@ -98,21 +98,21 @@
                 <div class="col-6">
                     <br>
                     <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-users fa-fw"></i><span id="text-left">Popolazione</span>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="true">
+                            <span id="simbol-left"><i class="fas fa-users fa-fw"></i></span><span id="text-left">Popolazione</span>
                         </button>
                         <div class="menu-left">
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item left-element" id="Popolazione left" href="#"><i class="fas fa-users fa-fw"></i>Popolazione</a></li>
-                                <li><a class="dropdown-item left-element" id="Nati e morti left" href="#"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
-                                <li><a class="dropdown-item left-element" id="Salute media left" href="#"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
-                                <li><a class="dropdown-item left-element" id="Capacità produttiva left" href="#"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
-                                <li><a class="dropdown-item left-element" id="Produzione left" href="#"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
-                                <li><a class="dropdown-item left-element" id="Vendite left" href="#"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
-                                <li><a class="dropdown-item left-element" id="Capacità, produzione e vendita mensile left" href="#"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
-                                <li><a class="dropdown-item left-element" id="Temperatura left" href="#"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
-                                <li><a class="dropdown-item left-element" id="Agenti atmosferici left" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
-                                <li><a class="dropdown-item left-element" id="Tipologie di cibo in relazione alla ricchezza left" href="#"><i class="fas fa-dollar-sign fa-fw"></i>Tipologie di cibo in relazione alla ricchezza</a></li>
+                                <li><a class="dropdown-item left-element" id="Popolazione left" href="#footer"><i class="fas fa-users fa-fw"></i>Popolazione</a></li>
+                                <li><a class="dropdown-item left-element" id="Nati e morti left" href="#footer"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
+                                <li><a class="dropdown-item left-element" id="Salute media left" href="#footer"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
+                                <li><a class="dropdown-item left-element" id="Capacità produttiva left" href="#footer"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
+                                <li><a class="dropdown-item left-element" id="Produzione left" href="#footer"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
+                                <li><a class="dropdown-item left-element" id="Vendite left" href="#footer"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
+                                <li><a class="dropdown-item left-element" id="Capacità, produzione e vendita mensile left" href="#footer"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
+                                <li><a class="dropdown-item left-element" id="Temperatura left" href="#footer"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
+                                <li><a class="dropdown-item left-element" id="Agenti atmosferici left" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
+                                <li><a class="dropdown-item left-element" id="Tipologie di cibo in relazione alla ricchezza left" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Tipologie di cibo in relazione alla ricchezza</a></li>
                             </div>
                         </div>
                     </div>
@@ -122,21 +122,21 @@
                 <div class="col-6">
                     <br>
                     <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user-circle fa-fw"></i><span id="text-right">Capacità produttiva</span>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="true">
+                            <span id="simbol-right"><i class="fas fa-user-circle fa-fw"></i></span><span id="text-right">Nati e morti</span>
                         </button>
                         <div class="menu-right">
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item right-element" id="Popolazione right" href="#"><i class="fas fa-users fa-fw"></i>Popolazione</a></li>
-                                <li><a class="dropdown-item right-element" id="Nati e morti right" href="#"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
-                                <li><a class="dropdown-item right-element" id="Salute media right" href="#"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
-                                <li><a class="dropdown-item right-element" id="Capacità produttiva right" href="#"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
-                                <li><a class="dropdown-item right-element" id="Produzione right" href="#"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
-                                <li><a class="dropdown-item right-element" id="Vendite right" href="#"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
-                                <li><a class="dropdown-item right-element" id="Capacità, produzione e vendita mensile right" href="#"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
-                                <li><a class="dropdown-item right-element" id="Temperatura right" href="#"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
-                                <li><a class="dropdown-item right-element" id="Agenti atmosferici right" href="#"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
-                                <li><a class="dropdown-item right-element" id="Tipologie di cibo in relazione alla ricchezza right" href="#"><i class="fas fa-dollar-sign fa-fw"></i>Tipologie di cibo in relazione alla ricchezza</a></li>
+                                <li><a class="dropdown-item right-element" id="Popolazione right" href="#footer"><i class="fas fa-users fa-fw"></i>Popolazione</a></li>
+                                <li><a class="dropdown-item right-element" id="Nati e morti right" href="#footer"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
+                                <li><a class="dropdown-item right-element" id="Salute media right" href="#footer"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
+                                <li><a class="dropdown-item right-element" id="Capacità produttiva right" href="#footer"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
+                                <li><a class="dropdown-item right-element" id="Produzione right" href="#footer"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
+                                <li><a class="dropdown-item right-element" id="Vendite right" href="#footer"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
+                                <li><a class="dropdown-item right-element" id="Capacità, produzione e vendita mensile right" href="#footer"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
+                                <li><a class="dropdown-item right-element" id="Temperatura right" href="#footer"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
+                                <li><a class="dropdown-item right-element" id="Agenti atmosferici right" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
+                                <li><a class="dropdown-item right-element" id="Tipologie di cibo in relazione alla ricchezza right" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Tipologie di cibo in relazione alla ricchezza</a></li>
                             </div>
                         </div>
                     </div>
@@ -146,10 +146,10 @@
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="py-4 bg-dark">
+        <!-- #footer -->
+        <footer class="py-4 bg-dark" style="height: 145px;">
             <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; 2019 HESystem. Tutti i diritti riservati.</p>
+                <p class="m-0 text-center text-white" style="padding: 40px;">Copyright &copy; 2019 HESystem. Tutti i diritti riservati.</p>
             </div>
             <!-- /.container -->
         </footer>
@@ -185,10 +185,10 @@
                                         Tendenza a mangiare carne
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="tendenza_mangiare_carne_slider" value="20">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="tendenza_mangiare_carne_slider" value="20">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="tendenza_mangiare_carne" value="20"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="tendenza_mangiare_carne" value="20"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="tendenza_mangiare_carne_checkbox" class="parametri_popolazione"></div>
@@ -385,10 +385,10 @@
                                         Apporto esterno GHGS
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_ghgs_slider" value="-1">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_ghgs_slider" value="-1">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_ghgs" value="-1"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_ghgs" value="-1"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_ghgs_checkbox" class="parametri_ambiente"></div>
@@ -399,10 +399,10 @@
                                         Apporto esterno PM
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_pm_slider" value="-2">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_pm_slider" value="-2">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_pm" value="-2"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_pm" value="-2"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_pm_checkbox" class="parametri_ambiente"></div>
@@ -413,10 +413,10 @@
                                         Apporto esterno NH<sub>3</sub>
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="extern_nh3_slider" value="-5">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_nh3_slider" value="-5">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="extern_nh3" value="-5"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_nh3" value="-5"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_nh3_checkbox" class="parametri_ambiente"></div>

@@ -176,7 +176,7 @@ function initCharts() {
      */
 
     moveChart('Popolazione', 'charts_left');
-    moveChart('Capacità produttiva', 'charts_right');
+    moveChart('Nati e morti', 'charts_right');
 }
 
 function performResponseActions(current_period, response_encoded) {
@@ -251,29 +251,43 @@ function getInputValues() {
 }
 
 $(function () {
-
+    
+    // Gestione menu grafici a sinistra
     $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
-
+        
+        /*
+        // Test
+        console.log($(this).find('i')[0].outerHTML);
+        console.log($(this)[0].innerText);
         console.log($(this).html());
+        console.log($(this));
+        */
 
-        $(this).parents(".dropdown").find('.btn').html('<span id="text-left">' + $(this).html() + '</span><span class="caret"></span>');
-        $(this).parents(".dropdown").find('.btn #text-left').val($(this).data('value'));
+        $(this).parents(".dropdown").find('.btn').html('<span id="simbol-left">' + $(this).find('i')[0].outerHTML + '</span><span id="text-left">' + $(this)[0].innerText + '</span>');
         moveChart(String($(this)[0].innerText), 'charts_left');
 
         if (String($(this)[0].innerText) == $('#text-right').html()) {
+            $('#simbol-right').html('<i class="fas fa-chart-bar" style="margin-right: 6px;"></i>');
             $('#text-right').html('Seleziona un grafico');
         }
     });
-
+    
+    // Gestione menu grafici a destra
     $(".menu-right .dropdown-menu li a").not('.disabled').click(function () {
-
+        
+        /*
+        // Test
+        console.log($(this).find('i')[0].outerHTML);
+        console.log($(this)[0].innerText);
         console.log($(this).html());
-
-        $(this).parents(".dropdown").find('.btn').html('<span id="text-right">' + $(this).html() + '</span><span class="caret"></span>');
-        $(this).parents(".dropdown").find('.btn #text-right').val($(this).data('value'));
+        console.log($(this));
+        */
+        
+        $(this).parents(".dropdown").find('.btn').html('<span id="simbol-right">' + $(this).find('i')[0].outerHTML + '</span><span id="text-right">' + $(this)[0].innerText + '</span>');
         moveChart(String($(this)[0].innerText), 'charts_right');
 
         if (String($(this)[0].innerText) == $('#text-left').html()) {
+            $('#simbol-left').html('<i class="fas fa-chart-bar" style="margin-right: 6px;"></i>');
             $('#text-left').html('Seleziona un grafico');
         }
     });
@@ -499,9 +513,11 @@ $(function () {
         /* Disabilita bottone start */
         $('#start').prop('disabled', true);
 
-        /* Abilita bottoni pausa e stop */
+        /* Abilita bottoni pausa, stop e grafici */
         $('#pausa').prop('disabled', false);
         $('#stop').prop('disabled', false);
+        $('#dropdownMenuButton1').prop('disabled', false);
+        $('#dropdownMenuButton2').prop('disabled', false);
 
         /* Abilita avanzamento slider */
         /*var count = 8.3333;
@@ -644,9 +660,11 @@ $(function () {
         $("#starttext").text('Start');
         $('#start').prop('disabled', false);
 
-        /* Disabilita bottone pausa e stop */
+        /* Disabilita bottoni pausa, stop e grafici */
         $('#pausa').prop('disabled', true);
         $('#stop').prop('disabled', true);
+        $('#dropdownMenuButton1').prop('disabled', true);
+        $('#dropdownMenuButton2').prop('disabled', true);
 
         /* Disabilita avanzamento slider */
         /* clearInterval(interval); Disattiva timer */
