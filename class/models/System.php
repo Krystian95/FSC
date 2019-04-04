@@ -220,23 +220,30 @@ class System {
                   error_log('$products_indexes = ' . count($products_indexes));
                   error_log('New for cicle i = ' . $i); */
                 $person = $this->person_collection->getPerson($i);
-                $rnd = Utils::rand(0, 1);
+                
+                $rnd = Utils::rand(0.0, 1.0);
+                $rnd = 1.0;
 
                 $j = 0;
 
-                //error_log('ENTER while');
+ //               error_log('ENTER while');
+//                error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
                 while ($rnd > $person->get_preferenza($j)) {
-                    //error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
-                    if ($j == ($this->product_collection->n_meat + $this->product_collection->n_veg - 1)) {
-                        //commento: qui tecnicamente non dovrebbe arrivarci perch nel caso limite rnd=1=preferenza(n_meat+n_veg - 1)
-                        //break;
+//                    error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
+//                    error_log($j . ' == ' . $this->product_collection->n_meat + $this->product_collection->n_veg - 1);
+                    if ($j == ($this->product_collection->n_meat + $this->product_collection->n_veg - 1)) {                     
+//                        error_log('break');
+                        //commento: qui tecnicamente non dovrebbe arrivarci perch nel caso limite rnd=1=preferenza(n_meat+n_veg - 1)                       
+                        break;
                         /////questo nel caso in cui le preferenze siano state generate bene *** questo if break non serve 
                         /////ed in caso contrario significa che preferenza(n_meat+n_veg - 1) < 1, cosa che non dovrebbe essere
                     } else {
                         $j++;
+                        error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
+                        
                     }
                 }
-                //error_log('EXIT while');
+                error_log('EXIT while con  j=' . $j);
 
                 /*
                  * Recupera un prodotto in caso j non sia pi disponibile
