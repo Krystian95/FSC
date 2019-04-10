@@ -254,7 +254,6 @@ function getInputValues() {
         data[name + '_max'] = String(this.getValue()[1]);
     });
 
-    //console.log(data);
     return data;
 }
 
@@ -387,8 +386,6 @@ $(function () {
     $('#selectModProd').change(function () {
         var selectedText = $(this).find("option:selected").text();
 
-        console.log(selectedText);
-
         if (selectedText == "Tutti i prodotti") {
             $("#singoli_prodotti").hide();
             $("#tutti_prodotti").show();
@@ -412,7 +409,6 @@ $(function () {
 
     /* Gestione scroll modal richiamate dentro modal principale */
     $(document).find('.child-modal').on('hidden.bs.modal', function () {
-        console.log('hiding child modal');
         $('body').addClass('modal-open');
     });
 
@@ -616,8 +612,6 @@ $(function () {
         /* Disabilita bottoni pausa, stop e grafici */
         $('#pausa').prop('disabled', true);
         $('#stop').prop('disabled', true);
-        $('#dropdownMenuButton1').prop('disabled', true);
-        $('#dropdownMenuButton2').prop('disabled', true);
 
         /* Disabilita avanzamento slider */
         /* clearInterval(interval); Disattiva timer */
@@ -786,17 +780,36 @@ $(function () {
     /* Premo il bottone reset parametri per ogni singolo prodotto */
     var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
         'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+    
+    var itemsValPar = [
+        [9, 3, 4, 2, 2, 3, 69, 0, 85, 2, 70, 22, 5],
+        [11, 4, 4, 3, 1, 6, 59, 0, 80, 3, 65, 28, 6],
+        [10, 5, 3, 2, 2, 9, 65, 0, 75, 6, 60, 25, 8],
+        [14, 4, 4, 3, 1, 8, 55, 0, 70, 8, 55, 26, 10],
+        [11, 5, 3, 2, 2, 2, 52, 0, 65, 10, 50, 28, 12],
+        [2, 4, 9, 2, -2, 9, 55, 0, 56, 9, 20, 20, 5],
+        [5, 5, 1, 1, -1, 2, 60, 0, 52, 15, 30, 21, 2],
+        [7, 6, 0, 2, -2, 5, 46, 0, 51, 17, 29, 22, 3],
+        [8, 7, 2, 1, -1, 4, 32, 0, 43, 19, 26, 23, 4],
+        [5, 6, 1, 2, -2, 3, 58, 0, 57, 21, 22, 24, 5],
+        [3, 5, -1, 1, -1, 2, 46, 0, 49, 23, 30, 25, 6],
+        [4, 4, -1, 2, -2, 5, 39, 0, 60, 25, 27, 26, 7],
+        [9, 7, 0, 1, -1, 1, 53, 0, 55, 20, 25, 27, 8],
+        [10, 5, 1, 2, -2, 4, 44, 0, 50, 22, 23, 28, 9],
+        [8, 4, 2, 1, -1, 2, 35, 0, 42, 16, 21, 25, 10]
+    ];
 
     $(itemsProd).each(function (index1, value1) {
-
+        
         $('#discardChanges' + value1).on('click', function (event) {
-
+            
             var itemsParProd = ['_prezzo', '_produttivita', '_impatto_ghgs', '_impatto_pm', '_impatto_nh3', '_ghgs_ideale', '_tolleranza_ghgs',
                 '_pm_ideale', '_tolleranza_pm', '_nh3_ideale', '_tolleranza_nh3', '_temperatura_ideale', '_tolleranza_temperatura', ];
 
             $(itemsParProd).each(function (index2, value2) {
-                $('input[name="' + value1 + value2 + '"]').val(0);
-                $('input[name="' + value1 + value2 + '_slider"]').val(0);
+                
+                $('input[name="' + value1 + value2 + '"]').val(itemsValPar[index1][index2]);
+                $('input[name="' + value1 + value2 + '_slider"]').val(itemsValPar[index1][index2]);
                 $('#' + value1 + value2 + '_checkbox').prop('checked', false);
             });
 

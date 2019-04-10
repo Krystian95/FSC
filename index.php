@@ -123,7 +123,7 @@
                     <br>
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="true">
-                            <span id="simbol-right"><i class="fas fa-user-circle fa-fw"></i></span><span id="text-right">Nati e morti</span>
+                            <span id="simbol-right"><i class="fa fa-industry fa-fw"></i></span><span id="text-right">Capacità produttiva</span>
                         </button>
                         <div class="menu-right">
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -536,7 +536,7 @@
                                             GHGS ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -544,7 +544,7 @@
                                             Tolleranza all'influenza di GHGS
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -552,7 +552,7 @@
                                             PM ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_pm" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -560,7 +560,7 @@
                                             Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[60,100]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[60,100]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -568,7 +568,7 @@
                                             NH<sub>3</sub> ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -576,7 +576,7 @@
                                             Tolleranza all'influenza di NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -584,7 +584,7 @@
                                             Temperatura ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_temp" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[22,28]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[22,28]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -592,7 +592,7 @@
                                             Tolleranza all'influenza della temperatura
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[5,12]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[5,12]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                 </div>
@@ -646,7 +646,7 @@
                                             GHGS ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,5]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,5]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -654,7 +654,7 @@
                                             Tolleranza all'influenza di GHGS
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[30,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[30,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -662,7 +662,7 @@
                                             PM ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_pm" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -670,7 +670,7 @@
                                             Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[40,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[40,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -678,7 +678,7 @@
                                             NH<sub>3</sub> ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[15,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[15,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -686,7 +686,7 @@
                                             Tolleranza all'influenza di NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -694,7 +694,7 @@
                                             Temperatura ideale
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_temp" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -702,7 +702,7 @@
                                             Tolleranza all'influenza della temperatura
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[2,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[2,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                 </div>
@@ -854,153 +854,379 @@
 
     <!-- Modal singoli prodotti-->
     <?php
-    $itemsProd = [
-        'manzo' => 'meat',
-        'pollo' => 'meat',
-        'maiale' => 'meat',
-        'cavallo' => 'meat',
-        'tacchino' => 'meat',
-        'patate' => 'veg',
-        'zucchine' => 'veg',
-        'peperoni' => 'veg',
-        'melanzane' => 'veg',
-        'pomodori' => 'veg',
-        'grano' => 'veg',
-        'riso' => 'veg',
-        'melo' => 'veg',
-        'pero' => 'veg',
-        'arancio' => 'veg',
-    ];
+    
+    $products = Array(
+        'manzo' => Array(
+            'tipo' => 'meat',
+            'prezzo' => 9,
+            'capacita_produttiva_iniziale' => 3,
+            'impatto_ghgs' => 4,
+            'impatto_pm' => 2,
+            'impatto_nh3' => 2,
+            'ghgs_ideale' => 3,
+            'tolleranza_influenza_ghgs' => 69,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 85,
+            'nh3_ideale' => 2,
+            'tolleranza_influenza_nh3' => 70,
+            'temperatura_ideale' => 22,
+            'tolleranza_influenza_temperatura' => 5
+        ),
+        'pollo' => Array(
+            'tipo' => 'meat',
+            'prezzo' => 11,
+            'capacita_produttiva_iniziale' => 4,
+            'impatto_ghgs' => 4,
+            'impatto_pm' => 3,
+            'impatto_nh3' => 1,
+            'ghgs_ideale' => 6,
+            'tolleranza_influenza_ghgs' => 59,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 80,
+            'nh3_ideale' => 3,
+            'tolleranza_influenza_nh3' => 65,
+            'temperatura_ideale' => 28,
+            'tolleranza_influenza_temperatura' => 6
+        ),
+        'maiale' => Array(
+            'tipo' => 'meat',
+            'prezzo' => 10,
+            'capacita_produttiva_iniziale' => 5,
+            'impatto_ghgs' => 3,
+            'impatto_pm' => 2,
+            'impatto_nh3' => 2,
+            'ghgs_ideale' => 9,
+            'tolleranza_influenza_ghgs' => 65,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 75,
+            'nh3_ideale' => 6,
+            'tolleranza_influenza_nh3' => 60,
+            'temperatura_ideale' => 25,
+            'tolleranza_influenza_temperatura' => 8
+        ),
+        'cavallo' => Array(
+            'tipo' => 'meat',
+            'rezzo' => 14,
+            'capacita_produttiva_iniziale' => 4,
+            'impatto_ghgs' => 4,
+            'impatto_pm' => 3,
+            'impatto_nh3' => 1,
+            'ghgs_ideale' => 8,
+            'tolleranza_influenza_ghgs' => 55,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 70,
+            'nh3_ideale' => 8,
+            'tolleranza_influenza_nh3' => 55,
+            'temperatura_ideale' => 26,
+            'tolleranza_influenza_temperatura' => 10
+        ),
+        'tacchino' => Array(
+            'tipo' => 'meat',
+            'prezzo' => 11,
+            'capacita_produttiva_iniziale' => 5,
+            'impatto_ghgs' => 3,
+            'impatto_pm' => 2,
+            'impatto_nh3' => 2,
+            'ghgs_ideale' => 2,
+            'tolleranza_influenza_ghgs' => 52,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 65,
+            'nh3_ideale' => 10,
+            'tolleranza_influenza_nh3' => 50,
+            'temperatura_ideale' => 28,
+            'tolleranza_influenza_temperatura' => 12
+        ),
+        'patate' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 2,
+            'capacita_produttiva_iniziale' => 4,
+            'impatto_ghgs' => 9,
+            'impatto_pm' => 2,
+            'impatto_nh3' => -2,
+            'ghgs_ideale' => 9,
+            'tolleranza_influenza_ghgs' => 55,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 56,
+            'nh3_ideale' => 9,
+            'tolleranza_influenza_nh3' => 20,
+            'temperatura_ideale' => 20,
+            'tolleranza_influenza_temperatura' => 5
+        ),
+        'zucchine' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 5,
+            'capacita_produttiva_iniziale' => 5,
+            'impatto_ghgs' => 1,
+            'impatto_pm' => 1,
+            'impatto_nh3' => -1,
+            'ghgs_ideale' => 2,
+            'tolleranza_influenza_ghgs' => 60,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 52,
+            'nh3_ideale' => 15,
+            'tolleranza_influenza_nh3' => 30,
+            'temperatura_ideale' => 21,
+            'tolleranza_influenza_temperatura' => 2
+        ),
+        'peperoni' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 7,
+            'capacita_produttiva_iniziale' => 6,
+            'impatto_ghgs' => 0,
+            'impatto_pm' => 2,
+            'impatto_nh3' => -2,
+            'ghgs_ideale' => 5,
+            'tolleranza_influenza_ghgs' => 46,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 51,
+            'nh3_ideale' => 17,
+            'tolleranza_influenza_nh3' => 29,
+            'temperatura_ideale' => 22,
+            'tolleranza_influenza_temperatura' => 3
+        ),
+        'melanzane' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 8,
+            'capacita_produttiva_iniziale' => 7,
+            'impatto_ghgs' => 2,
+            'impatto_pm' => 1,
+            'impatto_nh3' => -1,
+            'ghgs_ideale' => 4,
+            'tolleranza_influenza_ghgs' => 32,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 43,
+            'nh3_ideale' => 19,
+            'tolleranza_influenza_nh3' => 26,
+            'temperatura_ideale' => 23,
+            'tolleranza_influenza_temperatura' => 4
+        ),
+        'pomodori' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 5,
+            'capacita_produttiva_iniziale' => 6,
+            'impatto_ghgs' => 1,
+            'impatto_pm' => 2,
+            'impatto_nh3' => -2,
+            'ghgs_ideale' => 3,
+            'tolleranza_influenza_ghgs' => 58,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 57,
+            'nh3_ideale' => 21,
+            'tolleranza_influenza_nh3' => 22,
+            'temperatura_ideale' => 24,
+            'tolleranza_influenza_temperatura' => 5
+        ),
+        'grano' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 3,
+            'capacita_produttiva_iniziale' => 5,
+            'impatto_ghgs' => -1,
+            'impatto_pm' => 1,
+            'impatto_nh3' => -1,
+            'ghgs_ideale' => 2,
+            'tolleranza_influenza_ghgs' => 46,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 49,
+            'nh3_ideale' => 23,
+            'tolleranza_influenza_nh3' => 30,
+            'temperatura_ideale' => 25,
+            'tolleranza_influenza_temperatura' => 6
+        ),
+        'riso' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 4,
+            'capacita_produttiva_iniziale' => 4,
+            'impatto_ghgs' => -1,
+            'impatto_pm' => 2,
+            'impatto_nh3' => -2,
+            'ghgs_ideale' => 5,
+            'tolleranza_influenza_ghgs' => 39,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 60,
+            'nh3_ideale' => 25,
+            'tolleranza_influenza_nh3' => 27,
+            'temperatura_ideale' => 26,
+            'tolleranza_influenza_temperatura' => 7
+        ),
+        'melo' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 9,
+            'capacita_produttiva_iniziale' => 7,
+            'impatto_ghgs' => 0,
+            'impatto_pm' => 1,
+            'impatto_nh3' => -1,
+            'ghgs_ideale' => 1,
+            'tolleranza_influenza_ghgs' => 53,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 55,
+            'nh3_ideale' => 20,
+            'tolleranza_influenza_nh3' => 25,
+            'temperatura_ideale' => 27,
+            'tolleranza_influenza_temperatura' => 8
+        ),
+        'pero' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 10,
+            'capacita_produttiva_iniziale' => 5,
+            'impatto_ghgs' => 1,
+            'impatto_pm' => 2,
+            'impatto_nh3' => -2,
+            'ghgs_ideale' => 4,
+            'tolleranza_influenza_ghgs' => 44,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 50,
+            'nh3_ideale' => 22,
+            'tolleranza_influenza_nh3' => 23,
+            'temperatura_ideale' => 28,
+            'tolleranza_influenza_temperatura' => 9
+        ),
+        'arancio' => Array(
+            'tipo' => 'veg',
+            'prezzo' => 8,
+            'capacita_produttiva_iniziale' => 4,
+            'impatto_ghgs' => 2,
+            'impatto_pm' => 1,
+            'impatto_nh3' => -1,
+            'ghgs_ideale' => 2,
+            'tolleranza_influenza_ghgs' => 35,
+            'pm_ideale' => 0,
+            'tolleranza_influenza_pm' => 42,
+            'nh3_ideale' => 16,
+            'tolleranza_influenza_nh3' => 21,
+            'temperatura_ideale' => 25,
+            'tolleranza_influenza_temperatura' => 10
+        )
+    );
 
-    foreach ($itemsProd as $value => $value_tipo) {
-
-        echo '<div class="modal fade child-modal" id="' . $value . 'Modal" tabindex="-1" role="dialog" data-backdrop="static">';
+    foreach($products as $product => $parameter)
+    {
+        echo '<div class="modal fade child-modal" id="' . $product . 'Modal" tabindex="-1" role="dialog" data-backdrop="static">';
         echo '<div class="modal-dialog">';
         echo '<div class="modal-content" id="parameterProdSingoliModalDialog">';
         echo '<div class="modal-header">';
-        echo '<h4 class="modal-title">Imposta parametri ' . $value . '</h4>';
-        echo '<button type="button" class="close" data-dismiss="modal" id="chiudiFinestra' . $value . '">&times;</button>';
+        echo '<h4 class="modal-title">Imposta parametri ' . $product . '</h4>';
+        echo '<button type="button" class="close" data-dismiss="modal" id="chiudiFinestra' . $product . '">&times;</button>';
         echo '</div>';
         echo '<div class="modal-body">';
         echo '<div class="row">';
         echo '<div class="col-3">';
-        echo '<input type="text" readonly class="form-control textbox" name="' . $value . '_tipo" value="' . $value_tipo . '" style="display: none;">';
+        echo '<input type="text" readonly class="form-control textbox" name="' . $product . '_tipo" value="' . $parameter['tipo'] . '" style="display: none;">';
         echo '</div></div>';
         echo '<div class="row">';
         echo '<div class="col">';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Prezzo</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_prezzo_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_prezzo_slider" value="' . $parameter['prezzo'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_prezzo" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_prezzo" value="' . $parameter['prezzo'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_prezzo_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_prezzo_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Capacità produttiva iniziale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_produttivita_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_produttivita_slider" value="' . $parameter['capacita_produttiva_iniziale'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_produttivita" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_produttivita" value="' . $parameter['capacita_produttiva_iniziale'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_produttivita_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_produttivita_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Impatto su GHGS</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_ghgs_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_impatto_ghgs_slider" value="' . $parameter['impatto_ghgs'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_ghgs" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_impatto_ghgs" value="' . $parameter['impatto_ghgs'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_ghgs_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_impatto_ghgs_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Impatto su PM</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_pm_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_impatto_pm_slider" value="' . $parameter['impatto_pm'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_pm" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_impatto_pm" value="' . $parameter['impatto_pm'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_pm_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_impatto_pm_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Impatto su NH<sub>3</sub></label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_impatto_nh3_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_impatto_nh3_slider" value="' . $parameter['impatto_nh3'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_impatto_nh3" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_impatto_nh3" value="' . $parameter['impatto_nh3'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_impatto_nh3_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_impatto_nh3_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">GHGS ideale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_ghgs_ideale_slider" value="' . $parameter['ghgs_ideale'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_ghgs_ideale" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_ghgs_ideale" value="' . $parameter['ghgs_ideale'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_ghgs_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_ghgs_ideale_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Tolleranza all\'influenza di GHGS</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_tolleranza_ghgs_slider" value="' . $parameter['tolleranza_influenza_ghgs'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_ghgs" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_tolleranza_ghgs" value="' . $parameter['tolleranza_influenza_ghgs'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_ghgs_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_tolleranza_ghgs_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">PM ideale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_pm_ideale_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_pm_ideale_slider" value="' . $parameter['pm_ideale'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_pm_ideale" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_pm_ideale" value="' . $parameter['pm_ideale'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_pm_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_pm_ideale_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Tolleranza all\'influenza di PM</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_tolleranza_pm_slider" value="' . $parameter['tolleranza_influenza_pm'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_pm" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_tolleranza_pm" value="' . $parameter['tolleranza_influenza_pm'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_pm_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_tolleranza_pm_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">NH<sub>3</sub> ideale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_nh3_ideale_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_nh3_ideale_slider" value="' . $parameter['nh3_ideale'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_nh3_ideale" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_nh3_ideale" value="' . $parameter['nh3_ideale'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_nh3_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_nh3_ideale_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Tolleranza all\'influenza di NH<sub>3</sub></label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_tolleranza_nh3_slider" value="' . $parameter['tolleranza_influenza_nh3'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_nh3" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_tolleranza_nh3" value="' . $parameter['tolleranza_influenza_nh3'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_nh3_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_tolleranza_nh3_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Temperatura ideale</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_temperatura_ideale_slider" value="' . $parameter['temperatura_ideale'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_temperatura_ideale" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_temperatura_ideale" value="' . $parameter['temperatura_ideale'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_temperatura_ideale_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_temperatura_ideale_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Tolleranza all\'influenza della temperatura</label>';
         echo '<div class="col-6">';
-        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura_slider" value="30">';
+        echo '<input type="range" class="custom-range" min="0" max="100" step="1" name="' . $product . '_tolleranza_temperatura_slider" value="' . $parameter['tolleranza_influenza_temperatura'] . '">';
         echo '</div><div class="col-2">';
-        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $value . '_tolleranza_temperatura" value="30">';
+        echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_tolleranza_temperatura" value="' . $parameter['tolleranza_influenza_temperatura'] . '">';
         echo '</div><div class="col-1">';
-        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $value . '_tolleranza_temperatura_checkbox" class="parametri_' . $value . '"></div></div></div>';
+        echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_tolleranza_temperatura_checkbox" class="parametri_' . $product . '"></div></div></div>';
         echo '<div class="row form-group align-items-center">';
         echo '<label class="col-form-label col-3">Variazione percentuale</label>';
         echo '<div class="col-8">';
-        echo '<input type="number" class="form-control textbox" min="-100" max="100" step="1" name="variazione_percentuale_' . $value . '" value="0" disabled>';
+        echo '<input type="number" class="form-control textbox" min="-100" max="100" step="1" name="variazione_percentuale_' . $product . '" value="0" disabled>';
         echo '</div><div class="col-1"></div></div>';
         echo '</div></div></div>';
         echo '<div class="modal-footer">';
-        echo '<button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChanges' . $value . '"><i class="fas fa-sync-alt"></i>&nbsp&nbspReset</button>';
-        echo '<button type="button" class="btn btn-success" data-dismiss="modal" id="saveChanges' . $value . '"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>';
+        echo '<button type="button" class="btn btn-danger" data-dismiss="modal" id="discardChanges' . $product . '"><i class="fas fa-sync-alt"></i>&nbsp&nbspReset</button>';
+        echo '<button type="button" class="btn btn-success" data-dismiss="modal" id="saveChanges' . $product . '"><i class="fa fa-check"></i>&nbsp&nbspSalva</button>';
         echo '</div></div></div></div>';
     }
     ?>
