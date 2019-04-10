@@ -5,6 +5,7 @@ var sliders = [];
 var slider_numero_prodotti;
 var slider_percentuale_carne_vegetali;
 var charts = {};
+var pause = false;
 
 function getDefaultChart(chart_id) {
     return new Chart(document.getElementById(chart_id).getContext('2d'), {
@@ -120,8 +121,15 @@ function initCharts() {
         {
             title: 'Vendite',
             lines: []
-        },
+        }
     ];
+
+    for (var i = 0; i < charts_settings.length; i++) {
+        var chart_title = charts_settings[i].title;
+        if ($('#' + chart_title).length > 0) {
+            $('#' + chart_title).detach();
+        }
+    }
 
     // Modalità prodotti
 
@@ -176,7 +184,7 @@ function initCharts() {
      */
 
     moveChart('Popolazione', 'charts_left');
-    moveChart('Nati e morti', 'charts_right');
+    moveChart('Capacità produttiva', 'charts_right');
 }
 
 function performResponseActions(current_period, response_encoded) {
@@ -250,19 +258,24 @@ function getInputValues() {
     return data;
 }
 
+function makeNextCall() {
+
+    var utils = new Utils();
+
+    var params = {};
+    params['Action'] = 'Period_Iteration';
+    params['Data'] = {};
+    var current_period = $('input[name="periodo"]').val();
+    params['Data']['Period'] = current_period;
+
+    var response = utils.performAjaxCall(params);
+    performResponseActions(current_period, response);
+}
+
 $(function () {
-    
+
     // Gestione menu grafici a sinistra
     $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
-        
-        /*
-        // Test
-        console.log($(this).find('i')[0].outerHTML);
-        console.log($(this)[0].innerText);
-        console.log($(this).html());
-        console.log($(this));
-        */
-
         $(this).parents(".dropdown").find('.btn').html('<span id="simbol-left">' + $(this).find('i')[0].outerHTML + '</span><span id="text-left">' + $(this)[0].innerText + '</span>');
         moveChart(String($(this)[0].innerText), 'charts_left');
 
@@ -271,18 +284,10 @@ $(function () {
             $('#text-right').html('Seleziona un grafico');
         }
     });
-    
+
     // Gestione menu grafici a destra
     $(".menu-right .dropdown-menu li a").not('.disabled').click(function () {
-        
-        /*
-        // Test
-        console.log($(this).find('i')[0].outerHTML);
-        console.log($(this)[0].innerText);
-        console.log($(this).html());
-        console.log($(this));
-        */
-        
+
         $(this).parents(".dropdown").find('.btn').html('<span id="simbol-right">' + $(this).find('i')[0].outerHTML + '</span><span id="text-right">' + $(this)[0].innerText + '</span>');
         moveChart(String($(this)[0].innerText), 'charts_right');
 
@@ -291,40 +296,6 @@ $(function () {
             $('#text-left').html('Seleziona un grafico');
         }
     });
-
-    /*
-     $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
-     
-     $('.right-element').removeClass('disabled');
-     
-     var grafico_selezionato = String($(this)[0].innerText);
-     console.log(grafico_selezionato);
-     $('[id="' + grafico_selezionato + ' right"]').addClass('disabled');
-     
-     if ($('[id="' + grafico_selezionato + '"]').attr('class').indexOf('hidden') >= 0){
-     
-     $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
-     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-     moveChart(String($(this)[0].innerText), 'charts_left');
-     }
-     });
-     
-     $(".menu-right .dropdown-menu li a").not('.disabled').click(function () {
-     
-     $('.left-element').removeClass('disabled');
-     
-     var grafico_selezionato = String($(this)[0].innerText);
-     console.log(grafico_selezionato);
-     $('[id="' + grafico_selezionato + ' left"]').addClass('disabled');
-     
-     if ($('[id="' + grafico_selezionato + '"]').attr('class').indexOf('hidden') >= 0){
-     
-     $(this).parents(".dropdown").find('.btn').html($(this).html() + ' <span class="caret"></span>');
-     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-     moveChart(String($(this)[0].innerText), 'charts_right');
-     }
-     });
-     */
 
     // Abilita/disabilita textbox variazione percentuale in base alla selezione delle checkbox dialog popolazione, 
     // ambiente, parametri extra e singoli prodotti
@@ -412,27 +383,6 @@ $(function () {
     var veg_toll_infl_prod_temp = new Slider('#veg_toll_infl_prod_temp', {});
     sliders.push(veg_toll_infl_prod_temp);
 
-    /*
-     $('#parametriRandom').on('click', function (event) {
-     
-     // Recupero valori dei due slider
-     //console.log(numero_prodotti.getValue());
-     //console.log(percentuale_carne_vegetali.getValue());
-     
-     // Recupero valori dei range della carne
-     //console.log(meat_prezzo.getValue()[0]);
-     
-     var itemsMeat = [meat_prezzo, meat_produttivita, meat_impatto_ghgs, meat_impatto_pm, meat_impatto_nh3, 
-     meat_infl_prod_ghgs, meat_toll_infl_prod_ghgs, meat_infl_prod_pm, meat_toll_infl_prod_pm, 
-     meat_infl_prod_nh3, meat_toll_infl_prod_nh3, meat_infl_prod_temp, meat_toll_infl_prod_temp];
-     
-     $(itemsMeat).each(function (index, value) {
-     var random =  Math.floor(value.getValue()[0] + (value.getValue()[1] - value.getValue()[0]) * Math.random());
-     console.log(random);
-     });
-     });
-     */
-
     /* Select list tutti i prodotti o prodotti singoli */
     $('#selectModProd').change(function () {
         var selectedText = $(this).find("option:selected").text();
@@ -471,47 +421,63 @@ $(function () {
 
     var utils = new Utils();
 
-    // Premo il bottone start
     $('#start').on('click', function (event) {
 
-        startPerform();
+        $(this).prop('disabled', true);
+        pause = false;
 
-        var params = {};
-        params['Action'] = 'Start';
-        params['Data'] = {};
-        current_period = $('input[name="periodo"]').val();
-        params['Data']['Period'] = current_period;
-        params['Data']['Params'] = getInputValues();
+        if ($("#starttext").text() == 'Start') {
 
-        initCharts();
+            var current_period = getCurrentMonthYear();
+            $('input[name="periodo"]').val(current_period);
 
-        var response = utils.performAjaxCall(params);
-        performResponseActions(current_period, response);
+            startPerform();
 
-        var iterations = 100;
-
-        // Next Iteration(s)
-
-        setInterval(function () {
-            //while (iterations > 0) {
             var params = {};
-            params['Action'] = 'Period_Iteration';
+            params['Action'] = 'Start';
             params['Data'] = {};
             current_period = $('input[name="periodo"]').val();
             params['Data']['Period'] = current_period;
+            params['Data']['Params'] = getInputValues();
+
+            initCharts();
 
             var response = utils.performAjaxCall(params);
             performResponseActions(current_period, response);
 
-            iterations--;
-            //}
-        }, 2000);
+            // Next Iteration(s)
+            setInterval(function () {
+                if (!pause) {
+                    makeNextCall();
+                }
+            }, 2000);
+        } else if ($("#starttext").text() == 'Continua') {
+            pause = false;
+            $('#pausa').prop('disabled', false);
+        }
+    });
+
+    $('#pausa').on('click', function (event) {
+        pause = true;
+        $("#starttext").text('Continua');
+        $('#start').prop('disabled', false);
+        $(this).prop('disabled', true);
+    });
+
+    $('#stop').on('click', function (event) {
+
+        pause = true;
+
+        var utils = new Utils();
+
+        var params = {};
+        params['Action'] = 'Stop';
+        var response = utils.performAjaxCall(params);
+
+        stopPerform();
     });
 
     function startPerform() {
-
-        /* Disabilita bottone start */
-        $('#start').prop('disabled', true);
 
         /* Abilita bottoni pausa, stop e grafici */
         $('#pausa').prop('disabled', false);
@@ -638,19 +604,6 @@ $(function () {
         veg_ideal_temp.disable();
         veg_toll_infl_prod_temp.disable();
     }
-
-    /* Premo il bottone pausa */
-    $('#pausa').on('click', function (event) {
-
-        $("#starttext").text('Continua');
-        $('#start').prop('disabled', false);
-    });
-
-    /* Premo il bottone stop */
-    $('#stop').on('click', function (event) {
-
-        stopPerform();
-    });
 
     function stopPerform() {
 

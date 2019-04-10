@@ -24,6 +24,10 @@ if (isset($_POST['Action']) && !empty($_POST['Action'])) {
 
         case 'Start' :
 
+            session_unset();
+            session_destroy();
+            session_start();
+
             $params = $_POST['Data']['Params'];
 
             /* foreach ($params as $key => $value) {
