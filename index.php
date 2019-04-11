@@ -906,7 +906,7 @@
         ),
         'cavallo' => Array(
             'tipo' => 'meat',
-            'rezzo' => 14,
+            'prezzo' => 14,
             'capacita_produttiva_iniziale' => 4,
             'impatto_ghgs' => 4,
             'impatto_pm' => 3,
