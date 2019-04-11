@@ -75,7 +75,6 @@ function getDefaultChart(chart_id) {
  * Move the specified chart to the specified destination.
  * @param {type} chart_id Te chart id (Title)
  * @param {type} destination The class name (without the dot '.')
- * @returns {undefined}
  */
 function moveChart(chart_id, destination) {
 
@@ -86,28 +85,54 @@ function moveChart(chart_id, destination) {
     chart.removeClass('hidden').addClass('shown');
 }
 
+/*
+ * Generate a random color
+ */
+function getRandomColor() {
+
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 function initCharts() {
 
     var charts_settings = [
         {
             title: 'Popolazione',
-            lines: ['Popolazione']
+            lines: [
+                {name: 'Popolazione', color: 'deeppink'}
+            ]
         },
         {
             title: 'Nati e morti',
-            lines: ['Nati', 'Morti']
+            lines: [
+                {name: 'Nati', color: 'cornflowerblue'},
+                {name: 'Morti', color: 'black'}
+            ]
         },
         {
             title: 'Salute media',
-            lines: ['Salute media']
+            lines: [
+                {name: 'Salute media', color: 'red'}
+            ]
         },
         {
             title: 'Temperatura',
-            lines: ['Temperatura']
+            lines: [
+                {name: 'Temperatura', color: 'gold'}
+            ]
         },
         {
             title: 'Agenti atmosferici',
-            lines: ['GHGS', 'PM', 'NH3']
+            lines: [
+                {name: 'GHGS', color: 'gray'},
+                {name: 'PM', color: 'blueviolet'},
+                {name: 'NH3', color: 'gold'}
+            ]
         },
         // do not move objects, they are linked by index for selectModProd
         {
@@ -124,6 +149,7 @@ function initCharts() {
         }
     ];
 
+    // Distrugge eventuali grafici già esistenti (es. Stop -> Start)
     for (var i = 0; i < charts_settings.length; i++) {
         var chart_title = charts_settings[i].title;
         if ($("[id='" + chart_title + "']").length > 0) {
@@ -138,16 +164,18 @@ function initCharts() {
     if (selectModProd == 1) { // Tutti i prodotti
         var numero_prodotti = String(slider_numero_prodotti.getValue());
         for (var i = 0; i < numero_prodotti; i++) {
-            charts_settings[5].lines.push(i);
-            charts_settings[6].lines.push(i);
-            charts_settings[7].lines.push(i);
+            var item = {name: i, color: getRandomColor()};
+            charts_settings[5].lines.push(item);
+            charts_settings[6].lines.push(item);
+            charts_settings[7].lines.push(item);
         }
     } else if (selectModProd == 0) { // Singoli prodotti
         var prodotti_default = ['Manzo', 'Pollo', 'Maiale', 'Cavallo', 'Tacchino', 'Patate', 'Zucchine', 'Peperoni', 'Melanzane', 'Pomodori', 'Grano', 'Riso', 'Melo', 'Pero', 'Arancio'];
         for (var i = 0; i < prodotti_default.length; i++) {
-            charts_settings[5].lines.push(prodotti_default[i]);
-            charts_settings[6].lines.push(prodotti_default[i]);
-            charts_settings[7].lines.push(prodotti_default[i]);
+            var item = {name: prodotti_default[i], color: getRandomColor()};
+            charts_settings[5].lines.push(item);
+            charts_settings[6].lines.push(item);
+            charts_settings[7].lines.push(item);
         }
     }
 
@@ -164,10 +192,10 @@ function initCharts() {
         for (var j = 0; j < charts_settings[i].lines.length; j++) {
 
             var line = {
-                label: charts_settings[i].lines[j],
+                label: charts_settings[i].lines[j].name,
                 data: [],
-                backgroundColor: ['rgba(255, 99, 132, 0)'],
-                borderColor: ['rgba(255, 99, 132, 1)'],
+                backgroundColor: ['rgba(255, 99, 132, 0)'], /* background transparent */
+                borderColor: [charts_settings[i].lines[j].color],
                 borderWidth: 1
             };
 
@@ -416,6 +444,7 @@ $(function () {
     $('input[name="periodo"]').val(current_period);
 
     var utils = new Utils();
+    var timer_built = false;
 
     $('#start').on('click', function (event) {
 
@@ -428,10 +457,10 @@ $(function () {
             $('input[name="periodo"]').val(current_period);
 
             startPerform();
-            
+
             $('#dropdownMenuButton1').html('<span id="simbol-left"><i class="fas fa-users fa-fw"></i></span><span id="text-left">Popolazione</span>');
             $('#dropdownMenuButton2').html('<span id="simbol-right"><i class="fa fa-industry fa-fw"></i></span><span id="text-right">Capacità produttiva</span>');
-            
+
             var params = {};
             params['Action'] = 'Start';
             params['Data'] = {};
@@ -444,12 +473,15 @@ $(function () {
             var response = utils.performAjaxCall(params);
             performResponseActions(current_period, response);
 
-            // Next Iteration(s)
-            setInterval(function () {
-                if (!pause) {
-                    makeNextCall();
-                }
-            }, 2000);
+            if (!timer_built) {
+                timer_built = true;
+                // Next Iteration(s)
+                setInterval(function () {
+                    if (!pause) {
+                        makeNextCall();
+                    }
+                }, 2000);
+            }
         } else if ($("#starttext").text() == 'Continua') {
             pause = false;
             $('#pausa').prop('disabled', false);
