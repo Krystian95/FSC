@@ -126,8 +126,9 @@ function initCharts() {
 
     for (var i = 0; i < charts_settings.length; i++) {
         var chart_title = charts_settings[i].title;
-        if ($('#' + chart_title).length > 0) {
-            $('#' + chart_title).detach();
+        if ($("[id='" + chart_title + "']").length > 0) {
+            console.log("Detaching #" + chart_title);
+            $("[id='" + chart_title + "']").detach();
         }
     }
 
@@ -780,7 +781,7 @@ $(function () {
     /* Premo il bottone reset parametri per ogni singolo prodotto */
     var itemsProd = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane',
         'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
-    
+
     var itemsValPar = [
         [9, 3, 4, 2, 2, 3, 69, 0, 85, 2, 70, 22, 5],
         [11, 4, 4, 3, 1, 6, 59, 0, 80, 3, 65, 28, 6],
@@ -800,14 +801,14 @@ $(function () {
     ];
 
     $(itemsProd).each(function (index1, value1) {
-        
+
         $('#discardChanges' + value1).on('click', function (event) {
-            
+
             var itemsParProd = ['_prezzo', '_produttivita', '_impatto_ghgs', '_impatto_pm', '_impatto_nh3', '_ghgs_ideale', '_tolleranza_ghgs',
                 '_pm_ideale', '_tolleranza_pm', '_nh3_ideale', '_tolleranza_nh3', '_temperatura_ideale', '_tolleranza_temperatura', ];
 
             $(itemsParProd).each(function (index2, value2) {
-                
+
                 $('input[name="' + value1 + value2 + '"]').val(itemsValPar[index1][index2]);
                 $('input[name="' + value1 + value2 + '_slider"]').val(itemsValPar[index1][index2]);
                 $('#' + value1 + value2 + '_checkbox').prop('checked', false);
