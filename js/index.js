@@ -127,7 +127,6 @@ function initCharts() {
     for (var i = 0; i < charts_settings.length; i++) {
         var chart_title = charts_settings[i].title;
         if ($("[id='" + chart_title + "']").length > 0) {
-            console.log("Detaching #" + chart_title);
             $("[id='" + chart_title + "']").detach();
         }
     }
@@ -429,7 +428,10 @@ $(function () {
             $('input[name="periodo"]').val(current_period);
 
             startPerform();
-
+            
+            $('#dropdownMenuButton1').html('<span id="simbol-left"><i class="fas fa-users fa-fw"></i></span><span id="text-left">Popolazione</span>');
+            $('#dropdownMenuButton2').html('<span id="simbol-right"><i class="fa fa-industry fa-fw"></i></span><span id="text-right">Capacità produttiva</span>');
+            
             var params = {};
             params['Action'] = 'Start';
             params['Data'] = {};
