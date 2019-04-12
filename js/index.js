@@ -517,25 +517,57 @@ $(function () {
         $('#dropdownMenuButton2').prop('disabled', false);
 
         /* Abilita avanzamento slider */
-        /*var count = 8.3333;
-         var mese = 1;
-         var anno = 2019;
          
-         interval = setInterval(function () {
+        var count = 8.3333;
+        var data = new Date();
+        var mese = data.getMonth()+1;
+        var anno = data.getFullYear();
+        
+        var progress = mese*count;
+        $('#progressBarYear').attr('style', 'width: ' + progress + '%');
+        
+        
+        interval = setInterval(function () {
          
-         if (count < 100)
-         {
-         $('#textboxAnno').attr('value', mese + '/' + anno);
-         $('#progressBarYear').attr('aria-valuenow', count);
-         $('#progressBarYear').attr('style', 'width: ' + count + '%');
-         count = count + 8.3333;
-         mese++;
-         } else {
-         count = 0;
-         mese = 0;
-         anno++;
-         }
-         }, 1000);*/
+            if (progress < 100)
+            {
+                console.log(mese);
+                console.log(count);
+                $('#textboxAnno').attr('value', mese + '/' + anno);
+                $('#progressBarYear').attr('aria-valuenow', progress);
+                $('#progressBarYear').attr('style', 'width: ' + progress + '%');
+                progress = progress + count;
+                mese++;
+            } else {
+                progress = 0;
+                mese = 0;
+                anno++;
+            }
+        }, 2000);
+        
+        /*
+        // Versione originale
+        
+        var count = 8.3333;
+        var mese = 1;
+        var anno = 2019;
+        
+        interval = setInterval(function () {
+            
+            if (count < 100)
+            {
+                $('#textboxAnno').attr('value', mese + '/' + anno);
+                $('#progressBarYear').attr('aria-valuenow', count);
+                $('#progressBarYear').attr('style', 'width: ' + count + '%');
+                count = count + 8.3333;
+                mese++;
+            } else {
+                count = 0;
+                mese = 0;
+                anno++;
+            }
+         }, 2000);
+        */
 
         /* Mostra bottone chiudi finestra */
         document.getElementById("chiudiFinestraPop").style.display = "block";
