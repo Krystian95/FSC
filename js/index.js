@@ -6,6 +6,9 @@ var slider_numero_prodotti;
 var slider_percentuale_carne_vegetali;
 var charts = {};
 var pause = false;
+var count = 8.34;
+var mese = (new Date()).getMonth() + 1;
+var progress = mese * count;
 
 function getDefaultChart(chart_id) {
     return new Chart(document.getElementById(chart_id).getContext('2d'), {
@@ -215,7 +218,23 @@ function initCharts() {
     moveChart('Capacità produttiva', 'charts_right');
 }
 
+function progressProgressbar() {
+
+    /* Slider */
+    if (progress < 100) {
+        progress += count;
+        mese++;
+    } else {
+        mese = 1;
+        progress = mese * count;
+    }
+
+    $('#progressBarYear').attr('style', 'width: ' + progress + '%');
+}
+
 function performResponseActions(current_period, response_encoded) {
+
+    progressProgressbar();
 
     var response = JSON.parse(response_encoded);
     /*console.log(response);*/
@@ -300,6 +319,8 @@ function makeNextCall() {
 }
 
 $(function () {
+
+    $('#progressBarYear').attr('style', 'width: ' + progress + '%');
 
     // Gestione menu grafici a sinistra
     $(".menu-left .dropdown-menu li a").not('.disabled').click(function () {
@@ -453,6 +474,10 @@ $(function () {
 
         if ($("#starttext").text() == 'Start') {
 
+            mese = (new Date()).getMonth() + 1;
+            progress = mese * count;
+            $('#progressBarYear').attr('style', 'width: ' + progress + '%');
+
             var current_period = getCurrentMonthYear();
             $('input[name="periodo"]').val(current_period);
 
@@ -480,7 +505,7 @@ $(function () {
                     if (!pause) {
                         makeNextCall();
                     }
-                }, 2000);
+                }, 1000);
             }
         } else if ($("#starttext").text() == 'Continua') {
             pause = false;
@@ -516,58 +541,29 @@ $(function () {
         $('#dropdownMenuButton1').prop('disabled', false);
         $('#dropdownMenuButton2').prop('disabled', false);
 
-        /* Abilita avanzamento slider */
-         
-        var count = 8.3333;
-        var data = new Date();
-        var mese = data.getMonth()+1;
-        var anno = data.getFullYear();
-        
-        var progress = mese*count;
-        $('#progressBarYear').attr('style', 'width: ' + progress + '%');
-        
-        
-        interval = setInterval(function () {
-         
-            if (progress < 100)
-            {
-                console.log(mese);
-                console.log(count);
-                $('#textboxAnno').attr('value', mese + '/' + anno);
-                $('#progressBarYear').attr('aria-valuenow', progress);
-                $('#progressBarYear').attr('style', 'width: ' + progress + '%');
-                progress = progress + count;
-                mese++;
-            } else {
-                progress = 0;
-                mese = 0;
-                anno++;
-            }
-        }, 2000);
-        
         /*
-        // Versione originale
-        
-        var count = 8.3333;
-        var mese = 1;
-        var anno = 2019;
-        
-        interval = setInterval(function () {
-            
-            if (count < 100)
-            {
-                $('#textboxAnno').attr('value', mese + '/' + anno);
-                $('#progressBarYear').attr('aria-valuenow', count);
-                $('#progressBarYear').attr('style', 'width: ' + count + '%');
-                count = count + 8.3333;
-                mese++;
-            } else {
-                count = 0;
-                mese = 0;
-                anno++;
-            }
+         // Versione originale
+         
+         var count = 8.3333;
+         var mese = 1;
+         var anno = 2019;
+         
+         interval = setInterval(function () {
+         
+         if (count < 100)
+         {
+         $('#textboxAnno').attr('value', mese + '/' + anno);
+         $('#progressBarYear').attr('aria-valuenow', count);
+         $('#progressBarYear').attr('style', 'width: ' + count + '%');
+         count = count + 8.3333;
+         mese++;
+         } else {
+         count = 0;
+         mese = 0;
+         anno++;
+         }
          }, 2000);
-        */
+         */
 
         /* Mostra bottone chiudi finestra */
         document.getElementById("chiudiFinestraPop").style.display = "block";
@@ -670,8 +666,6 @@ $(function () {
 
     function stopPerform() {
 
-        $('#textboxAnno').attr('value', '0/0');
-
         /* Abilita bottone start */
         $("#starttext").text('Start');
         $('#start').prop('disabled', false);
@@ -682,8 +676,6 @@ $(function () {
 
         /* Disabilita avanzamento slider */
         /* clearInterval(interval); Disattiva timer */
-        $('#progressBarYear').attr('aria-valuenow', 0);
-        $('#progressBarYear').attr('style', '0%');
 
         /* Nascondi bottone chiudi finestra */
         document.getElementById("chiudiFinestraPop").style.display = "none";
