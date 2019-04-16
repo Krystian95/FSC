@@ -22,6 +22,8 @@ class System {
 
     private function getCharts() {
 
+        //error_log('-----------------------------------------------------------------');
+
         $return = [];
 
         // Popolazione
@@ -30,7 +32,6 @@ class System {
 
         $return['Charts']['Nati e morti']['Nati'] = $this->person_collection->getCountNati();
         $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
-
         $return['Charts']['Salute media']['Salute media'] = $this->person_collection->getMeanHealth();
 
         // Prodotti

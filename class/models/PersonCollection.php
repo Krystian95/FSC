@@ -56,8 +56,12 @@ class PersonCollection {
 
         $salute_media = $params['salute_iniziale_media'];
         $salute_dev_std = $params['salute_iniziale_dev_stan'];
+        //error_log('salute_iniziale_media: ' . $salute_media);
+        //error_log('salute_iniziale_dev_stan: ' . $salute_dev_std);
         $gauss = Utils::rand(($salute_media - $salute_dev_std / 2), ($salute_media + $salute_dev_std / 2));
+        //error_log('gauss: ' . $gauss);
         $health = ($gauss > 0 ? $gauss : 1);
+        //error_log('health: ' . $health);
 
         $fabbisogno_cibo_media = $params['fabbisogno_cibo_media'];
         $fabbisogno_cibo_dev_std = $params['fabbisogno_cibo_dev_stan'];
@@ -65,11 +69,6 @@ class PersonCollection {
         $fabbisogno_cibo = ($gauss > 0 ? $gauss : 1);
 
         $person = new Person($params['tendenza_mangiare_carne'], $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $params['influenza_differenze_ricchezza'], $this->tot_prod);
-
-        $rand = random_int(0, 100);
-
-        $person->set_health($rand, 0);
-        $person->set_health($rand, 1);
 
         return $person;
     }
@@ -100,15 +99,18 @@ class PersonCollection {
 
         $mean = 0;
         foreach ($this->persons as $person) {
+            //error_log('health person: '.$person->get_health(0));
             $mean += $person->get_health(1);
         }
 
-        /* error_log($mean);
-          error_log(count($this->persons)); */
+        //error_log('mean: ' . $mean);
+        //error_log('n persons: ' . count($this->persons));
 
         if (count($this->persons) == 0) {
+            //error_log('mean_health: ' . 0);
             return 0;
         } else {
+            //error_log('mean_health: ' . ($mean / count($this->persons)));
             return $mean / count($this->persons);
         }
     }

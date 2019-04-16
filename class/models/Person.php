@@ -21,6 +21,8 @@ class Person {
         $this->health[0] = $health;
         $this->health[1] = $health;
         $this->food_need = $fabbisogno_cibo;
+        
+        //error_log('health in Person: ' . $health);
 
         $this->wealth = $wealth;
         $wealth_influence = $wealth_influence_factor / (1000 * $tot_prod);
