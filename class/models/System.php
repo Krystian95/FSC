@@ -38,7 +38,9 @@ class System {
         foreach ($this->product_collection->getProducts() as $product) {
 
             $product_name = $product->get_name();
-            $return['Charts']['CapacitÃ  produttiva'][$product_name] = $product->get_capacity(1);
+            $return['Charts']['CapacitÃ  produttiva'][$product_name] = $product->get_capacity(0);
+                   /////la capacità mostrata è capacità(0), perché production -e sold- sono calcolate a partire da quella
+                   /////mentre capacità(1) svolge il ruolo di capacità produttiva dell'iterazione successiva -dopo la crescita
             $return['Charts']['Produzione'][$product_name] = $product->get_production(1);
             $return['Charts']['Vendite'][$product_name] = $product->get_sold(1);
             /*
@@ -77,23 +79,26 @@ class System {
          * step_productions
          */
         $this->product_collection->step_productions($this->environment);
-
+                                /////////////setta production[1]
         /*
          * impact_from_product
          */
         $products = $this->product_collection->getProducts();
-        $this->environment->impact_from_products($products);
-
+        $this->environment->impact_from_products($products);        
+                                /////////////setta agentiatmosferici[1]
         /*
          * temperature_evaluation
          */
         $this->environment->temperature_evaluation();
+                                /////////////setta temperatura[1]
 
         /*
          * Buy & Sell
          */
 
         $this->buyAndSell();
+                                /////////////setta sold[1]
+                                /////////////setta bought[1]
 
         /*
          * health_evaluate
@@ -101,11 +106,14 @@ class System {
         //error_log(count($this->person_collection->getPersons()));
         $this->person_collection->grow_pops($this->product_collection);
         //error_log(count($this->person_collection->getPersons()));
+                                ////////////setta tutti gli healt[1]
+                                ////////////nasce e uccide i pops
 
         /*
          * growth_evaluate
          */
         $this->product_collection->growth_evaluations();
+                                ////////////setta capacity[1] per il nuovo ciclo
 
         self::$step++;
 
@@ -164,54 +172,20 @@ class System {
 
         $persons_indexes = array_keys($this->person_collection->getPersons());
         $products_indexes = array_keys($this->product_collection->getProducts());
-
-        //error_log('Count $persons_indexes = ' . count($persons_indexes));
-        ////!!!andrebbe aggiunto un commento al momento dell'acquisto 
-        ////   che stampi tutti i parametri coinvolti (quelli interni di prod e pop)
-        ////***sarebbe da controllare se le preferenze vengono generate come dovrebbero:
-        ////   ovverosia: preferenze(j) di ogni persona sono comprese tra 0 ed 1 e strettamente crescenti
-        ////   quindi: preferenza(0) >0 ; preferenza(j)<preferenza(j+1); preferenza(N_meat+N-veg - 1) =1
-
-        /* A) considerazioni:
-         * 1) while e for hanno le stesse condizioni, se si blocca l dentro significa che 
-         * non si raggiunge la condizione in cui nessuno dei due array (persone e prodotti) raggiunge per tutti i suoi elementi la condizione di unset
-         * 2) basta che uno dei due _indexes sia vuoto per far finire il ciclo, e che durante il ciclo
-         * i parametri interni degli oggetti DOVREBBERO AUMENTARE MONOTONAMENTE fino a che non raggiungono la condizione di unset
-         * 
-         * B) aggiungendo il commento per i parametri interni degli oggetti al momento dell'acquisto, si dovrebbe osservare che: 
-         * 1) tutti i valori sono >0
-         * 2) tutti i valori sono < del valore max che possono raggiungere: 
-         *    person.speso < person.wealth; person.eaten < person. fabbisogno; product.sold < product.production
-         * 3) l'unico momento in cui la (2) non  vera  quando una persona o prodotto ha raggiunto uno dei "limiti di unset"
-         *    quindi i casi in cui la (2) non si verifica dovrebbero esser seguiti da "rimosso prodotto tot" o "rimossa persona tot"
-         *    e dopo di quello quella persona o quel prodotto non dovrebbero pi comparire nel commento
-         *
-         * C) secondo me gli errori possibili sono:                
-         * 1) il ciclo  eccessivamente lento a fare quel che deve, il che eventualmente significa
-         *   un valore troppo alto tra fabbisogno, wealth, produzione dell'industria
-         *   un valore troppo basso di cibo acquistato (val), e prezzi
-         *   con !!! e (B) si dovbrebbe poter vedere che quando il programma si arresta stava tuttavia facendo cose sensate
-         * 2) ci sono casini strani nei parametri interni di persone e/o prodotti, tali per cui non si raggiungono le condizioni di unset
-         *   ma in tal caso aggiungendo quel commento al momento dell'acquisto (B) si dovrebbe capire dove sta l'errore
-         * 3) le preferenze vengono generate in maniera strana, per cui se non  (1) o (2) conviene *** 
-         *   tecnicamente l'algoritmo dovrebbe funzionare anche con preferenze a casaccio, 
-         *   perch il while(!in_array (...) ) funziona sul solo indice a prescindere dalle preferenze e quindi qualcosa becca sicuro
-         *   tuttavia potrebbe darsi che delle preferenze costruite male rallentino la funzione o chi sa che diavolo    
-         * 4) cose di sintassi/codice di cui non ho la minima idea, ad esempio il funzionamento di count, unset, assegnamenti, boh
-         *   o comunque qualche stranezza nelle condizioni dei cicli che tuttavia non mi sembra di notare
-         * 5) mi sta sfuggendo qualcosa di palesissimo e bah
-         *
-         *
-         */
+  /*      
+        foreach($product_indexes as $j){
+            $product = $this->product_collection->getProduct($j)
+            if($product->get_production(1)==0){
+                unset($products_indexes[$j])
+            }
+        }
+*/
         while (count($persons_indexes) > 0 && count($products_indexes) > 0) {
             /* error_log('');
               error_log('');
               error_log('New while cicle');
               error_log('$persons_indexes = ' . count($persons_indexes)); */
 
-            /////aggiungerei un commento qui per capire quante volte il ciclo for riparte da capo
-            /////nb il ciclo for riparte da capo significa: "tutti hanno comprato un prodotto, ora chi  rimasto compra quel che  rimasto"
-            //for ($i = 0; $i < $persons_indexes_size && count($products_indexes) > 0; $i++) {
             foreach ($persons_indexes as $i) {
                 if (count($products_indexes) == 0) {
                     break;
@@ -269,8 +243,6 @@ class System {
                 $product = $this->product_collection->getProduct($j);
 
                 $val = 1;  //questo val  una costante  pu esser tranquillamente messa prima dell'inizio del ciclo
-                ///NB: qui get_eaten legge lo stesso indirizzo di memoria che set eaten va a scrivere
-                ///non ne so molto ma potrebbe causare conflitti nella memorizzazione ????
                 $person->set_eaten($person->get_eaten(1) + $val, 1);
                 $product->set_sold($product->get_sold(1) + $val, 1);
                 $person->set_speso($person->get_speso() + $product->get_price() * $val);

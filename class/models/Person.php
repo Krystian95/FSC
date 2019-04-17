@@ -36,11 +36,12 @@ class Person {
         $mean = 1.0 / $tot_prod;
         $mean_meat = $mean + $mean * $tendency / 100;
         $mean_veg = $mean - $mean * $tendency / 100;
+        $aleatorieta_preferenze=0;        ///DA AGGIUNGERE AI PARAMETRI DI SISTEMA
         for ($i = 0; $i < $tot_prod; $i++) {
             if ($product_collection->getProductTypeByIndex($i) == 'meat') {
-                $preferenze_tmp[$i] = Utils::rand(0, ($mean_meat * 2));
+                $preferenze_tmp[$i] = Utils::rand( mean_meat*(1-aleatorieta_preferenze/100), $mean_meat*(1+aleatorieta_preferenze/100) );
             } elseif ($product_collection->getProductTypeByIndex($i) == 'veg') {
-                $preferenze_tmp[$i] = Utils::rand(0, ($mean_veg * 2));
+                $preferenze_tmp[$i] = Utils::rand(mean_veg*(1-aleatorieta_preferenze/100), $mean_veg*(1+aleatorieta_preferenze/100));
             }
         }
 

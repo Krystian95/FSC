@@ -34,11 +34,18 @@ class Product {
     }
 
     public function step_production($environment) {
-
+        
         $min_required_production = 2 / 10;
-        $this->production[1] = $this->capacity[0] * (1 - (abs($environment->get_temperature(0) - $this->ideal_temperature) / $this->tolerance_temperature) * (abs($environment->get_GHGS(0) - $this->ideal_GHGS) / $this->tolerance_GHGS) * (abs($environment->get_NH3(0) - $this->ideal_NH3) / $this->tolerance_NH3) * (abs($environment->get_PM(0) - $this->ideal_PM) / $this->tolerance_PM) );
+        $this->production[1] = $this->capacity[0] * (1 - abs($environment->get_temperature(0) - $this->ideal_temperature) / $this->tolerance_temperature) *(1 - abs($environment->get_GHGS(0) - $this->ideal_GHGS) / $this->tolerance_GHGS) *(1 - abs($environment->get_NH3(0) - $this->ideal_NH3) / $this->tolerance_NH3) *(1 - abs($environment->get_PM(0) - $this->ideal_PM) / $this->tolerance_PM) ;
+        if (1 - abs($environment->get_temperature(0) - $this->ideal_temperature) / $this->tolerance_temperature < $min_required_production
+            || 1 - abs($environment->get_GHGS(0) - $this->ideal_GHGS) / $this->tolerance_GHGS < $min_required_production
+            || 1 - abs($environment->get_GHGS(0) - $this->ideal_GHGS) / $this->tolerance_GHGS < $min_required_production
+            || 1 - abs($environment->get_NH3(0) - $this->ideal_NH3) / $this->tolerance_NH3 < $min_required_production )
+        {
+                $this->production[1]=0;
+        }
         ///se la produzione non supera un minimo percentuale della capacit� (min required production), la produzione � direttamente nulla
-        $this->production[1] = ($this->production[1] <= ($this->capacity[1] * $min_required_production) ? 0 : $this->production[1]);
+        $this->production[1] = ($this->production[1] <= ($this->capacity[0] * $min_required_production) ? 0 : $this->production[1]);
     }
 
     public function growth_evaluate($prod_stab, $max_growth_prod) {
