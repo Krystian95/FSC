@@ -128,7 +128,7 @@ class PersonCollection {
                 $this->n_morti++;
             } elseif ($person->get_health(1) >= $this->step_pop_growth) {
                 $rand = random_int(0, 100);
-                if ($rand >= $this->growth_parameter) {
+                if ($rand <= $this->growth_parameter) {
 
                     $new_person = new Person($this->tendenza_mangiare_carne, $product_collection, $person->get_wealth(), $birth_health = 50, $this->ricchezza_media, $person->get_food_need(), $this->influenza_differenze_ricchezza, $this->tot_prod);
                     $this->n_nati++;
