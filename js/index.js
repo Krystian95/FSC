@@ -594,7 +594,7 @@ $(function () {
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
             'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'extern_ghgs',
             'extern_pm', 'extern_nh3', 'step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
-            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza', 'aleatorieta_preferenze'];
 
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', true);
@@ -706,7 +706,7 @@ $(function () {
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
             'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'extern_ghgs',
             'extern_pm', 'extern_nh3', 'step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
-            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza', 'aleatorieta_preferenze'];
 
         $(itemsPopEnvExtra).each(function (index, value) {
             $('input[name="' + value + '"]').prop('disabled', false);
@@ -822,9 +822,9 @@ $(function () {
     $('#discardChangesExtra').on('click', function (event) {
 
         var itemsExtra = ['step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
-            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+            'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza', 'aleatorieta_preferenze'];
 
-        var valoriExtra = [60, 25, 20, 60, 3, 70, 7, 30];
+        var valoriExtra = [60, 25, 20, 60, 3, 70, 7, 30, 30];
 
         $(itemsExtra).each(function (index, value) {
             $('input[name="' + value + '"]').val(valoriExtra[index]);
@@ -917,7 +917,7 @@ $(function () {
         'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan', 'oscillazioni_temperatura_media',
         'oscillazioni_temperatura_ampiezza', 'valore_iniziale_ghgs', 'valore_iniziale_pm', 'valore_iniziale_nh3', 'extern_ghgs',
         'extern_pm', 'extern_nh3', 'step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
-        'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza'];
+        'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza', 'aleatorieta_preferenze'];
 
     $(itemsPopEnvExtra).each(function (index, value) {
         $(document).on('input change', 'input[name="' + value + '_slider"]', function () {

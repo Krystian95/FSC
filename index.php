@@ -1357,6 +1357,20 @@
                             </div>
                             <div class="row form-group align-items-center">
                                 <label class="col-form-label col-4">
+                                    Aleatorietà delle preferenze
+                                </label>
+                                <div class="col-5">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="aleatorieta_preferenze_slider" value="30">
+                                </div>
+                                <div class="col-2">
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="aleatorieta_preferenze" value="30"> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="checkbox"><input type="checkbox" value="" id="aleatorieta_preferenze_checkbox" class="parametri_extra"></div>
+                                </div>
+                            </div>
+                            <div class="row form-group align-items-center">
+                                <label class="col-form-label col-4">
                                     Variazione percentuale
                                 </label>   
                                 <div class="col-7">
