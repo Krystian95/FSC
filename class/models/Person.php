@@ -14,14 +14,14 @@ class Person {
     private $eaten = [];
     private $speso = 0;
 
-    public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $wealth_influence_factor, $tot_prod) {
+    public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $wealth_influence_factor, $tot_prod, $aleatorieta_preferenze) {
 
         $this->eaten[0] = 0.0;
         $this->eaten[1] = 0.0;
         $this->health[0] = $health;
         $this->health[1] = $health;
         $this->food_need = $fabbisogno_cibo;
-        
+
         //error_log('health in Person: ' . $health);
 
         $this->wealth = $wealth;
@@ -36,12 +36,11 @@ class Person {
         $mean = 1.0 / $tot_prod;
         $mean_meat = $mean + $mean * $tendency / 100;
         $mean_veg = $mean - $mean * $tendency / 100;
-        $aleatorieta_preferenze=0;        ///DA AGGIUNGERE AI PARAMETRI DI SISTEMA
         for ($i = 0; $i < $tot_prod; $i++) {
             if ($product_collection->getProductTypeByIndex($i) == 'meat') {
-                $preferenze_tmp[$i] = Utils::rand( mean_meat*(1-aleatorieta_preferenze/100), $mean_meat*(1+aleatorieta_preferenze/100) );
+                $preferenze_tmp[$i] = Utils::rand($mean_meat * (1 - $aleatorieta_preferenze / 100), $mean_meat * (1 + $aleatorieta_preferenze / 100));
             } elseif ($product_collection->getProductTypeByIndex($i) == 'veg') {
-                $preferenze_tmp[$i] = Utils::rand(mean_veg*(1-aleatorieta_preferenze/100), $mean_veg*(1+aleatorieta_preferenze/100));
+                $preferenze_tmp[$i] = Utils::rand($mean_veg * (1 - $aleatorieta_preferenze / 100), $mean_veg * (1 + $aleatorieta_preferenze / 100));
             }
         }
 
@@ -81,12 +80,12 @@ class Person {
     }
 
     public function health_evaluate($pop_stab, $max_growth_pop) {
+
         if ($this->eaten[1] >= $this->food_need) {
             $this->eaten[1] = $this->food_need;
         }
-        
-        $this->health[1] = $this->health[0] + $max_growth_pop * ($this->eaten[1] / $this->food_need - $pop_stab / 100) / (1 - $pop_stab / 100);
 
+        $this->health[1] = $this->health[0] + $max_growth_pop * ($this->eaten[1] / $this->food_need - $pop_stab / 100) / (1 - $pop_stab / 100);
         $this->health[1] = $this->health[1] >= 100 ? 100 : $this->health[1];
     }
 

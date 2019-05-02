@@ -39,8 +39,10 @@ class System {
 
             $product_name = $product->get_name();
             $return['Charts']['CapacitÃ  produttiva'][$product_name] = $product->get_capacity(0);
-                   /////la capacità mostrata è capacità(0), perché production -e sold- sono calcolate a partire da quella
-                   /////mentre capacità(1) svolge il ruolo di capacità produttiva dell'iterazione successiva -dopo la crescita
+            /*
+             * la capacitÃ  mostrata Ã¨ capacita(0), perchï¿½ production -e sold- sono calcolate a partire da quella
+             * mentre capacita(1) svolge il ruolo di capacitÃ  produttiva dell'iterazione successiva -dopo la crescita
+             */
             $return['Charts']['Produzione'][$product_name] = $product->get_production(1);
             $return['Charts']['Vendite'][$product_name] = $product->get_sold(1);
             /*
@@ -79,26 +81,26 @@ class System {
          * step_productions
          */
         $this->product_collection->step_productions($this->environment);
-                                /////////////setta production[1]
+        //setta production[1]
         /*
          * impact_from_product
          */
         $products = $this->product_collection->getProducts();
-        $this->environment->impact_from_products($products);        
-                                /////////////setta agentiatmosferici[1]
+        $this->environment->impact_from_products($products);
+        //setta agentiatmosferici[1]
         /*
          * temperature_evaluation
          */
         $this->environment->temperature_evaluation();
-                                /////////////setta temperatura[1]
+        //setta temperatura[1]
 
         /*
          * Buy & Sell
          */
 
         $this->buyAndSell();
-                                /////////////setta sold[1]
-                                /////////////setta bought[1]
+        //setta sold[1]
+        //setta bought[1]
 
         /*
          * health_evaluate
@@ -106,14 +108,14 @@ class System {
         //error_log(count($this->person_collection->getPersons()));
         $this->person_collection->grow_pops($this->product_collection);
         //error_log(count($this->person_collection->getPersons()));
-                                ////////////setta tutti gli healt[1]
-                                ////////////nasce e uccide i pops
+        //setta tutti gli healt[1]
+        //nasce e uccide i pops
 
         /*
          * growth_evaluate
          */
         $this->product_collection->growth_evaluations();
-                                ////////////setta capacity[1] per il nuovo ciclo
+        //setta capacity[1] per il nuovo ciclo
 
         self::$step++;
 
@@ -172,14 +174,14 @@ class System {
 
         $persons_indexes = array_keys($this->person_collection->getPersons());
         $products_indexes = array_keys($this->product_collection->getProducts());
-  /*      
-        foreach($product_indexes as $j){
-            $product = $this->product_collection->getProduct($j)
-            if($product->get_production(1)==0){
-                unset($products_indexes[$j])
-            }
-        }
-*/
+        /*
+          foreach($product_indexes as $j){
+          $product = $this->product_collection->getProduct($j)
+          if($product->get_production(1)==0){
+          unset($products_indexes[$j])
+          }
+          }
+         */
         while (count($persons_indexes) > 0 && count($products_indexes) > 0) {
             /* error_log('');
               error_log('');
@@ -197,18 +199,18 @@ class System {
                 $person = $this->person_collection->getPerson($i);
 
                 $rnd = Utils::rand(0.0, 1.0);
-                //$rnd = 1.0;
+//$rnd = 1.0;
 
                 $j = 0;
 
-                //               error_log('ENTER while');
-//                error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
+//               error_log('ENTER while');
+//error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
                 while ($rnd > $person->get_preferenza($j)) {
-//                    error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
-//                    error_log($j . ' == ' . $this->product_collection->n_meat + $this->product_collection->n_veg - 1);
+//    error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
+//    error_log($j . ' == ' . $this->product_collection->n_meat + $this->product_collection->n_veg - 1);
                     if ($j == ($this->product_collection->n_meat + $this->product_collection->n_veg - 1)) {
-//                        error_log('break');
-                        //commento: qui tecnicamente non dovrebbe arrivarci perch nel caso limite rnd=1=preferenza(n_meat+n_veg - 1)                       
+//        error_log('break');
+                        //commento: qui tecnicamente non dovrebbe arrivarci perch nel caso limite rnd=1=preferenza(n_meat+n_veg - 1)       
                         break;
                         /////questo nel caso in cui le preferenze siano state generate bene *** questo if break non serve 
                         /////ed in caso contrario significa che preferenza(n_meat+n_veg - 1) < 1, cosa che non dovrebbe essere
@@ -217,7 +219,7 @@ class System {
                         //error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
                     }
                 }
-                //error_log('EXIT while con  j=' . $j);
+//error_log('EXIT while con  j=' . $j);
 
                 /*
                  * Recupera un prodotto in caso j non sia pi disponibile
@@ -229,8 +231,8 @@ class System {
                         while (!in_array($j, $products_indexes)) {
                             if ($j == ($this->product_collection->n_meat + $this->product_collection->n_veg - 1)) {
                                 break;
-                                //commento: qui ci arriva solo se l'ultimo cibo rimasto  quello pi costoso
-                                //Il che  plausibile ma se finisce sistematicamente qui forse c' qualcosa di strano
+//commento: qui ci arriva solo se l'ultimo cibo rimasto  quello pi costoso
+//Il che  plausibile ma se finisce sistematicamente qui forse c' qualcosa di strano
                             } else {
                                 $j++;
                             }
