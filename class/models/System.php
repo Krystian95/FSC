@@ -34,13 +34,65 @@ class System {
         $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
         $return['Charts']['Salute media']['Salute media'] = $this->person_collection->getMeanHealth();
 
+        $return['Charts']['Distribuzione della salute']['0-9'] = 0;
+        $return['Charts']['Distribuzione della salute']['10-19'] = 0;
+        $return['Charts']['Distribuzione della salute']['20-29'] = 0;
+        $return['Charts']['Distribuzione della salute']['30-39'] = 0;
+        $return['Charts']['Distribuzione della salute']['40-49'] = 0;
+        $return['Charts']['Distribuzione della salute']['50-59'] = 0;
+        $return['Charts']['Distribuzione della salute']['60-69'] = 0;
+        $return['Charts']['Distribuzione della salute']['70-79'] = 0;
+        $return['Charts']['Distribuzione della salute']['80-89'] = 0;
+        $return['Charts']['Distribuzione della salute']['90-100'] = 0;
+
+        for ($i = 0; $i < $this->person_collection->getCountPeople(); $i++) {
+
+            $health = $this->person_collection->getPerson($i)->get_health(0);
+
+            switch ($health) {
+                case ($health >= 0 && $health <= 9):
+                    $return['Charts']['Distribuzione della salute']['0-9'] ++;
+                    break;
+                case ($health >= 10 && $health <= 19):
+                    $return['Charts']['Distribuzione della salute']['10-19'] ++;
+                    break;
+                case ($health >= 20 && $health <= 29):
+                    $return['Charts']['Distribuzione della salute']['20-29'] ++;
+                    break;
+                case ($health >= 30 && $health <= 39):
+                    $return['Charts']['Distribuzione della salute']['30-39'] ++;
+                    break;
+                case ($health >= 40 && $health <= 49):
+                    $return['Charts']['Distribuzione della salute']['40-49'] ++;
+                    break;
+                case ($health >= 50 && $health <= 59):
+                    $return['Charts']['Distribuzione della salute']['50-59'] ++;
+                    break;
+                case ($health >= 60 && $health <= 69):
+                    $return['Charts']['Distribuzione della salute']['60-69'] ++;
+                    break;
+                case ($health >= 70 && $health <= 79):
+                    $return['Charts']['Distribuzione della salute']['70-79'] ++;
+                    break;
+                case ($health >= 80 && $health <= 89):
+                    $return['Charts']['Distribuzione della salute']['80-89'] ++;
+                    break;
+                case ($health >= 90 && $health <= 100):
+                    $return['Charts']['Distribuzione della salute']['90-100'] ++;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         // Prodotti
         foreach ($this->product_collection->getProducts() as $product) {
 
             $product_name = $product->get_name();
             $return['Charts']['Capacità produttiva'][$product_name] = $product->get_capacity(0);
             /*
-             * la capacità mostrata è capacita(0), perch� production -e sold- sono calcolate a partire da quella
+             * la capacità mostrata è capacita(0), perchè production -e sold- sono calcolate a partire da quella
              * mentre capacita(1) svolge il ruolo di capacità produttiva dell'iterazione successiva -dopo la crescita
              */
             $return['Charts']['Produzione'][$product_name] = $product->get_production(1);

@@ -9,10 +9,12 @@ var pause = false;
 var count = 8.34;
 var mese = (new Date()).getMonth() + 1;
 var progress = mese * count;
+var charts_settings;
 
-function getDefaultChart(chart_id) {
+function getDefaultChart(chart_id, type) {
+
     return new Chart(document.getElementById(chart_id).getContext('2d'), {
-        type: 'line',
+        type: type,
         data: {
             datasets: []
         },
@@ -103,7 +105,8 @@ function getRandomColor() {
 
 function initCharts() {
 
-    var charts_settings = [
+    // do not move objects, they are linked by index for selectModProd
+    charts_settings = [
         {
             title: 'Popolazione',
             lines: [
@@ -149,6 +152,21 @@ function initCharts() {
         {
             title: 'Vendite',
             lines: []
+        },
+        {
+            title: 'Distribuzione della salute',
+            lines: [
+                {name: '0-9', color: 'red'},
+                {name: '10-19', color: 'red'},
+                {name: '20-29', color: 'red'},
+                {name: '30-39', color: 'red'},
+                {name: '40-49', color: 'red'},
+                {name: '50-59', color: 'red'},
+                {name: '60-69', color: 'red'},
+                {name: '70-79', color: 'red'},
+                {name: '80-89', color: 'red'},
+                {name: '90-100', color: 'red'}
+            ]
         }
     ];
 
@@ -190,7 +208,15 @@ function initCharts() {
 
         $('.charts_left').append('<canvas id="' + chart_title + '" class="chart" width="1550" height="1000"></canvas>');
 
-        var chart = getDefaultChart(chart_title);
+        var chart_type;
+
+        if (chart_title == 'Distribuzione della salute') {
+            chart_type = 'bar';
+        } else {
+            chart_type = 'line';
+        }
+
+        var chart = getDefaultChart(chart_title, chart_type);
 
         for (var j = 0; j < charts_settings[i].lines.length; j++) {
 
@@ -242,16 +268,43 @@ function performResponseActions(current_period, response_encoded) {
     $('input[name="periodo"]').val(next_period);
 
     $.each(response['Charts'], function (chart_title, value_outer) {
-        /*console.log(charts[chart_title]);*/
-        charts[chart_title].data.labels.push(current_period);
+
+        if (chart_title == 'Distribuzione della salute') {
+            /*charts[chart_title].data.labels.pop();
+             charts[chart_title].data.labels.push('x');*/
+
+            // rimuove tutti i dati dal grafico
+            charts[chart_title].data.datasets.forEach((dataset) => {
+                dataset.data.pop();
+            });
+
+            //charts[chart_title].data.labels.pop();
+
+            //charts[chart_title].data.datasets[0].data.pop();
+
+            /*for (var j = 0; j < charts_settings[i].lines.length; j++) {
+             var label = charts_settings[i].lines[j].name;
+             }*/
+            //charts[chart_title].data.labels.push('0-9');
+        } else {
+            charts[chart_title].data.labels.push(current_period);
+        }
+
         var count = 0;
+
         $.each(response['Charts'][chart_title], function (chart_line, value_inner) {
+
             //alert(key + ": " + value);
             var value = response['Charts'][chart_title][chart_line];
-            /*console.log(charts[chart_title].data.datasets[0]);*/
+            //console.log(charts[chart_title].data.datasets[0]);
             charts[chart_title].data.datasets[count].data.push(value);
+
+            if (chart_title == 'Distribuzione della salute') {
+                //charts[chart_title].data.labels.push(chart_line);
+            }
             count++;
         });
+
         charts[chart_title].update();
     });
 
