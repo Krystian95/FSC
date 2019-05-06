@@ -1,8 +1,6 @@
 <?php
 
 /**
- * Description of Utils
- *
  * @author Cristian
  */
 class Utils {
@@ -22,6 +20,10 @@ class Utils {
         array_multisort($ordered, SORT_ASC, $array);
 
         return $ordered;
+    }
+
+    public static function round($value) {
+        return round($value, 2);
     }
 
 }

@@ -32,7 +32,7 @@ class System {
 
         $return['Charts']['Nati e morti']['Nati'] = $this->person_collection->getCountNati();
         $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
-        $return['Charts']['Salute media']['Salute media'] = $this->person_collection->getMeanHealth();
+        $return['Charts']['Salute media']['Salute media'] = Utils::round($this->person_collection->getMeanHealth());
 
         $return['Charts']['Distribuzione della salute']['0-9'] = 0;
         $return['Charts']['Distribuzione della salute']['10-19'] = 0;
@@ -90,24 +90,24 @@ class System {
         foreach ($this->product_collection->getProducts() as $product) {
 
             $product_name = $product->get_name();
-            $return['Charts']['Capacità produttiva'][$product_name] = $product->get_capacity(0);
+            $return['Charts']['Capacità produttiva'][$product_name] = Utils::round($product->get_capacity(0));
             /*
              * la capacità mostrata è capacita(0), perchè production -e sold- sono calcolate a partire da quella
              * mentre capacita(1) svolge il ruolo di capacità produttiva dell'iterazione successiva -dopo la crescita
              */
-            $return['Charts']['Produzione'][$product_name] = $product->get_production(1);
-            $return['Charts']['Vendite'][$product_name] = $product->get_sold(1);
+            $return['Charts']['Produzione'][$product_name] = Utils::round($product->get_production(1));
+            $return['Charts']['Vendite'][$product_name] = Utils::round($product->get_sold(1));
             /*
              * TODO Grafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto (tipo istogramma dove ogni barra è divisa per tre)
              */
         }
 
         // Ambiente
-        $return['Charts']['Temperatura']['Temperatura'] = $this->environment->get_temperature(1);
+        $return['Charts']['Temperatura']['Temperatura'] = Utils::round($this->environment->get_temperature(1));
 
-        $return['Charts']['Agenti atmosferici']['GHGS'] = $this->environment->get_GHGS(1);
-        $return['Charts']['Agenti atmosferici']['PM'] = $this->environment->get_PM(1);
-        $return['Charts']['Agenti atmosferici']['NH3'] = $this->environment->get_NH3(1);
+        $return['Charts']['Agenti atmosferici']['GHGS'] = Utils::round($this->environment->get_GHGS(1));
+        $return['Charts']['Agenti atmosferici']['PM'] = Utils::round($this->environment->get_PM(1));
+        $return['Charts']['Agenti atmosferici']['NH3'] = Utils::round($this->environment->get_NH3(1));
 
         /*
          * TODO Tipologie di cibo in relazione alla ricchezza
