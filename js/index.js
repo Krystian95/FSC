@@ -637,12 +637,20 @@ $(function () {
                 }, 1000);
             }
         } else if ($("#starttext").text() == 'Continua') {
+            
+            /* Abilita animazione progressbar */
+            $("#progressBarYear").addClass("progress-bar-animated");
+            
             pause = false;
             $('#pausa').prop('disabled', false);
         }
     });
 
     $('#pausa').on('click', function (event) {
+        
+        /* Disabilita animazione progressbar */
+        $("#progressBarYear").removeClass("progress-bar-animated");
+        
         pause = true;
         $("#starttext").text('Continua');
         $('#start').prop('disabled', false);
@@ -663,6 +671,9 @@ $(function () {
     });
 
     function startPerform() {
+        
+        /* Disabilita animazione progressbar */
+        $("#progressBarYear").addClass("progress-bar-animated");
 
         /* Abilita bottoni pausa, stop e grafici */
         $('#pausa').prop('disabled', false);
@@ -794,7 +805,10 @@ $(function () {
     }
 
     function stopPerform() {
-
+        
+        /* Disabilita animazione progressbar */
+        $("#progressBarYear").removeClass("progress-bar-animated");
+        
         /* Abilita bottone start */
         $("#starttext").text('Start');
         $('#start').prop('disabled', false);
