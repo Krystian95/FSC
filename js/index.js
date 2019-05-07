@@ -10,6 +10,7 @@ var count = 8.34;
 var mese = (new Date()).getMonth() + 1;
 var progress = mese * count;
 var charts_settings;
+var charts_barchart = ['Distribuzione della salute', 'Capacità, produzione e vendita mensile'];
 
 function getDefaultChart(chart_id, type) {
 
@@ -20,10 +21,8 @@ function getDefaultChart(chart_id, type) {
         },
         options: {
             scales: {
-                yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
+                xAxes: [{
+                        stacked: true // false (mostra le singole barrette sottili affiancate)
                     }]
             },
             elements: {
@@ -167,6 +166,10 @@ function initCharts() {
                 {name: '80-89', color: 'red'},
                 {name: '90-100', color: 'red'}
             ]
+        },
+        {
+            title: 'Capacità, produzione e vendita mensile',
+            lines: []
         }
     ];
 
@@ -186,19 +189,24 @@ function initCharts() {
         var numero_prodotti = String(slider_numero_prodotti.getValue());
         for (var i = 0; i < numero_prodotti; i++) {
             var item = {name: i, color: getRandomColor()};
-            charts_settings[5].lines.push(item);
-            charts_settings[6].lines.push(item);
-            charts_settings[7].lines.push(item);
+            charts_settings[5].lines.push(item); // Capacità produttiva
+            charts_settings[6].lines.push(item); // Produzione
+            charts_settings[7].lines.push(item); // Vendite
         }
     } else if (selectModProd == 0) { // Singoli prodotti
         var prodotti_default = ['Manzo', 'Pollo', 'Maiale', 'Cavallo', 'Tacchino', 'Patate', 'Zucchine', 'Peperoni', 'Melanzane', 'Pomodori', 'Grano', 'Riso', 'Melo', 'Pero', 'Arancio'];
         for (var i = 0; i < prodotti_default.length; i++) {
             var item = {name: prodotti_default[i], color: getRandomColor()};
-            charts_settings[5].lines.push(item);
-            charts_settings[6].lines.push(item);
-            charts_settings[7].lines.push(item);
+            charts_settings[5].lines.push(item); // Capacità produttiva
+            charts_settings[6].lines.push(item); // Produzione
+            charts_settings[7].lines.push(item); // Vendite
         }
     }
+
+    // Capacità, produzione e vendita mensile
+    /*charts_settings[9].lines.push({name: 'Capacità', color: getRandomColor()});
+     charts_settings[9].lines.push({name: 'Produzione', color: getRandomColor()});
+     charts_settings[9].lines.push({name: 'Vendita', color: getRandomColor()});*/
 
     // Creazione grafici
 
@@ -210,7 +218,7 @@ function initCharts() {
 
         var chart_type;
 
-        if (chart_title == 'Distribuzione della salute') {
+        if (charts_barchart.includes(chart_title)) {
             chart_type = 'bar';
         } else {
             chart_type = 'line';
@@ -218,17 +226,52 @@ function initCharts() {
 
         var chart = getDefaultChart(chart_title, chart_type);
 
-        for (var j = 0; j < charts_settings[i].lines.length; j++) {
-
-            var line = {
-                label: charts_settings[i].lines[j].name,
+        if (chart_title == 'Capacità, produzione e vendita mensile') {
+            line = {
+                label: 'Capacità produttiva',
                 data: [],
-                backgroundColor: ['rgba(255, 99, 132, 0)'], /* background transparent */
-                borderColor: [charts_settings[i].lines[j].color],
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgba(255, 159, 64, 1)',
                 borderWidth: 1
             };
 
             chart.data.datasets.push(line);
+
+            line = {
+                label: 'Produzione',
+                data: [],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235, 1)',
+                borderWidth: 1
+            };
+
+            chart.data.datasets.push(line);
+
+            line = {
+                label: 'Vendite',
+                data: [],
+                backgroundColor: 'rgba(90, 235, 54, 0.2)',
+                borderColor: 'rgba(90, 235, 54, 1)',
+                borderWidth: 1
+            };
+
+            chart.data.datasets.push(line);
+        } else {
+            for (var j = 0; j < charts_settings[i].lines.length; j++) {
+                var line;
+                // Capacità, produzione e vendita mensile
+                if (i != 9) {
+                    line = {
+                        label: charts_settings[i].lines[j].name,
+                        data: [],
+                        backgroundColor: ['rgba(255, 99, 132, 0)'], /* background transparent */
+                        borderColor: [charts_settings[i].lines[j].color],
+                        borderWidth: 1
+                    };
+
+                    chart.data.datasets.push(line);
+                }
+            }
         }
 
         chart.update();
@@ -269,14 +312,16 @@ function performResponseActions(current_period, response_encoded) {
 
     $.each(response['Charts'], function (chart_title, value_outer) {
 
-        if (chart_title == 'Distribuzione della salute') {
+        if (charts_barchart.includes(chart_title)) {
             /*charts[chart_title].data.labels.pop();
              charts[chart_title].data.labels.push('x');*/
 
             // rimuove tutti i dati dal grafico
             charts[chart_title].data.datasets.forEach((dataset) => {
-                dataset.data.pop();
+                dataset.data = [];
             });
+
+            charts[chart_title].data.labels = [];
 
             //charts[chart_title].data.labels.pop();
 
@@ -290,20 +335,40 @@ function performResponseActions(current_period, response_encoded) {
             charts[chart_title].data.labels.push(current_period);
         }
 
-        var count = 0;
+        if (chart_title == 'Capacità, produzione e vendita mensile') {
 
-        $.each(response['Charts'][chart_title], function (chart_line, value_inner) {
+            $.each(response['Charts'][chart_title], function (product_name, value) {
 
-            //alert(key + ": " + value);
-            var value = response['Charts'][chart_title][chart_line];
-            //console.log(charts[chart_title].data.datasets[0]);
-            charts[chart_title].data.datasets[count].data.push(value);
+                charts[chart_title].data.labels.push(product_name);
 
-            if (chart_title == 'Distribuzione della salute') {
-                //charts[chart_title].data.labels.push(chart_line);
-            }
-            count++;
-        });
+                //console.log("-------------------");
+                //console.log("chart_title = " + chart_title);
+                //console.log("product_name = " + product_name);
+                //console.log("value = " + JSON.stringify(value));
+                /*console.log("value x = " + value['Capacità']);
+                 console.log("value x = " + value['Produzione']);
+                 console.log("value x = " + value['Vendite']);*/
+
+                //console.log(charts[chart_title].data.datasets);
+
+                charts[chart_title].data.datasets[0].data.push(value['Capacità produttiva']);
+                charts[chart_title].data.datasets[1].data.push(value['Produzione']);
+                charts[chart_title].data.datasets[2].data.push(value['Vendite']);
+            });
+        } else {
+
+            var count = 0;
+
+            $.each(response['Charts'][chart_title], function (chart_line, value) {
+
+                //alert(key + ": " + value);
+                //var value = response['Charts'][chart_title][chart_line];
+                //console.log(charts[chart_title].data.datasets[0]);
+
+                charts[chart_title].data.datasets[count].data.push(value);
+                count++;
+            });
+        }
 
         charts[chart_title].update();
     });

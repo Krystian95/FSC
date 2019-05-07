@@ -97,9 +97,10 @@ class System {
              */
             $return['Charts']['Produzione'][$product_name] = Utils::round($product->get_production(1));
             $return['Charts']['Vendite'][$product_name] = Utils::round($product->get_sold(1));
-            /*
-             * TODO Grafico a barre mese per mese per ogni prodotto: capacità, produzione, venduto (tipo istogramma dove ogni barra è divisa per tre)
-             */
+
+            $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Capacità produttiva'] = Utils::round($product->get_capacity(1));
+            $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Produzione'] = Utils::round($product->get_production(1));
+            $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Vendite'] = Utils::round($product->get_sold(1));
         }
 
         // Ambiente
