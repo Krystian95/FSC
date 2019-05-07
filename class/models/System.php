@@ -87,6 +87,13 @@ class System {
         }
 
         // Prodotti
+        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] = 0;
+
         foreach ($this->product_collection->getProducts() as $product) {
 
             $product_name = $product->get_name();
@@ -101,6 +108,24 @@ class System {
             $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Capacità produttiva'] = Utils::round($product->get_capacity(1));
             $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Produzione'] = Utils::round($product->get_production(1));
             $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Vendite'] = Utils::round($product->get_sold(1));
+
+            switch ($product->get_type()) {
+                case 'meat':
+                    $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] += Utils::round($product->get_capacity(1));
+                    $return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)'] += Utils::round($product->get_production(1));
+                    $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] += Utils::round($product->get_sold(1));
+
+                    break;
+
+                case 'veg':
+                    $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] += Utils::round($product->get_capacity(1));
+                    $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] += Utils::round($product->get_production(1));
+                    $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] += Utils::round($product->get_sold(1));
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         // Ambiente

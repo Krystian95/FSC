@@ -170,6 +170,17 @@ function initCharts() {
         {
             title: 'Capacità, produzione e vendita mensile',
             lines: []
+        },
+        {
+            title: 'Industria carni/industria vegetali',
+            lines: [
+                {name: 'Capacità produttiva (Carni)', color: 'red'},
+                {name: 'Produzione (Carni)', color: 'orange'},
+                {name: 'Vendite (Carni)', color: 'brown'},
+                {name: 'Capacità produttiva (Vegetali)', color: 'green'},
+                {name: 'Produzione (Vegetali)', color: 'yellow'},
+                {name: 'Vendite (Vegetali)', color: 'limegreen'}
+            ]
         }
     ];
 
