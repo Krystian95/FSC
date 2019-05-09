@@ -22,7 +22,7 @@ function getDefaultChart(chart_id, type) {
         options: {
             scales: {
                 xAxes: [{
-                        stacked: true // false (mostra le singole barrette sottili affiancate)
+                        stacked: (chart_id == 'Distribuzione della salute' ? false : true) // false (mostra le singole barrette sottili affiancate)
                     }]
             },
             elements: {
@@ -193,7 +193,6 @@ function initCharts() {
     }
 
     // Modalità prodotti
-
     var selectModProd = String($('#selectModProd').val());
 
     if (selectModProd == 1) { // Tutti i prodotti
@@ -214,13 +213,7 @@ function initCharts() {
         }
     }
 
-    // Capacità, produzione e vendita mensile
-    /*charts_settings[9].lines.push({name: 'Capacità', color: getRandomColor()});
-     charts_settings[9].lines.push({name: 'Produzione', color: getRandomColor()});
-     charts_settings[9].lines.push({name: 'Vendita', color: getRandomColor()});*/
-
     // Creazione grafici
-
     for (var i = 0; i < charts_settings.length; i++) {
 
         var chart_title = charts_settings[i].title;
@@ -637,20 +630,20 @@ $(function () {
                 }, 1000);
             }
         } else if ($("#starttext").text() == 'Continua') {
-            
+
             /* Abilita animazione progressbar */
             $("#progressBarYear").addClass("progress-bar-animated");
-            
+
             pause = false;
             $('#pausa').prop('disabled', false);
         }
     });
 
     $('#pausa').on('click', function (event) {
-        
+
         /* Disabilita animazione progressbar */
         $("#progressBarYear").removeClass("progress-bar-animated");
-        
+
         pause = true;
         $("#starttext").text('Continua');
         $('#start').prop('disabled', false);
@@ -671,7 +664,7 @@ $(function () {
     });
 
     function startPerform() {
-        
+
         /* Disabilita animazione progressbar */
         $("#progressBarYear").addClass("progress-bar-animated");
 
@@ -805,10 +798,10 @@ $(function () {
     }
 
     function stopPerform() {
-        
+
         /* Disabilita animazione progressbar */
         $("#progressBarYear").removeClass("progress-bar-animated");
-        
+
         /* Abilita bottone start */
         $("#starttext").text('Start');
         $('#start').prop('disabled', false);
