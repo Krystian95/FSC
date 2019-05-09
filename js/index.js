@@ -20,6 +20,9 @@ function getDefaultChart(chart_id, type) {
             datasets: []
         },
         options: {
+            tooltips: {
+                mode: (chart_id == 'Capacità, produzione e vendita mensile' ? 'index' : 'nearest')
+            },
             scales: {
                 xAxes: [{
                         stacked: (chart_id == 'Distribuzione della salute' ? false : true) // false (mostra le singole barrette sottili affiancate)
@@ -181,6 +184,10 @@ function initCharts() {
                 {name: 'Produzione (Vegetali)', color: 'yellow'},
                 {name: 'Vendite (Vegetali)', color: 'limegreen'}
             ]
+        },
+        {
+            title: 'Distribuzione cibi acquistati/ricchezza',
+            lines: []
         }
     ];
 

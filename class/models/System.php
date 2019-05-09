@@ -47,6 +47,9 @@ class System {
 
         for ($i = 0; $i < $this->person_collection->getCountPeople(); $i++) {
 
+            /*
+             * Distribuzione della salute
+             */
             $health = $this->person_collection->getPerson($i)->get_health(0);
 
             switch ($health) {
@@ -84,6 +87,47 @@ class System {
                 default:
                     break;
             }
+
+            /*
+             * Distribuzione cibi acquistati/ricchezza
+             */
+            /*$wealth = $this->person_collection->getPerson($i)->get_wealth(0);
+
+            switch ($wealth) {
+                case ($wealth >= 0 && $wealth <= 9):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['0-9'] ++;
+                    break;
+                case ($wealth >= 10 && $wealth <= 19):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['10-19'] ++;
+                    break;
+                case ($wealth >= 20 && $wealth <= 29):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['20-29'] ++;
+                    break;
+                case ($wealth >= 30 && $wealth <= 39):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['30-39'] ++;
+                    break;
+                case ($wealth >= 40 && $wealth <= 49):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['40-49'] ++;
+                    break;
+                case ($wealth >= 50 && $wealth <= 59):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['50-59'] ++;
+                    break;
+                case ($wealth >= 60 && $wealth <= 69):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['60-69'] ++;
+                    break;
+                case ($wealth >= 70 && $wealth <= 79):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['70-79'] ++;
+                    break;
+                case ($wealth >= 80 && $wealth <= 89):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['80-89'] ++;
+                    break;
+                case ($wealth >= 90 && $wealth <= 100):
+                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['90-100'] ++;
+                    break;
+
+                default:
+                    break;
+            }*/
         }
 
         // Prodotti
@@ -141,10 +185,6 @@ class System {
         $return['Charts']['Agenti atmosferici']['GHGS'] = Utils::round($this->environment->get_GHGS(1));
         $return['Charts']['Agenti atmosferici']['PM'] = Utils::round($this->environment->get_PM(1));
         $return['Charts']['Agenti atmosferici']['NH3'] = Utils::round($this->environment->get_NH3(1));
-
-        /*
-         * TODO Tipologie di cibo in relazione alla ricchezza
-         */
 
         return $return;
     }
