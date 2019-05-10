@@ -12,15 +12,17 @@ class ProductCollection {
     private $products = [];
     private $prod_stab;
     private $max_growth_prod;
+    private $default_products = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane', 'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
+    private $mode_random_params = false;
 
     public function __construct($params) {
 
         $this->prod_stab = $params['valore_capacita_stabile'];
         $this->max_growth_prod = $params['massima_crescita_capacita'];
 
-        $mode_random_params = (isset($params['selectModProd']) && $params['selectModProd'] == '1') ? true : false;
+        $this->mode_random_params = (isset($params['selectModProd']) && $params['selectModProd'] == '1') ? true : false;
 
-        if ($mode_random_params) {
+        if ($this->mode_random_params) {
 
             $n_products = $params['numero_prodotti'];
             $percent_type = $params['percentuale_carne_vegetali'];
@@ -32,7 +34,7 @@ class ProductCollection {
 
                 $new_product = new Product();
 
-                $new_product->set_name($i);
+                $new_product->set_name('Prodotto ' . $i);
 
                 if ($i < $this->n_veg) {
                     $tipo = 'veg';
@@ -87,18 +89,17 @@ class ProductCollection {
                 array_push($this->products, $new_product);
             }
         } else {
-            $products = ['manzo', 'pollo', 'maiale', 'cavallo', 'tacchino', 'patate', 'zucchine', 'peperoni', 'melanzane', 'pomodori', 'grano', 'riso', 'melo', 'pero', 'arancio'];
 
             $this->n_meat = 5;
             $this->n_veg = 10;
 
-            foreach ($products as $product) {
+            foreach ($this->default_products as $product) {
 
                 $prefix = $product . '_';
 
                 $new_product = new Product();
 
-                $new_product->set_name($product);
+                $new_product->set_name(ucwords($product));
                 $new_product->set_type($params[$prefix . 'tipo']);
                 $new_product->set_price($params[$prefix . 'prezzo']);
 
@@ -208,8 +209,30 @@ class ProductCollection {
         return $this->products;
     }
 
+    public function getNProducts() {
+        return sizeof($this->products);
+    }
+
+    public function getDefaultProducts() {
+        return $this->default_products;
+    }
+
+    public function getModeRandomParams() {
+        return $this->mode_random_params;
+    }
+
     public function getProduct($index) {
         return $this->products[$index];
+    }
+
+    public function getProductByName($product_name) {
+
+        foreach ($this->getProducts() as $product) {
+            if ($product->get_name() == $product_name) {
+                return $product;
+            }
+        }
+        return null;
     }
 
 }

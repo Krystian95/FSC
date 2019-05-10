@@ -13,6 +13,7 @@ class Person {
     private $health = [];
     private $eaten = [];
     private $speso = 0;
+    private $bought = [];
 
     public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $wealth_influence_factor, $tot_prod, $aleatorieta_preferenze) {
 
@@ -30,7 +31,6 @@ class Person {
         /*
          * Preferences
          */
-
         $preferenze_tmp = [];
 
         $mean = 1.0 / $tot_prod;
@@ -59,7 +59,6 @@ class Person {
         /*
          * Correction value
          */
-
         $sum = 0;
         for ($i = 0; $i < $tot_prod; $i++) {
             $sum += $preferenze_tmp[$i];
@@ -72,7 +71,6 @@ class Person {
         /*
          * Preferences (reals)
          */
-
         $this->preferenze[0] = $preferenze_tmp[0];
         for ($i = 1; $i < $tot_prod; $i++) {
             $this->preferenze[$i] = $this->preferenze[$i - 1] + $preferenze_tmp[$i];
@@ -109,6 +107,14 @@ class Person {
         $this->speso = $speso;
     }
 
+    public function reset_bought() {
+        $this->bought = [];
+    }
+
+    public function add_to_bought($product_name) {
+        array_push($this->bought, $product_name);
+    }
+
     /*
      * Getters
      */
@@ -135,6 +141,10 @@ class Person {
 
     public function get_speso() {
         return $this->speso;
+    }
+
+    public function get_bought() {
+        return $this->bought;
     }
 
 }

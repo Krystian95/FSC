@@ -94,6 +94,7 @@ class PersonCollection {
             $person->set_eaten(0.0, 1);
 
             $person->set_speso(0.0);
+            $person->reset_bought();
         }
     }
 

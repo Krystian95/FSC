@@ -114,7 +114,7 @@
                                 <li><a class="dropdown-item left-element" id="Industria carni industria vegetali left" href="#footer"><i class="fa fa-seedling fa-fw"></i>Industria carni/industria vegetali</a></li>
                                 <li><a class="dropdown-item left-element" id="Temperatura left" href="#footer"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
                                 <li><a class="dropdown-item left-element" id="Agenti atmosferici left" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
-                                <li><a class="dropdown-item left-element" id="Tipologie di cibo in relazione alla ricchezza left" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Tipologie di cibo in relazione alla ricchezza</a></li>
+                                <li><a class="dropdown-item left-element" id="Distribuzione cibi acquistati/ricchezza left" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Distribuzione cibi acquistati/ricchezza</a></li>
                             </div>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
                                 <li><a class="dropdown-item left-element" id="Industria carni industria vegetali right" href="#footer"><i class="fa fa-seedling fa-fw"></i>Industria carni/industria vegetali</a></li>
                                 <li><a class="dropdown-item right-element" id="Temperatura right" href="#footer"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
                                 <li><a class="dropdown-item right-element" id="Agenti atmosferici right" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
-                                <li><a class="dropdown-item right-element" id="Tipologie di cibo in relazione alla ricchezza right" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Tipologie di cibo in relazione alla ricchezza</a></li>
+                                <li><a class="dropdown-item right-element" id="Distribuzione cibi acquistati/ricchezza right" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Distribuzione cibi acquistati/ricchezza</a></li>
                             </div>
                         </div>
                     </div>

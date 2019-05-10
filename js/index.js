@@ -10,7 +10,14 @@ var count = 8.34;
 var mese = (new Date()).getMonth() + 1;
 var progress = mese * count;
 var charts_settings;
-var charts_barchart = ['Distribuzione della salute', 'Capacità, produzione e vendita mensile'];
+var charts_barchart = ['Distribuzione della salute', 'Capacità, produzione e vendita mensile', 'Distribuzione cibi acquistati/ricchezza'];
+var charts_barchart_stacked = ['Capacità, produzione e vendita mensile', 'Distribuzione cibi acquistati/ricchezza'];
+
+const capitalize = (s) => {
+    if (typeof s !== 'string')
+        return '';
+    return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
 function getDefaultChart(chart_id, type) {
 
@@ -21,7 +28,45 @@ function getDefaultChart(chart_id, type) {
         },
         options: {
             tooltips: {
-                mode: (chart_id == 'Capacità, produzione e vendita mensile' ? 'index' : 'nearest')
+                mode: (charts_barchart_stacked.includes(chart_id) ? 'index' : 'nearest'),
+                yAlign: 'bottom',
+                callbacks: {
+                    title: function (tooltipItems, data) {
+                        var title = '';
+                        if (chart_id == 'Distribuzione cibi acquistati/ricchezza') {
+                            title += 'Ricchezza ';
+                        } else if (chart_id == 'Distribuzione della salute') {
+                            title += 'Salute ';
+                        }
+
+                        var value = data.labels[tooltipItems[0].index];
+                        title += (value == 'undefined' || value == null ? '' : value);
+                        return title;
+                    },
+                    label: function (tooltipItem, data) {
+
+                        var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                        if (label) {
+                            label += ': ';
+                        }
+                        var value = Math.round(tooltipItem.yLabel * 100) / 100;
+
+                        if (value == 0 && chart_id == 'Distribuzione cibi acquistati/ricchezza') {
+                            return null;
+                        }
+
+                        label += value;
+
+                        if (chart_id == 'Distribuzione cibi acquistati/ricchezza') {
+                            label += ' acquistati';
+                        } else if (chart_id == 'Distribuzione della salute') {
+                            label += ' persone';
+                        }
+
+                        return label;
+                    }
+                }
             },
             scales: {
                 xAxes: [{
@@ -187,7 +232,18 @@ function initCharts() {
         },
         {
             title: 'Distribuzione cibi acquistati/ricchezza',
-            lines: []
+            lines: [
+                /*{name: '0-9', color: 'red'},
+                 {name: '10-19', color: 'red'},
+                 {name: '20-29', color: 'red'},
+                 {name: '30-39', color: 'red'},
+                 {name: '40-49', color: 'red'},
+                 {name: '50-59', color: 'red'},
+                 {name: '60-69', color: 'red'},
+                 {name: '70-79', color: 'red'},
+                 {name: '80-89', color: 'red'},
+                 {name: '90-100', color: 'red'}*/
+            ]
         }
     ];
 
@@ -205,7 +261,7 @@ function initCharts() {
     if (selectModProd == 1) { // Tutti i prodotti
         var numero_prodotti = String(slider_numero_prodotti.getValue());
         for (var i = 0; i < numero_prodotti; i++) {
-            var item = {name: i, color: getRandomColor()};
+            var item = {name: 'Prodotto ' + i, color: getRandomColor()};
             charts_settings[5].lines.push(item); // Capacità produttiva
             charts_settings[6].lines.push(item); // Produzione
             charts_settings[7].lines.push(item); // Vendite
@@ -234,6 +290,8 @@ function initCharts() {
         } else {
             chart_type = 'line';
         }
+
+        var line;
 
         var chart = getDefaultChart(chart_title, chart_type);
 
@@ -267,11 +325,35 @@ function initCharts() {
             };
 
             chart.data.datasets.push(line);
+        } else if (chart_title == 'Distribuzione cibi acquistati/ricchezza') {
+            if (selectModProd == 1) { // Tutti i prodotti
+                var numero_prodotti = String(slider_numero_prodotti.getValue());
+                for (var i = 0; i < numero_prodotti; i++) {
+                    line = {
+                        label: 'Prodotto ' + i,
+                        data: [],
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        borderWidth: 1
+                    };
+                    chart.data.datasets.push(line);
+                }
+            } else if (selectModProd == 0) { // Singoli prodotti
+                var prodotti_default = ['Manzo', 'Pollo', 'Maiale', 'Cavallo', 'Tacchino', 'Patate', 'Zucchine', 'Peperoni', 'Melanzane', 'Pomodori', 'Grano', 'Riso', 'Melo', 'Pero', 'Arancio'];
+                for (var i = 0; i < prodotti_default.length; i++) {
+                    line = {
+                        label: prodotti_default[i],
+                        data: [],
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        borderWidth: 1
+                    };
+                    chart.data.datasets.push(line);
+                }
+            }
         } else {
             for (var j = 0; j < charts_settings[i].lines.length; j++) {
-                var line;
-                // Capacità, produzione e vendita mensile
-                if (i != 9) {
+                if (i != 9 && i != 11) { // "Capacità, produzione e vendita mensile" e "Distribuzione cibi acquistati/ricchezza"
                     line = {
                         label: charts_settings[i].lines[j].name,
                         data: [],
@@ -289,6 +371,8 @@ function initCharts() {
 
         charts[chart_title] = chart;
     }
+
+    //console.log(charts);
 
     /*
      * Visualizzazione iniziale grafici (sinistra e destra)
@@ -317,7 +401,7 @@ function performResponseActions(current_period, response_encoded) {
     progressProgressbar();
 
     var response = JSON.parse(response_encoded);
-    /*console.log(response);*/
+    //console.log(response);
     var next_period = response.Next_Period;
     $('input[name="periodo"]').val(next_period);
 
@@ -366,16 +450,31 @@ function performResponseActions(current_period, response_encoded) {
                 charts[chart_title].data.datasets[1].data.push(value['Produzione']);
                 charts[chart_title].data.datasets[2].data.push(value['Vendite']);
             });
+        } else if (chart_title == 'Distribuzione cibi acquistati/ricchezza') {
+
+            /*$.each(response['Charts'][chart_title], function (wealth_range, index) {
+             charts[chart_title].data.labels.push(wealth_range);
+             });*/
+
+            $.each(response['Charts'][chart_title], function (wealth_range, value) {
+                //console.log(product_name);
+                charts[chart_title].data.labels.push(wealth_range);
+                var count = 0;
+                $.each(response['Charts'][chart_title][wealth_range], function (product_name, bought) {
+                    //console.log('wealth_range ' + wealth_range + ': product_name ' + capitalize(product_name) + ', bought ' + bought);
+                    charts[chart_title].data.datasets[count].data.push(bought);
+                    count++;
+                });
+            });
         } else {
 
             var count = 0;
-
             $.each(response['Charts'][chart_title], function (chart_line, value) {
 
                 //alert(key + ": " + value);
                 //var value = response['Charts'][chart_title][chart_line];
                 //console.log(charts[chart_title].data.datasets[0]);
-
+                //console.log(chart_title);
                 charts[chart_title].data.datasets[count].data.push(value);
                 count++;
             });

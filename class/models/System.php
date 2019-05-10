@@ -34,100 +34,76 @@ class System {
         $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
         $return['Charts']['Salute media']['Salute media'] = Utils::round($this->person_collection->getMeanHealth());
 
-        $return['Charts']['Distribuzione della salute']['0-9'] = 0;
-        $return['Charts']['Distribuzione della salute']['10-19'] = 0;
-        $return['Charts']['Distribuzione della salute']['20-29'] = 0;
-        $return['Charts']['Distribuzione della salute']['30-39'] = 0;
-        $return['Charts']['Distribuzione della salute']['40-49'] = 0;
-        $return['Charts']['Distribuzione della salute']['50-59'] = 0;
-        $return['Charts']['Distribuzione della salute']['60-69'] = 0;
-        $return['Charts']['Distribuzione della salute']['70-79'] = 0;
-        $return['Charts']['Distribuzione della salute']['80-89'] = 0;
-        $return['Charts']['Distribuzione della salute']['90-100'] = 0;
+        $ranges = [
+            ['min' => 0, 'max' => 9],
+            ['min' => 10, 'max' => 19],
+            ['min' => 20, 'max' => 29],
+            ['min' => 30, 'max' => 39],
+            ['min' => 40, 'max' => 49],
+            ['min' => 50, 'max' => 59],
+            ['min' => 60, 'max' => 69],
+            ['min' => 70, 'max' => 79],
+            ['min' => 80, 'max' => 89],
+            ['min' => 90, 'max' => 100],
+        ];
+
+        /*
+         * Distribuzione della salute
+         */
+        foreach ($ranges as $range) {
+            $range_text = $range['min'] . '-' . $range['max'];
+            $return['Charts']['Distribuzione della salute'][$range_text] = 0;
+        }
+
+        /*
+         * Distribuzione cibi acquistati/ricchezza.
+         * imposta tutti i prodotti acquistati a 0.
+         */
+        foreach ($ranges as $range) {
+            $range_text = $range['min'] . '-' . $range['max'];
+            foreach ($this->product_collection->getProducts() as $product) {
+                $return['Charts']['Distribuzione cibi acquistati/ricchezza'][$range_text][$product->get_name()] = 0;
+            }
+        }
 
         for ($i = 0; $i < $this->person_collection->getCountPeople(); $i++) {
+
+            $person = $this->person_collection->getPerson($i);
 
             /*
              * Distribuzione della salute
              */
-            $health = $this->person_collection->getPerson($i)->get_health(0);
+            $health = $person->get_health(0);
 
-            switch ($health) {
-                case ($health >= 0 && $health <= 9):
-                    $return['Charts']['Distribuzione della salute']['0-9'] ++;
-                    break;
-                case ($health >= 10 && $health <= 19):
-                    $return['Charts']['Distribuzione della salute']['10-19'] ++;
-                    break;
-                case ($health >= 20 && $health <= 29):
-                    $return['Charts']['Distribuzione della salute']['20-29'] ++;
-                    break;
-                case ($health >= 30 && $health <= 39):
-                    $return['Charts']['Distribuzione della salute']['30-39'] ++;
-                    break;
-                case ($health >= 40 && $health <= 49):
-                    $return['Charts']['Distribuzione della salute']['40-49'] ++;
-                    break;
-                case ($health >= 50 && $health <= 59):
-                    $return['Charts']['Distribuzione della salute']['50-59'] ++;
-                    break;
-                case ($health >= 60 && $health <= 69):
-                    $return['Charts']['Distribuzione della salute']['60-69'] ++;
-                    break;
-                case ($health >= 70 && $health <= 79):
-                    $return['Charts']['Distribuzione della salute']['70-79'] ++;
-                    break;
-                case ($health >= 80 && $health <= 89):
-                    $return['Charts']['Distribuzione della salute']['80-89'] ++;
-                    break;
-                case ($health >= 90 && $health <= 100):
-                    $return['Charts']['Distribuzione della salute']['90-100'] ++;
-                    break;
-
-                default:
-                    break;
+            foreach ($ranges as $range) {
+                if ($health >= $range['min'] && $health <= $range['max']) {
+                    $range_text = $range['min'] . '-' . $range['max'];
+                    $return['Charts']['Distribuzione della salute'][$range_text] ++;
+                }
             }
 
             /*
              * Distribuzione cibi acquistati/ricchezza
              */
-            /*$wealth = $this->person_collection->getPerson($i)->get_wealth(0);
+            $wealth = $person->get_wealth();
 
-            switch ($wealth) {
-                case ($wealth >= 0 && $wealth <= 9):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['0-9'] ++;
-                    break;
-                case ($wealth >= 10 && $wealth <= 19):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['10-19'] ++;
-                    break;
-                case ($wealth >= 20 && $wealth <= 29):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['20-29'] ++;
-                    break;
-                case ($wealth >= 30 && $wealth <= 39):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['30-39'] ++;
-                    break;
-                case ($wealth >= 40 && $wealth <= 49):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['40-49'] ++;
-                    break;
-                case ($wealth >= 50 && $wealth <= 59):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['50-59'] ++;
-                    break;
-                case ($wealth >= 60 && $wealth <= 69):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['60-69'] ++;
-                    break;
-                case ($wealth >= 70 && $wealth <= 79):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['70-79'] ++;
-                    break;
-                case ($wealth >= 80 && $wealth <= 89):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['80-89'] ++;
-                    break;
-                case ($wealth >= 90 && $wealth <= 100):
-                    $return['Charts']['Distribuzione cibi acquistati/ricchezza']['90-100'] ++;
-                    break;
-
-                default:
-                    break;
-            }*/
+            foreach ($ranges as $range) {
+                /*
+                 * Test if extist sub set with the name of the product. If not create it and then add 1 to it.
+                 */
+                if ($wealth >= $range['min'] && $wealth <= $range['max']) {
+                    $range_text = $range['min'] . '-' . $range['max'];
+                    //error_log($range_text);
+                    $products_bought = $person->get_bought();
+                    foreach ($products_bought as $product_bought) {
+                        //error_log($product_bought);
+                        if (!isset($return['Charts']['Distribuzione cibi acquistati/ricchezza'][$range_text][$product_bought])) {
+                            $return['Charts']['Distribuzione cibi acquistati/ricchezza'][$range_text][$product_bought] = 0;
+                        }
+                        $return['Charts']['Distribuzione cibi acquistati/ricchezza'][$range_text][$product_bought] ++;
+                    }
+                }
+            }
         }
 
         // Prodotti
@@ -137,10 +113,28 @@ class System {
         $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] = 0;
+        //error_log('--------------------');
 
-        foreach ($this->product_collection->getProducts() as $product) {
+        $mode_random_params = $this->product_collection->getModeRandomParams();
+        $products = [];
+        if ($mode_random_params) {
+            for ($i = 0; $i < $this->product_collection->getNProducts(); $i++) {
+                array_push($products, $i);
+            }
+        } else {
+            $products = $this->product_collection->getDefaultProducts();
+            $products = array_map('ucfirst', $products);
+        }
 
-            $product_name = $product->get_name();
+        foreach ($products as $product_name) {
+
+            if ($mode_random_params) {
+                $product_name = 'Prodotto ' . $product_name;
+            }
+
+            $product = $this->product_collection->getProductByName($product_name);
+
+            //error_log($product_name);
             $return['Charts']['Capacità produttiva'][$product_name] = Utils::round($product->get_capacity(0));
             /*
              * la capacità mostrata è capacita(0), perchè production -e sold- sono calcolate a partire da quella
@@ -368,13 +362,15 @@ class System {
                 }
 
                 $product = $this->product_collection->getProduct($j);
+                //error_log("Product bought: " . $product->get_name());
 
                 $val = 1;  //questo val  una costante  pu esser tranquillamente messa prima dell'inizio del ciclo
                 $person->set_eaten($person->get_eaten(1) + $val, 1);
                 $product->set_sold($product->get_sold(1) + $val, 1);
                 $person->set_speso($person->get_speso() + $product->get_price() * $val);
-                /* error_log('persona i=' . $i . ' speso(' . $person->get_speso() . '), wealth (' . $person->get_wealth() . '), eaten (' . $person->get_eaten(1) . '), fabbisogno (' . $person->get_food_need() . ')');
-                  error_log('ha comprato val (' . $val . ') del prodotto j=' . $j . '(nome: ' . $product->get_name() . ', venduto ' . $product->get_sold(1) . ', production ' . $product->get_production(1) . ')'); */
+                $person->add_to_bought($product->get_name());
+                //error_log('persona i=' . $i . ' speso(' . $person->get_speso() . '), wealth (' . $person->get_wealth() . '), eaten (' . $person->get_eaten(1) . '), fabbisogno (' . $person->get_food_need() . ')');
+                //error_log('ha comprato val (' . $val . ') del prodotto j=' . $j . '(nome: ' . $product->get_name() . ', venduto ' . $product->get_sold(1) . ', production ' . $product->get_production(1) . ')');
                 if ($person->get_eaten(1) >= $person->get_food_need() || $person->get_speso() >= $person->get_wealth()) {
                     //error_log('Removed Person i = ' . $i);
                     unset($persons_indexes[$i]);
