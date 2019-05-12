@@ -40,6 +40,9 @@ class Product {
         if (1 - abs($environment->get_temperature(0) - $this->ideal_temperature) / $this->tolerance_temperature < $min_required_production || 1 - abs($environment->get_GHGS(0) - $this->ideal_GHGS) / $this->tolerance_GHGS < $min_required_production || 1 - abs($environment->get_GHGS(0) - $this->ideal_GHGS) / $this->tolerance_GHGS < $min_required_production || 1 - abs($environment->get_NH3(0) - $this->ideal_NH3) / $this->tolerance_NH3 < $min_required_production) {
             $this->production[1] = 0;
         }
+        if( $this->production[1] > $this->capacity[0]){
+            $this->production[1] = $this->capacity[0];
+        }
         ///se la produzione non supera un minimo percentuale della capacità (min required production), la produzione è direttamente nulla
         $this->production[1] = ($this->production[1] <= ($this->capacity[0] * $min_required_production) ? 0 : $this->production[1]);
     }
