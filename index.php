@@ -231,10 +231,10 @@
                                         Ricchezza media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_media_slider" value="86">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_media_slider" value="85">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media" value="86"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media" value="85"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_media_checkbox" class="parametri_popolazione"></div>
@@ -618,7 +618,7 @@
                                             Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[43,43]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">

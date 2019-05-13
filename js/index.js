@@ -1049,7 +1049,7 @@ $(function () {
         var itemsPop = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
 
-        var valoriPop = [70, 27, 50, 0, 86, 0, 14, 0];
+        var valoriPop = [70, 27, 50, 0, 85, 0, 14, 0];
 
         $(itemsPop).each(function (index, value) {
             $('input[name="' + value + '"]').val(valoriPop[index]);
@@ -1159,7 +1159,7 @@ $(function () {
         meat_toll_infl_prod_temp.setAttribute('value', [20, 20]).refresh();
 
         veg_prezzo.setAttribute('value', [10, 10]).refresh();
-        veg_produttivita.setAttribute('value', [25, 25]).refresh();
+        veg_produttivita.setAttribute('value', [43, 43]).refresh();
         veg_impatto_ghgs.setAttribute('value', [1, 1]).refresh();
         veg_impatto_pm.setAttribute('value', [2, 2]).refresh();
         veg_impatto_nh3.setAttribute('value', [-5, -5]).refresh();
