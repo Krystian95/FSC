@@ -20,7 +20,7 @@
         <!-- Navigation -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="images/favicon.png" height="35" width="35" style="display: inline-block;">
                     <span style="display: inline-block;">HESystem</span>
                 </a>
