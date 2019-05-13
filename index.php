@@ -175,10 +175,10 @@
                                         Popolazione iniziale
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="popolazione_iniziale_slider" value="10">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="popolazione_iniziale_slider" value="70">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="popolazione_iniziale" value="10"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="popolazione_iniziale" value="70"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="popolazione_iniziale_checkbox" class="parametri_popolazione"></div>
@@ -189,10 +189,10 @@
                                         Tendenza a mangiare carne
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="tendenza_mangiare_carne_slider" value="20">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="tendenza_mangiare_carne_slider" value="27">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="tendenza_mangiare_carne" value="20"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="tendenza_mangiare_carne" value="27"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="tendenza_mangiare_carne_checkbox" class="parametri_popolazione"></div>
@@ -217,10 +217,10 @@
                                         Salute iniziale deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_iniziale_dev_stan_slider" value="20">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="salute_iniziale_dev_stan_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_dev_stan" value="20"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="salute_iniziale_dev_stan" value="0"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="salute_iniziale_dev_stan_checkbox" class="parametri_popolazione"></div>
@@ -231,10 +231,10 @@
                                         Ricchezza media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_media_slider" value="40">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_media_slider" value="86">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media" value="40"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media" value="86"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_media_checkbox" class="parametri_popolazione"></div>
@@ -245,10 +245,10 @@
                                         Ricchezza deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_dev_stan_slider" value="20">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_dev_stan_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_dev_stan" value="20"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_dev_stan" value="0"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_dev_stan_checkbox" class="parametri_popolazione"></div>
@@ -259,10 +259,10 @@
                                         Fabbisogno di cibo media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_media_slider" value="15">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_media_slider" value="14">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_media" value="15"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_media" value="14"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="fabbisogno_cibo_media_checkbox" class="parametri_popolazione"></div>
@@ -273,10 +273,10 @@
                                         Fabbisogno di cibo deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan_slider" value="10">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan" value="10"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan" value="0"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="fabbisogno_cibo_dev_stan_checkbox" class="parametri_popolazione"></div>
@@ -333,10 +333,10 @@
                                         Ampiezza oscillazioni temperatura
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza_slider" value="5">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza" value="5"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="oscillazioni_temperatura_ampiezza" value="0"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="oscillazioni_temperatura_ampiezza_checkbox" class="parametri_ambiente"></div>
@@ -347,10 +347,10 @@
                                         Valore iniziale GHGS
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_ghgs_slider" value="2">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_ghgs_slider" value="10">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_ghgs" value="2"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_ghgs" value="10"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="valore_iniziale_ghgs_checkbox" class="parametri_ambiente"></div>
@@ -361,10 +361,10 @@
                                         Valore iniziale PM
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_pm_slider" value="2">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_pm_slider" value="10">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_pm" value="2"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_pm" value="10"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="valore_iniziale_pm_checkbox" class="parametri_ambiente"></div>
@@ -375,10 +375,10 @@
                                         Valore iniziale NH<sub>3</sub>
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_nh3_slider" value="1">
+                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_iniziale_nh3_slider" value="10">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_nh3" value="1"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_iniziale_nh3" value="10"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="valore_iniziale_nh3_checkbox" class="parametri_ambiente"></div>
@@ -389,10 +389,10 @@
                                         Apporto esterno GHGS
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_ghgs_slider" value="-1">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_ghgs_slider" value="-30">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_ghgs" value="-1"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_ghgs" value="-30"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_ghgs_checkbox" class="parametri_ambiente"></div>
@@ -403,10 +403,10 @@
                                         Apporto esterno PM
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_pm_slider" value="-2">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_pm_slider" value="-60">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_pm" value="-2"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_pm" value="-60"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_pm_checkbox" class="parametri_ambiente"></div>
@@ -417,10 +417,10 @@
                                         Apporto esterno NH<sub>3</sub>
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_nh3_slider" value="-5">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="extern_nh3_slider" value="-15">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_nh3" value="-5"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="extern_nh3" value="15"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_nh3_checkbox" class="parametri_ambiente"></div>
@@ -476,7 +476,7 @@
                                             Numero prodotti
                                         </label>
                                         <div class="col-10">
-                                            <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="numero_prodotti" data-slider-id='numero_prodotti' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="15"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="numero_prodotti" data-slider-id='numero_prodotti' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="30"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -500,7 +500,7 @@
                                             Prezzo
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[8,14]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[17,17]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -508,7 +508,7 @@
                                             Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[3,5]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[45,45]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -516,7 +516,7 @@
                                             Impatto su GHGS
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[3,4]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[4,4]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -524,7 +524,7 @@
                                             Impatto su PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[2,3]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[6,6]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -532,7 +532,7 @@
                                             Impatto su NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_impatto_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[10,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -540,7 +540,7 @@
                                             GHGS ideale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -548,7 +548,7 @@
                                             Tolleranza all'influenza di GHGS
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[70,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -564,7 +564,7 @@
                                             Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[60,100]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[100,100]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -572,7 +572,7 @@
                                             NH<sub>3</sub> ideale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -580,7 +580,7 @@
                                             Tolleranza all'influenza di NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[50,70]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[50,50]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -588,7 +588,7 @@
                                             Temperatura ideale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[22,28]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_ideal_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -596,7 +596,7 @@
                                             Tolleranza all'influenza della temperatura
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[5,12]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[20,20]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                 </div>
@@ -610,7 +610,7 @@
                                             Prezzo
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[3,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[10,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -618,7 +618,7 @@
                                             Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[4,7]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -626,7 +626,7 @@
                                             Impatto su GHGS
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[-1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_ghgs" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[1,1]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -634,7 +634,7 @@
                                             Impatto su PM
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[1,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_pm" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[2,2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -642,7 +642,7 @@
                                             Impatto su NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[-1,-2]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            <b>-100</b>&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_impatto_nh3" type="text" class="span2" value="" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="[-5,-5]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -650,7 +650,7 @@
                                             GHGS ideale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,5]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,0]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -658,7 +658,7 @@
                                             Tolleranza all'influenza di GHGS
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[30,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_ghgs" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[50,50]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -674,7 +674,7 @@
                                             Tolleranza all'influenza di PM
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[40,60]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_pm" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[80,80]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -682,7 +682,7 @@
                                             NH<sub>3</sub> ideale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[15,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[15,15]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -690,7 +690,7 @@
                                             Tolleranza all'influenza di NH<sub>3</sub>
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_nh3" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[40,40]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -698,7 +698,7 @@
                                             Temperatura ideale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[20,30]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_ideal_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[25,25]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -706,7 +706,7 @@
                                             Tolleranza all'influenza della temperatura
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[2,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>0</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_toll_infl_prod_temp" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[10,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                 </div>
@@ -1252,10 +1252,10 @@
                                     Step nascita popolazione
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="60">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="70">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="60"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="70"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="step_nascita_popolazione_checkbox" class="parametri_extra"></div>
@@ -1266,10 +1266,10 @@
                                     Step morte popolazione
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="25">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="35">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="25"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="35"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="step_morte_popolazione_checkbox" class="parametri_extra"></div>
@@ -1280,10 +1280,10 @@
                                     Rapporto nascite salute
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="rapporto_nascite_salute_slider" value="20">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="rapporto_nascite_salute_slider" value="10">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="rapporto_nascite_salute" value="20"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="rapporto_nascite_salute" value="10"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="rapporto_nascite_salute_checkbox" class="parametri_extra"></div>
@@ -1294,10 +1294,10 @@
                                     Valore salute stabile
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_salute_stabile_slider" value="60">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_salute_stabile_slider" value="50">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_salute_stabile" value="60"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_salute_stabile" value="50"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="valore_salute_stabile_checkbox" class="parametri_extra"></div>
@@ -1322,10 +1322,10 @@
                                     Valore capacità stabile
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_capacita_stabile_slider" value="70">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="valore_capacita_stabile_slider" value="50">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_capacita_stabile" value="70"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="valore_capacita_stabile" value="50"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="valore_capacita_stabile_checkbox" class="parametri_extra"></div>
@@ -1336,10 +1336,10 @@
                                     Massima crescita capacita
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_capacita_slider" value="7">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="massima_crescita_capacita_slider" value="5">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_capacita" value="7"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="massima_crescita_capacita" value="5"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="massima_crescita_capacita_checkbox" class="parametri_extra"></div>
@@ -1364,10 +1364,10 @@
                                     Aleatorietà delle preferenze
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="aleatorieta_preferenze_slider" value="30">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="aleatorieta_preferenze_slider" value="0">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="aleatorieta_preferenze" value="30"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="aleatorieta_preferenze" value="0"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="aleatorieta_preferenze_checkbox" class="parametri_extra"></div>
