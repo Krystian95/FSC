@@ -282,7 +282,7 @@
                                         <div class="checkbox"><input type="checkbox" value="" id="fabbisogno_cibo_dev_stan_checkbox" class="parametri_popolazione"></div>
                                     </div>
                                 </div>
-                                <div class="row form-group align-items-center">
+                                <div class="row form-group align-items-center variazione_percentuale">
                                     <label class="col-form-label col-4">
                                         Variazione percentuale
                                     </label>
@@ -426,7 +426,7 @@
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_nh3_checkbox" class="parametri_ambiente"></div>
                                     </div>
                                 </div>
-                                <div class="row form-group align-items-center">
+                                <div class="row form-group align-items-center variazione_percentuale">
                                     <label class="col-form-label col-4">
                                         Variazione percentuale
                                     </label>
@@ -1222,7 +1222,7 @@
         echo '<input type="number" class="form-control textbox" min="0" max="100" step="1" name="' . $product . '_tolleranza_temperatura" value="' . $parameter['tolleranza_influenza_temperatura'] . '">';
         echo '</div><div class="col-1">';
         echo '<div class="checkbox"><input type="checkbox" value="" id="' . $product . '_tolleranza_temperatura_checkbox" class="parametri_' . $product . '"></div></div></div>';
-        echo '<div class="row form-group align-items-center">';
+        echo '<div class="row form-group align-items-center variazione_percentuale">';
         echo '<label class="col-form-label col-3">Variazione percentuale</label>';
         echo '<div class="col-8">';
         echo '<input type="number" class="form-control textbox" min="-100" max="100" step="1" name="variazione_percentuale_' . $product . '" value="0" disabled>';
@@ -1373,7 +1373,7 @@
                                     <div class="checkbox"><input type="checkbox" value="" id="aleatorieta_preferenze_checkbox" class="parametri_extra"></div>
                                 </div>
                             </div>
-                            <div class="row form-group align-items-center">
+                            <div class="row form-group align-items-center variazione_percentuale">
                                 <label class="col-form-label col-4">
                                     Variazione percentuale
                                 </label>   

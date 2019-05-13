@@ -550,6 +550,10 @@ function makeNextCall() {
 }
 
 $(function () {
+    
+    /* Nascondi le checkbox */
+    $(".checkbox").addClass("hidden");
+    $(".variazione_percentuale").addClass("hidden");
 
     $('#progressBarYear').attr('style', 'width: ' + progress + '%');
 
