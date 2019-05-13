@@ -108,11 +108,12 @@ class System {
 
         // Prodotti
         $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] = 0;
-        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)'] = 0;
-        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] = 0;
+
         //error_log('--------------------');
 
         $mode_random_params = $this->product_collection->getModeRandomParams();
@@ -152,13 +153,16 @@ class System {
                     $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] += $product->get_capacity(1);
                     $return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)'] += $product->get_production(1);
                     $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] += $product->get_sold(1);
-
+                    //error_log($product_name . ' (' . $product->get_type() . ')');
+                    //error_log('Capacità produttiva = ' . $product->get_capacity(1));
                     break;
 
                 case 'veg':
                     $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] += $product->get_capacity(1);
                     $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] += $product->get_production(1);
                     $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] += $product->get_sold(1);
+                    //error_log($product_name . ' (' . $product->get_type() . ')');
+                    //error_log('Produzione = ' . $product->get_production(1));
                     break;
 
                 default:
@@ -167,10 +171,10 @@ class System {
         }
 
         $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)']);
-        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)']);
         $return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)']);
-        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)']);
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)']);
+        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)']);
+        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)']);
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)']);
 
         // Ambiente

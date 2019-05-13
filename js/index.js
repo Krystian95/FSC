@@ -467,14 +467,12 @@ function performResponseActions(current_period, response_encoded) {
                 });
             });
         } else {
-
             var count = 0;
             $.each(response['Charts'][chart_title], function (chart_line, value) {
-
-                //alert(key + ": " + value);
                 //var value = response['Charts'][chart_title][chart_line];
                 //console.log(charts[chart_title].data.datasets[0]);
                 //console.log(chart_title);
+                //console.log('chart_title = ' + chart_title + ' datasets = ' + count, ' chart_line = ' + chart_line + ' value = ' + value);
                 charts[chart_title].data.datasets[count].data.push(value);
                 count++;
             });
