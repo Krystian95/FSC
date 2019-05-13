@@ -66,6 +66,8 @@ class System {
             }
         }
 
+        //error_log('----------------------');
+
         for ($i = 0; $i < $this->person_collection->getCountPeople(); $i++) {
 
             $person = $this->person_collection->getPerson($i);
@@ -73,11 +75,13 @@ class System {
             /*
              * Distribuzione della salute
              */
-            $health = $person->get_health(0);
+            $health = Utils::round($person->get_health(1));
+            //error_log('health = ' . $health);
 
             foreach ($ranges as $range) {
-                if ($health >= $range['min'] && $health <= $range['max']) {
+                if ($health >= $range['min'] && $health <= ($range['max'] + 0.99)) {
                     $range_text = $range['min'] . '-' . $range['max'];
+                    //error_log('range (SI) = ' . $range_text);
                     $return['Charts']['Distribuzione della salute'][$range_text] ++;
                 }
             }
@@ -85,13 +89,13 @@ class System {
             /*
              * Distribuzione cibi acquistati/ricchezza
              */
-            $wealth = $person->get_wealth();
+            $wealth = Utils::round($person->get_wealth());
 
             foreach ($ranges as $range) {
                 /*
                  * Test if extist sub set with the name of the product. If not create it and then add 1 to it.
                  */
-                if ($wealth >= $range['min'] && $wealth <= $range['max']) {
+                if ($wealth >= $range['min'] && $wealth <= ($range['max'] + 0.99)) {
                     $range_text = $range['min'] . '-' . $range['max'];
                     //error_log($range_text);
                     $products_bought = $person->get_bought();
@@ -117,6 +121,7 @@ class System {
 
         $mode_random_params = $this->product_collection->getModeRandomParams();
         $products = [];
+        
         if ($mode_random_params) {
             for ($i = 0; $i < $this->product_collection->getNProducts(); $i++) {
                 array_push($products, $i);
@@ -290,14 +295,14 @@ class System {
     }
 
     private function buyAndSell() {
-        
-        
+
+
         $val = 1;
         $persons_indexes = array_keys($this->person_collection->getPersons());
         $products_indexes = array_keys($this->product_collection->getProducts());
-        $N_products=count($products_indexes);
-        
-        for ($i = 0; $i < $N_products; $i++) {
+        $n_products = count($products_indexes);
+
+        for ($i = 0; $i < $n_products; $i++) {
             $product = $this->product_collection->getProduct($products_indexes[$i]);
             if ($product->get_production(1) <= $val) {
                 unset($products_indexes[$i]);

@@ -469,7 +469,19 @@ function performResponseActions(current_period, response_encoded) {
                     count++;
                 });
             });
-        } else {
+        } /*else if (chart_title == 'Distribuzione della salute') {
+
+            $.each(response['Charts'][chart_title], function (health_range, index) {
+                charts[chart_title].data.labels.push(health_range);
+            });
+
+            var count = 0;
+            $.each(response['Charts'][chart_title], function (health_range, value) {
+                console.log("Distribuzione della salute, health_range = " + health_range + ", value = " + value);
+                charts[chart_title].data.datasets[count].data.push(value);
+                count++;
+            });
+        } */else {
 
             var count = 0;
             $.each(response['Charts'][chart_title], function (chart_line, value) {
@@ -550,7 +562,7 @@ function makeNextCall() {
 }
 
 $(function () {
-    
+
     /* Nascondi le checkbox */
     $(".checkbox").addClass("hidden");
     $(".variazione_percentuale").addClass("hidden");
