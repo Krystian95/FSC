@@ -70,6 +70,9 @@ function getDefaultChart(chart_id, type) {
             },
             scales: {
                 xAxes: [{
+                        ticks: {
+                            autoSkip: (chart_id == 'Capacità, produzione e vendita mensile' ? false : true)
+                        },
                         stacked: (chart_id == 'Distribuzione della salute' ? false : true) // false (mostra le singole barrette sottili affiancate)
                     }]
             },
