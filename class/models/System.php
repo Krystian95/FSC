@@ -108,10 +108,10 @@ class System {
 
         // Prodotti
         $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] = 0;
-        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)'] = 0;
-        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = 0;
+        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] = 0;
         //error_log('--------------------');
 
