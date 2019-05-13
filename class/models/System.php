@@ -167,10 +167,10 @@ class System {
         }
 
         $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)']);
-        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)']);
         $return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)']);
-        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)']);
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)']);
+        $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)']);
+        $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)']);
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] = Utils::round($return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)']);
 
         // Ambiente
