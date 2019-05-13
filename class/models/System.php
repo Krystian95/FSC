@@ -143,20 +143,20 @@ class System {
             $return['Charts']['Produzione'][$product_name] = Utils::round($product->get_production(1));
             $return['Charts']['Vendite'][$product_name] = Utils::round($product->get_sold(1));
 
-            $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Capacità produttiva'] = Utils::round($product->get_capacity(1));
+            $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Capacità produttiva'] = Utils::round($product->get_capacity(0));
             $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Produzione'] = Utils::round($product->get_production(1));
             $return['Charts']['Capacità, produzione e vendita mensile'][$product_name]['Vendite'] = Utils::round($product->get_sold(1));
 
             switch ($product->get_type()) {
                 case 'meat':
-                    $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] += $product->get_capacity(1);
+                    $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] += $product->get_capacity(0);
                     $return['Charts']['Industria carni/industria vegetali']['Produzione (Carni)'] += $product->get_production(1);
                     $return['Charts']['Industria carni/industria vegetali']['Vendite (Carni)'] += $product->get_sold(1);
 
                     break;
 
                 case 'veg':
-                    $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] += $product->get_capacity(1);
+                    $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] += $product->get_capacity(0);
                     $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] += $product->get_production(1);
                     $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] += $product->get_sold(1);
                     break;
@@ -290,13 +290,16 @@ class System {
     }
 
     private function buyAndSell() {
-
+        
+        
+        $val = 1;
         $persons_indexes = array_keys($this->person_collection->getPersons());
         $products_indexes = array_keys($this->product_collection->getProducts());
-
-        for ($i = 0; $i < count($products_indexes); $i++) {
+        $N_products=count($products_indexes);
+        
+        for ($i = 0; $i < $N_products; $i++) {
             $product = $this->product_collection->getProduct($products_indexes[$i]);
-            if ($product->get_production(1) == 0) {
+            if ($product->get_production(1) <= $val) {
                 unset($products_indexes[$i]);
             }
         }
@@ -364,7 +367,6 @@ class System {
                 $product = $this->product_collection->getProduct($j);
                 //error_log("Product bought: " . $product->get_name());
 
-                $val = 1;  //questo val  una costante  pu esser tranquillamente messa prima dell'inizio del ciclo
                 $person->set_eaten($person->get_eaten(1) + $val, 1);
                 $product->set_sold($product->get_sold(1) + $val, 1);
                 $person->set_speso($person->get_speso() + $product->get_price() * $val);
