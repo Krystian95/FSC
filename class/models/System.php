@@ -293,14 +293,14 @@ class System {
 
         $persons_indexes = array_keys($this->person_collection->getPersons());
         $products_indexes = array_keys($this->product_collection->getProducts());
-        /*
-          foreach($product_indexes as $j){
-          $product = $this->product_collection->getProduct($j)
-          if($product->get_production(1)==0){
-          unset($products_indexes[$j])
-          }
-          }
-         */
+
+        for ($i = 0; $i < count($products_indexes); $i++) {
+            $product = $this->product_collection->getProduct($products_indexes[$i]);
+            if ($product->get_production(1) == 0) {
+                unset($products_indexes[$i]);
+            }
+        }
+
         while (count($persons_indexes) > 0 && count($products_indexes) > 0) {
             /* error_log('');
               error_log('');

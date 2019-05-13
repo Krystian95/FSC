@@ -71,7 +71,7 @@
 }
 
 .tooltip.in {
-  opacity: 1;
+    opacity: 1;
 }
 
 .slider-selection {
@@ -79,11 +79,11 @@
 }
 
 #percentuale_carne_vegetali .slider-track-high {
-	background: #1ea73f;
+    background: #1ea73f;
 }
 
 #percentuale_carne_vegetali .slider-selection {
-	background: #de3341 !important;
+    background: #de3341 !important;
 }
 
 #numero_prodotti.slider.slider-horizontal, #percentuale_carne_vegetali.slider.slider-horizontal {
@@ -111,4 +111,9 @@
 
 .fa-fw {
     margin-right: 6px;
+}
+
+.dropdown-item {
+    font-size: 93%;
+    padding: .15rem 1.5rem;
 }
