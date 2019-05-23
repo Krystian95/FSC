@@ -23,7 +23,7 @@ class Person {
         $this->health[1] = (float) $health;        
         $this->eaten[0] =(float) 0.0;
         $this->eaten[1] =(float) 0.0;
-        $this->$speso = (float) 0.0;
+        $this->speso = (float) 0.0;
 
 
         //error_log('health in Person: ' . $health);
