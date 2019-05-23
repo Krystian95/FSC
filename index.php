@@ -189,10 +189,10 @@
                                         Tendenza a mangiare carne
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-100" max="100" step="1" name="tendenza_mangiare_carne_slider" value="27">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne_slider" value="27">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-100" max="100" step="1" name="tendenza_mangiare_carne" value="27"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne" value="27"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="tendenza_mangiare_carne_checkbox" class="parametri_popolazione"></div>
@@ -231,10 +231,10 @@
                                         Ricchezza media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_media_slider" value="85">
+                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="ricchezza_media_slider" value="85">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_media" value="85"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="ricchezza_media" value="85"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_media_checkbox" class="parametri_popolazione"></div>
@@ -245,10 +245,10 @@
                                         Ricchezza deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="ricchezza_dev_stan_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="ricchezza_dev_stan_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="ricchezza_dev_stan" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="ricchezza_dev_stan" value="0"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_dev_stan_checkbox" class="parametri_popolazione"></div>
@@ -259,10 +259,10 @@
                                         Fabbisogno di cibo media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_media_slider" value="14">
+                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="fabbisogno_cibo_media_slider" value="14">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_media" value="14"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="fabbisogno_cibo_media" value="14"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="fabbisogno_cibo_media_checkbox" class="parametri_popolazione"></div>
@@ -273,10 +273,10 @@
                                         Fabbisogno di cibo deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="fabbisogno_cibo_dev_stan_slider" value="0">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="1" name="fabbisogno_cibo_dev_stan" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="fabbisogno_cibo_dev_stan" value="0"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="fabbisogno_cibo_dev_stan_checkbox" class="parametri_popolazione"></div>
