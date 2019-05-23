@@ -206,16 +206,26 @@ function initCharts() {
         {
             title: 'Distribuzione della salute',
             lines: [
-                {name: '0-9', color: 'red'},
-                {name: '10-19', color: 'red'},
-                {name: '20-29', color: 'red'},
-                {name: '30-39', color: 'red'},
-                {name: '40-49', color: 'red'},
-                {name: '50-59', color: 'red'},
-                {name: '60-69', color: 'red'},
-                {name: '70-79', color: 'red'},
-                {name: '80-89', color: 'red'},
-                {name: '90-100', color: 'red'}
+                {name: '0-4', color: 'red'},
+                {name: '5-9', color: 'red'},
+                {name: '10-14', color: 'red'},
+                {name: '15-19', color: 'red'},
+                {name: '20-24', color: 'red'},
+                {name: '25-29', color: 'red'},
+                {name: '30-34', color: 'red'},
+                {name: '35-39', color: 'red'},
+                {name: '40-44', color: 'red'},
+                {name: '45-49', color: 'red'},
+                {name: '50-54', color: 'red'},
+                {name: '55-59', color: 'red'},
+                {name: '60-64', color: 'red'},
+                {name: '65-69', color: 'red'},
+                {name: '70-74', color: 'red'},
+                {name: '75-79', color: 'red'},
+                {name: '80-84', color: 'red'},
+                {name: '85-89', color: 'red'},
+                {name: '90-94', color: 'red'},
+                {name: '95-100', color: 'red'}
             ]
         },
         {

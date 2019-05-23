@@ -34,6 +34,29 @@ class System {
         $return['Charts']['Nati e morti']['Morti'] = $this->person_collection->getCountMorti();
         $return['Charts']['Salute media']['Salute media'] = Utils::round($this->person_collection->getMeanHealth());
 
+        $ranges_distr_salute = [
+            ['min' => 0, 'max' => 4],
+            ['min' => 5, 'max' => 9],
+            ['min' => 10, 'max' => 14],
+            ['min' => 15, 'max' => 19],
+            ['min' => 20, 'max' => 24],
+            ['min' => 25, 'max' => 29],
+            ['min' => 30, 'max' => 34],
+            ['min' => 35, 'max' => 39],
+            ['min' => 40, 'max' => 44],
+            ['min' => 45, 'max' => 49],
+            ['min' => 50, 'max' => 54],
+            ['min' => 55, 'max' => 59],
+            ['min' => 60, 'max' => 64],
+            ['min' => 65, 'max' => 69],
+            ['min' => 70, 'max' => 74],
+            ['min' => 75, 'max' => 79],
+            ['min' => 80, 'max' => 84],
+            ['min' => 85, 'max' => 89],
+            ['min' => 90, 'max' => 94],
+            ['min' => 95, 'max' => 100]
+        ];
+
         $ranges = [
             ['min' => 0, 'max' => 9],
             ['min' => 10, 'max' => 19],
@@ -44,13 +67,13 @@ class System {
             ['min' => 60, 'max' => 69],
             ['min' => 70, 'max' => 79],
             ['min' => 80, 'max' => 89],
-            ['min' => 90, 'max' => 100],
+            ['min' => 90, 'max' => 100]
         ];
 
         /*
          * Distribuzione della salute
          */
-        foreach ($ranges as $range) {
+        foreach ($ranges_distr_salute as $range) {
             $range_text = $range['min'] . '-' . $range['max'];
             $return['Charts']['Distribuzione della salute'][$range_text] = 0;
         }
@@ -78,7 +101,7 @@ class System {
             $health = Utils::round($person->get_health(1));
             //error_log('health = ' . $health);
 
-            foreach ($ranges as $range) {
+            foreach ($ranges_distr_salute as $range) {
                 if ($health >= $range['min'] && $health <= ($range['max'] + 0.99)) {
                     $range_text = $range['min'] . '-' . $range['max'];
                     //error_log('range (SI) = ' . $range_text);
@@ -121,7 +144,7 @@ class System {
 
         $mode_random_params = $this->product_collection->getModeRandomParams();
         $products = [];
-        
+
         if ($mode_random_params) {
             for ($i = 0; $i < $this->product_collection->getNProducts(); $i++) {
                 array_push($products, $i);
