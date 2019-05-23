@@ -320,14 +320,14 @@ class System {
     private function buyAndSell() {
 
 
-        $val = 1;
+        $val = 1.0;
         $persons_indexes = array_keys($this->person_collection->getPersons());
         $products_indexes = array_keys($this->product_collection->getProducts());
         $n_products = count($products_indexes);
 
         for ($i = 0; $i < $n_products; $i++) {
             $product = $this->product_collection->getProduct($products_indexes[$i]);
-            if ($product->get_production(1) <= $val) {
+            if ($product->get_production(1) == 0) {
                 unset($products_indexes[$i]);
             }
         }
@@ -337,7 +337,9 @@ class System {
               error_log('');
               error_log('New while cicle');
               error_log('$persons_indexes = ' . count($persons_indexes)); */
-
+            
+            $bought=Utils::rand(0.0, $val)
+            
             foreach ($persons_indexes as $i) {
                 if (count($products_indexes) == 0) {
                     break;
@@ -395,9 +397,9 @@ class System {
                 $product = $this->product_collection->getProduct($j);
                 //error_log("Product bought: " . $product->get_name());
 
-                $person->set_eaten($person->get_eaten(1) + $val, 1);
-                $product->set_sold($product->get_sold(1) + $val, 1);
-                $person->set_speso($person->get_speso() + $product->get_price() * $val);
+                $person->set_eaten($person->get_eaten(1) + $bought, 1);
+                $product->set_sold($product->get_sold(1) + $bought, 1);
+                $person->set_speso($person->get_speso() + $product->get_price() * $bought);
                 $person->add_to_bought($product->get_name());
                 //error_log('persona i=' . $i . ' speso(' . $person->get_speso() . '), wealth (' . $person->get_wealth() . '), eaten (' . $person->get_eaten(1) . '), fabbisogno (' . $person->get_food_need() . ')');
                 //error_log('ha comprato val (' . $val . ') del prodotto j=' . $j . '(nome: ' . $product->get_name() . ', venduto ' . $product->get_sold(1) . ', production ' . $product->get_production(1) . ')');

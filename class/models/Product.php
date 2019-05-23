@@ -27,10 +27,10 @@ class Product {
 
     public function __construct() {
 
-        $this->production[0] = 0.0;
-        $this->production[1] = 0.0;
-        $this->sold[0] = 0.0;
-        $this->sold[1] = 0.0;
+        $this->production[0] = (float) 0.0;
+        $this->production[1] = (float) 0.0;
+        $this->sold[0] = (float) 0.0;
+        $this->sold[1] = (float) 0.0;
     }
 
     public function step_production($environment) {

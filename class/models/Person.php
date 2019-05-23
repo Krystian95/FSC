@@ -12,20 +12,23 @@ class Person {
     private $wealth;
     private $health = [];
     private $eaten = [];
-    private $speso = 0;
+    private $speso;
     private $bought = [];
 
     public function __construct($tendency, $product_collection, $wealth, $health, $ricchezza_media, $fabbisogno_cibo, $wealth_influence_factor, $tot_prod, $aleatorieta_preferenze) {
 
-        $this->eaten[0] = 0.0;
-        $this->eaten[1] = 0.0;
-        $this->health[0] = $health;
-        $this->health[1] = $health;
-        $this->food_need = $fabbisogno_cibo;
+        $this->food_need = (float) $fabbisogno_cibo;
+        $this->wealth = (float) $wealth;
+        $this->health[0] = (float) $health;
+        $this->health[1] = (float) $health;        
+        $this->eaten[0] =(float) 0.0;
+        $this->eaten[1] =(float) 0.0;
+        $this->$speso = (float) 0.0;
+
 
         //error_log('health in Person: ' . $health);
 
-        $this->wealth = $wealth;
+
         $wealth_influence = $wealth_influence_factor / (1000 * $tot_prod);
 
         /*
@@ -92,19 +95,19 @@ class Person {
      */
 
     public function set_wealth($wealth) {
-        $this->wealth = $wealth;
+        $this->wealth = (float) $wealth;
     }
 
     public function set_health($health, $index) {
-        $this->health[$index] = $health;
+        $this->health[$index] = (float) $health;
     }
 
     public function set_eaten($eaten, $index) {
-        $this->eaten[$index] = $eaten;
+        $this->eaten[$index] = (float) $eaten;
     }
 
     public function set_speso($speso) {
-        $this->speso = $speso;
+        $this->speso = (float) $speso;
     }
 
     public function reset_bought() {
