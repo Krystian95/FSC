@@ -1059,7 +1059,7 @@ $(function () {
         var itemsPop = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
 
-        var valoriPop = [70, 27, 50, 0, 85, 0, 14, 0];
+        var valoriPop = [70, 25, 50, 0, 84, 17, 15, 0];
 
         $(itemsPop).each(function (index, value) {
             $('input[name="' + value + '"]').val(valoriPop[index]);
@@ -1095,7 +1095,7 @@ $(function () {
         var itemsExtra = ['step_nascita_popolazione', 'step_morte_popolazione', 'rapporto_nascite_salute', 'valore_salute_stabile',
             'massima_crescita_salute', 'valore_capacita_stabile', 'massima_crescita_capacita', 'influenza_differenze_ricchezza', 'aleatorieta_preferenze'];
 
-        var valoriExtra = [70, 35, 10, 50, 3, 50, 5, 30, 0];
+        var valoriExtra = [75, 20, 10, 50, 3, 50, 5, 30, 0];
 
         $(itemsExtra).each(function (index, value) {
             $('input[name="' + value + '"]').val(valoriExtra[index]);
@@ -1154,8 +1154,8 @@ $(function () {
         slider_numero_prodotti.setAttribute('value', 30).refresh();
         slider_percentuale_carne_vegetali.setAttribute('value', 33).refresh();
 
-        meat_prezzo.setAttribute('value', [17, 17]).refresh();
-        meat_produttivita.setAttribute('value', [45, 45]).refresh();
+        meat_prezzo.setAttribute('value', [19, 19]).refresh();
+        meat_produttivita.setAttribute('value', [48, 48]).refresh();
         meat_impatto_ghgs.setAttribute('value', [4, 4]).refresh();
         meat_impatto_pm.setAttribute('value', [6, 6]).refresh();
         meat_impatto_nh3.setAttribute('value', [10, 10]).refresh();
@@ -1168,8 +1168,8 @@ $(function () {
         meat_ideal_temp.setAttribute('value', [25, 25]).refresh();
         meat_toll_infl_prod_temp.setAttribute('value', [20, 20]).refresh();
 
-        veg_prezzo.setAttribute('value', [10, 10]).refresh();
-        veg_produttivita.setAttribute('value', [43, 43]).refresh();
+        veg_prezzo.setAttribute('value', [6, 6]).refresh();
+        veg_produttivita.setAttribute('value', [46, 46]).refresh();
         veg_impatto_ghgs.setAttribute('value', [1, 1]).refresh();
         veg_impatto_pm.setAttribute('value', [2, 2]).refresh();
         veg_impatto_nh3.setAttribute('value', [-5, -5]).refresh();

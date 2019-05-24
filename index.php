@@ -189,10 +189,10 @@
                                         Tendenza a mangiare carne
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne_slider" value="27">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne_slider" value="25">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne" value="27"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne" value="25"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="tendenza_mangiare_carne_checkbox" class="parametri_popolazione"></div>
@@ -231,10 +231,10 @@
                                         Ricchezza media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="ricchezza_media_slider" value="85">
+                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="ricchezza_media_slider" value="84">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="ricchezza_media" value="85"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="ricchezza_media" value="84"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_media_checkbox" class="parametri_popolazione"></div>
@@ -245,10 +245,10 @@
                                         Ricchezza deviazione standard
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="ricchezza_dev_stan_slider" value="0">
+                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="ricchezza_dev_stan_slider" value="17">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="ricchezza_dev_stan" value="0"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="ricchezza_dev_stan" value="17"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_dev_stan_checkbox" class="parametri_popolazione"></div>
@@ -259,10 +259,10 @@
                                         Fabbisogno di cibo media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="fabbisogno_cibo_media_slider" value="14">
+                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="fabbisogno_cibo_media_slider" value="15">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="fabbisogno_cibo_media" value="14"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="fabbisogno_cibo_media" value="15"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="fabbisogno_cibo_media_checkbox" class="parametri_popolazione"></div>
@@ -500,7 +500,7 @@
                                             Prezzo
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[17,17]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[19,19]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -508,7 +508,7 @@
                                             Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[45,45]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="meat_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[48,48]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -610,7 +610,7 @@
                                             Prezzo
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[10,10]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_prezzo" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[6,6]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -618,7 +618,7 @@
                                             Capacità produttiva iniziale
                                         </label>
                                         <div class="col-8">
-                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[43,43]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
+                                            &nbsp;&nbsp;&nbsp; <b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="veg_produttivita" type="text" class="span2" value="" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[46,46]"/>&nbsp;&nbsp;&nbsp;&nbsp;<b>100</b>
                                         </div>
                                     </div>
                                     <div class="row form-group align-items-center">
@@ -1252,10 +1252,10 @@
                                     Step nascita popolazione
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="70">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="75">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="70"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="75"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="step_nascita_popolazione_checkbox" class="parametri_extra"></div>
@@ -1266,10 +1266,10 @@
                                     Step morte popolazione
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="35">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_morte_popolazione_slider" value="20">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="35"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_morte_popolazione" value="20"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="step_morte_popolazione_checkbox" class="parametri_extra"></div>
