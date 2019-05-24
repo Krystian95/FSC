@@ -1059,7 +1059,7 @@ $(function () {
         var itemsPop = ['popolazione_iniziale', 'tendenza_mangiare_carne', 'salute_iniziale_media', 'salute_iniziale_dev_stan',
             'ricchezza_media', 'ricchezza_dev_stan', 'fabbisogno_cibo_media', 'fabbisogno_cibo_dev_stan'];
 
-        var valoriPop = [70, 25, 50, 0, 84, 17, 15, 0];
+        var valoriPop = [70, 25, 50, 0, 84.17, 0, 15, 0];
 
         $(itemsPop).each(function (index, value) {
             $('input[name="' + value + '"]').val(valoriPop[index]);
