@@ -35,10 +35,25 @@ class Person {
          * Preferences
          */
         $preferenze_tmp = [];
-
+        
+        $N_meat=0.0;
+        $N_vegt=0.0;
+        for ($i = 0; $i < $tot_prod; $i++) {
+            if ($product_collection->getProductTypeByIndex($i) == 'meat') {
+                $N_meat+=1;
+            } elseif ($product_collection->getProductTypeByIndex($i) == 'veg') {
+                $N_vegt+=1;
+            }
+        }
+    /*
         $mean = 1.0 / $tot_prod;
         $mean_meat = $mean + $mean * $tendency / 100;
-        $mean_veg = $mean - $mean * $tendency / 100;
+        $mean_veg = $mean - $mean * $tendency / 100;*/
+        $mean_meat= (0.5/ $N_meat)*(1.0+$tendency/100.0);
+        $mean_veg = (0.5/ $N_vegt)*(1.0-$tendency/100.0);
+        
+
+        
         for ($i = 0; $i < $tot_prod; $i++) {
             if ($product_collection->getProductTypeByIndex($i) == 'meat') {
                 $preferenze_tmp[$i] = Utils::rand($mean_meat * (1 - $aleatorieta_preferenze / 100), $mean_meat * (1 + $aleatorieta_preferenze / 100));
