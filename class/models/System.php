@@ -257,12 +257,16 @@ class System {
         //error_log(count($this->person_collection->getPersons()));
         //setta tutti gli healt[1]
         //nasce e uccide i pops
+        $this->person_collection->T_distr_sh();
+        $this->person_collection->I_distr_sh();
+        //riempie l'array cumulativo ed individuale per l'analisi di variazione
 
         /*
          * growth_evaluate
          */
         $this->product_collection->growth_evaluations();
         //setta capacity[1] per il nuovo ciclo
+
 
         self::$step++;
 

@@ -1252,10 +1252,10 @@
                                     Step nascita popolazione
                                 </label>
                                 <div class="col-5">
-                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="75">
+                                    <input type="range" class="custom-range" min="0" max="100" step="1" name="step_nascita_popolazione_slider" value="70">
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="75"> 
+                                    <input type="number" class="form-control textbox" min="0" max="100" step="1" name="step_nascita_popolazione" value="70"> 
                                 </div>
                                 <div class="col-1">
                                     <div class="checkbox"><input type="checkbox" value="" id="step_nascita_popolazione_checkbox" class="parametri_extra"></div>

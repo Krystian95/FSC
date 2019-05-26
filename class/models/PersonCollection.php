@@ -158,6 +158,10 @@ class PersonCollection {
     public function T_distr_sh(){
         $delta = (int)(($this->getMeanHealth(1)-$this->getMeanHealth(0))*1000);      
         $Tot_distr_step_health[$delta]++;  
+        
+/*        foreach($this->Tot_distr_step_health as $value){
+            $value/= $System->step
+        }*/////normalizzo usando $step che sta in system
     }
     
     public function I_distr_sh(){
@@ -165,6 +169,7 @@ class PersonCollection {
             $delta = (int)(($person->get_health(1)-$person->get_health(0))*1000);
             $Ind_distr_step_health[$delta]++;
         }
+        
     }
 
     public function getCountNati() {
