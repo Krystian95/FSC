@@ -389,10 +389,10 @@
                                         Apporto esterno GHGS
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-10000" max="10000" step="1" name="extern_ghgs_slider" value="-1500">
+                                        <input type="range" class="custom-range" min="-10000" max="10000" step="1" name="extern_ghgs_slider" value="-1700">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-10000" max="10000" step="1" name="extern_ghgs" value="-1500"> 
+                                        <input type="number" class="form-control textbox" min="-10000" max="10000" step="1" name="extern_ghgs" value="-1700"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_ghgs_checkbox" class="parametri_ambiente"></div>
@@ -403,10 +403,10 @@
                                         Apporto esterno PM
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-10000" max="10000" step="1" name="extern_pm_slider" value="-2000">
+                                        <input type="range" class="custom-range" min="-10000" max="10000" step="1" name="extern_pm_slider" value="-2200">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-10000" max="10000" step="1" name="extern_pm" value="-2000"> 
+                                        <input type="number" class="form-control textbox" min="-10000" max="10000" step="1" name="extern_pm" value="-2200"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_pm_checkbox" class="parametri_ambiente"></div>
@@ -417,10 +417,10 @@
                                         Apporto esterno NH<sub>3</sub>
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-10000" max="10000" step="1" name="extern_nh3_slider" value="-200">
+                                        <input type="range" class="custom-range" min="-10000" max="10000" step="1" name="extern_nh3_slider" value="-250">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-10000" max="10000" step="1" name="extern_nh3" value="-200"> 
+                                        <input type="number" class="form-control textbox" min="-10000" max="10000" step="1" name="extern_nh3" value="-250"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="extern_nh3_checkbox" class="parametri_ambiente"></div>
