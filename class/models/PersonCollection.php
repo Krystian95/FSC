@@ -22,6 +22,9 @@ class PersonCollection {
     private $n_nati = 0;
     private $n_morti = 0;
     private $tot_prod;
+    
+    private $Tot_distr_step_health = [];
+    private $Ind_distr_step_health = [];
 
     public function __construct($params, $product_collection) {
 
@@ -98,12 +101,12 @@ class PersonCollection {
         }
     }
 
-    public function getMeanHealth() {
+    public function getMeanHealth($i=1) {
 
         $mean = 0;
         foreach ($this->persons as $person) {
             //error_log('health person: '.$person->get_health(0));
-            $mean += $person->get_health(1);
+            $mean += $person->get_health($i);
         }
 
         //error_log('mean: ' . $mean);
@@ -152,6 +155,17 @@ class PersonCollection {
     /*
      * Getters
      */
+    public function T_distr_sh(){
+        $delta = (int)(($this->getMeanHealth(1)-$this->getMeanHealth(0))*1000);      
+        $Tot_distr_step_health[$delta]++;  
+    }
+    
+    public function I_distr_sh(){
+        foreach ($this->persons as $person) {
+            $delta = (int)(($person->get_health(1)-$person->get_health(0))*1000);
+            $Ind_distr_step_health[$delta]++;
+        }
+    }
 
     public function getCountNati() {
         return $this->n_nati;

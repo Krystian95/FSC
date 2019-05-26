@@ -189,10 +189,10 @@
                                         Tendenza a mangiare carne
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne_slider" value="25">
+                                        <input type="range" class="custom-range" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne_slider" value="-24.39">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne" value="25"> 
+                                        <input type="number" class="form-control textbox" min="-100" max="100" step="0.01" name="tendenza_mangiare_carne" value="-24.39"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="tendenza_mangiare_carne_checkbox" class="parametri_popolazione"></div>
@@ -231,10 +231,10 @@
                                         Ricchezza media
                                     </label>
                                     <div class="col-5">
-                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="ricchezza_media_slider" value="84.17">
+                                        <input type="range" class="custom-range" min="0" max="100" step="0.01" name="ricchezza_media_slider" value="77">
                                     </div>
                                     <div class="col-2">
-                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="ricchezza_media" value="84.17"> 
+                                        <input type="number" class="form-control textbox" min="0" max="100" step="0.01" name="ricchezza_media" value="77"> 
                                     </div>
                                     <div class="col-1">
                                         <div class="checkbox"><input type="checkbox" value="" id="ricchezza_media_checkbox" class="parametri_popolazione"></div>
