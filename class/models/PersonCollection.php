@@ -22,9 +22,8 @@ class PersonCollection {
     private $n_nati = 0;
     private $n_morti = 0;
     private $tot_prod;
-    
-    private $Tot_distr_step_health = [];
-    private $Ind_distr_step_health = [];
+    private $tot_distr_step_health = [];
+    private $ind_distr_step_health = [];
 
     public function __construct($params, $product_collection) {
 
@@ -101,7 +100,7 @@ class PersonCollection {
         }
     }
 
-    public function getMeanHealth($i=1) {
+    public function getMeanHealth($i = 1) {
 
         $mean = 0;
         foreach ($this->persons as $person) {
@@ -152,21 +151,36 @@ class PersonCollection {
         $this->sortPersonsByWealthDescending($this->persons);
     }
 
+    public function T_distr_sh() {
+        
+        $delta = (int) (($this->getMeanHealth(1) - $this->getMeanHealth(0)) * 100);
+        if (!isset($this->tot_distr_step_health[$delta])) {
+            $this->tot_distr_step_health[$delta] = 0;
+        }
+        $this->tot_distr_step_health[$delta] ++;
+    }
+
+    public function I_distr_sh() {
+        
+        foreach ($this->persons as $person) {
+            $delta = (int) (($person->get_health(1) - $person->get_health(0)) * 100);
+            if (!isset($this->ind_distr_step_health[$delta])) {
+                $this->ind_distr_step_health[$delta] = 0;
+            }
+            $this->ind_distr_step_health[$delta] ++;
+        }
+    }
+
     /*
      * Getters
      */
-    public function T_distr_sh(){
-        $delta = (int)(($this->getMeanHealth(1)-$this->getMeanHealth(0))*100);      
-        $Tot_distr_step_health[$delta]++;  
-        
+
+    public function get_tot_distr_step_health() {
+        return $this->tot_distr_step_health;
     }
-    
-    public function I_distr_sh(){
-        foreach ($this->persons as $person) {
-            $delta = (int)(($person->get_health(1)-$person->get_health(0))*100);
-            $Ind_distr_step_health[$delta]++;
-        }
-        
+
+    public function get_ind_distr_step_health() {
+        return $this->ind_distr_step_health;
     }
 
     public function getCountNati() {

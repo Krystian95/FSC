@@ -858,7 +858,6 @@
 
     <!-- Modal singoli prodotti-->
     <?php
-    
     $products = Array(
         'manzo' => Array(
             'tipo' => 'meat',
@@ -1102,8 +1101,7 @@
         )
     );
 
-    foreach($products as $product => $parameter)
-    {
+    foreach ($products as $product => $parameter) {
         echo '<div class="modal fade child-modal" id="' . $product . 'Modal" tabindex="-1" role="dialog" data-backdrop="static">';
         echo '<div class="modal-dialog">';
         echo '<div class="modal-content" id="parameterProdSingoliModalDialog">';

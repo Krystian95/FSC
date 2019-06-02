@@ -341,9 +341,9 @@ class System {
               error_log('');
               error_log('New while cicle');
               error_log('$persons_indexes = ' . count($persons_indexes)); */
-            
-            $bought=Utils::rand(0.0, $val);
-            
+
+            $bought = Utils::rand(0.0, $val);
+
             foreach ($persons_indexes as $i) {
                 if (count($products_indexes) == 0) {
                     break;
