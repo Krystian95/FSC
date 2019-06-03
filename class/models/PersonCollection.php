@@ -151,16 +151,17 @@ class PersonCollection {
         $this->sortPersonsByWealthDescending($this->persons);
     }
 
-    public function T_distr_sh() {
+    public function t_distr_sh() {
         
         $delta = (int) (($this->getMeanHealth(1) - $this->getMeanHealth(0)) * 100);
         if (!isset($this->tot_distr_step_health[$delta])) {
             $this->tot_distr_step_health[$delta] = 0;
         }
         $this->tot_distr_step_health[$delta] ++;
+        ksort($this->tot_distr_step_health);
     }
 
-    public function I_distr_sh() {
+    public function i_distr_sh() {
         
         foreach ($this->persons as $person) {
             $delta = (int) (($person->get_health(1) - $person->get_health(0)) * 100);
@@ -169,6 +170,8 @@ class PersonCollection {
             }
             $this->ind_distr_step_health[$delta] ++;
         }
+        
+        //ksort($this->ind_distr_step_health);
     }
 
     /*

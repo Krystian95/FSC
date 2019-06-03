@@ -89,7 +89,12 @@ class System {
             }
         }
 
-        //error_log('----------------------');
+        $return['Charts']['Variazioni salute media'] = [];
+        
+        foreach ($this->person_collection->get_tot_distr_step_health() as $key => $value) {
+            $return['Charts']['Variazioni salute media'][$key] = $value;
+            //error_log($key . ': ' . $value);
+        }
 
         for ($i = 0; $i < $this->person_collection->getCountPeople(); $i++) {
 
@@ -257,8 +262,8 @@ class System {
         //error_log(count($this->person_collection->getPersons()));
         //setta tutti gli healt[1]
         //nasce e uccide i pops
-        $this->person_collection->T_distr_sh();
-        $this->person_collection->I_distr_sh();
+        $this->person_collection->t_distr_sh();
+        $this->person_collection->i_distr_sh();
         //riempie l'array cumulativo ed individuale per l'analisi di variazione
 
         /*
@@ -355,14 +360,14 @@ class System {
                 $person = $this->person_collection->getPerson($i);
 
                 $rnd = Utils::rand(0.0, 1.0);
-//$rnd = 1.0;
+                //$rnd = 1.0;
 
                 $j = 0;
 
 //               error_log('ENTER while');
-//error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
+                //error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
                 while ($rnd > $person->get_preferenza($j)) {
-//    error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
+//                    error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
 //    error_log($j . ' == ' . $this->product_collection->n_meat + $this->product_collection->n_veg - 1);
                     if ($j == ($this->product_collection->n_meat + $this->product_collection->n_veg - 1)) {
 //        error_log('break');
@@ -375,7 +380,7 @@ class System {
                         //error_log('Rand (' . $rnd . ') > Preferenza j=' . $j . ' (' . $person->get_preferenza($j) . ')');
                     }
                 }
-//error_log('EXIT while con  j=' . $j);
+                //error_log('EXIT while con  j=' . $j);
 
                 /*
                  * Recupera un prodotto in caso j non sia pi disponibile
@@ -387,8 +392,8 @@ class System {
                         while (!in_array($j, $products_indexes)) {
                             if ($j == ($this->product_collection->n_meat + $this->product_collection->n_veg - 1)) {
                                 break;
-//commento: qui ci arriva solo se l'ultimo cibo rimasto  quello pi costoso
-//Il che  plausibile ma se finisce sistematicamente qui forse c' qualcosa di strano
+                                //commento: qui ci arriva solo se l'ultimo cibo rimasto  quello pi costoso
+                                //Il che  plausibile ma se finisce sistematicamente qui forse c' qualcosa di strano
                             } else {
                                 $j++;
                             }
