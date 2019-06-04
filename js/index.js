@@ -10,8 +10,8 @@ var count = 8.34;
 var mese = (new Date()).getMonth() + 1;
 var progress = mese * count;
 var charts_settings;
-var charts_barchart = ['Distribuzione della salute', 'Capacità, produzione e vendita mensile', 'Distribuzione cibi acquistati/ricchezza', 'Variazioni salute media'];
-var charts_barchart_stacked = ['Capacità, produzione e vendita mensile', 'Distribuzione cibi acquistati/ricchezza', 'Variazioni salute media'];
+var charts_barchart = ['Distribuzione della salute', 'Capacità, produzione e vendita mensile', 'Distribuzione cibi acquistati/ricchezza', 'Variazioni salute media', 'Variazioni salute individuale'];
+var charts_barchart_stacked = ['Capacità, produzione e vendita mensile', 'Distribuzione cibi acquistati/ricchezza', 'Variazioni salute media', 'Variazioni salute individuale'];
 
 const capitalize = (s) => {
     if (typeof s !== 'string')
@@ -67,7 +67,7 @@ function getDefaultChart(chart_id, type) {
                             label += ' acquistat' + (value_one ? 'o' : 'i');
                         } else if (chart_id == 'Distribuzione della salute') {
                             label += ' person' + (value_one ? 'a' : 'e');
-                        } else if (chart_id == 'Variazioni salute media') {
+                        } else if (chart_id == 'Variazioni salute media' || chart_id == 'Variazioni salute individuale') {
                             label += ' occorrenz' + (value_one ? 'a' : 'e');
                         }
 
@@ -261,7 +261,11 @@ function initCharts() {
         {
             title: 'Variazioni salute media',
             lines: []
-        }
+        },
+        {
+            title: 'Variazioni salute individuale',
+            lines: []
+        },
     ];
 
     // Distrugge eventuali grafici già esistenti (es. Stop -> Start)
@@ -378,13 +382,24 @@ function initCharts() {
             };
             chart.data.datasets.push(line);
 
+        } else if (chart_title == 'Variazioni salute individuale') {
+            line = {
+                label: 'Variazioni salute individuale',
+                data: [],
+                backgroundColor: 'rgba(255, 20, 147, 0.2)',
+                borderColor: 'rgba(255, 20, 147, 0.5)',
+                borderWidth: 1
+            };
+            chart.data.datasets.push(line);
+
         } else {
             for (var j = 0; j < charts_settings[i].lines.length; j++) {
                 // Skippati:
-                // "Capacità, produzione e vendita mensile"
-                // "Distribuzione cibi acquistati/ricchezza"
-                // "Variazioni salute media"
-                if (![9, 11, 12].includes(i)) {
+                // Capacità, produzione e vendita mensile
+                // Distribuzione cibi acquistati/ricchezza
+                // Variazioni salute media
+                // Variazioni salute individuale
+                if (![9, 11, 12, 13].includes(i)) {
                     line = {
                         label: charts_settings[i].lines[j].name,
                         data: [],
@@ -409,7 +424,7 @@ function initCharts() {
      */
 
     moveChart('Variazioni salute media', 'charts_left');
-    moveChart('Capacità produttiva', 'charts_right');
+    moveChart('Variazioni salute individuale', 'charts_right');
 }
 
 function progressProgressbar() {
@@ -499,10 +514,8 @@ function performResponseActions(current_period, response_encoded) {
                     count++;
                 });
             });
-        } else if (chart_title == 'Variazioni salute media') {
+        } else if (chart_title == 'Variazioni salute media' || chart_title == 'Variazioni salute individuale') {
 
-            //console.log(response['Charts'][chart_title]);
-            //console.log('-----------------');
             $.each(response['Charts'][chart_title], function (delta, value) {
                 //console.log('delta: ' + delta + ' value: ' + value);
                 charts[chart_title].data.labels.push('Delta ' + delta);

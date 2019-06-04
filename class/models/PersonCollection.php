@@ -158,6 +158,7 @@ class PersonCollection {
             $this->tot_distr_step_health[$delta] = 0;
         }
         $this->tot_distr_step_health[$delta] ++;
+        
         ksort($this->tot_distr_step_health);
     }
 
@@ -171,7 +172,7 @@ class PersonCollection {
             $this->ind_distr_step_health[$delta] ++;
         }
         
-        //ksort($this->ind_distr_step_health);
+        ksort($this->ind_distr_step_health);
     }
 
     /*

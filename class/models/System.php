@@ -90,10 +90,15 @@ class System {
         }
 
         $return['Charts']['Variazioni salute media'] = [];
-        
+
         foreach ($this->person_collection->get_tot_distr_step_health() as $key => $value) {
             $return['Charts']['Variazioni salute media'][$key] = $value;
-            //error_log($key . ': ' . $value);
+        }
+
+        $return['Charts']['Variazioni salute individuale'] = [];
+
+        foreach ($this->person_collection->get_ind_distr_step_health() as $key => $value) {
+            $return['Charts']['Variazioni salute individuale'][$key] = $value;
         }
 
         for ($i = 0; $i < $this->person_collection->getCountPeople(); $i++) {

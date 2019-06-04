@@ -130,7 +130,6 @@ class ProductCollection {
     }
 
     private function sortProductsByPriceAscending(&$products) {
-
         usort($products, ['ProductCollection', 'sort_ascending']);
     }
 
