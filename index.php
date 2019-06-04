@@ -107,6 +107,8 @@
                                 <li><a class="dropdown-item left-element" id="Nati e morti left" href="#footer"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
                                 <li><a class="dropdown-item left-element" id="Salute media left" href="#footer"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
                                 <li><a class="dropdown-item left-element" id="Distribuzione della salute left" href="#footer"><i class="fa fa-heartbeat fa-fw"></i>Distribuzione della salute</a></li>
+                                <li><a class="dropdown-item left-element" id="Variazioni salute media left" href="#footer"><i class="fas fa-stethoscope fa-fw"></i>Variazioni salute media</a></li>
+                                <li><a class="dropdown-item left-element" id="Variazioni salute individuale left" href="#footer"><i class="fas fa-stethoscope fa-fw"></i>Variazioni salute individuale</a></li>
                                 <li><a class="dropdown-item left-element" id="Capacità produttiva left" href="#footer"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
                                 <li><a class="dropdown-item left-element" id="Produzione left" href="#footer"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
                                 <li><a class="dropdown-item left-element" id="Vendite left" href="#footer"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
@@ -133,6 +135,8 @@
                                 <li><a class="dropdown-item right-element" id="Nati e morti right" href="#footer"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
                                 <li><a class="dropdown-item right-element" id="Salute media right" href="#footer"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
                                 <li><a class="dropdown-item left-element" id="Distribuzione della salute right" href="#footer"><i class="fa fa-heartbeat fa-fw"></i>Distribuzione della salute</a></li>
+                                <li><a class="dropdown-item left-element" id="Variazioni salute media right" href="#footer"><i class="fas fa-stethoscope fa-fw"></i>Variazioni salute media</a></li>
+                                <li><a class="dropdown-item left-element" id="Variazioni salute individuale right" href="#footer"><i class="fas fa-stethoscope fa-fw"></i>Variazioni salute individuale</a></li>
                                 <li><a class="dropdown-item right-element" id="Capacità produttiva right" href="#footer"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
                                 <li><a class="dropdown-item right-element" id="Produzione right" href="#footer"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
                                 <li><a class="dropdown-item right-element" id="Vendite right" href="#footer"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
@@ -140,7 +144,7 @@
                                 <li><a class="dropdown-item left-element" id="Industria carni industria vegetali right" href="#footer"><i class="fa fa-seedling fa-fw"></i>Industria carni/industria vegetali</a></li>
                                 <li><a class="dropdown-item right-element" id="Temperatura right" href="#footer"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
                                 <li><a class="dropdown-item right-element" id="Agenti atmosferici right" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
-                                <li><a class="dropdown-item right-element" id="Distribuzione cibi acquistati/ricchezza right" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Distribuzione cibi acquistati/ricchezza</a></li>
+                                <li><a class="dropdown-item right-element" id="Distribuzione cibi acquistati/ricchezza right" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Distribuzione cibi acquistati/ricchezza</a></li>                              
                             </div>
                         </div>
                     </div>

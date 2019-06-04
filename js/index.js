@@ -423,8 +423,8 @@ function initCharts() {
      * Visualizzazione iniziale grafici (sinistra e destra)
      */
 
-    moveChart('Variazioni salute media', 'charts_left');
-    moveChart('Variazioni salute individuale', 'charts_right');
+    moveChart('Popolazione', 'charts_left');
+    moveChart('Capacità produttiva', 'charts_right');
 }
 
 function progressProgressbar() {
