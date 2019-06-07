@@ -122,3 +122,71 @@
     float: left;
     width: 45%;
 }
+
+.dropdown-item.active, 
+.dropdown-item:active {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+
+#simbol-left i,
+#simbol-right i{
+    color: white!important;
+}
+
+.icon-popolazione{
+    color: deeppink;
+}
+
+.icon-nati-morti{
+    color: #007fff;
+}
+
+.icon-salute-media{
+    color: crimson;
+}
+
+.icon-distr-salute{
+    color: red;
+}
+
+.icon-var-salute-media{
+    color: #e4606d;
+}
+
+.icon-var-salute-media-ind{
+    color: #e4606d;
+}
+
+.icon-cap-prod{
+    color: darkslategrey;
+}
+
+.icon-prod{
+    color: gray;
+}
+
+.icon-vendite{
+    color: orangered;
+}
+
+.icon-cap-prod-vend{
+    color: darkorchid;
+}
+
+.icon-meat-veg{
+    color: chartreuse;
+}
+
+.icon-temp{
+    color: #856404;
+}
+
+.icon-agent-atm{
+    color: orange;
+}
+
+.icon-cibi-ricc{
+    color: green;
+}

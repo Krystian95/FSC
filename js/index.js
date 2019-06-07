@@ -43,7 +43,7 @@ function getDefaultChart(chart_id, type) {
                         if (chart_id == 'Distribuzione della salute' || chart_id == 'Capacità, produzione e vendita mensile' || chart_id == 'Distribuzione cibi acquistati/ricchezza') {
                             title += ' (' + current_period_global + ')';
                         } else if (['Variazioni salute media', 'Variazioni salute individuale'].includes(chart_id)) {
-                            title += ' (cumulative fino al ' + current_period_global + ')';
+                            title += ' (cumulativi fino al ' + current_period_global + ')';
                         }
 
                         return title;
@@ -365,7 +365,7 @@ function initCharts() {
             line = {
                 label: 'Variazioni salute media',
                 data: [],
-                backgroundColor: 'rgba(255, 192, 203, 0.6)',
+                backgroundColor: 'rgba(255, 192, 203, 0.4)',
                 borderColor: 'rgba(255, 192, 203, 1)',
                 borderWidth: 1
             };
@@ -590,6 +590,8 @@ function makeNextCall() {
 }
 
 $(function () {
+
+    $('[title]').tooltip();
 
     /* Nascondi le checkbox */
     $(".checkbox").addClass("hidden");

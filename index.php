@@ -74,10 +74,10 @@
                             <button type="button" class="btn btn-warning" id="pausa" disabled="true"><i class="fa fa-pause"></i>&nbspPausa</button>
                         </div>
                         <div class="col-2">
-                            <button type="button" class="btn btn-danger" id="stop" disabled="true"><i class="fa fa-stop"></i>&nbspStop</button>
+                            <button type="button" class="btn btn-danger" id="stop" disabled="true" data-toggle="tooltip" data-placement="bottom" title="Interrompi la simulazione corrente, senza ripristinare i valori impostati."><i class="fa fa-stop"></i>&nbspStop</button>
                         </div>
                         <div class="col-2">
-                            <button type="button" class="btn btn-secondary" id="reset"><i class="fas fa-sync-alt"></i>&nbspReset</button>
+                            <button type="button" class="btn btn-secondary" id="reset" data-toggle="tooltip" data-placement="bottom" title="Interrompi la simulazione corrente e ripristina ai valori di default."><i class="fas fa-sync-alt"></i>&nbspReset</button>
                         </div>
 
 
@@ -103,20 +103,20 @@
                         </button>
                         <div class="menu-left">
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item left-element" id="Popolazione left" href="#footer"><i class="fas fa-users fa-fw"></i>Popolazione</a></li>
-                                <li><a class="dropdown-item left-element" id="Nati e morti left" href="#footer"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
-                                <li><a class="dropdown-item left-element" id="Salute media left" href="#footer"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
-                                <li><a class="dropdown-item left-element" id="Distribuzione della salute left" href="#footer"><i class="fa fa-heartbeat fa-fw"></i>Distribuzione della salute</a></li>
-                                <li><a class="dropdown-item left-element" id="Variazioni salute media left" href="#footer"><i class="fas fa-stethoscope fa-fw"></i>Variazioni salute media</a></li>
-                                <li><a class="dropdown-item left-element" id="Variazioni salute individuale left" href="#footer"><i class="fas fa-stethoscope fa-fw"></i>Variazioni salute individuale</a></li>
-                                <li><a class="dropdown-item left-element" id="Capacità produttiva left" href="#footer"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
-                                <li><a class="dropdown-item left-element" id="Produzione left" href="#footer"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
-                                <li><a class="dropdown-item left-element" id="Vendite left" href="#footer"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
-                                <li><a class="dropdown-item left-element" id="Capacità, produzione e vendita mensile left" href="#footer"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
-                                <li><a class="dropdown-item left-element" id="Industria carni industria vegetali left" href="#footer"><i class="fa fa-seedling fa-fw"></i>Industria carni/industria vegetali</a></li>
-                                <li><a class="dropdown-item left-element" id="Temperatura left" href="#footer"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
-                                <li><a class="dropdown-item left-element" id="Agenti atmosferici left" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
-                                <li><a class="dropdown-item left-element" id="Distribuzione cibi acquistati/ricchezza left" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Distribuzione cibi acquistati/ricchezza</a></li>
+                                <li><a class="dropdown-item left-element" id="Popolazione left" href="#footer"><i class="fas fa-users fa-fw icon-popolazione"></i>Popolazione</a></li>
+                                <li><a class="dropdown-item left-element" id="Nati e morti left" href="#footer"><i class="fas fa-user-circle fa-fw icon-nati-morti"></i>Nati e morti</a></li>
+                                <li><a class="dropdown-item left-element" id="Salute media left" href="#footer"><i class="fa fa-medkit fa-fw icon-salute-media"></i>Salute media</a></li>
+                                <li><a class="dropdown-item left-element" id="Distribuzione della salute left" href="#footer"><i class="fa fa-heartbeat fa-fw icon-distr-salute"></i>Distribuzione della salute</a></li>
+                                <li><a class="dropdown-item left-element" id="Variazioni salute media left" href="#footer"><i class="fas fa-stethoscope fa-fw icon-var-salute-media"></i>Variazioni salute media</a></li>
+                                <li><a class="dropdown-item left-element" id="Variazioni salute individuale left" href="#footer"><i class="fas fa-stethoscope fa-fw icon-var-salute-media-ind"></i>Variazioni salute individuale</a></li>
+                                <li><a class="dropdown-item left-element" id="Capacità produttiva left" href="#footer"><i class="fa fa-industry fa-fw icon-cap-prod"></i>Capacità produttiva</a></li>
+                                <li><a class="dropdown-item left-element" id="Produzione left" href="#footer"><i class="fa fa-archive fa-fw icon-prod"></i>Produzione</a></li>
+                                <li><a class="dropdown-item left-element" id="Vendite left" href="#footer"><i class="fa fa-chart-line fa-fw icon-vendite"></i>Vendite</a></li>
+                                <li><a class="dropdown-item left-element" id="Capacità, produzione e vendita mensile left" href="#footer"><i class="fa fa-signal fa-fw icon-cap-prod-vend"></i>Capacità, produzione e vendita mensile</a></li>
+                                <li><a class="dropdown-item left-element" id="Industria carni industria vegetali left" href="#footer"><i class="fa fa-seedling fa-fw icon-meat-veg"></i>Industria carni/industria vegetali</a></li>
+                                <li><a class="dropdown-item left-element" id="Temperatura left" href="#footer"><i class="fa fa-thermometer-half fa-fw icon-temp"></i>Temperatura</a></li>
+                                <li><a class="dropdown-item left-element" id="Agenti atmosferici left" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw icon-agent-atm"></i>Agenti atmosferici</a></li>
+                                <li><a class="dropdown-item left-element" id="Distribuzione cibi acquistati/ricchezza left" href="#footer"><i class="fas fa-dollar-sign fa-fw icon-cibi-ricc"></i>Distribuzione cibi acquistati/ricchezza</a></li>
                             </div>
                         </div>
                     </div>
@@ -131,20 +131,20 @@
                         </button>
                         <div class="menu-right">
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item right-element" id="Popolazione right" href="#footer"><i class="fas fa-users fa-fw"></i>Popolazione</a></li>
-                                <li><a class="dropdown-item right-element" id="Nati e morti right" href="#footer"><i class="fas fa-user-circle fa-fw"></i>Nati e morti</a></li>
-                                <li><a class="dropdown-item right-element" id="Salute media right" href="#footer"><i class="fa fa-medkit fa-fw"></i>Salute media</a></li>
-                                <li><a class="dropdown-item left-element" id="Distribuzione della salute right" href="#footer"><i class="fa fa-heartbeat fa-fw"></i>Distribuzione della salute</a></li>
-                                <li><a class="dropdown-item left-element" id="Variazioni salute media right" href="#footer"><i class="fas fa-stethoscope fa-fw"></i>Variazioni salute media</a></li>
-                                <li><a class="dropdown-item left-element" id="Variazioni salute individuale right" href="#footer"><i class="fas fa-stethoscope fa-fw"></i>Variazioni salute individuale</a></li>
-                                <li><a class="dropdown-item right-element" id="Capacità produttiva right" href="#footer"><i class="fa fa-industry fa-fw"></i>Capacità produttiva</a></li>
-                                <li><a class="dropdown-item right-element" id="Produzione right" href="#footer"><i class="fa fa-archive fa-fw"></i>Produzione</a></li>
-                                <li><a class="dropdown-item right-element" id="Vendite right" href="#footer"><i class="fa fa-chart-line fa-fw"></i>Vendite</a></li>
-                                <li><a class="dropdown-item right-element" id="Capacità, produzione e vendita mensile right" href="#footer"><i class="fa fa-signal fa-fw"></i>Capacità, produzione e vendita mensile</a></li>
-                                <li><a class="dropdown-item left-element" id="Industria carni industria vegetali right" href="#footer"><i class="fa fa-seedling fa-fw"></i>Industria carni/industria vegetali</a></li>
-                                <li><a class="dropdown-item right-element" id="Temperatura right" href="#footer"><i class="fa fa-thermometer-half fa-fw"></i>Temperatura</a></li>
-                                <li><a class="dropdown-item right-element" id="Agenti atmosferici right" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw"></i>Agenti atmosferici</a></li>
-                                <li><a class="dropdown-item right-element" id="Distribuzione cibi acquistati/ricchezza right" href="#footer"><i class="fas fa-dollar-sign fa-fw"></i>Distribuzione cibi acquistati/ricchezza</a></li>                              
+                                <li><a class="dropdown-item right-element" id="Popolazione right" href="#footer"><i class="fas fa-users fa-fw icon-popolazione"></i>Popolazione</a></li>
+                                <li><a class="dropdown-item right-element" id="Nati e morti right" href="#footer"><i class="fas fa-user-circle fa-fw icon-nati-morti"></i>Nati e morti</a></li>
+                                <li><a class="dropdown-item right-element" id="Salute media right" href="#footer"><i class="fa fa-medkit fa-fw icon-salute-media"></i>Salute media</a></li>
+                                <li><a class="dropdown-item right-element" id="Distribuzione della salute right" href="#footer"><i class="fa fa-heartbeat fa-fw icon-distr-salute"></i>Distribuzione della salute</a></li>
+                                <li><a class="dropdown-item right-element" id="Variazioni salute media right" href="#footer"><i class="fas fa-stethoscope fa-fw icon-var-salute-media"></i>Variazioni salute media</a></li>
+                                <li><a class="dropdown-item right-element" id="Variazioni salute individuale right" href="#footer"><i class="fas fa-stethoscope fa-fw icon-var-salute-media-ind"></i>Variazioni salute individuale</a></li>
+                                <li><a class="dropdown-item right-element" id="Capacità produttiva right" href="#footer"><i class="fa fa-industry fa-fw icon-cap-prod"></i>Capacità produttiva</a></li>
+                                <li><a class="dropdown-item right-element" id="Produzione right" href="#footer"><i class="fa fa-archive fa-fw icon-prod"></i>Produzione</a></li>
+                                <li><a class="dropdown-item right-element" id="Vendite right" href="#footer"><i class="fa fa-chart-line fa-fw icon-vendite"></i>Vendite</a></li>
+                                <li><a class="dropdown-item right-element" id="Capacità, produzione e vendita mensile right" href="#footer"><i class="fa fa-signal fa-fw icon-cap-prod-vend"></i>Capacità, produzione e vendita mensile</a></li>
+                                <li><a class="dropdown-item right-element" id="Industria carni industria vegetali right" href="#footer"><i class="fa fa-seedling fa-fw icon-meat-veg"></i>Industria carni/industria vegetali</a></li>
+                                <li><a class="dropdown-item right-element" id="Temperatura right" href="#footer"><i class="fa fa-thermometer-half fa-fw icon-temp"></i>Temperatura</a></li>
+                                <li><a class="dropdown-item right-element" id="Agenti atmosferici right" href="#footer"><i class="fas fa-cloud-sun-rain fa-fw icon-agent-atm"></i>Agenti atmosferici</a></li>
+                                <li><a class="dropdown-item right-element" id="Distribuzione cibi acquistati/ricchezza right" href="#footer"><i class="fas fa-dollar-sign fa-fw icon-cibi-ricc"></i>Distribuzione cibi acquistati/ricchezza</a></li>
                             </div>
                         </div>
                     </div>
