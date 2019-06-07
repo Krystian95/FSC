@@ -78,7 +78,6 @@ class PersonCollection {
     }
 
     private function sortPersonsByWealthDescending(&$persons) {
-
         usort($persons, ['PersonCollection', 'sort_descending']);
     }
 
@@ -152,18 +151,22 @@ class PersonCollection {
     }
 
     public function t_distr_sh() {
-        
+
+        $this->clearKeys($this->tot_distr_step_health);
+
         $delta = (int) (($this->getMeanHealth(1) - $this->getMeanHealth(0)) * 100);
         if (!isset($this->tot_distr_step_health[$delta])) {
             $this->tot_distr_step_health[$delta] = 0;
         }
         $this->tot_distr_step_health[$delta] ++;
-        
-        ksort($this->tot_distr_step_health);
+
+        Utils::sortArrayWithIntegerKeys($this->tot_distr_step_health);
     }
 
     public function i_distr_sh() {
-        
+
+        $this->clearKeys($this->ind_distr_step_health);
+
         foreach ($this->persons as $person) {
             $delta = (int) (($person->get_health(1) - $person->get_health(0)) * 100);
             if (!isset($this->ind_distr_step_health[$delta])) {
@@ -171,8 +174,19 @@ class PersonCollection {
             }
             $this->ind_distr_step_health[$delta] ++;
         }
-        
-        ksort($this->ind_distr_step_health);
+
+        Utils::sortArrayWithIntegerKeys($this->ind_distr_step_health);
+    }
+
+    private function clearKeys(&$array) {
+
+        foreach ($array as $key => $value) {
+            if (Utils::stringContainsSubstring($key, 'Delta')) {
+                $new_key = str_replace('Delta', '', $key);
+                $array[$new_key] = $value;
+                unset($array[$key]);
+            }
+        }
     }
 
     /*

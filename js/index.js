@@ -517,8 +517,8 @@ function performResponseActions(current_period, response_encoded) {
         } else if (chart_title == 'Variazioni salute media' || chart_title == 'Variazioni salute individuale') {
 
             $.each(response['Charts'][chart_title], function (delta, value) {
-                //console.log('delta: ' + delta + ' value: ' + value);
-                charts[chart_title].data.labels.push('Delta ' + delta);
+                var label = delta.replace('Delta', 'Delta ');
+                charts[chart_title].data.labels.push(label);
                 charts[chart_title].data.datasets[0].data.push(value);
             });
         } /*else if (chart_title == 'Distribuzione della salute') {

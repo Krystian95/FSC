@@ -26,4 +26,33 @@ class Utils {
         return round($value, 2);
     }
 
+    public static function stringContainsSubstring($string, $subString) {
+
+        if (stripos($string, $subString) !== false) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function sortArrayWithIntegerKeys(&$array) {
+
+        $keys = array_keys($array);
+        asort($keys);
+
+        foreach ($keys as &$key) {
+            $key = 'Delta' . $key;
+        }
+
+        $keys = array_flip($keys);
+
+        $values = array_values($array);
+
+        foreach ($keys as $key => &$value) {
+            $index = $value;
+            $value = $values[$index];
+        }
+
+        $array = $keys;
+    }
+
 }
