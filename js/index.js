@@ -7,11 +7,11 @@ var slider_percentuale_carne_vegetali;
 var charts = {};
 var pause = false;
 var count = 8.34;
+var current_period_global;
 var mese = (new Date()).getMonth() + 1;
 var progress = mese * count;
 var charts_settings;
 var charts_barchart = ['Distribuzione della salute', 'Capacità, produzione e vendita mensile', 'Distribuzione cibi acquistati/ricchezza', 'Variazioni salute media', 'Variazioni salute individuale'];
-var charts_barchart_stacked = ['Capacità, produzione e vendita mensile', 'Distribuzione cibi acquistati/ricchezza', 'Variazioni salute media', 'Variazioni salute individuale'];
 
 const capitalize = (s) => {
     if (typeof s !== 'string')
@@ -28,19 +28,24 @@ function getDefaultChart(chart_id, type) {
         },
         options: {
             tooltips: {
-                mode: (charts_barchart_stacked.includes(chart_id) ? 'index' : 'nearest'),
+                mode: (charts_barchart.includes(chart_id) ? 'index' : 'nearest'),
                 yAlign: 'bottom',
                 callbacks: {
                     title: function (tooltipItems, data) {
                         var title = '';
                         if (chart_id == 'Distribuzione cibi acquistati/ricchezza') {
                             title += 'Ricchezza ';
-                        } else if (chart_id == 'Distribuzione della salute') {
-                            title += 'Salute ';
                         }
 
                         var value = data.labels[tooltipItems[0].index];
                         title += (value == 'undefined' || value == null ? '' : value);
+
+                        if (chart_id == 'Distribuzione della salute' || chart_id == 'Capacità, produzione e vendita mensile' || chart_id == 'Distribuzione cibi acquistati/ricchezza') {
+                            title += ' (' + current_period_global + ')';
+                        } else if (['Variazioni salute media', 'Variazioni salute individuale'].includes(chart_id)) {
+                            title += ' (cumulative fino al ' + current_period_global + ')';
+                        }
+
                         return title;
                     },
                     label: function (tooltipItem, data) {
@@ -50,6 +55,11 @@ function getDefaultChart(chart_id, type) {
                         if (label) {
                             label += ': ';
                         }
+
+                        if (chart_id == 'Distribuzione della salute') {
+                            label = '';
+                        }
+
                         var value = Math.round(tooltipItem.yLabel * 100) / 100;
 
                         if (value == 0 && chart_id == 'Distribuzione cibi acquistati/ricchezza') {
@@ -216,28 +226,7 @@ function initCharts() {
         },
         {
             title: 'Distribuzione della salute',
-            lines: [
-                {name: '0-4', color: 'red'},
-                {name: '5-9', color: 'red'},
-                {name: '10-14', color: 'red'},
-                {name: '15-19', color: 'red'},
-                {name: '20-24', color: 'red'},
-                {name: '25-29', color: 'red'},
-                {name: '30-34', color: 'red'},
-                {name: '35-39', color: 'red'},
-                {name: '40-44', color: 'red'},
-                {name: '45-49', color: 'red'},
-                {name: '50-54', color: 'red'},
-                {name: '55-59', color: 'red'},
-                {name: '60-64', color: 'red'},
-                {name: '65-69', color: 'red'},
-                {name: '70-74', color: 'red'},
-                {name: '75-79', color: 'red'},
-                {name: '80-84', color: 'red'},
-                {name: '85-89', color: 'red'},
-                {name: '90-94', color: 'red'},
-                {name: '95-100', color: 'red'}
-            ]
+            lines: []
         },
         {
             title: 'Capacità, produzione e vendita mensile',
@@ -392,14 +381,25 @@ function initCharts() {
             };
             chart.data.datasets.push(line);
 
+        } else if (chart_title == 'Distribuzione della salute') {
+            line = {
+                label: 'Distribuzione della salute',
+                data: [],
+                backgroundColor: 'rgba(255, 0, 0, 0.4)',
+                borderColor: 'rgba(255, 0, 0, 0.7)',
+                borderWidth: 1
+            };
+            chart.data.datasets.push(line);
+
         } else {
             for (var j = 0; j < charts_settings[i].lines.length; j++) {
                 // Skippati:
+                // Distribuzione della salute
                 // Capacità, produzione e vendita mensile
                 // Distribuzione cibi acquistati/ricchezza
                 // Variazioni salute media
                 // Variazioni salute individuale
-                if (![9, 11, 12, 13].includes(i)) {
+                if (![8, 9, 11, 12, 13].includes(i)) {
                     line = {
                         label: charts_settings[i].lines[j].name,
                         data: [],
@@ -417,12 +417,9 @@ function initCharts() {
         charts[chart_title] = chart;
     }
 
-    //console.log(charts);
-
     /*
      * Visualizzazione iniziale grafici (sinistra e destra)
      */
-
     moveChart('Popolazione', 'charts_left');
     moveChart('Capacità produttiva', 'charts_right');
 }
@@ -449,15 +446,11 @@ function performResponseActions(current_period, response_encoded) {
     //console.log(response);
     var next_period = response.Next_Period;
     $('input[name="periodo"]').val(next_period);
+    current_period_global = current_period;
 
     $.each(response['Charts'], function (chart_title, value_outer) {
 
         if (charts_barchart.includes(chart_title)) {
-            /*charts[chart_title].data.labels.pop();
-             charts[chart_title].data.labels.push('x');*/
-
-            /*console.log("clearing: " + chart_title);
-             console.log(charts[chart_title]);*/
 
             // rimuove tutti i dati dal grafico
             charts[chart_title].data.datasets.forEach((dataset) => {
@@ -465,15 +458,6 @@ function performResponseActions(current_period, response_encoded) {
             });
 
             charts[chart_title].data.labels = [];
-
-            //charts[chart_title].data.labels.pop();
-
-            //charts[chart_title].data.datasets[0].data.pop();
-
-            /*for (var j = 0; j < charts_settings[i].lines.length; j++) {
-             var label = charts_settings[i].lines[j].name;
-             }*/
-            //charts[chart_title].data.labels.push('0-9');
         } else {
             charts[chart_title].data.labels.push(current_period);
         }
@@ -484,32 +468,18 @@ function performResponseActions(current_period, response_encoded) {
 
                 charts[chart_title].data.labels.push(product_name);
 
-                //console.log("-------------------");
-                //console.log("chart_title = " + chart_title);
-                //console.log("product_name = " + product_name);
-                //console.log("value = " + JSON.stringify(value));
-                /*console.log("value x = " + value['Capacità']);
-                 console.log("value x = " + value['Produzione']);
-                 console.log("value x = " + value['Vendite']);*/
-
-                //console.log(charts[chart_title].data.datasets);
-
                 charts[chart_title].data.datasets[0].data.push(value['Capacità produttiva']);
                 charts[chart_title].data.datasets[1].data.push(value['Produzione']);
                 charts[chart_title].data.datasets[2].data.push(value['Vendite']);
             });
         } else if (chart_title == 'Distribuzione cibi acquistati/ricchezza') {
 
-            /*$.each(response['Charts'][chart_title], function (wealth_range, index) {
-             charts[chart_title].data.labels.push(wealth_range);
-             });*/
-
             $.each(response['Charts'][chart_title], function (wealth_range, value) {
-                //console.log(product_name);
+
                 charts[chart_title].data.labels.push('$ ' + wealth_range);
                 var count = 0;
+
                 $.each(response['Charts'][chart_title][wealth_range], function (product_name, bought) {
-                    //console.log('wealth_range ' + wealth_range + ': product_name ' + capitalize(product_name) + ', bought ' + bought);
                     charts[chart_title].data.datasets[count].data.push(bought);
                     count++;
                 });
@@ -521,7 +491,13 @@ function performResponseActions(current_period, response_encoded) {
                 charts[chart_title].data.labels.push(label);
                 charts[chart_title].data.datasets[0].data.push(value);
             });
-        } /*else if (chart_title == 'Distribuzione della salute') {
+        } else if (chart_title == 'Distribuzione della salute') {
+
+            $.each(response['Charts'][chart_title], function (range, value) {
+                charts[chart_title].data.labels.push('Salute ' + range);
+                charts[chart_title].data.datasets[0].data.push(value);
+            });
+        }/*else if (chart_title == 'Distribuzione della salute') {
          
          $.each(response['Charts'][chart_title], function (health_range, index) {
          charts[chart_title].data.labels.push(health_range);

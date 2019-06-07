@@ -73,10 +73,10 @@ class System {
         /*
          * Distribuzione della salute
          */
-        foreach ($ranges_distr_salute as $range) {
-            $range_text = $range['min'] . '-' . $range['max'];
-            $return['Charts']['Distribuzione della salute'][$range_text] = 0;
-        }
+        /* foreach ($ranges_distr_salute as $range) {
+          $range_text = $range['min'] . '-' . $range['max'];
+          $return['Charts']['Distribuzione della salute'][$range_text] = 0;
+          } */
 
         /*
          * Distribuzione cibi acquistati/ricchezza.
@@ -109,12 +109,13 @@ class System {
              * Distribuzione della salute
              */
             $health = Utils::round($person->get_health(1));
-            //error_log('health = ' . $health);
 
             foreach ($ranges_distr_salute as $range) {
                 if ($health >= $range['min'] && $health <= ($range['max'] + 0.99)) {
                     $range_text = $range['min'] . '-' . $range['max'];
-                    //error_log('range (SI) = ' . $range_text);
+                    if (!isset($return['Charts']['Distribuzione della salute'][$range_text])) {
+                        $return['Charts']['Distribuzione della salute'][$range_text] = 0;
+                    }
                     $return['Charts']['Distribuzione della salute'][$range_text] ++;
                 }
             }
@@ -142,6 +143,8 @@ class System {
                 }
             }
         }
+        
+        ksort($return['Charts']['Distribuzione della salute']);
 
         // Prodotti
         $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Carni)'] = 0;
@@ -150,7 +153,6 @@ class System {
         $return['Charts']['Industria carni/industria vegetali']['Capacità produttiva (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Produzione (Vegetali)'] = 0;
         $return['Charts']['Industria carni/industria vegetali']['Vendite (Vegetali)'] = 0;
-        //error_log('--------------------');
 
         $mode_random_params = $this->product_collection->getModeRandomParams();
         $products = [];
@@ -172,7 +174,6 @@ class System {
 
             $product = $this->product_collection->getProductByName($product_name);
 
-            //error_log($product_name);
             $return['Charts']['Capacità produttiva'][$product_name] = Utils::round($product->get_capacity(0));
             /*
              * la capacità mostrata è capacita(0), perchè production -e sold- sono calcolate a partire da quella
