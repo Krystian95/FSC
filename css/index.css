@@ -117,3 +117,8 @@
     font-size: 93%;
     padding: .15rem 1.5rem;
 }
+
+.dropdown-menu li {
+    float: left;
+    width: 45%;
+}
