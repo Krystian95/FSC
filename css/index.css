@@ -190,3 +190,13 @@
 .icon-cibi-ricc{
     color: green;
 }
+
+.button-relazione{
+    position: absolute;
+    right: 3.5%;
+    width: 110px;
+}
+
+.button-relazione i{
+    padding-right: 3px;
+}
