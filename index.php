@@ -24,7 +24,7 @@
                     <img src="images/favicon.png" height="35" width="35" style="display: inline-block;">
                     <span style="display: inline-block;">HESystem</span>
                 </a>
-                <a target="_blank" href="Relazione.pdf" class="btn btn-light button-relazione"><i class="fas fa-book"></i> Relazione</a>
+                <a target="_blank" href="HESystem_Relazione.pdf" class="btn btn-light button-relazione"><i class="fas fa-book"></i> Relazione</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
